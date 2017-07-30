@@ -6,23 +6,23 @@
   <title>About</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/blog/assets/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/assets/css/main.css" type="text/css">
 
   <!-- Font -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
 
-  <link rel="alternate" type="application/rss+xml" title="RSS Feed for Holdonnn" href="/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed for Holdonnn" href="/feed.xml" />
   <!-- Begin Jekyll SEO tag v2.2.3 -->
 <title>About | Holdonnn</title>
 <meta property="og:title" content="About" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/blog/about/" />
-<meta property="og:url" content="http://localhost:4000/blog/about/" />
+<link rel="canonical" href="https://holdonnn.github.io/about/" />
+<meta property="og:url" content="https://holdonnn.github.io/about/" />
 <meta property="og:site_name" content="Holdonnn" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebSite","name":"Holdonnn","headline":"About","author":{"@type":"Person","name":null},"url":"http://localhost:4000/blog/about/"}</script>
+{"@context":"http://schema.org","@type":"WebSite","name":"Holdonnn","headline":"About","author":{"@type":"Person","name":null},"url":"https://holdonnn.github.io/about/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -35,7 +35,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-ga('create', '', 'auto');
+ga('create', '77395473', 'auto');
 ga('send', 'pageview');
 
 </script>
@@ -44,235 +44,31 @@ ga('send', 'pageview');
 
 </head>
 
+
 <body>
   <div class="content-container">
     <header>
   <div class="header-small">
-    <a href="http://localhost:4000/blog">Holdonnn</a>
+    <a href="https://holdonnn.github.io">Holdonnn</a>
   </div>
 </header>
 <div class="page">
   <div class="page-title">About</div>
-  <p>You can see live demo <a href="https://aweekj.github.io/Kiko-plus">here</a>. This theme is inspired by <a href="http://github.com/gfjaru/Kiko">Kiko</a> theme.</p>
-
-<h2 id="features">Features</h2>
-
-<ul>
-  <li>Disqus comment system</li>
-  <li>Google analytics</li>
-  <li>Pagination support</li>
-  <li>Custom tags</li>
-  <li>SEO support</li>
-</ul>
-
-<h2 id="installation">Installation</h2>
-
-<h4 id="method-1-new-masters-repository-the-best">Method 1: new master’s repository (The Best)</h4>
-
-<ol>
-  <li>First <a href="https://github.com/AWEEKJ/Kiko-plus/fork">fork</a> it.</li>
-  <li>Change your forked repository name <em>Kiko-plus</em> to <strong>USERNAME.github.io</strong> where <strong>USERNAME</strong> is your github username.</li>
-  <li>Access your new blog via <a href="https://username.github.io">https://username.github.io</a>.</li>
-  <li><a href="#configuration">See configuration</a>.</li>
-</ol>
-
-<h4 id="method-2-gh-pages-in-existing-repository">Method 2: gh-pages in existing repository</h4>
-
-<ol>
-  <li>Create a new branch called <em>gh-pages</em> in the repository where you want to add a template <a href="https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/">managing branches</a>.</li>
-  <li>From command line run <code class="highlighter-rouge">git clone https://github.com/AWEEKJ/Kiko-plus.git</code> - this will clone <em>Kiko-plus</em> template to your computer.</li>
-  <li>Create new branch <code class="highlighter-rouge">git checkout -b gh-pages</code> where <em>gh-pages</em> will be your branch name.</li>
-  <li>Add remote, which is your repo from the first step, to your new branch <code class="highlighter-rouge">git remote add gh-pages https://github.com/&lt;yourName&gt;/&lt;yourMaster&gt;/gh-pages</code>. <em>yourName</em> is your account name and <em>yourMaster</em> is your repository.</li>
-  <li>Push new branch to remote <code class="highlighter-rouge">git push gh-pages</code>.</li>
-  <li>Update <code class="highlighter-rouge">_config.yml</code> file by changing <code class="highlighter-rouge">baseurl: "&lt;branchName&gt;"</code> <em>branchName</em> is your branch name where <em>gh-pages</em> resides. See <a href="#configuration">configuration</a>.</li>
-</ol>
-
-<h4 id="method-3-run-it-locally">Method 3: Run it locally</h4>
-
-<ol>
-  <li>Download <a href="https://github.com/AWEEKJ/Kiko-plus/archive/master.zip">zip</a> or clone it <code class="highlighter-rouge">git clone https://github.com/AWEEKJ/Kiko-plus</code>.</li>
-  <li>Go inside folder and run <code class="highlighter-rouge">jekyll serve</code> or <code class="highlighter-rouge">rake preview</code>. This will build a website which you can access <a href="https://localhost:4000">https://localhost:4000</a>. You need to have <a href="https://jekyllrb.com/docs/installation/">Jekyll</a> installed to do this.</li>
-</ol>
-
-<h2 id="configuration">Configuration</h2>
-
-<p>All configuration is done via <code class="highlighter-rouge">_config.yml</code> file which you will find in your main repo folder. Change this <code class="highlighter-rouge">&lt;something&gt;</code> to yours.</p>
-
-<h3 id="basic">Basic</h3>
-
-<ul>
-  <li>Config your blog name.</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">name</span><span class="pi">:</span> <span class="s">&lt;blog-name&gt;</span>
-</code></pre>
-</div>
-
-<ul>
-  <li>These configuration in <code class="highlighter-rouge">author:</code> is for links to icons in footer. If you want to add more link icons, modify <code class="highlighter-rouge">_includes/footer.html</code> file.</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">author</span><span class="pi">:</span>
-  <span class="s">facebook</span><span class="pi">:</span>         <span class="s">your-id</span>
-  <span class="s">twitter</span><span class="pi">:</span>          <span class="s">your-id</span>
-  <span class="s">github</span><span class="pi">:</span>           <span class="s">your-id</span>
-  <span class="s">linkedin</span><span class="pi">:</span>         <span class="s">your-id</span>
-  <span class="s">medium</span><span class="pi">:</span>           <span class="s">your-id</span>
-  <span class="s">tumblr</span><span class="pi">:</span>           <span class="s">your-id</span>
-  <span class="s">email</span><span class="pi">:</span>            <span class="s">your-id@your-email.com</span>
-</code></pre>
-</div>
-
-<ul>
-  <li>Change copyright year and name in footer.</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">copyright</span><span class="pi">:</span>
-  <span class="s">year</span><span class="pi">:</span>             <span class="s">2017</span>
-  <span class="s">name</span><span class="pi">:</span>             <span class="s">Kiko</span>
-</code></pre>
-</div>
-
-<h3 id="google-analytics">Google analytics</h3>
-
-<ul>
-  <li>Change this to your Google Analytic ID.</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">google-analytics</span><span class="pi">:</span>
-  <span class="s">id</span><span class="pi">:</span>               <span class="s2">"</span><span class="s">your-id"</span>
-</code></pre>
-</div>
-
-<h3 id="disqus">Disqus</h3>
-
-<ul>
-  <li>Change this to your Disqus short name.</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">disqus</span><span class="pi">:</span>
-  <span class="s">id</span><span class="pi">:</span>               <span class="s2">"</span><span class="s">your-id"</span>
-</code></pre>
-</div>
-
-<h3 id="url">URL</h3>
-
-<ul>
-  <li>Config your domain.</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://&lt;your-name&gt;.github.io"</span>
-</code></pre>
-</div>
-
-<ul>
-  <li><strong>NOTE</strong> When if running locally, change url to</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://localhost:4000"</span>
-</code></pre>
-</div>
-
-<ul>
-  <li>Change this to your branch name where <em>gh-pages</em> resides.</li>
-  <li><strong>NOTE</strong> apply only if you used <strong>Method 2</strong> for installation.</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/&lt;branch-name&gt;"</span>
-</code></pre>
-</div>
-
-<h2 id="rakefile-usage">Rakefile Usage</h2>
-
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># Create new post</span>
-<span class="gp">$ </span>rake post <span class="nv">title</span><span class="o">=</span><span class="s2">"A Title"</span> <span class="o">[</span><span class="nv">date</span><span class="o">=</span><span class="s2">"2015-08-16"</span><span class="o">]</span> <span class="o">[</span><span class="nv">tags</span><span class="o">=</span><span class="s2">"[tag1, tag2]"</span><span class="o">]</span> 
-
-<span class="c"># Create new draft post</span>
-<span class="gp">$ </span>rake draft <span class="nv">title</span><span class="o">=</span><span class="s2">"A Title"</span> <span class="o">[</span><span class="nv">date</span><span class="o">=</span><span class="s2">"2015-08-16"</span><span class="o">]</span> <span class="o">[</span><span class="nv">tags</span><span class="o">=</span><span class="s2">"[tag1, tag2]"</span><span class="o">]</span>
-
-<span class="c"># Install Jekyll Plugins. Do before running in local.</span>
-<span class="gp">$ </span>rake geminstall
-
-<span class="c"># Run in Local</span>
-<span class="gp">$ </span>rake preview
-</code></pre>
-</div>
-
-<h2 id="license">License</h2>
-
-<p>This theme is released under MIT License.</p>
+  <p>hello</p>
 
 </div>
-
-
-    <!-- Documents about icons are here: http://fontawesome.io/icons/ -->
+ <!-- Documents about icons are here: http://fontawesome.io/icons/ -->
 <div class="footer">
-  <hr />
-  <div class="footer-link">
-    
-    <a href="https://www.facebook.com/your-id"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-    
-	
-	
-    <a href="https://www.youtube.com/user/your-id"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-    
-	
-	
-    <a href="https://www.youtube.com/channel/your-id"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-    
+    <hr />
+    <div class="footer-link">
+            
+        <a href="https://github.com/your-id"><i class="fa fa-github" aria-hidden="true"></i></a>           
+        <a href="mailto:rururu0729@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a> 
 
-    
-    <a href="https://twitter.com/your-id"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-    
-
-    
-    <a href="https://github.com/your-id"><i class="fa fa-github" aria-hidden="true"></i></a>
-    
-	
-	
-    <a href="http://stackoverflow.com/users/your-id"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
-    
-	
-	
-    <a href="https://www.quora.com/profile/your-id"><i class="fa fa-quora" aria-hidden="true"></i></a>
-    
-
-    
-    <a href="https://www.linkedin.com/in/your-id"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-    
-	
-	
-    <a href="https://www.pinterest.com/your-id"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-    
-	
-	
-    <a href="https://plus.google.com/your-id"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-    
-	
-	
-    <a href="https://www.instagram.com/your-id"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-    
-	
-	
-    <a href="https://www.reddit.com/user/your-id"><i class="fa fa-reddit" aria-hidden="true"></i></a>
-    
-
-    
-    <a href="https://medium.com/@your-id"><i class="fa fa-medium" aria-hidden="true"></i></a>
-    
-
-    
-    <a href="https://your-id.tumblr.com"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
-    
-
-    
-    <a href="mailto:your-id@your-email.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-    
-
-  </div>
-  © 2017 Holdonnn. All rights reserved.
+    </div>
+    © 2017 Holdonnn. All rights reserved.
 </div>
-
   </div>
 </body>
+
 </html>

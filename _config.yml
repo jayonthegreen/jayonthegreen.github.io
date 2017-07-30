@@ -6,21 +6,21 @@
 name:               "Holdonnn"
 
 author:
-  facebook:         your-id
-  youtubeUser:      your-id
-  youtubeChannel:   your-id
-  twitter:          your-id
+  # facebook:         your-id
+  # youtubeUser:      your-id
+  # youtubeChannel:   your-id
+  # twitter:          your-id
   github:           your-id
-  stackoverflow:    your-id
-  quora:            your-id
-  linkedin:         your-id
-  pinterest:        your-id
-  googlePlus:       your-id
-  instagram:        your-id
-  reddit:           your-id
-  medium:           your-id
-  tumblr:           your-id
-  email:            your-id@your-email.com
+  # stackoverflow:    your-id
+  # quora:            your-id
+  # linkedin:         your-id
+  # pinterest:        your-id
+  # googlePlus:       your-id
+  # instagram:        your-id
+  # reddit:           your-id
+  # medium:           your-id
+  # tumblr:           your-id
+  email:            rururu0729@gmail.com
 
 copyright:
   year:             2017
@@ -28,16 +28,16 @@ copyright:
 
 # Google-analytics
 google-analytics:
-  id:               ""
+  id:               "77395473"
 
 # Disqus
 disqus:
-  id:               "kiko-plus"
+  id:               "holdonnn"
 
 # URL
 url:                "https://holdonnn.github.io" # the base hostname & protocol for your site
 # url:                "http://localhost:4000" # use this url when you develop
-baseurl:            "/blog" # the subpath of your site, e.g. /blog
+# baseurl:            "/blog" # the subpath of your site, e.g. /blog
 
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -59,8 +59,6 @@ nav:
     url:            "/about"
   - name:           "Archive"
     url:            "/archive"
-  - name:           "Tags"
-    url:            "/tags"
   - name:           "Github"
     url:            "https://github.com/holdonnnn"
 
