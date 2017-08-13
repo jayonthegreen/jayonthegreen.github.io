@@ -48,6 +48,21 @@ permalink:          /:year-:month-:day/:title/
 paginate:           5
 paginate_path:      /page:num/
 
+# Pagination with category
+paginate_category_basepath: '/category/:name/'
+paginate_category_layout: 'categories.html'
+
+# Categories
+category:
+  - name: "movie"
+    url: "/category/movie"
+  - name: "book"
+    url: "/category/book"  
+  - name: "dev"
+    url: "/category/dev"
+  - name: "etc"
+    url: "/category/etc"
+
 # Markdown
 markdown:           kramdown
 kramdown:
@@ -61,6 +76,7 @@ nav:
     url:            "/archive"
   - name:           "Github"
     url:            "https://github.com/holdonnnn"
+
 
 # Sass
 sass:
@@ -87,5 +103,7 @@ gems:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-admin
+  - jekyll-paginate-categories
+
 
 exclude:            [vendor]

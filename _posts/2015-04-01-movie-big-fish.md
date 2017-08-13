@@ -4,6 +4,7 @@ layout: post
 title:  "Big fish, Tim Burton (2003)"
 date:   2015-04-01
 categories: movie
+categoriy: movie
 
 ---
 

@@ -1,5 +1,11 @@
 # Kiko Plus Theme
 
+
+## fixed by me (holdonnn)
+
+- add [paginate category](https://github.com/jguyomard/jekyll-paginate-categories)
+
+
 ![image](/images/image.png)
 
 You can see live demo [here](https://aweekj.github.io/Kiko-plus). This theme is inspired by [Kiko](http://github.com/gfjaru/Kiko) theme.
@@ -128,3 +134,5 @@ $ rake preview
 ## License
 
 This theme is released under MIT License.
+
+

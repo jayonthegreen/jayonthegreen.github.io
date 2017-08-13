@@ -32,7 +32,6 @@ body {
   Header
   -------------- */
 .header {
-  padding: 2%;
   margin-bottom: 1.5em;
 
   &-title {
@@ -69,6 +68,9 @@ body {
         color: $oc-gray-7;
         text-decoration: none;
       }
+    }
+    .header-nav-category{
+      font-size: 0.85em;
     }
   }
 }
