@@ -58,8 +58,6 @@ category:
     url: "/category/movie"
   - name: "book"
     url: "/category/book"  
-  - name: "dev"
-    url: "/category/dev"
   - name: "etc"
     url: "/category/etc"
 
