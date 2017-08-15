@@ -4,8 +4,6 @@ layout: post
 title:  "Big fish, Tim Burton (2003)"
 date:   2015-04-01
 categories: movie
-categoriy: movie
-
 ---
 
 영화 ‘Big fish’에서는  모든 이야기를 과장하여, 판타지처럼 말하는 아버지가 나온다. 그러한 아버지에게 진실된 모습을 바라는 아들이 나온다. 아들은 아버지의 임종을 앞 두고, 아버지를 이해하게 된다. 결국 자신의 아들에게도 과장된 이야기를 전달하며 영화는 끝난다.
