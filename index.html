@@ -15,9 +15,9 @@ layout: default
     {% endif %}
     {% endfor %}
     <br>
-    <a href="{{ site.url }}{{ site.baseurl }}">All</a>
+    <a class="header-nav-category" href="{{ site.url }}{{ site.baseurl }}">All</a>
     {% for category in site.category %}
-    <a href="{{ category.url | prepend: site.baseurl }}">{{ category.name }}</a>
+    <a class="header-nav-category" href="{{ category.url | prepend: site.baseurl }}">{{ category.name }}</a>
     {% endfor %}
   </nav>
 </header>
