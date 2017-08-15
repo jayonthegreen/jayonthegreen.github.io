@@ -49,17 +49,17 @@ paginate:           5
 paginate_path:      /page:num/
 
 # Pagination with category
-paginate_category_basepath: '/category/:name/'
+paginate_category_basepath: '/c/:name/'
 paginate_category_layout: 'categories.html'
 
 # Categories
 category:
   - name: "movie"
-    url: "/category/movie"
+    url: "/c/movie"
   - name: "book"
-    url: "/category/book"  
+    url: "/c/book"  
   - name: "etc"
-    url: "/category/etc"
+    url: "/c/etc"
 
 # Markdown
 markdown:           kramdown
