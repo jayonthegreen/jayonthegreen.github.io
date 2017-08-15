@@ -16,8 +16,8 @@ layout: default
     {% endfor %}
     <br>
     <a class="header-nav-category" href="{{ site.url }}{{ site.baseurl }}">All</a>
-    {% for category in site.category %}
-    <a class="header-nav-category" href="{{ category.url | prepend: site.baseurl }}">{{ category.name }}</a>
+    {% for c in site.category %}
+    <a class="header-nav-category" href="{{ site.baseurl}}{{c.url }}">{{ c.name }}</a>
     {% endfor %}
   </nav>
 </header>
