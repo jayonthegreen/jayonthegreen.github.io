@@ -5,6 +5,10 @@ layout: default
 <header class="header">
   <div class="header-title">
     <a href="{{ site.url }}{{ site.baseurl }}">{{ site.name }}</a>
+    <p class="header-description">
+      Wouldn't it be more consistent to change the direction <br/> 
+      if I had a different perspective today than yesterday?    
+    </p>
   </div>
   <nav class="header-nav">
     {% for nav in site.nav %}
@@ -15,10 +19,10 @@ layout: default
     {% endif %}
     {% endfor %}
     <br>
-    <a class="header-nav-category" href="{{ site.url }}{{ site.baseurl }}">All</a>
+    <!-- <a class="header-nav-category" href="{{ site.url }}{{ site.baseurl }}">All</a>
     {% for c in site.category %}
     <a class="header-nav-category" href="{{ site.url}}{{c.url }}">{{ c.name }}</a>
-    {% endfor %}
+    {% endfor %} -->
   </nav>
 </header>
 
