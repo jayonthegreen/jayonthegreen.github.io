@@ -16,7 +16,7 @@ categories: 'book'
 
 <p align="center"><img src="https://holdonnn.github.io/assets/img/book/tsutaya.jpg
 "></p>
-<p align="center">[사진 출처](https://publishingperspectives.com/2017/01/japan-tsutaya-book-cafe-taiwan/)</p>
+<p style="test-align:center;word-break: break-all;">[사진 출처](https://publishingperspectives.com/2017/01/japan-tsutaya-book-cafe-taiwan/)</p>
 
 
 소비자 입장에서 나는 무엇을 소비하는가? 그렇다면 생산자 입장에서는 어떠한 고민을 하고 실천해야 하는가?를  생각하는 시간을 갖게 해 준 책이다. 웹사이트를 만들어서 무언가 해보려다, 흘러 흘러 개발자로 일하고 있다. 무엇을 만들고, 어떻게 전달해야 하며, 왜 만들어야 하는지에 대한 생각도 잦아졌다. '지적 자본론'이라는 단어를 몇 번 들었기도 하고 책이 아담하게 생겨서 출퇴근길에 읽으려고 구매했는데 아주 재미있게 읽었다. 
