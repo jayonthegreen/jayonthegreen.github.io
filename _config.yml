@@ -106,3 +106,5 @@ plugins:
 
 
 exclude:            [vendor]
+
+future: true
