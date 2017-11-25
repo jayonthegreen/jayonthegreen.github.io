@@ -10,7 +10,7 @@
     "gatsby-plugin-styled-components": "^2.0.2",
     "gatsby-source-filesystem": "^1.5.8",
     "gatsby-transformer-remark": "^1.7.21",
-    "styled-components": "^2.2.3"
+    "styled-components": "^2.2.0"
   },
   "keywords": [
     "gatsby"
