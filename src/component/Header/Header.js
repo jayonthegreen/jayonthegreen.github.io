@@ -3,24 +3,36 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
+import SearchInput from './SearchInput'
+
 const HeaderWrapper = styled.div`
   position: fixed;
-  top: 0;
+  top: ${props => props.searchMode ?  0 : -150}px;;
+  height: 200px;
   left: 0;
   right: 0;
   opacity: 0.9;
   display: flex;
-  background: red;
-  height: ${props => props.expand ? 200 : 50}px;
-  transition: height 0.5s;
+  background: ${props => props.searchMode ? 'black' : 'white'};
+  color: ${props => props.searchMode ? 'white' : 'black'};
+  transition: all 0.5s;
+  flex-direction: column;
+`
+const HeaderBottom = styled.div`
+  margin-top: auto;
+  display: flex;
+  text-align: center;
+  padding: 0.5rem 1rem;
 `
 
 const HeaderTitle = styled(Link)`
   text-decoration: none;
   color: inherit;
+  margin-right: auto;
 `
 const HeaderSearchIcon = styled.a`
-
+  cursor: pointer;
+  margin-left: auto;
 `
 
 class Header extends React.Component {
@@ -35,9 +47,12 @@ class Header extends React.Component {
 
   render() {
     return (
-      <HeaderWrapper expand={this.state.searchMode}>
-        <HeaderTitle to="/">Holdonnn!!!!</HeaderTitle>
-        <HeaderSearchIcon onClick={this.onClickSearchIcon}>Search</HeaderSearchIcon>
+      <HeaderWrapper searchMode={this.state.searchMode}>
+        { this.state.searchMode && <SearchInput />}
+        <HeaderBottom>
+          <HeaderTitle to="/">Holdonnn</HeaderTitle>
+          <HeaderSearchIcon onClick={this.onClickSearchIcon}>Search</HeaderSearchIcon>
+        </HeaderBottom>
       </HeaderWrapper>
     )
   }
