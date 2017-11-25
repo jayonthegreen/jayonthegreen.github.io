@@ -1,0 +1,2 @@
+webpackJsonp([0xefeaa6d1881d],{182:function(e,t,a){"use strict";function u(e){return e&&e.__esModule?e:{default:e}}t.__esModule=!0,t.query=void 0;var l=a(4),d=u(l),n=a(42),r=u(n),o=function(e){var t=e.data;return d.default.createElement("div",null,d.default.createElement("h1",null,"About ",t.site.siteMetadata.title),d.default.createElement(r.default,{to:"/"},"Go to Home"))};t.default=o;t.query="** extracted graphql fragment **"}});
+//# sourceMappingURL=component---src-pages-about-js-d4eb63ea114b7617df2a.js.map
