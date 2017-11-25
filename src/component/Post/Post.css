@@ -1,0 +1,14 @@
+.Post{
+    border: 1px solid red;
+    margin: 1rem;
+    cursor: pointer
+}
+
+.Post__date{
+    color: #666666;   
+}
+
+.Post__title{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
