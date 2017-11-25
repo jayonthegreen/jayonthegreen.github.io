@@ -33,6 +33,17 @@ export default class HTML extends React.Component {
           {this.props.headComponents}
           <link rel="shortcut icon" href={favicon} />
           {css}
+          
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77395473-1"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-77395473-1');
+          </script>
+
         </head>
         <body>
           <div

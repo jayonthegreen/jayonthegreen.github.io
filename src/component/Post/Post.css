@@ -1,7 +1,5 @@
 .Post{
-    border: 1px solid red;
     margin: 1rem;
-    cursor: pointer
 }
 
 .Post__date{
