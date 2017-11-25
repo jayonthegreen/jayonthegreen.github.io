@@ -1,10 +1,10 @@
 import React from 'react';
 import favicon from './favicon.png';
 
-let inlinedStyles = '';
+let inlineStyles = '';
 if (process.env.NODE_ENV === 'production') {
   try {
-    inlinedStyles = require('!raw-loader!../public/styles.css');
+    inlineStyles = require('!raw-loader!../public/styles.css');
   } catch (e) {
     console.log(e);
   }
@@ -17,7 +17,7 @@ export default class HTML extends React.Component {
       css = (
         <style
           id="gatsby-inlined-css"
-          dangerouslySetInnerHTML={{ __html: inlinedStyles }}
+          dangerouslySetInnerHTML={{ __html: inlineStyles }}
         />
       );
     }
@@ -35,10 +35,10 @@ export default class HTML extends React.Component {
           {css}
           
           <!-- Global site tag (gtag.js) - Google Analytics -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77395473-1"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77395473-1" />
           <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            function gtag(){dataLayer.push(arguments)}
             gtag('js', new Date());
 
             gtag('config', 'UA-77395473-1');
