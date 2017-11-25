@@ -1,14 +1,16 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import './IndexPage.css'
 import Post from '../component/Post/Post'
 
 const IndexPage = ({ data }) => (
-  <div>
-    <h1>Hi! </h1>
-    <h2>
+  <div className="IndexPage">
+    <h1 className="IndexPage__title">Hi! </h1>
+    <h2 className="IndexPage__subtitle">
       Wouldn't it be more consistent to change the direction  <br/>
-      if I had a different perspective today than yesterday?</h2>
+      if I had a different perspective today than yesterday?
+    </h2>
     {data.allMarkdownRemark.totalCount} Posts
     {data.allMarkdownRemark.edges.map(({ node }) =>(
       <Link
