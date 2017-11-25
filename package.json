@@ -19,7 +19,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --host localhost --port 8000",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "deploy": "gatsby build && aws s3 sync public s3://viva-ui-developer --delete",
     "test": "echo \"Error: no test specified\" && exit 1"
