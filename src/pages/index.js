@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import './IndexPage.css'
 import Post from '../component/Post/Post'
 
 const IndexPage = ({ data }) => (

@@ -38,7 +38,7 @@ const HeaderSearchIcon = styled.a`
 class Header extends React.Component {
 
   state = {
-    searchMode: true
+    searchMode: false
   }
 
   onClickSearchIcon = () => {
