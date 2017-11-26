@@ -5,26 +5,32 @@ import Header from '../component/Header'
 
 import './index.css'
 
-const TemplateWrapper = ({ children, data }) => (
+const TemplateWrapper = ({children, data, location}) => (
   <div>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'Simple Holdonn' },
-        { name: 'keywords', content: 'blog' },
+        {name: 'description', content: 'Simple Holdonn'},
+        {name: 'keywords', content: 'blog'},
       ]}
     />
-    <Header />
-    <div
-      style={{
-        margin: '100px auto',
-        maxWidth: 1000,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
+    {
+      location.pathname !== '/visitor' ?
+      <span>
+          <Header />
+          <div
+            style={{
+              margin: '100px auto',
+              maxWidth: 1000,
+              padding: '0px 1.0875rem 1.45rem',
+              paddingTop: 0,
+            }}
+          >
+        {children()}
+        </div>
+      </span> :
+      children()
+    }
   </div>
 )
 

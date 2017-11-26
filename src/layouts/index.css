@@ -3,10 +3,13 @@
   font-family: 'Spoqa Han Sans', 'Sans-serif';
 }
 
-html {
+
+html, body{
+  margin: 0;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 
 @media only screen and (max-width: 480px) {
   html {
@@ -14,9 +17,7 @@ html {
   }
 }
 
-body {
-  margin: 0;
-}
+
 article,
 aside,
 details,
