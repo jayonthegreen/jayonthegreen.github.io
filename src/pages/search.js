@@ -7,33 +7,32 @@ import PostList from '../component/PostList'
 
 const SearchKeyword = styled.h1`
   text-align: center;
-  ${media.mobile`font-size: 1rem;`}
-  opacity: ${props => props.visible ? 1 : 0};
+  ${media.mobile`font-size: 1rem;`} opacity: ${props =>
+      props.visible ? 1 : 0};
 `
 
 class SearchPage extends React.Component {
-
   state = {
-    searchKeyword: ''
+    searchKeyword: '',
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const { search } = window.location
     const searchKeyword = search
       .replace('?', '')
       .split('&')
       .reduce((acc, params) => {
         const [key, value] = params.split('=')
-        return key === 'q' && decodeURIComponent(value) || ''
+        return (key === 'q' && decodeURIComponent(value)) || ''
       }, '')
-    this.setState({searchKeyword})
+    this.setState({ searchKeyword })
   }
 
-  getNodesWithSearchKeyword (searchKeyword) {
-    if (!searchKeyword) return [];
+  getNodesWithSearchKeyword(searchKeyword) {
+    if (!searchKeyword) return []
     return this.props.data.allMarkdownRemark.edges
-      .map(({node}) => node)
-      .filter(({fields, frontmatter, html}) => {
+      .map(({ node }) => node)
+      .filter(({ fields, frontmatter, html }) => {
         return (
           fields.slug.includes(searchKeyword) ||
           frontmatter.title.includes(searchKeyword) ||
@@ -43,14 +42,18 @@ class SearchPage extends React.Component {
       })
   }
 
-  render () {
+  render() {
     const resultNodes = this.getNodesWithSearchKeyword(this.state.searchKeyword)
     return (
       <div>
-        <Link to='/'> Go to Home</Link>
+        <Link to="/"> Go to Home</Link>
         <SearchKeyword visible={this.state.searchKeyword}>
-          {resultNodes.length > 0 && `😀 ${resultNodes.length} results about '${this.state.searchKeyword}'`}
-          {resultNodes.length === 0 && `🙃 no results about '${this.state.searchKeyword}'`}
+          {resultNodes.length > 0 &&
+            `😀 ${resultNodes.length} results about '${
+              this.state.searchKeyword
+            }'`}
+          {resultNodes.length === 0 &&
+            `🙃 no results about '${this.state.searchKeyword}'`}
         </SearchKeyword>
         {resultNodes.length > 0 && <PostList markdownNodes={resultNodes} />}
       </div>
@@ -61,23 +64,22 @@ class SearchPage extends React.Component {
 export default SearchPage
 
 export const query = graphql`
-query SearchPageQuery {
-    allMarkdownRemark (sort: { order: DESC, fields: [frontmatter___date]}){
-        totalCount
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-              date(formatString: "YYYY-MM-DD")
-            }
-            fields {
-              slug
-            }
-            html
+  query SearchPageQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "YYYY-MM-DD")
           }
+          fields {
+            slug
+          }
+          html
         }
       }
-
-}
+    }
+  }
 `

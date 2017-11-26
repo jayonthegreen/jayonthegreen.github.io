@@ -7,14 +7,14 @@ import SearchInput from './SearchInput'
 
 const HeaderWrapper = styled.div`
   position: fixed;
-  top: ${props => props.searchMode ?  0 : -150}px;;
+  top: ${props => (props.searchMode ? 0 : -150)}px;
   height: 200px;
   left: 0;
   right: 0;
   opacity: 0.9;
   display: flex;
-  background: ${props => props.searchMode ? 'black' : 'white'};
-  color: ${props => props.searchMode ? 'white' : 'black'};
+  background: ${props => (props.searchMode ? 'black' : 'white')};
+  color: ${props => (props.searchMode ? 'white' : 'black')};
   transition: all 0.5s;
   flex-direction: column;
 `
@@ -36,30 +36,33 @@ const HeaderSearchIcon = styled.a`
 `
 
 class Header extends React.Component {
-
   state = {
-    searchMode: false
+    searchMode: false,
   }
 
   onClickSearchIcon = () => {
-    this.setState({searchMode: !this.state.searchMode})
+    this.setState({ searchMode: !this.state.searchMode })
   }
-  
-  onSubmitSearch = (searchKeyword) => {
-    window.location = `/search/?q=${searchKeyword}`;
+
+  onSubmitSearch = searchKeyword => {
+    window.location = `/search/?q=${searchKeyword}`
   }
 
   render() {
     return (
       <HeaderWrapper searchMode={this.state.searchMode}>
-        { this.state.searchMode && <SearchInput  onSubmit={this.onSubmitSearch}/>}
+        {this.state.searchMode && (
+          <SearchInput onSubmit={this.onSubmitSearch} />
+        )}
         <HeaderBottom>
           <HeaderTitle to="/">Holdonnn</HeaderTitle>
-          <HeaderSearchIcon onClick={this.onClickSearchIcon}>Search</HeaderSearchIcon>
+          <HeaderSearchIcon onClick={this.onClickSearchIcon}>
+            Search
+          </HeaderSearchIcon>
         </HeaderBottom>
       </HeaderWrapper>
     )
   }
 }
 
-export default Header;
+export default Header

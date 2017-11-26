@@ -1,1 +1,1 @@
-export { media } from './style/media';
+export { media } from './style/media'

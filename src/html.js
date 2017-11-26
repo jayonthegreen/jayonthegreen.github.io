@@ -1,28 +1,27 @@
-import React from 'react';
-import favicon from './favicon.png';
+import React from 'react'
+import favicon from './favicon.png'
 
-let inlineStyles = '';
+let inlineStyles = ''
 if (process.env.NODE_ENV === 'production') {
   try {
-    inlineStyles = require('!raw-loader!../public/styles.css');
+    inlineStyles = require('!raw-loader!../public/styles.css')
   } catch (e) {
-    console.log(e);
+    console.log(e)
   }
 }
 
 export default class HTML extends React.Component {
   render() {
-    let css;
+    let css
     if (process.env.NODE_ENV === 'production') {
       css = (
         <style
           id="gatsby-inlined-css"
           dangerouslySetInnerHTML={{ __html: inlineStyles }}
         />
-      );
+      )
     }
     return (
-
       <html lang="en">
         <head>
           <meta charSet="utf-8" />
@@ -33,17 +32,6 @@ export default class HTML extends React.Component {
           {this.props.headComponents}
           <link rel="shortcut icon" href={favicon} />
           {css}
-          
-          <!-- Global site tag (gtag.js) - Google Analytics -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77395473-1" />
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments)}
-            gtag('js', new Date());
-
-            gtag('config', 'UA-77395473-1');
-          </script>
-
         </head>
         <body>
           <div
@@ -53,6 +41,6 @@ export default class HTML extends React.Component {
           {this.props.postBodyComponents}
         </body>
       </html>
-    );
+    )
   }
 }
