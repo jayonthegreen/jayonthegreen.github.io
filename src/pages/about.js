@@ -3,8 +3,8 @@ import Link from 'gatsby-link'
 
 const AboutPage = ({ data }) => (
   <div>
-    <h1>About {data.site.siteMetadata.title}</h1>
-    <Link to="/">Go to Home</Link>
+    <h1>About</h1>
+    - email: rururu0729@gmail.com <br/>
   </div>
 )
 
