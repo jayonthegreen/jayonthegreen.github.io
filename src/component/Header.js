@@ -46,8 +46,7 @@ class Header extends React.Component {
   }
   
   onSubmitSearch = (searchKeyword) => {
-    navigateTo(`/search?q=${searchKeyword}`)
-    window.location.reload();
+    window.location = `/search/?q=${searchKeyword}`;
   }
 
   render() {

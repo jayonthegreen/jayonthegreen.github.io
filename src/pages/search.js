@@ -47,11 +47,11 @@ class SearchPage extends React.Component {
     const resultNodes = this.getNodesWithSearchKeyword(this.state.searchKeyword)
     return (
       <div>
+        <Link to='/'> Go to Home</Link>
         <SearchKeyword visible={this.state.searchKeyword}>
           {resultNodes.length > 0 && `😀 ${resultNodes.length} results about '${this.state.searchKeyword}'`}
           {resultNodes.length === 0 && `🙃 no results about '${this.state.searchKeyword}'`}
         </SearchKeyword>
-        <Link to='/'> Go to Home</Link>
         {resultNodes.length > 0 && <PostList markdownNodes={resultNodes} />}
       </div>
     )
