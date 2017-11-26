@@ -10,7 +10,7 @@ class PostList extends React.Component {
       <div>
         {this.props.markdownNodes.map( node  => (
            <Link key={node.id} to={node.fields.slug} style={{ textDecoration: `none`, color: `inherit` }}>
-           <PostListItem title={node.frontmatter.title} date={node.frontmatter.date} />
+            <PostListItem title={node.frontmatter.title} date={node.frontmatter.date} />
            </Link>
          ))}
       </div>

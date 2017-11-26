@@ -16,7 +16,7 @@ const Title = styled.div`
 `
 
 const PostListItem = ({ title, date, excerpt}) => (
-  <Wrapper onClick={() => navigateTo('/test')}>
+  <Wrapper>
     <Date>
       {date}
     </Date>
