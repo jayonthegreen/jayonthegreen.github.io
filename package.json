@@ -21,10 +21,11 @@
     "build": "gatsby build",
     "develop": "gatsby develop --host localhost --port 8000",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "deploy": "gatsby build && aws s3 sync public s3://viva-ui-developer --delete",
+    "deploy": "gatsby build && aws s3 sync public s3://holdonnn.me",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "aws-cli": "^0.0.1",
     "gh-pages": "^1.1.0",
     "prettier": "^1.8.2"
   }
