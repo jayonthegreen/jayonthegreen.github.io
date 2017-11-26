@@ -10,6 +10,8 @@ const StyledSearchInput = styled.input`
     color: white;
     font-size: 40px;
     outline: none;
+    line-height: 60px;
+    height: 60px;
 `
 
 class SearchInput extends React.Component {
