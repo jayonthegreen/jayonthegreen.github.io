@@ -58,7 +58,8 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run deploy with aws cli
+      - run: sudo apt-get install -y awscli
+      - run: aws configure set default.region ap-northeast-1
       - run: yarn deploy
 
 
