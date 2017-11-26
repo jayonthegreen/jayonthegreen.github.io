@@ -14,8 +14,8 @@ const StyledSearchInput = styled.input`
 export default class SearchInput extends Component {
    
     onKeyDown = (e) => {
-        if( e.keyCode === 13){
-            console.log('enter!')
+        if( e.keyCode === 13 && e.target.value){
+            window.location = `/search?q=${e.target.value}`
         }
     }
 

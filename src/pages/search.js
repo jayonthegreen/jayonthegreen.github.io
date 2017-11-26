@@ -1,7 +1,15 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import styled from 'styled-components'
+import { media } from '../utils/style'
 
 import PostList from '../component/PostList'
+
+const SearchKeyword = styled.h1`
+  text-align: center;
+  ${media.mobile`font-size: 1rem;`}
+`
+
 
 class SearchPage extends React.Component {
 
@@ -17,18 +25,35 @@ class SearchPage extends React.Component {
     this.setState({searchKeyword})
   }
 
-  componentDidMount () {
-    console.log(this.props.data.allMarkdownRemark.edges.map(({node}) => node))
+  getNodesWithSearchKeyword() {
+    const { searchKeyword } = this.state;
+    window.nodes = this.props.data.allMarkdownRemark.edges;
+    return this.props.data.allMarkdownRemark.edges
+    .map(({node}) => node)
+    .filter(({fields, frontmatter, html}) => {
+      return (
+        fields.slug.includes(searchKeyword)  ||
+        frontmatter.title.includes(searchKeyword) ||
+        frontmatter.date.includes(searchKeyword) ||
+        html.includes(searchKeyword)
+      );
+    })
   }
 
   render () {
+    const resultNodes = this.getNodesWithSearchKeyword();
     return (
       <div>
-        {this.state.searchKeyword}
+        <SearchKeyword>
+          { resultNodes.length > 0 && 
+            `${resultNodes.length} results about '${this.state.searchKeyword}'`
+          }
+          { resultNodes.length === 0 && 
+            `no results about '${this.state.searchKeyword}'`
+          }
+        </SearchKeyword>
         <Link to='/'> Go to Home</Link>
-        <PostList
-            markdownNodes={this.props.data.allMarkdownRemark.edges.map(({node}) => node)}
-        />
+        { resultNodes.length > 0 && <PostList markdownNodes={resultNodes}/> }
       </div>
     )
   }
