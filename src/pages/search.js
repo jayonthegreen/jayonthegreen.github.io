@@ -46,10 +46,10 @@ class SearchPage extends React.Component {
       <div>
         <SearchKeyword>
           { resultNodes.length > 0 && 
-            `${resultNodes.length} results about '${this.state.searchKeyword}'`
+            `😀 ${resultNodes.length} results about '${this.state.searchKeyword}'`
           }
           { resultNodes.length === 0 && 
-            `no results about '${this.state.searchKeyword}'`
+            `🙃 no results about '${this.state.searchKeyword}'`
           }
         </SearchKeyword>
         <Link to='/'> Go to Home</Link>

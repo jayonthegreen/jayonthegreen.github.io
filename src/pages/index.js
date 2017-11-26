@@ -7,7 +7,7 @@ class IndexPage  extends React.Component {
   render() {
     return(
       <div>
-        <h1>Hi!</h1>
+        <h1>Hi! 😄</h1>
         <h2>Wouldn't it be more consistent to change the direction <br/> if I had a different perspective today than yesterday?</h2>
         <PostList markdownNodes={this.props.data.allMarkdownRemark.edges.map(({node}) => node)} />
       </div>
