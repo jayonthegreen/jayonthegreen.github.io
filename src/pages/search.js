@@ -7,8 +7,8 @@ import PostList from '../component/PostList'
 
 const SearchKeyword = styled.h1`
   text-align: center;
-  ${media.mobile`font-size: 1rem;`} opacity: ${props =>
-      props.visible ? 1 : 0};
+  ${media.mobile`font-size: 1rem;`} 
+  opacity: ${props => props.visible ? 1 : 0};
 `
 
 class SearchPage extends React.Component {

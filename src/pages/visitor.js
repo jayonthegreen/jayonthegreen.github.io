@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { media } from '../utils/style'
 import ImgFace from './visitor/esens_face.png'
 import ImgEyeLeft from './visitor/esens_left.png'
 import ImgEyeRight from './visitor/esens_right.png'
@@ -24,9 +25,13 @@ const FaceWrapper = styled.div`
 
 const Face = styled.div`
    width: 420px;
+   ${media.mobile`width: ${420 * 0.75}px;`} 
    height: 500px;
+   ${media.mobile`height: ${500 * 0.75}px;`} 
    background-image: url('${props => props.backgroundImage}');
+   background-size: contain;
    z-index: 11;
+   margin: 0 auto;
 `
 
 const Eyes = styled.div`
@@ -34,6 +39,7 @@ const Eyes = styled.div`
   width: 100%;
   position: absolute;
   top: calc(50% - 85px);
+  ${media.mobile`top: calc(50% - ${85* 0.75}px);`}
   text-align: center;
   z-index: 10;
   transform: translate(${props => props.x}px);
@@ -41,14 +47,15 @@ const Eyes = styled.div`
 `
 
 const EyeLeft = styled.img`
-  // margin-left: -10px; 
   margin-bottom: 0;
   padding-right: 12px;
   margin-left: -8px;
+  ${media.mobile`height: 30px`}
 `
 
 const EyeRight = styled.img`
   margin-bottom: 0;
+  ${media.mobile`height: 30px`}
 `
 
 
