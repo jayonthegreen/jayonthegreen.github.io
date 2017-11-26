@@ -1,16 +1,31 @@
 ---
 
-layout: post
 title:  "Big fish, Tim Burton (2003)"
 date:   2015-04-01
-categories: movie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 
 영화 ‘Big fish’에서는  모든 이야기를 과장하여, 판타지처럼 말하는 아버지가 나온다. 그러한 아버지에게 진실된 모습을 바라는 아들이 나온다. 아들은 아버지의 임종을 앞 두고, 아버지를 이해하게 된다. 결국 자신의 아들에게도 과장된 이야기를 전달하며 영화는 끝난다.
 
-<p align="center">
-<img src="https://holdonnn.github.io/assets/img/movie/big-fish/0.jpg"></p>
-
+![big-fish](https://s3.ap-northeast-2.amazonaws.com/static.holdonnn.me/img/movie/big-fish/0.jpg)
 
  먼저 판타지에 관련되어 드는 생각은 드라마 ‘나인'이다.  드라마는 기본적으로 시간여행을 다룬다. 기억에 남는 건 “믿고 싶은 판타지는 믿고”라는 말 뿐 이였다. 시간여행이라는 무지막지한 판타지 같은 인생 속에서, 주인공 자신이 믿고 싶은 판타지를 선택한다라는 것이 인상적 이였다. 현실을 이끄는 판타지를 선택한건 현실을 선택하는 거같다.
 

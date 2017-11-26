@@ -14,7 +14,7 @@ categories: 'book'
 저자는 기존의 서점을 '라이프 스타일을 제안해주는' 장소로 혁신했다. 판매자 입장에서 상품을 나열하고 판매하는 것을 넘어, 사용자에게 가치들을 제안하고자 했다. 그렇게 만들어 곳이 바로 츠타야 서점이다.
 
 
-<p align="center"><img src="https://holdonnn.github.io/assets/img/book/tsutaya.jpg
+<p align="center"><img src="https://s3.ap-northeast-2.amazonaws.com/static.holdonnn.me/img/book/tsutaya.jpg
 "></p>
 <p style="test-align:center;word-break: break-all;">[사진 출처](https://publishingperspectives.com/2017/01/japan-tsutaya-book-cafe-taiwan/)</p>
 
