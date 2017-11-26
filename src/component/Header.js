@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
+import Link, { navigateTo } from 'gatsby-link'
 import styled from 'styled-components'
 
 import SearchInput from './SearchInput'
@@ -44,11 +44,16 @@ class Header extends React.Component {
   onClickSearchIcon = () => {
     this.setState({searchMode: !this.state.searchMode})
   }
+  
+  onSubmitSearch = (searchKeyword) => {
+    navigateTo(`/search?q=${searchKeyword}`)
+    window.location.reload();
+  }
 
   render() {
     return (
       <HeaderWrapper searchMode={this.state.searchMode}>
-        { this.state.searchMode && <SearchInput />}
+        { this.state.searchMode && <SearchInput  onSubmit={this.onSubmitSearch}/>}
         <HeaderBottom>
           <HeaderTitle to="/">Holdonnn</HeaderTitle>
           <HeaderSearchIcon onClick={this.onClickSearchIcon}>Search</HeaderSearchIcon>
