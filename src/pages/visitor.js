@@ -11,9 +11,7 @@ const Wrapper = styled.div`
    background-color: black;
    display: flex;
    flex-direction: column;
-   height: 100vh;
    align-items: center;
-   width: 100wh;
    overflow-x: hidden;
    position: fixed;
    top: 0;
@@ -85,6 +83,7 @@ const SwipeBall = styled.div`
   position: absolute;
   top:0;
   left: ${props => props.dragEndX ? `${(props.dragEndX - 30)}px` : `calc(50% - 30px)`};
+  will-change: left;
 `
 
 const Header = styled(Link)`
@@ -132,9 +131,10 @@ class VisitorPage extends React.Component {
     }
     const dragEndX = e.touches ? e.touches[0].pageX : e.clientX;
     const width = this.getWindowWidth();
-    this.setState({
+    clearTimeout(this.bounce)
+    this.bounce = setTimeout(() => this.setState({
       dragEndX: Math.min(Math.max(dragEndX, -15), width + 15)
-    });
+    }), 10)
   }
 
   getEyesX = () => {
