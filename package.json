@@ -18,8 +18,8 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "start": "gatsby develop --host localhost --port 8000",
     "build": "gatsby build",
-    "develop": "gatsby develop --host localhost --port 8000",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "deploy": "yarn build && aws s3 sync public s3://holdonnn.me --delete  --region ap-northeast-1",
     "test": "echo \"Error: no test specified\" && exit 1"
