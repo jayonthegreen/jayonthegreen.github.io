@@ -8,12 +8,11 @@ import PostList from '../component/PostList'
 const SearchKeyword = styled.h1`
   text-align: center;
   ${media.mobile`font-size: 1rem;`} 
-  opacity: ${props => props.visible ? 1 : 0};
 `
 
 class SearchPage extends React.Component {
   state = {
-    searchKeyword: '',
+    searchKeyword: null,
   }
 
   componentDidMount() {
@@ -43,16 +42,16 @@ class SearchPage extends React.Component {
   }
 
   render() {
-    const resultNodes = this.getNodesWithSearchKeyword(this.state.searchKeyword)
+    const resultNodes = this.getNodesWithSearchKeyword(this.state.searchKeyword);
     return (
       <div>
         <Link to="/"> Go to Home</Link>
-        <SearchKeyword visible={this.state.searchKeyword}>
-          {resultNodes.length > 0 &&
+        <SearchKeyword>
+          {this.state.searchKeyword && resultNodes.length > 0 &&
             `😀 ${resultNodes.length} results about '${
               this.state.searchKeyword
             }'`}
-          {resultNodes.length === 0 &&
+          {this.state.searchKeyword && resultNodes.length === 0 &&
             `🙃 no results about '${this.state.searchKeyword}'`}
         </SearchKeyword>
         {resultNodes.length > 0 && <PostList markdownNodes={resultNodes} />}

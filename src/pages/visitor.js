@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import {media} from '../utils/style'
+import { media } from '../utils/style'
 import ImgFace from './visitor/esens_face.png'
 import ImgEyeLeft from './visitor/esens_left.png'
 import ImgEyeRight from './visitor/esens_right.png'

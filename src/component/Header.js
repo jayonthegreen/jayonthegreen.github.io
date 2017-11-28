@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link, { navigateTo } from 'gatsby-link'
 import styled from 'styled-components'
+import { media } from '../utils/style'
 
 import SearchInput from './SearchInput'
 
@@ -17,7 +18,12 @@ const HeaderWrapper = styled.div`
   color: ${props => (props.searchMode ? 'white' : 'black')};
   transition: all 0.5s;
   flex-direction: column;
+  ${media.mobile`
+  height: 120px;
+  top: ${props => (props.searchMode ? 0 : -70)}px;
+  `}
 `
+
 const HeaderBottom = styled.div`
   margin-top: auto;
   display: flex;
