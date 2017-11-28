@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../component/Header'
 
+import './spoqa-han-sans.css'
 import './index.css'
 
 const TemplateWrapper = ({children, data, location}) => (
