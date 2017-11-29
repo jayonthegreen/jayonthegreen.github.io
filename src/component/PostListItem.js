@@ -1,10 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import { media } from '../utils/style'
 
 const Wrapper = styled.div`
   margin: 0 1rem;
   border-bottom: 1px solid #cccccc;
   padding: 1rem 0;
+   ${
+  media.mobile`
+  margin: 0;
+  `
+  }
 `
 
 const Date = styled.div`
