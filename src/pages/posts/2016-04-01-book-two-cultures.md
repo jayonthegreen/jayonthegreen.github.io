@@ -3,7 +3,8 @@
 layout: post
 title: "두 문화, C. P. Snow (1959)"
 date: 2016-05-07
-categories: book
+category: book
+description: "스노우는 세상을 크게, 인문학과 과학으로 나누어 그 두 문화간에 몰이해가 우리사회에 심각한 문제임을 이야기한다. 약 50년전에 스노우가 이야기한 두 문화간의 몰이해는 쉽게 우리 주변에서 발견 할 수 있다."
 
 ---
 

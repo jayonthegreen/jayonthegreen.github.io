@@ -1,9 +1,8 @@
 ---
-
-layout: post
 title:  A clockwork orange, Stanley Kubrick (1971)
-date:   2016-02-01 12:00:00 +0900
-categories: movie
+description: "에소프레소 샷을 바다에 뿌리면 그것은 아메리카노가 아니다. 적당한 양의 물과 에소프레소를 섞으면 우리는 그것을  아메리카노라고 한다. 정도는 어떤것을 이야기하는데 중요하다. 그러나 가끔 우리는 극단에 집착한다."
+date: 2016-02-01
+category: movie
 
 ---
 

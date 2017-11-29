@@ -1,9 +1,9 @@
 ---
 
-layout : post
 title : The Lives Of Others, Florian Henckel von Donnersmarck (2006)
-categories : movie
+category : movie
 date: 2016-05-14
+description: "윤리라는 것은 우리에게 경험이라는 보답을 준다. 윤리, 공감, 연대는 더불어 살아가는 당위가 아닌 방식이다."
 
 ---
 &nbsp;영화는 비슬러가 심문하는 것을 학생들에게 가르치는 것으로 부터 시작된다. 정치적 이념아래, 타인의 삶에 공감하지 못했던 비슬러는 점점 시인들을 감시하는 자신의 일에 대해 확신을 잃는다. 그는 자신의 본분을 거스르고 결국 두 예술가의 삶을 지키려고 노력한다. 두 예술가가 위험에 처하자 비슬러는 자신이 위험을 감수했으나, 크리스타의 죽음을 막지 못한다.

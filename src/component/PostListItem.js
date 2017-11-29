@@ -1,5 +1,4 @@
 import React from 'react'
-import { navigateTo } from 'gatsby-link'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -15,10 +14,11 @@ const Title = styled.div`
   font-size: 1.2rem;
 `
 
-const PostListItem = ({ title, date, excerpt }) => (
+const PostListItem = ({ title, date, description }) => (
   <Wrapper>
     <Date>{date}</Date>
     <Title>{title}</Title>
+    {description}
   </Wrapper>
 )
 

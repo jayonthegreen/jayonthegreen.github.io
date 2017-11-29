@@ -1,9 +1,9 @@
 ---
 
-layout: post
+category: book
+date:  2017-01-30
 title: 블랙스완, 나심 니콜라스 탈레브 (2007)
-date:   2017-01-30
-categories: book
+description: "이 책의 중심 주제는 무작위성에 대해 우리 인간이 가지고 있는 맹목성을 살펴보는 것이다."
 
 ---
 

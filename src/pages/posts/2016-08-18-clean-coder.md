@@ -1,9 +1,9 @@
 ---
 
-layout: post
 title : The Clean Coder, Robert C. Martin (2011)
 date : 2016-09-13
-categories: book
+category: book
+description: '프로는 자신이 극도로 오만하다는 사실과 언젠간 불운이 닥쳐 목표가무너질지도 모른다는 사실을 안다. 목표가 무너졌을 때, 가장 좋은 방법은 하워드의 충고를 따르는 것이다. "그냥 웃어, 이 친구야"'
 
 ---
 
@@ -173,6 +173,3 @@ categories: book
 - 장인정신은 장인들이 지니고 있는 사고방식으로써 가치, 규율, 기술, 자세 및 답변을 포함하는 밈이다.
 
 - 장인 정신 밈은 사람을 통해 전해진다.
-
-
-
