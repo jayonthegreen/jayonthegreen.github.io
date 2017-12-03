@@ -1,19 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import styled from 'styled-components'
-
-const Wrapper = styled.div`
-  margin: 1rem auto;
-  max-width: 720px;
-`
 
 import PostListItem from './PostListItem'
 
 class PostList extends React.Component {
   render() { 
     return (
-      <Wrapper>
+      <div>
         {this.props.markdownNodes.map(node => (
           <Link
             key={node.id}
@@ -28,7 +22,7 @@ class PostList extends React.Component {
             />
           </Link>
         ))}
-      </Wrapper >
+      </div>
     )
   }
 }

@@ -2,9 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../component/Header'
+import styled from 'styled-components'
 
 import './spoqa-han-sans.css'
 import './index.css'
+
+const Wrapper = styled.div`
+margin: 50px auto;
+max-width: 720px;
+padding: 0 1.0875rem 1.45rem;
+`
 
 const TemplateWrapper = ({children, data, location}) => (
   <div>
@@ -15,17 +22,10 @@ const TemplateWrapper = ({children, data, location}) => (
         {name: 'keywords', content: 'blog'},
       ]}
     />
-    <Header />
-    <div
-      style={{
-        margin: '50px auto',
-        maxWidth: 1000,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
+    <Wrapper>
+      <Header />
       {children()}
-    </div>
+    </Wrapper>
   </div>
 )
 
