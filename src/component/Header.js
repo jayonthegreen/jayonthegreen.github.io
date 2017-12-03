@@ -61,7 +61,7 @@ class Header extends React.Component {
           <SearchInput onSubmit={this.onSubmitSearch} />
         )}
         <HeaderBottom>
-          <HeaderTitle to="/">Holdonnn</HeaderTitle>
+          <HeaderTitle to="/">holdonnn</HeaderTitle>
           <HeaderSearchIcon onClick={this.onClickSearchIcon}>
             Search
           </HeaderSearchIcon>
