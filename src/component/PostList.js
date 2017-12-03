@@ -11,8 +11,7 @@ const Wrapper = styled.div`
 import PostListItem from './PostListItem'
 
 class PostList extends React.Component {
-  render() {
-    console.log(this.props.markdownNodes[0])
+  render() { 
     return (
       <Wrapper>
         {this.props.markdownNodes.map(node => (
