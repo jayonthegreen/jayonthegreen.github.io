@@ -63,22 +63,45 @@ class SearchPage extends React.Component {
 export default SearchPage
 
 export const query = graphql`
-  query SearchPageQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "YYYY-MM-DD")
-          }
-          fields {
-            slug
-          }
-          html
+query SearchPageQuery {
+  allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    totalCount
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          category
+          date(formatString: "YYYY-MM-DD")
+          description
         }
+        fields {
+          slug
+        }
+        html
       }
     }
   }
+}
 `
+
+// export const query = graphql`
+//   query SearchPageQuery {
+//     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+//       totalCount
+//       edges {
+//         node {
+//           id
+//           frontmatter {
+//             title
+//             date(formatString: "YYYY-MM-DD")
+//           }
+//           fields {
+//             slug
+//           }
+//           html
+//         }
+//       }
+//     }
+//   }
+// `
