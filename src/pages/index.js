@@ -6,7 +6,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hi! 😄</h1>
+        <h1>Hi!</h1>
         <h2>
           Wouldn't it be more consistent to change the direction <br /> if I had
           a different perspective today than yesterday?
@@ -32,6 +32,7 @@ export const query = graphql`
           id
           frontmatter {
             title
+            category
             date(formatString: "YYYY-MM-DD")
             description
           }

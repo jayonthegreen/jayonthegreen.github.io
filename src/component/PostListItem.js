@@ -26,12 +26,21 @@ const Title = styled.div`
 
 const maxLength = 120;
 
-const PostListItem = ({ title, date, description }) => (
+const PostListItem = ({ title, category, date, description }) => (
   <Wrapper>
     <Date>{date}</Date>
-    <Title>{title}</Title>
+    <Title>{ getEmoji(category)} {title}</Title>
     {description.slice(0, maxLength)}{description.length > maxLength && '...'}
   </Wrapper>
 )
+
+const CATEGORY_EMOJI_MAP = {
+  'book': '📚',
+  'movie': '🎥',
+  'essay': '🤔',
+  'default': '🤔',
+}
+
+const getEmoji = (key) => CATEGORY_EMOJI_MAP[key] || CATEGORY_EMOJI_MAP.default;
 
 export default PostListItem
