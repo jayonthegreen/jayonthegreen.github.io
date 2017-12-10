@@ -24,7 +24,10 @@ class PostTemplate extends React.Component {
       <Wrapper>
         <Helmet
         meta={[
+          {name: 'title', content: post.frontmatter.title},
+          {name: 'og:title', content: post.frontmatter.title},
           {name: 'description', content: post.frontmatter.description},
+          {name: 'og:description', content: post.frontmatter.description},
           {name: 'keywords', content: post.frontmatter.keywords},
         ]}
         />
