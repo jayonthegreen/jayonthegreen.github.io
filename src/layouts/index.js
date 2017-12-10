@@ -14,21 +14,25 @@ max-width: 720px;
 padding: 0 1.0875rem 1.45rem;
 `
 
-const TemplateWrapper = ({children, data, location}) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        {name: 'description', content: 'Simple Holdonn'},
-        {name: 'keywords', content: 'blog'},
-      ]}
-    />
-    <Wrapper>
-      <Header />
-      {children()}
-    </Wrapper>
-  </div>
-)
+class TemplateWrapper extends React.Component {
+  render() {
+    return (
+      <div>
+      <Helmet
+        title={this.props.data.site.siteMetadata.title}
+        meta={[
+          {name: 'description', content: 'holdonnn\'s blog'},
+          {name: 'keywords', content: 'blog'},
+        ]}
+      />
+      <Wrapper>
+        <Header />
+        {this.props.children()}
+      </Wrapper>
+    </div>
+    )
+  } 
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
