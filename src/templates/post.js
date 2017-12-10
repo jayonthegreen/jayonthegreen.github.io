@@ -1,13 +1,18 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import styled from 'styled-components';
+
+const Header = styled.h1`
+  margin: 1rem 0;
+`
 
 class PostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     return (
       <div>
-        <Link to="/"> Go to Home</Link>
-        <h1>{post.frontmatter.title}</h1>
+        <Link to="/">go to home</Link>
+        <Header>{post.frontmatter.title}</Header>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     )

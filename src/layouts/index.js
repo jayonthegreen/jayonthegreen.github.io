@@ -5,6 +5,7 @@ import Header from '../component/Header'
 import styled from 'styled-components'
 
 import './spoqa-han-sans.css'
+import './reset.css'
 import './index.css'
 
 const Wrapper = styled.div`
