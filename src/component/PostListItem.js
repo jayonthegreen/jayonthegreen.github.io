@@ -30,7 +30,12 @@ const PostListItem = ({ title, category, date, description }) => (
   <Wrapper>
     <Date>{date}</Date>
     <Title>{ getEmoji(category)} {title}</Title>
-    {description.slice(0, maxLength)}{description.length > maxLength && '...'}
+    {
+      description && description.slice(0, maxLength)
+    }
+    {
+      description && description.length > maxLength && '...'
+    }
   </Wrapper>
 )
 
