@@ -19,9 +19,3 @@ html {
 p {
   line-height: 1.8;
 }
-
-.Wrapper{
-  margin: 50px auto;
-  max-width: 720px;
-  padding: 0 1.0875rem 1.45rem;
-}

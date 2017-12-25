@@ -2,10 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../component/Header'
+import styled from 'styled-components'
 
+import './spoqa-han-sans.css'
 import './reset.css'
 import './index.css'
-import './spoqa-han-sans.css'
+
+const Wrapper = styled.div`
+margin: 50px auto;
+max-width: 720px;
+padding: 0 1.0875rem 1.45rem;
+`
 
 class TemplateWrapper extends React.Component {
   render() {
@@ -18,10 +25,10 @@ class TemplateWrapper extends React.Component {
           {name: 'keywords', content: 'blog'},
         ]}
       />
-      <div className="Wrapper">
+      <Wrapper>
         <Header />
         {this.props.children()}
-      </div>
+      </Wrapper>
     </div>
     )
   } 
