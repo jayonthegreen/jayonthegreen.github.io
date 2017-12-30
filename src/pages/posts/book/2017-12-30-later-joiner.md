@@ -9,7 +9,7 @@ description: 책에서 인간을 효율성을 갖고 있는 기계가 아니라 
 <iframe src='http://serviceapi.rmcnmv.naver.com/flash/outKeyPlayer.nhn?vid=8F18C336DBB7E77C84708BCD56F24A4E0B38&outKey=V125dce72288afcdba60aed51fd7a4a9ac4e95d3c6ef9d53b49bfed51fd7a4a9ac4e9&controlBarMovable=true&jsCallable=true&isAutoPlay=true&skinName=tvcast_white' frameborder='no' scrolling='no' marginwidth='0' marginheight='0' allowfullscreen></iframe>
 </div>
 
-토스라는 서비스의 팬이다. 정말 간편한 서비스이다. 서비스와 회사도 미친듯한 성장을 하는 것 같다. 토스팀의 창업자 이승건 대표의 강연 영상을 보게 되었다. 이승건 대표는 담백하고, 명료했다. 강연 도중 이 책을 소개했고 바로 구매하여 읽었다.
+토스라는 서비스의 팬이다. 정말 간편한 서비스이다. 서비스와 회사도 미친듯한 성장을 하는 것 같다. 창업자 이승건 대표의 강연 영상을 보게 되었다. 이승건 대표는 담백하고, 명료했다. 강연 도중 이 책을 소개했고 바로 구매하여 읽었다.
 
 책에서 인간을 효율성을 갖고 있는 기계가 아니라 영혼을 동력으로 가진 기관이라고 정의한다. 또 가치를 '생명에 유용한 것'으로 정의한다. 저자는 생산성과 효율만이 경제 활동의 근간이 아니라고 강조한다. 부의 본질은 '사람'에 있기에 고용인과 피고용인의 애정을 역설한다. 책을 읽어나가며 경제를 사람중심에서 생각해 볼 수 있었다.
 
