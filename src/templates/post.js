@@ -36,17 +36,21 @@ const Content = styled.div`
 class PostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
+    const { 
+      title,
+      description,
+      keywords,
+      image = this.props.data.site.siteMetadata.image,
+    } = post.frontmatter;
+    const meta = [
+      {name: 'title', content: title},
+      {name: 'description', content: description},
+      {name: 'keywords', content: keywords},
+      {name: 'image', content: image},
+    ]
     return (
       <Wrapper>
-        <Helmet
-        meta={[
-          {name: 'title', content: post.frontmatter.title},
-          {name: 'og:title', content: post.frontmatter.title},
-          {name: 'description', content: post.frontmatter.description},
-          {name: 'og:description', content: post.frontmatter.description},
-          {name: 'keywords', content: post.frontmatter.keywords},
-        ]}
-        />
+        <Helmet meta={meta}/>
         <Header>{post.frontmatter.title}</Header>
         <Date>{post.frontmatter.date}</Date>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -65,6 +69,13 @@ export const query = graphql`
         title
         date(formatString: "YYYY-MM-DD")
         description
+        keywords
+        image
+      }
+    }
+    site {
+      siteMetadata {
+        image
       }
     }
   }
