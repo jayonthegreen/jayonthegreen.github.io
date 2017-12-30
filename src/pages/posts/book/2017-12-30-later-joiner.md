@@ -6,7 +6,7 @@ description: 책에서 인간을 효율성을 갖고 있는 기계가 아니라 
 --- 
 
 <div style="text-align:center">
-<iframe src='http://serviceapi.rmcnmv.naver.com/flash/outKeyPlayer.nhn?vid=8F18C336DBB7E77C84708BCD56F24A4E0B38&outKey=V125dce72288afcdba60aed51fd7a4a9ac4e95d3c6ef9d53b49bfed51fd7a4a9ac4e9&controlBarMovable=true&jsCallable=true&isAutoPlay=true&skinName=tvcast_white' frameborder='no' scrolling='no' marginwidth='0' marginheight='0' WIDTH='544' HEIGHT='306' allowfullscreen></iframe>
+<iframe src='http://serviceapi.rmcnmv.naver.com/flash/outKeyPlayer.nhn?vid=8F18C336DBB7E77C84708BCD56F24A4E0B38&outKey=V125dce72288afcdba60aed51fd7a4a9ac4e95d3c6ef9d53b49bfed51fd7a4a9ac4e9&controlBarMovable=true&jsCallable=true&isAutoPlay=true&skinName=tvcast_white' frameborder='no' scrolling='no' marginwidth='0' marginheight='0' allowfullscreen></iframe>
 </div>
 
 토스라는 서비스의 팬이다. 정말 미치도록 간편한 서비스이다. 서비스와 회사도 미친듯한 성장을 하는 것 같다. 토스팀의 창업자 이승건 대표의 강연 영상을 보게 되었다. 너무나 인상적이었다. 이승건 대표는 담백하고, 명료했다. 강연 도중 이 책을 소개했고 바로 구매하여 읽었다. 

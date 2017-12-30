@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import styled from 'styled-components';
+import { media } from '../utils/style'
+
 
 const Wrapper = styled.div`
   padding-top: 1rem;
@@ -18,7 +20,17 @@ const Date = styled.div`
 `
 
 const Content = styled.div`
-
+  & iframe {
+    margin: 0 auto;
+    width: 544px;
+    height: 306px;
+    ${
+      media.mobile`
+        width: 100%;
+        height: 100%;
+      `
+    }
+  }
 `
 
 class PostTemplate extends React.Component {
