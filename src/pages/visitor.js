@@ -157,7 +157,7 @@ class VisitorPage extends React.Component {
   render() {
     return <Wrapper>
       <Audio autoPlay loop controls>
-        <source src="https://s3.ap-northeast-2.amazonaws.com/static.holdonnn.me/mp3/e-sens-visitor.mp3"
+        <source src="/mp3/e-sens-visitor.mp3"
                 type="audio/mpeg"/>
         Your browser does not support the audio element.
       </Audio>

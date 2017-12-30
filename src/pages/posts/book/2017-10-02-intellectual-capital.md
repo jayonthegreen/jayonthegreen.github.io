@@ -4,6 +4,7 @@ title: "지적자본론, 마스다무네아키(2015)"
 description: "저번 주에 카페에서 산 커피 원두가 부엌에 놓여있다. 풍미가 없어지기 전에 다 마시지 못할걸 왜 샀을까 하는 생각도 든다. 정말 나는 커피를 원해서 샀을까? 사실 중요한 건 단순 커피가 아닐지도 모른다. 그저 그렇게 지나가다 커피 원두쯤을 사는 사람이 되고 싶었거나 그저 집에서 커피 한잔 마실 여유를 누리고 싶었을지도 모른다. 꼭 필요해서만 사는 것은 아닐 것이다."
 date: 2017-10-02
 category: 'book'
+image: /img/book/tsutaya.jpg
 ---
 
 저번 주에 카페에서 산 커피 원두가 부엌에 놓여있다. 풍미가 없어지기 전에 다 마시지 못할걸 왜 샀을까 하는 생각도 든다. 정말 나는 커피를 원해서 샀을까? 사실 중요한 건 단순 커피가 아닐지도 모른다. 그저 그렇게 지나가다 커피 원두쯤을 사는 사람이 되고 싶었거나 그저 집에서 커피 한잔 마실 여유를 누리고 싶었을지도 모른다. 꼭 필요해서만 사는 것은 아닐 것이다.
@@ -13,7 +14,7 @@ category: 'book'
 저자는 기존의 서점을 '라이프 스타일을 제안해주는' 장소로 혁신했다. 판매자 입장에서 상품을 나열하고 판매하는 것을 넘어, 사용자에게 가치들을 제안하고자 했다. 그렇게 만들어 곳이 바로 츠타야 서점이다.
 
 
-<p align="center"><img src="https://s3.ap-northeast-2.amazonaws.com/static.holdonnn.me/img/book/tsutaya.jpg
+<p align="center"><img src="/img/book/tsutaya.jpg
 "></p>
 <p style="test-align:center;word-break: break-all;">[사진 출처](https://publishingperspectives.com/2017/01/japan-tsutaya-book-cafe-taiwan/)</p>
 

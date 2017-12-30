@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `holdonnn`,
-    image: `/og.jpeg`,
+    image: `/img/og.jpeg`,
   },
   plugins: [
     {
