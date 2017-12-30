@@ -16,13 +16,17 @@ padding: 0 1.0875rem 1.45rem;
 
 class TemplateWrapper extends React.Component {
   render() {
+    const { title, image } = this.props.data.site.siteMetadata;
     return (
       <div>
       <Helmet
-        title={this.props.data.site.siteMetadata.title}
+        title={title}
         meta={[
           {name: 'description', content: 'holdonnn\'s blog'},
+          {name: 'og:description', content: 'holdonnn\'s blog'},
           {name: 'keywords', content: 'blog'},
+          {name: 'image', content: image },
+          {name: 'og:image', content: image },
         ]}
       />
       <Wrapper>
@@ -45,6 +49,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        image
       }
     }
   }

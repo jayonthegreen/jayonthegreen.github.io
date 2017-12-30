@@ -44,9 +44,12 @@ class PostTemplate extends React.Component {
     } = post.frontmatter;
     const meta = [
       {name: 'title', content: title},
+      {name: 'og:title', content: title},
       {name: 'description', content: description},
+      {name: 'og:description', content: description},
       {name: 'keywords', content: keywords},
       {name: 'image', content: image},
+      {name: 'og:image', content: image},
     ]
     return (
       <Wrapper>
