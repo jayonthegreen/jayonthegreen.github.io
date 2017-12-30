@@ -17,6 +17,10 @@ const Date = styled.div`
   font-size: 0.8rem;
 `
 
+const Content = styled.div`
+
+`
+
 class PostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -33,7 +37,7 @@ class PostTemplate extends React.Component {
         />
         <Header>{post.frontmatter.title}</Header>
         <Date>{post.frontmatter.date}</Date>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Content dangerouslySetInnerHTML={{ __html: post.html }} />
       </Wrapper>
     )
   }
