@@ -16,12 +16,9 @@ const Content = styled.div`
   position: relative; 
   margin-left: 300px;
   padding: 50px;
-  height: 100vh;
-  overflow-y: ${props => props.mobileSideNavVisible ? 'hidden': 'scroll'};
   ${media.mobile`
   margin-left: ${props => props.mobileSideNavVisible ? 300 : 0}px;
-  padding: 20px;
-  height: calc(100vh - 50px);
+  padding: 50px 20px;
   `}
   transition: all 0.3s ease;
 `

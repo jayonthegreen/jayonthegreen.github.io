@@ -9,8 +9,14 @@ import hamburgerSvg from './hamburger.svg'
 const MobileNav =styled.div`
     display: none;
     ${media.mobile`
+    position: fixed;
     display:flex;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: white;
     height: 50px;
+    z-index: 2;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     align-items: center;
     `}
@@ -27,12 +33,15 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   width: 300px;
-  height: ${props => props.mobileVisible ? 'calc(100vh - 50px)': '100vh'};
+  height: 100vh;
   display: flex;
   flex-direction: column;
   border-right: 1px solid rgba(0, 0, 0, 0.08);
   ${media.mobile`
-  left: ${props => props.mobileVisible ? 0 : -300}px;`
+  left: ${props => props.mobileVisible ? 0 : -300}px;
+  top: 50px;
+  height: calc(100vh - 50px);
+  `
   } 
 `
 
