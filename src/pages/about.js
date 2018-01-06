@@ -3,8 +3,8 @@ import Link from 'gatsby-link'
 
 const AboutPage = ({ data }) => (
   <div>
-    <h1>About</h1>
-    - email: rururu0729@gmail.com <br/>
+    email: rururu0729@gmail.com <br/>
+    It will be updated soon.....
   </div>
 )
 
