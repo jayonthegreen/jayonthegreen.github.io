@@ -22,9 +22,9 @@ const MobileNav =styled.div`
     `}
 `
 
-const MobileNavIcon = styled.img`
+const MobileNavIconImg = styled.img`
     margin: 0 20px;
-    cursor: pointer;
+    /* cursor: pointer; */
 `
 
 const Wrapper = styled.div`
@@ -99,7 +99,7 @@ class SideBar extends React.Component {
   render() {
     return (<div>
         <MobileNav>
-            <MobileNavIcon src={hamburgerSvg} alt="menu" onClick={this.toggle} />
+            <div onClick={this.toggle}><MobileNavIconImg src={hamburgerSvg} alt="menu" /></div>
         </MobileNav>
         <Wrapper mobileVisible={this.state.mobileVisible} onClick={e => this.state.mobileVisible && e.stopPropagation()}>
           <Top>
