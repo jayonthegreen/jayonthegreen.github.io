@@ -22,9 +22,14 @@ const MobileNav =styled.div`
     `}
 `
 
+const MobileNavItem = styled.div`
+    cursor: pointer;
+    display:flex;
+    align-items: center;
+`
+
 const MobileNavIconImg = styled.img`
     margin: 0 20px;
-    /* cursor: pointer; */
 `
 
 const Wrapper = styled.div`
@@ -99,7 +104,7 @@ class SideBar extends React.Component {
   render() {
     return (<div>
         <MobileNav>
-            <div onClick={this.toggle}><MobileNavIconImg src={hamburgerSvg} alt="menu" /></div>
+            <MobileNavItem onClick={this.toggle}><MobileNavIconImg src={hamburgerSvg} alt="menu" /></MobileNavItem>
         </MobileNav>
         <Wrapper mobileVisible={this.state.mobileVisible} onClick={e => this.state.mobileVisible && e.stopPropagation()}>
           <Top>
