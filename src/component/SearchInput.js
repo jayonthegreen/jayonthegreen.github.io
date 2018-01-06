@@ -27,19 +27,18 @@ const StyledSearchInput = styled.input`
 class SearchInput extends React.Component {
   onKeyDown = e => {
     if (e.keyCode === 13 && e.target.value) {
+      e.preventDefault();
       this.props.onSubmit(e.target.value)
     }
   }
 
   render() {
-    return (
-      <StyledSearchInput
+    return (<StyledSearchInput
         autoFocus
         onKeyDown={this.onKeyDown}
         type="text"
-        placeholder="Type to search"
-      />
-    )
+        placeholder="type to search"
+      />)
   }
 }
 
