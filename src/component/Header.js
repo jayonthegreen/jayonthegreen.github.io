@@ -6,10 +6,13 @@ import { media } from '../utils/style'
 
 import SearchInput from './SearchInput'
 
+const headerNormalHeight = 50;
+const SearchModeHeight = 150;
+const MobileSearchModeHeight = 120;
 const HeaderWrapper = styled.div`
   position: fixed;
-  top: ${props => (props.searchMode ? 0 : -150)}px;
-  height: 200px;
+  height: ${SearchModeHeight}px;
+  top: ${props => (props.searchMode ? 0 : -(SearchModeHeight - headerNormalHeight))}px;
   left: 0;
   right: 0;
   opacity: 0.9;
@@ -19,8 +22,8 @@ const HeaderWrapper = styled.div`
   transition: all 0.5s;
   flex-direction: column;
   ${media.mobile`
-  height: 120px;
-  top: ${props => (props.searchMode ? 0 : -70)}px;
+  height: ${MobileSearchModeHeight}px;
+  top: ${props => (props.searchMode ? 0 : -(MobileSearchModeHeight - headerNormalHeight))}px;
   `}
 `
 
@@ -46,7 +49,19 @@ class Header extends React.Component {
     searchMode: false,
   }
 
-  onClickSearchIcon = () => {
+  componentDidMount() {
+    window.addEventListener('click', this.hideSearchModeHeader)
+  }
+  componentWillUnmound() {
+    window.removeEventListner('click', this.hideSearchModeHeader)
+  }
+
+  hideSearchModeHeader = e => {
+    this.setState({ searchMode: false })
+  }
+
+  onClickSearchIcon = (e) => {
+    e.stopPropagation();
     this.setState({ searchMode: !this.state.searchMode })
   }
 
@@ -56,14 +71,12 @@ class Header extends React.Component {
 
   render() {
     return (
-      <HeaderWrapper searchMode={this.state.searchMode}>
-        {this.state.searchMode && (
-          <SearchInput onSubmit={this.onSubmitSearch} />
-        )}
+      <HeaderWrapper searchMode={this.state.searchMode} onClick={e => this.state.searchMode && e.stopPropagation()}>
+        <SearchInput style={{display: this.state.searchMode ? 'block': 'none'}} onSubmit={this.onSubmitSearch} />
         <HeaderBottom>
           <HeaderTitle to="/">holdonnn</HeaderTitle>
           <HeaderSearchIcon onClick={this.onClickSearchIcon}>
-            Search
+            🔎
           </HeaderSearchIcon>
         </HeaderBottom>
       </HeaderWrapper>
