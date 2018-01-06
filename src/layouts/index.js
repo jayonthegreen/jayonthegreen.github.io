@@ -17,22 +17,13 @@ const Content = styled.div`
   margin-left: 300px;
   padding: 50px;
   height: 100vh;
-  overflow-y: auto;
+  overflow-y: ${props => props.mobileSideNavVisible ? 'hidden': 'scroll'};
   ${media.mobile`
   margin-left: ${props => props.mobileSideNavVisible ? 300 : 0}px;
   padding: 20px;
+  height: calc(100vh - 50px);
   `}
   transition: all 0.3s ease;
-`
-
-const ContentBlock = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: black;
-  opacity: 0.7;
 `
 
 class TemplateWrapper extends React.Component {
@@ -57,7 +48,6 @@ class TemplateWrapper extends React.Component {
         />
           <SideBar onChangeMobileVisible={mobileSideNavVisible => this.setState({ mobileSideNavVisible })} />
           <Content mobileSideNavVisible={this.state.mobileSideNavVisible}>
-            {this.state.mobileSideNavVisible && <ContentBlock />}
             {this.props.children()}
           </Content>
       </div>
