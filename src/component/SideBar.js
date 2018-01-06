@@ -18,6 +18,7 @@ const MobileNav =styled.div`
 
 const MobileNavIcon = styled.img`
     margin: 0 20px;
+    cursor: pointer;
 `
 
 const Wrapper = styled.div`
