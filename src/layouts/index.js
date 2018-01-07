@@ -1,16 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Header from '../component/Header'
 import SideBar from '../component/SideBar'
+import Navigation from '../component/Navigation'
 import styled from 'styled-components'
 import { media } from '../utils/style'
-
-
 import './reset.css'
 import './spoqa-han-sans.css'
 import './index.css'
 
+const NavigationWrapper = styled.div`
+  display: none;
+  ${media.mobile`
+  display: block;
+  `}
+`
+
+const Body = styled.div`
+  
+`
 
 const Content = styled.div`
   position: relative; 
@@ -29,7 +37,32 @@ class TemplateWrapper extends React.Component {
     mobileSideNavVisible: false,
   }
 
+  toggleMobileSideNavVisible = (e) => {
+    e.stopPropagation();
+    const { mobileSideNavVisible  } = this.state;
+    this.setState({mobileSideNavVisible : !mobileSideNavVisible})
+  }
+
+  onClickSideBarItem = (e) => {
+    e.stopPropagation();
+    this.hideWhenMobileSideNav();
+  }
+
+  componentDidMount() {
+    window.addEventListener('click', this.hideWhenMobileSideNav )
+  }
+  componentWillUnmound() {
+    window.removeEventListner('click', this.hideWhenMobileSideNav )
+  }
+
+  hideWhenMobileSideNav = () => {
+    this.state.mobileSideNavVisible && this.setState({ mobileSideNavVisible: false })
+  }
+
+
+
   render() {
+    const { mobileSideNavVisible } = this.state;
     const { title, image } = this.props.data.site.siteMetadata;
     return (
       <div>
@@ -43,10 +76,20 @@ class TemplateWrapper extends React.Component {
             { name: 'og:image', content: image },
           ]}
         />
-          <SideBar onChangeMobileVisible={mobileSideNavVisible => this.setState({ mobileSideNavVisible })} />
-          <Content mobileSideNavVisible={this.state.mobileSideNavVisible}>
+        <NavigationWrapper>
+          <Navigation
+            onClickMenu={this.toggleMobileSideNavVisible}
+          />
+        </NavigationWrapper>
+        <Body>
+          <SideBar
+            onClickSideBarItem={this.onClickSideBarItem}
+            mobileSideNavVisible={mobileSideNavVisible}
+          />
+          <Content mobileSideNavVisible={mobileSideNavVisible}>
             {this.props.children()}
           </Content>
+        </Body>
       </div>
     )
   }
