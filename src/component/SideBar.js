@@ -19,8 +19,7 @@ const Wrapper = styled.div`
   left: ${props => props.mobileVisible ? 0 : -300}px;
   top: 50px;
   height: calc(100vh - 50px);
-  `
-    } 
+  `}
 `
 
 const Top = styled.div`
@@ -50,11 +49,6 @@ const List = styled.div`
 
 
 class SideBar extends React.Component {
-
-
-    hide = e => {
-        this.props.setMobileVisibleFalse(false)
-    }
 
     render() {
         return (

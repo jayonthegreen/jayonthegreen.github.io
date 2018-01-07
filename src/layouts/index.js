@@ -16,9 +16,7 @@ const NavigationWrapper = styled.div`
   `}
 `
 
-const Body = styled.div`
-  
-`
+const Body = styled.div``
 
 const Content = styled.div`
   position: relative; 
@@ -26,7 +24,8 @@ const Content = styled.div`
   padding: 50px;
   ${media.mobile`
   margin-left: ${props => props.mobileSideNavVisible ? 300 : 0}px;
-  padding: 50px 20px;
+  margin-top: 50px;
+  padding: 20px;
   `}
   transition: all 0.3s ease;
 `
