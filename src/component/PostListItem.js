@@ -3,9 +3,8 @@ import styled from 'styled-components'
 import { media } from '../utils/style'
 
 const Wrapper = styled.div`
-  margin: 0 1rem;
-  padding: 1rem 0; 
-  ${media.mobile`margin: 0;`}
+  margin: 1rem 0; 
+  ${media.mobile`margin: 0.5rem 0;`}
 `
 
 const Date = styled.div`
