@@ -26,12 +26,10 @@ const ContentBlock = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 0;
   background-color: black;
-  opacity: 0.7;
-  z-index: 2;
-  display: ${props => props.mobileSideNavVisible ? 'block' : 'none'};
-  transition: all 0.3s ease;
+  z-index: ${props => props.mobileSideNavVisible ? 2 : -1}; 
+  opacity: ${props => props.mobileSideNavVisible ? '0.7' : '0'};
+  transition: all 0.5s ease;
 `
 
 
