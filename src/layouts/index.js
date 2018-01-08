@@ -27,9 +27,9 @@ const ContentBlock = styled.div`
   right: 0;
   bottom: 0;
   background-color: black;
-  z-index: ${props => props.mobileSideNavVisible ? 2 : -1}; 
-  opacity: ${props => props.mobileSideNavVisible ? '0.7' : '0'};
-  transition: all 0.5s ease;
+  z-index: 2;
+  opacity: 0.7;
+  display: ${props => props.mobileSideNavVisible ? 'block' : 'none'};
 `
 
 
