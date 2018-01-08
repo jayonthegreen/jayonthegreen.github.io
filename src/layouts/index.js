@@ -16,15 +16,34 @@ const NavigationWrapper = styled.div`
   `}
 `
 
-const Body = styled.div``
+const Body = styled.div`
+  position: relative;
+`
+
+const ContentBlock = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 2;
+  display: ${props => props.mobileSideNavVisible ? 'block' : 'none'};
+  transition: all 0.3s ease;
+`
+
 
 const Content = styled.div`
   position: relative; 
   margin-left: 300px;
   padding: 50px;
+  z-index: 0;
   ${media.mobile`
-  margin-left: ${props => props.mobileSideNavVisible ? 300 : 0}px;
+  margin-left: 0;
   margin-top: 50px;
+  min-height: calc( 100vh - 50px );
   padding: 20px;
   `}
   transition: all 0.3s ease;
@@ -55,7 +74,9 @@ class TemplateWrapper extends React.Component {
   }
 
   hideWhenMobileSideNav = () => {
-    this.state.mobileSideNavVisible && this.setState({ mobileSideNavVisible: false })
+    if (this.state.mobileSideNavVisible ) {
+      this.setState({ mobileSideNavVisible: false })
+    }
   }
 
 
@@ -86,6 +107,7 @@ class TemplateWrapper extends React.Component {
             mobileSideNavVisible={mobileSideNavVisible}
           />
           <Content mobileSideNavVisible={mobileSideNavVisible}>
+            <ContentBlock mobileSideNavVisible={mobileSideNavVisible} />
             {this.props.children()}
           </Content>
         </Body>

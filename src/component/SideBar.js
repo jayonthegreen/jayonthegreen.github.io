@@ -6,6 +6,7 @@ import SideBarItem from './SideBarItem'
 
 
 const Wrapper = styled.div`
+  background-color: white;
   transition: all 0.3s ease;
   position: fixed;
   left: 0;
@@ -19,6 +20,7 @@ const Wrapper = styled.div`
   left: ${props => props.mobileVisible ? 0 : -300}px;
   top: 50px;
   height: calc(100vh - 50px);
+  z-index: 4;
   `}
 `
 
