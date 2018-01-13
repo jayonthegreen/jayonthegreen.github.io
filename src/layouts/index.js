@@ -30,6 +30,7 @@ const ContentBlock = styled.div`
   z-index: 2;
   opacity: 0.7;
   display: ${props => props.mobileSideNavVisible ? 'block' : 'none'};
+  cursor: pointer;
 `
 
 
