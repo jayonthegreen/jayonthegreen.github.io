@@ -3,7 +3,7 @@
 title: 일러스트 공산당 선언, 카를 마르크스 / 프리드히리 엥겔스 (2015)
 date: 2017-01-13
 category: 'book'
-description: 
+description: 지금까지 인간 사회의 모든 역사는 게급 투쟁의 역사이다.
 image: '/img/book/marx.jpg'
 keywords: 공산당 선언, 마르크르, 공산주의 원리, 엥겔스
 
