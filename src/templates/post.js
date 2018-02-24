@@ -31,6 +31,10 @@ const Content = styled.div`
       `
     }
   }
+  img{
+    display:block;
+  margin: 0 auto;
+  }
 `
 
 class PostTemplate extends React.Component {
