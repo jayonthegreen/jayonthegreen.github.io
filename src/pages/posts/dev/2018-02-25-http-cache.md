@@ -12,7 +12,7 @@ keywords: http cache, cache
 
 --- 
 
-캐쉬는 미래에 요청될 응답을 빠르게 전달하기 위해 응답을 저장하는 것으로 이해할 수 있다. 그러나 이런 time & space 의 trade off 보다 cache lifecycle이 문제일 것이다. 멋진 말이 있지 않은가. 
+캐쉬는 미래에 요청될 응답을 빠르게 전달하기 위해 응답을 저장하는 것으로 이해할 수 있다. 그러나 이런 time & space 의 trade off 보다 cache lifecycle이 문제일 것이다. 
 > There are only two hard things in Computer Science: cache invalidation and naming things. 
 > -- Phil Karlton
 
