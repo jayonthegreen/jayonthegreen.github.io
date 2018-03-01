@@ -54,7 +54,7 @@ header 에 Prama: no-cache를 주면 캐싱이 될 것이라 생각하지만, �
 
 #### 3. Cache-Control 
 
-Expires를 보완하고자 1.1부터 Cache-Control이라는 헤더 명세가 추가되었다. `Cache-Control: max-age=3600, must-revalidate`처럼 사용되는데, 이를 해석하면 3600초까지는 케쉬를 사용하고, 이후에는 유효성 검사를 진행해야만 한다는 뜻이다. 자세한 값의 스펙은 [여기](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control)를 참고하도록 하자.
+Expires를 보완하고자 http 1.1부터 Cache-Control이라는 헤더 명세가 추가되었다. `Cache-Control: max-age=3600, must-revalidate`처럼 사용되는데, 이를 해석하면 3600초까지는 케쉬를 사용하고, 이후에는 유효성 검사를 진행해야만 한다는 뜻이다. 자세한 값의 스펙은 [여기](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control)를 참고하도록 하자.
 
 #### 캐쉬 유효성 검사
 
