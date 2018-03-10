@@ -83,6 +83,7 @@ class TemplateWrapper extends React.Component {
   render() {
     const { mobileSideNavVisible } = this.state;
     const { title, image } = this.props.data.site.siteMetadata;
+    const imageUrl = 'http://holdonnn.me/' + image;
     return (
       <div>
         <Helmet
@@ -91,8 +92,8 @@ class TemplateWrapper extends React.Component {
             { name: 'description', content: 'holdonnn\'s blog' },
             { name: 'og:description', content: 'holdonnn\'s blog' },
             { name: 'keywords', content: 'blog' },
-            { name: 'image', content: image },
-            { name: 'og:image', content: image },
+            { name: 'image', content: imageUrl },
+            { name: 'og:image', content: imageUrl },
           ]}
         />
         <NavigationWrapper>
