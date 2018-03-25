@@ -50,13 +50,14 @@ class PostTemplate extends React.Component {
     const imageUrl = 'http://holdonnn.me' + image;
     const meta = [
       {name: 'title', content: title},
-      {name: 'og:title', content: title},
       {name: 'description', content: description},
-      {name: 'og:description', content: description},
       {name: 'keywords', content: keywords},
       {name: 'image', content: imageUrl},
-      {name: 'og:image', content: imageUrl},
+      {property: 'og:description', content: description},
+      {property: 'og:title', content: title},
+      {property: 'og:image', content: imageUrl},
     ]
+
     return (
       <Wrapper>
         <Helmet meta={meta}/>
