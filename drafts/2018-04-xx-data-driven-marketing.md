@@ -21,4 +21,9 @@ image: '/img/book/goal.jpeg'
 - 정말로 평가 없는 (not data driven) 마케팅은 낭비일까?
     - 저자도 많은 부분이 data driven 하지 못한 영역이 있음을 인정한다. 문제는 data driven 이 가능한 곳에 그렇게 하지 않음을 이야기하는 것이다.
     -  측정하기 어렵다고 해서 data driven 마케팅을 포기하자는게 아니라, 그것을 최대한 달성하기 위한 실천적인 방법들을 제시한다.
+
+
+
+- http://m.the-pr.co.kr/news/articleView.html?idxno=14949
+- https://brunch.co.kr/@project1/8
     
