@@ -3,7 +3,7 @@
 category: book
 date:  2018-04-08
 title: 마케팅 평가 바이블(Data Driven Marketing), 마크 제프리(2001)
-description: 
+description: 소비재 기반의 마케팅 방법론이 주를 이룬다. IT 서비스에서는 CLTV(Customer LifeTime Value)를 명확하게 측정되지 않는 stage 의 제품이 있는데 이는 어떻게 바라봐야 하는가? CLTV 대신 AU(Active User)로 측정하더라도, 유저의 충성도를 기반으로 가상의 유저가치를 산정하여 CLTV를 대체해야 data driven marketing 이 가능할 것 같다. 
 image: '/img/book/marketing.jpeg'
 
 --- 
