@@ -23,6 +23,11 @@ image: '/img/book/goal.jpeg'
     -  측정하기 어렵다고 해서 data driven 마케팅을 포기하자는게 아니라, 그것을 최대한 달성하기 위한 실천적인 방법들을 제시한다.
 
 
+- 블로그에 지표를 설정해보고, 대쉬보드화 해봐야겠다.!
+    - 1. 이탈률(aka 체류시간), 노출수를 대쉬보드화 해봐야겠다.
+    - 2. 근데 '내가 들어가는 것'은 어떻게 발라내나? 기기의 고유값 같은게 있으면 제외하고 봤음 하는데...
+
+
 
 - http://m.the-pr.co.kr/news/articleView.html?idxno=14949
 - https://brunch.co.kr/@project1/8
