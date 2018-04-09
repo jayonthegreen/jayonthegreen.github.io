@@ -8,7 +8,7 @@ image: '/img/book/marketing.jpeg'
 
 --- 
 
-## 책을 읽기 전 질문들
+## 읽기 전 질문들
 
 1. 마케팅이란 무엇인가?
 2. data driven marketing 에서 중요한 것은?
