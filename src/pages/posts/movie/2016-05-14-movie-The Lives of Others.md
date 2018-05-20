@@ -1,6 +1,6 @@
 ---
 
-title : The Lives Of Others, Florian Henckel von Donnersmarck (2006)
+title : The Lives Of Others, Florian Henckel von Donnersmarck
 category : movie
 date: 2016-05-14
 description: "윤리라는 것은 우리에게 경험이라는 보답을 준다. 윤리, 공감, 연대는 더불어 살아가는 당위가 아닌 방식이다."

@@ -1,6 +1,6 @@
 ---
 
-title:  contact, Robert Zemeckis (1997)
+title:  contact, Robert Zemeckis
 date : 2016-05-22
 category : movie
 description: "이 영화가 세련되게 다가왔던 것은 과학자와 종교철학자인 두 주연의 성찰의 태도였을 것이다. 과학과 종교는 여러가지 관점에서 다루어지지만 종종 사람들의 '화'로 채워진다. 서로의 생각을 바꾸려는 태도에 불편함을 느낀다."

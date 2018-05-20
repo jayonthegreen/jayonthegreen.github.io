@@ -1,6 +1,6 @@
 ---
 
-title : The Clean Coder, Robert C. Martin (2011)
+title : The Clean Coder, Robert C. Martin
 date : 2016-09-13
 category: book
 description: '프로는 자신이 극도로 오만하다는 사실과 언젠간 불운이 닥쳐 목표가무너질지도 모른다는 사실을 안다. 목표가 무너졌을 때, 가장 좋은 방법은 하워드의 충고를 따르는 것이다. "그냥 웃어, 이 친구야"'

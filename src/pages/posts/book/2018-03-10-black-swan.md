@@ -2,7 +2,7 @@
 
 category: book
 date:  2018-03-10
-title: 블랙스완, 나심 니콜라스 탈레브 (2007)
+title: 블랙스완, 나심 니콜라스 탈레브
 description: "이 책의 중심 주제는 무작위성에 대해 우리 인간이 가지고 있는 맹목성을 살펴보는 것이다."
 image: '/img/book/black-swan.jpg'
 ---

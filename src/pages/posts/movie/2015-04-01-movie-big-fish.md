@@ -1,6 +1,6 @@
 ---
 
-title: "Big fish, Tim Burton (2003)"
+title: "Big fish, Tim Burton"
 description: "우리는 과거와 미래를 과장한다. 지금 빼고 모두 판타지로 만들어 버린다. 편집되지 않은 과거란 없으며, 상상 없는 미래도 없다."
 date: 2015-04-01
 category: movie

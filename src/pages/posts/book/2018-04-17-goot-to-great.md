@@ -2,7 +2,7 @@
 
 category: book
 date:  2018-04-17
-title: 좋은 기업을 넘어 위대한 기업으로(good to great), 짐 콜린스(2002)
+title: 좋은 기업을 넘어 위대한 기업으로(good to great), 짐 콜린스
 description: 외부에서 볼 때, 전환은 극적이고 혁명이나 다름없는 돌파로 비친다. 그러나 내부에서 볼 때, 전환은 전혀 다른 느낌으로 오히려 유기체의 발달 과정에 가깝다.
 image: '/img/book/good2great.png'
 

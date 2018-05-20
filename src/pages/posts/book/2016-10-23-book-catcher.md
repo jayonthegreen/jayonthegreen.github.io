@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title:  호밀밭의 파수꾼, J. D. Salinger (1951)
+title:  호밀밭의 파수꾼, J. D. Salinger
 date:   2016-10-23
 category: book
 description: "미칠듯이 미워하고 방황하면서 하나의 전환점을 맞는 홀든의 이야기를 보며, 나 또한 불편한 감정을 외면하기보다는 붙잡아야 겠다는 생각을 했다."
