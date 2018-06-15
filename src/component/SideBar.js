@@ -57,7 +57,7 @@ class SideBar extends React.Component {
             <Wrapper mobileVisible={this.props.mobileSideNavVisible}>
                 <Top>
                     <TopTitle>Jaehyun Baek</TopTitle>
-                    <TopSubtitle>write...?!</TopSubtitle>
+                    <TopSubtitle>A growth mindset</TopSubtitle>
                     <TopDescription>
                         Wouldn't it be more consistent to change the direction  <br />
                         if I had a different perspective today than yesterday?
