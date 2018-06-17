@@ -78,8 +78,6 @@ class TemplateWrapper extends React.Component {
     }
   }
 
-
-
   render() {
     const { mobileSideNavVisible } = this.state;
     const { title, image } = this.props.data.site.siteMetadata;
