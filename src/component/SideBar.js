@@ -60,9 +60,7 @@ class SideBar extends React.Component {
                 </Top>
                 <List>
                     <SideBarItem to="/" text="All Posts" onClick={this.props.onClickSideBarItem} />
-                    <SideBarItem to="/category/book" text="book" onClick={this.props.onClickSideBarItem} isSubType={true}/>
-                    <SideBarItem to="/category/programming" text="book" onClick={this.props.onClickSideBarItem} isSubType={true}/>
-                    <SideBarItem to="/about" text="about" onClick={this.props.onClickSideBarItem} />
+                    <SideBarItem to="/about" text="About" onClick={this.props.onClickSideBarItem} />
                 </List>
             </Wrapper>
         );
