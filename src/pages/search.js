@@ -20,7 +20,7 @@ class SearchPage extends React.Component {
     const searchKeyword = search
       .replace('?', '')
       .split('&')
-      .reduce((acc, params) => {
+      .reduce((_, params) => {
         const [key, value] = params.split('=')
         return (key === 'q' && decodeURIComponent(value)) || ''
       }, '')
