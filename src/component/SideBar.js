@@ -34,11 +34,7 @@ const TopTitle = styled.h1`
     color: #333;
     margin-bottom: 0.2rem;
 `
-const TopSubtitle = styled.h2`
-    font-size: 0.8rem;
-    color: #666;
-    font-weight: 500;
-`
+
 const TopDescription = styled.div`
     font-size: 0.7rem;
     color: #666;
@@ -63,7 +59,9 @@ class SideBar extends React.Component {
               </TopDescription>
                 </Top>
                 <List>
-                    <SideBarItem to="/" text="home" onClick={this.props.onClickSideBarItem} />
+                    <SideBarItem to="/" text="All Posts" onClick={this.props.onClickSideBarItem} />
+                    <SideBarItem to="/category/book" text="book" onClick={this.props.onClickSideBarItem} isSubType={true}/>
+                    <SideBarItem to="/category/programming" text="book" onClick={this.props.onClickSideBarItem} isSubType={true}/>
                     <SideBarItem to="/about" text="about" onClick={this.props.onClickSideBarItem} />
                 </List>
             </Wrapper>

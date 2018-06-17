@@ -1,25 +1,36 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import NavLink from 'gatsby-link'
+import NavLink, {navigateTo} from 'gatsby-link'
 import styled from 'styled-components'
-import { media } from '../utils/style'
 
-const paddingSide = 50;
 const Wrapper = styled(NavLink)`
     text-decoration: none;
-    color: inherit;
     display: block;
-    font-size: 0.8rem;
-    padding: 1rem ${paddingSide}px;
+    color: inherit;
+    font-size: ${props => props.isSubType ? '0.7' :'0.8'}rem;
+    padding-left: ${props => props.isSubType ? 60 : 50}px;
+    margin-top: ${props => props.isSubType ? 10 : 30}px;
     &.active{
       font-weight: bold;
     }
 `
 
 class SideBarItem extends React.Component {
+  isActive = (match, location) => {
+    if (match) {
+      return true;
+    }
+    const { pathname, search } = location;
+    return pathname + search === this.props.to
+  }
+  
   render() {
     return (
-      <Wrapper exact to={this.props.to} onClick={this.props.onClick}>
+      <Wrapper 
+          isActive={this.isActive}
+          exact to={this.props.to}
+          onClick={this.props.onClick}
+          isSubType={this.props.isSubType}
+          >
           {this.props.text}
       </Wrapper>
     )
