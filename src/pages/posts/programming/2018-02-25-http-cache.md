@@ -1,6 +1,6 @@
 ---
 
-category: dev
+category: programming
 date:  2018-02-25
 title: http cache
 description: '캐쉬가 프로그래머가 의도한대로 최신화 되지 않으면, 최신화된 데이터나 이미지등이 보이지 않게되어 치명적일 수 있다. 여러 방면에서 cache를 논할 수 있지만, 우선 http cache에 대해 정리를 해보고자 한다.'

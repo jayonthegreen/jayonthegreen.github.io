@@ -43,7 +43,8 @@ class PostTemplate extends React.Component {
     const { 
       title,
       description,
-      keywords,
+      category,
+      keywords = [],
       image = this.props.data.site.siteMetadata.image,
     } = post.frontmatter;
 
@@ -51,7 +52,7 @@ class PostTemplate extends React.Component {
     const meta = [
       {name: 'title', content: title},
       {name: 'description', content: description},
-      {name: 'keywords', content: keywords},
+      {name: 'keywords', content: [...keywords, category]},
       {name: 'image', content: imageUrl},
       {property: 'og:description', content: description},
       {property: 'og:title', content: title},
@@ -62,7 +63,7 @@ class PostTemplate extends React.Component {
       <Wrapper>
         <Helmet meta={meta}/>
         <Header>{post.frontmatter.title}</Header>
-        <Date>{post.frontmatter.date}</Date>
+        <Date>{post.frontmatter.date}&middot;{post.frontmatter.category}</Date>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
       </Wrapper>
     )
@@ -81,6 +82,7 @@ export const query = graphql`
         description
         keywords
         image
+        category
       }
     }
     site {

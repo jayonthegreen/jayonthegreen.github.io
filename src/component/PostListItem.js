@@ -7,8 +7,8 @@ const Wrapper = styled.div`
   ${media.mobile`margin: 0.5rem 0;`}
 `
 
-const Date = styled.div`
-  font-size: 0.8rem;
+const Meta = styled.div`
+  font-size: 0.75rem;
   color: #666666;
   margin-bottom: 0.1rem;
 `
@@ -29,7 +29,7 @@ const maxLength = 200;
 
 const PostListItem = ({ title, category, date, description }) => (
   <Wrapper>
-    <Date>{date}</Date>
+    <Meta>{date}&middot;{category}</Meta>
     <Title>{title}</Title>
     {
       description && 
@@ -40,13 +40,6 @@ const PostListItem = ({ title, category, date, description }) => (
     }
   </Wrapper>
 )
-
-const CATEGORY_EMOJI_MAP = {
-  'book': '📚',
-  'movie': '🎥',
-  'essay': '🤔',
-  'default': '🤔',
-}
 
 const getEmoji = (key) => CATEGORY_EMOJI_MAP[key] || CATEGORY_EMOJI_MAP.default;
 
