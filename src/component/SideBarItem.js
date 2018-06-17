@@ -2,34 +2,35 @@ import React from 'react'
 import NavLink from 'gatsby-link'
 import styled from 'styled-components'
 
-const Wrapper = styled(NavLink)`
+const Wrapper = styled.div`
     text-decoration: none;
     display: block;
-    color: inherit;
-    font-size: ${props => props.isSubType ? '0.7' :'0.8'}rem;
-    padding-left: ${props => props.isSubType ? 60 : 50}px;
-    margin-top: ${props => props.isSubType ? 10 : 30}px;
-    &.active{
+    font-size: ${props => props.isSub ? '0.7' :'0.8'}rem;
+    padding-left: ${props => props.isSub ? 60 : 50}px;
+    margin-top: ${props => props.isSub ? 10 : 30}px;
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      &.active{
       font-weight: bold;
+    }
     }
 `
 
 class SideBarItem extends React.Component {
-  isActive = (match, location) => {
-    if (match) {
-      return true;
-    }
-    const { pathname, search } = location;
-    return pathname + search === this.props.to
-  }
   
   render() {
     return (
-      <Wrapper 
-          isActive={this.isActive}
+      <Wrapper
           exact to={this.props.to}
-          onClick={this.props.onClick}>
-          {this.props.text}
+          onClick={this.props.onClick}
+          isSub={this.props.isSub}
+      >
+          <NavLink
+            style={{color: 'inherit'}}
+            exact to={this.props.to}
+            onClick={this.props.onClick}>{this.props.text}</NavLink>
       </Wrapper>
     )
   }
