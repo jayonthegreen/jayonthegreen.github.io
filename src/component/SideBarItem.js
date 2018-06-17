@@ -1,5 +1,5 @@
 import React from 'react'
-import NavLink, {navigateTo} from 'gatsby-link'
+import NavLink from 'gatsby-link'
 import styled from 'styled-components'
 
 const Wrapper = styled(NavLink)`
@@ -28,9 +28,7 @@ class SideBarItem extends React.Component {
       <Wrapper 
           isActive={this.isActive}
           exact to={this.props.to}
-          onClick={this.props.onClick}
-          isSubType={this.props.isSubType}
-          >
+          onClick={this.props.onClick}>
           {this.props.text}
       </Wrapper>
     )
