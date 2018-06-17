@@ -15,12 +15,16 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
     const { createPage } = boundActionCreators
-    return new Promise((resolve, reject) => {
-      graphql(`
+    return new Promise((resolve) => {
+      graphql(
+        `
         {
           allMarkdownRemark {
             edges {
               node {
+                frontmatter{
+                  category
+                }
                 fields {
                   slug
                 }
@@ -30,6 +34,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       `
   ).then(result => {
+        const categories = [];
         result.data.allMarkdownRemark.edges.map(({ node }) => {
             createPage({
               path: node.fields.slug,
@@ -38,9 +43,23 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 // Data passed to context is available in page queries as GraphQL variables.
                 slug: node.fields.slug,
               },
-            })
-          })
+            });
+            if(!categories.includes(node.frontmatter.category)) {
+              categories.push(node.frontmatter.category)
+            }
+          });
+
+        for(const category of categories) {
+          createPage({
+            path: `/category/${category}`,
+            component: path.resolve(`./src/templates/category.js`),
+            context: {
+              category,
+            }
+          });
+        }
+
         resolve()
       })
     })
-  }
+  };
