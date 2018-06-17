@@ -18,10 +18,10 @@ class CategoryPage extends React.Component {
 export default CategoryPage
 
 export const query = graphql`
-  query CategoryQuery($category: String!) {
+  query IndexQuery1($category: String!) {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter:{frontmatter:{category:{eq: [$category]}}}
+      filter:{frontmatter:{category:{eq: $category}}}
     ) {
       totalCount
       edges {
