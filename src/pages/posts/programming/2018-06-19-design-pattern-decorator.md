@@ -65,4 +65,4 @@ public static void main(String args[]) {
 
 ## misc
 
-- OPC(open closed principle) : 확장에 대해서는 열려 있어야 하지만 코드 변경에 대해서는 닫혀 있어야 한다. 그러나 무조건 OCP 를 적용하는 것은 불필요하게 복접하고 이해하기 힘든 코드를 만들 수 있으므로 주의해야 한다.
+- OPC(open closed principle) : 확장에 대해서는 열려 있어야 하지만 코드 변경에 대해서는 닫혀 있어야 한다. 그러나 무조건 OCP 를 적용하는 것은 불필요하게 복잡하고 유지보수하기 힘든 코드를 만들 수 있으므로 주의해야 한다.
