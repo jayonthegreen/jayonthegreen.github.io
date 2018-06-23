@@ -19,6 +19,7 @@ description: 2018년이 된 지금, 다시 책을 펼쳤고 이번에는 조금 
 - [Strategy](#strategy)
 - [Decorator](#decorator)
 - [Factory Method](#factory-method)
+- [Singleton](#singleton)
 
 ## <a name="observer"></a>Observer
 
@@ -253,3 +254,47 @@ public abstract class PizzaStore {
 
 - [https://www.oreilly.com/library/view/head-first-design/0596007124/ch04.html](https://www.oreilly.com/library/view/head-first-design/0596007124/ch04.html)
 
+## <a name="singleton"></a>Singleton
+
+---
+
+해당 클래스의 인스턴스가 하나만 만들어지고, 어디서든지 그 인스턴스에 접근할 수 있도록 하기 위한 패턴.
+
+### background & pattern
+
+- 사실상 객체중에 하나만 있으면 되는것이 많다. 쓰레드풀이라던지, 사용자 설정등이 그러하다. 컴퓨팅 자원관점에서도 그러하고 개념적인 설계 관점에서도 그러하다.
+
+- 전역 변수로 관리하면 저녁 네임스페이스가 관리되지 않고, 어플리케이션이 시작하자 마자 자원을 차지하기 때문에 오버헤드가 있을 수 있다. 싱글턴 패턴이 전역 네임스페이스의 문제는 완벽히 해결하지 못해도, 인스턴스를 lazy load 해준다는 관점에서는 그 효용이 명백하다. 객체 생성비용이 많을 때에는 lazy load 를 고려해볼 수 있다.
+
+### code with java
+
+```java
+
+// simple singleton
+public class Singleton {
+    private static Singleton uniqueInstance;
+
+    // 외부에서 생성자 호출를 막는다.
+    private Singleton() {};
+
+    // 'synchronized' 를 사용하여 thread safe 한 코드를 만든다. uniqueInstance가 없을 때 멀티 쓰레드가 동시에 getInstance 를 호출하면 객체가 2개 생길 수 있다.
+    public static synchronized Singleton getInstance(){
+        if (uniqueInstance == null) {
+            uniqueInstance = new Singleton();
+        }
+        return uniqueInstance;
+    }
+}
+
+// synchronized를 이용한 method 동기화의 오버헤드를 부담이 되는 경우라면, 처음 class가 load 될 때 생성 할 수 있다.
+public class SingletonWithoutSyncronizedMethod {
+    // JVM 에서는 class loader 마다 서로다른 네임스페이스를 정의 하기 때문에, 클래스가 여러번 로드되어 싱글턴이 여러개 만들어질 수 있으니 클래스 로더를 조심히 살피자.
+    private static SingletonWithoutSyncronizedMethod uniqueInstance = new SingletonWithoutSyncronizedMethod();
+
+    // 외부에서 생성자 호출를 막는다.
+    private SingletonWithoutSyncronizedMethod() {};.
+    public static synchronized SingletonWithoutSyncronizedMethod getInstance(){
+        return uniqueInstance;
+    }
+}
+```
