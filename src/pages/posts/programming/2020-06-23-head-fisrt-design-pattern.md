@@ -277,7 +277,7 @@ public class Singleton {
     // 외부에서 생성자 호출를 막는다.
     private Singleton() {};
 
-    // 'synchronized' 를 사용하여 thread safe 한 코드를 만든다. uniqueInstance가 없을 때 멀티 쓰레드가 동시에 getInstance 를 호출하면 객체가 2개 생길 수 있다.
+    // 'synchronized' 를 사용하여 thread safe 한 코드를 만든다. uniqueInstance가 없을 때 멀티 쓰레드가 동시에 getInstance 를 호출하면 객체가 여러개 생길 수 있다.
     public static synchronized Singleton getInstance(){
         if (uniqueInstance == null) {
             uniqueInstance = new Singleton();
