@@ -19,3 +19,7 @@ html {
 p {
   line-height: 1.8;
 }
+
+li {
+  margin-bottom: 0.4rem;
+}
