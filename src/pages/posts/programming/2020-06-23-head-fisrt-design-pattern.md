@@ -20,6 +20,7 @@ description: 2018년이 된 지금, 다시 책을 펼쳤고 이번에는 조금 
 - [Decorator](#decorator)
 - [Factory Method](#factory-method)
 - [Singleton](#singleton)
+- [Command](#command)
 
 ## <a name="observer"></a>Observer
 
@@ -298,3 +299,96 @@ public class SingletonWithoutSyncronizedMethod {
     }
 }
 ```
+
+## <a name="command"></a>Command
+
+---
+
+요청을 객체의 형태로 캡슐화하여 사용자가 보낸 요청을 나중에 이용할 수 있도록 매서드 이름, 매개변수 등 요청에 필요한 정보를 저장 또는 로깅, 취소할 수 있게 하는 패턴이다.
+
+### background & pattern
+
+- 커맨드 패턴에는 명령(command), 수신자(receiver), 발동자(invoker), 클라이언트(client)의 네개의 용어가 항상 따른다. 
+    - 커맨드 객체는 수신자 객체를 가지고 있으며, 수신자의 메서드를 호출하고, 이에 수신자는 자신에게 정의된 메서드를 수행한다.
+    - 클라이언트 객체는 어느 시점에서 어떤 명령을 수행할지를 결정한다. 명령을 수행하려면, 클라이언트 객체는 invoker 객체로 커맨드 객체를 전달한다.
+
+- invoker 입장에서는 Command 객체의 정의된 excute 만 사용하면 되기때문에 캡슐화의 이점을 얻는다. (아래 코드 참고) 
+
+- 커맨드 패턴을 이용하면 Command 객체를 이용하고 한참 후에도 일련의 computation 을 진행할 수 있다. 이러한 시나리오는 스케줄러, 스레드풀, 작업 큐 같은 상황에서 유용하다. 작업 큐는 커맨드들의 excute 를 호출하기만 하면 된다.
+
+### code with java
+
+```java
+
+/*the Invoker class*/
+public class Switch {
+    private Command flipUpCommand;
+    private Command flipDownCommand;
+
+    public Switch(Command flipUpCmd,Command flipDownCmd){
+        this.flipUpCommand=flipUpCmd;
+        this.flipDownCommand=flipDownCmd;
+    }
+
+    public void flipUp(){
+         flipUpCommand.execute();
+    }
+
+    public void flipDown(){
+         flipDownCommand.execute();
+    }
+}
+
+
+/*Receiver class*/
+public class Light{
+     public Light(){  }
+
+     public void turnOn(){
+        System.out.println("The light is on");
+     }
+
+     public void turnOff(){
+        System.out.println("The light is off");
+     }
+}
+
+
+/*the Command interface*/
+public interface Command{
+    void execute();
+}
+
+public class TurnOnLightCommand implements Command{
+   private Light theLight;
+
+   public TurnOnLightCommand(Light light){
+        this.theLight=light;
+   }
+
+   public void execute(){
+      theLight.turnOn();
+   }
+}
+
+
+/*The test class*/
+public class TestCommand{
+   public static void main(String[] args){
+       Light light=new Light();
+       Command switchUp=new TurnOnLightCommand(light);
+       Command switchDown=new TurnOffLightCommand(light);
+
+       Switch s=new Switch(switchUp,switchDown);
+
+       s.flipUp();
+       s.flipDown();
+   }
+}
+
+```
+
+### reference
+
+- [https://ko.wikipedia.org/wiki/%EC%BB%A4%EB%A7%A8%EB%93%9C_%ED%8C%A8%ED%84%B4](https://ko.wikipedia.org/wiki/%EC%BB%A4%EB%A7%A8%EB%93%9C_%ED%8C%A8%ED%84%B4)
+
