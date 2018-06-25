@@ -278,7 +278,8 @@ public class Singleton {
     // 외부에서 생성자 호출를 막는다.
     private Singleton() {};
 
-    // 'synchronized' 를 사용하여 thread safe 한 코드를 만든다. uniqueInstance가 없을 때 멀티 쓰레드가 동시에 getInstance 를 호출하면 객체가 여러개 생길 수 있다.
+    // 'synchronized' 를 사용하여 thread safe 한 코드를 만든다. 
+    // uniqueInstance가 없을 때 멀티 쓰레드가 동시에 getInstance 를 호출하면 객체가 여러개 생길 수 있다.
     public static synchronized Singleton getInstance(){
         if (uniqueInstance == null) {
             uniqueInstance = new Singleton();
@@ -289,7 +290,8 @@ public class Singleton {
 
 // synchronized를 이용한 method 동기화의 오버헤드를 부담이 되는 경우라면, 처음 class가 load 될 때 생성 할 수 있다.
 public class SingletonWithoutSyncronizedMethod {
-    // JVM 에서는 class loader 마다 서로다른 네임스페이스를 정의 하기 때문에, 클래스가 여러번 로드되어 싱글턴이 여러개 만들어질 수 있으니 클래스 로더를 조심히 살피자.
+    // JVM 에서는 class loader 마다 서로다른 네임스페이스를 정의 하기 때문에,
+    // 클래스가 여러번 로드되어 싱글턴이 여러개 만들어질 수 있으니 클래스 로더를 조심히 살피자.
     private static SingletonWithoutSyncronizedMethod uniqueInstance = new SingletonWithoutSyncronizedMethod();
 
     // 외부에서 생성자 호출를 막는다.
