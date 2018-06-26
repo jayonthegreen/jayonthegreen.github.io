@@ -21,6 +21,8 @@ description: 2018년이 된 지금, 다시 책을 펼쳤고 이번에는 조금 
 - [Factory Method](#factory-method)
 - [Singleton](#singleton)
 - [Command](#command)
+- [Adapter](#adapter)
+- [Facade](#facade)
 
 ## <a name="observer"></a>Observer
 
@@ -394,3 +396,112 @@ public class TestCommand{
 
 - [https://ko.wikipedia.org/wiki/%EC%BB%A4%EB%A7%A8%EB%93%9C_%ED%8C%A8%ED%84%B4](https://ko.wikipedia.org/wiki/%EC%BB%A4%EB%A7%A8%EB%93%9C_%ED%8C%A8%ED%84%B4)
 
+## <a name="adapter"></a>Adapter
+
+---
+
+한 클래스의 인터페이스를 클라이언트에서 사용하고자하는 다른 인터페이스로 변환한다. 어댑터를 이용하면 인터페이스 호환성 문제 때문에 같이 쓸 수 없는 클래스들을 연결해서 쓸 수 있다.
+
+### background & pattern
+
+- 기존 클래스를 사용하고 싶으나, 인터페이스가 다른 경우. 인터페이스를 맞추는 패턴
+
+- 어댑터 클래스에서 목표로 하는 객체를 받아서 구현하는 object adapter 가 있고, 다중 상속을 통해 클라이언트에 공개할 인터페이스는 public 으로 상속받고, 내부 구현을 private 으로 감추는 class adapter 가 있다.
+
+### code with java
+
+```java
+
+ public interface Duck {
+    public void quack();
+    public void fly();
+ }
+
+ public class MallardDuck implements Duck {
+    public void quack() {
+        System.out.println("Quack");
+    }
+    public void fly() {
+        System.out.println("I'm flying");
+    }
+ }
+ public interface Turkey {
+    public void gobble();
+    public void fly();
+ }
+
+public class TurkeyAdapter implements Duck {
+    Turkey turkey;
+    public TurkeyAdapter(Turkey turkey) {
+        this.turkey = turkey;
+    }
+
+    public void quack(){
+        turkey.gobble();
+    }
+
+    public void fly() {
+        turkey.fly();
+    }
+ }
+```
+
+## <a name="facade"></a>Facade
+
+---
+
+어떤 서브세스템의 일련의 인터페이스에 대한 통합된 인터페이스를 제공합니다. 퍼사드에서 고수준 인터페이스를 정의하기 때문에 서브시스템을 더 쉽게 사용할 수 있습니다. 
+
+### background & pattern
+
+- 개념적인 하나의 일을 하기 위해서, 여러객체와 상호작용을 많이 하는 경우 고수준의 인터페이스를 정의할 필요가 있다. 더욱 서브시스템의 객체들의 인터페이스가 지저분한 경우 이러한 wrapper 를 고려할 수 있다.
+
+### code with java
+
+```java
+class CPU {
+    public void freeze() { ... }
+    public void jump(long position) { ... }
+    public void execute() { ... }
+}
+
+class HardDrive {
+    public byte[] read(long lba, int size) { ... }
+}
+
+class Memory {
+    public void load(long position, byte[] data) { ... }
+}
+
+/* Facade */
+class ComputerFacade {
+    private CPU processor;
+    private Memory ram;
+    private HardDrive hd;
+
+    public ComputerFacade() {
+        this.processor = new CPU();
+        this.ram = new Memory();
+        this.hd = new HardDrive();
+    }
+
+    public void start() {
+        processor.freeze();
+        ram.load(BOOT_ADDRESS, hd.read(BOOT_SECTOR, SECTOR_SIZE));
+        processor.jump(BOOT_ADDRESS);
+        processor.execute();
+    }
+}
+
+/* Client */
+class You {
+    public static void main(String[] args) {
+        ComputerFacade computer = new ComputerFacade();
+        computer.start();
+    }
+}
+```
+
+### misc
+
+- 최소 지식 원칙 - 복잡하게 상호작용하는 의존성들을 최소화 한다.
