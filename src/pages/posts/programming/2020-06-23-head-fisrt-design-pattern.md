@@ -23,6 +23,7 @@ description: 2018년이 된 지금, 다시 책을 펼쳤고 이번에는 조금 
 - [Command](#command)
 - [Adapter](#adapter)
 - [Facade](#facade)
+- [Template Method](#template-method)
 
 ## <a name="observer"></a>Observer
 
@@ -505,3 +506,48 @@ class You {
 ### misc
 
 - 최소 지식 원칙 - 복잡하게 상호작용하는 의존성들을 최소화 한다.
+
+## <a name="template-method"></a>Template Method
+
+---
+
+알고리즘의 골격을 정의합니다. 알고리즘의 여러 단계 중 일부는 서브클래스에서 구현할 수 있습니다. 템플릿 메소드를 이용하면 알고리즘의 구조는 그대로 유지하면서 서브클래스에서 특정 단계를 재정의할 수 있습니다.
+
+### background & pattern
+
+- '비슷한' 일련의 알고리즘을 수행해야 한다면, 바뀌는 부분과 바뀌지 않는 부분을 명확하게 구분하야한다. 가령 여러 절차적인 메소드의 틀을 final 메소드로 구현하여 틀을 만들고, 그 안에서 공통으로 쓰이지 않는 메소드들을 abstract 메소드로 정의하면 코드 중복을 줄이고 확장성 있는 코드를 짤 수 있다.
+
+### code with java
+
+```java
+public abstract class Beverage {
+    final vodi prepare() {
+        boilWater();
+        brew();
+        pourInCup()
+    }
+
+    abstract void brew();
+
+    void boilWater() {
+        System.out.println("boilWater");
+    }
+
+    void pourInCup() {
+        System.out.println("pourInCup");
+    }
+}
+
+public class Tea extends Beverage {
+    public void brew() {
+        System.out.println("Tea brew");
+    }
+}
+
+
+public class Coffee extends Beverage {
+    public void brew() {
+            System.out.println("Coffee brew");
+    }
+}
+```
