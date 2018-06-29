@@ -24,6 +24,8 @@ description: 개발을 시작한 2014년, 개발을 알려준 형이 이 책을 
 - [Adapter](#adapter)
 - [Facade](#facade)
 - [Template Method](#template-method)
+- [Iterator](#iterator)
+- [Composite](#composite)
 
 ## <a name="observer"></a>Observer
 
@@ -550,4 +552,139 @@ public class Coffee extends Beverage {
             System.out.println("Coffee brew");
     }
 }
+```
+
+## <a name="iterator"></a>Iterator
+
+---
+
+컬렉션 구현 방법을 노출시키지 않으면서도 그 집합체 안에 들어있는 모든 항목에 접근할 수 있게 해주는 방법을 제공해 줍니다.
+
+### background & pattern
+
+- 배열이든 스택이든 해시테이블이든, 어떠한 객체든 전부 순회하는 경우 객체 따라 순회하는 코드를 짜야한다면 iterator 를 고려해 볼 수 있다. 이 때 concrete class 에 맞춰서 분기하기보다 인터페이스에 의존하도록 하면 좋다. 만약 또다른 객체를 순회해야한다면 그 객체에 맞게 순환문도 추가해야 한다.
+
+
+
+### code with java
+
+```java
+// 참고로 java.util.Iterator 인터페이스가 있다.
+public interface Iterator {
+    boolean hasNext();
+    Object next();
+}
+
+public class DinerMenuIterator implements Iterator {
+    MenuItem[] items;
+    int position = 0;
+ 
+    public DinerMenuIterator(MenuItem[] items) {
+        this.items = items;
+    }
+ 
+    public MenuItem next() {
+        MenuItem menuItem = items[position];
+        position = position + 1;
+        return menuItem;
+    }
+ 
+    public boolean hasNext() {
+        if (position >= items.length || items[position] == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+}
+public class PancakeHouseMenuIterator implements Iterator {
+    ArrayList<MenuItem> items;
+    int position = 0;
+
+    public PancakeHouseMenuIterator(ArrayList<MenuItem> items) {
+        this.items = items;
+    }
+
+    public MenuItem next() {
+        MenuItem item = items.get(position);
+        position = position + 1;
+        return item;
+    }
+
+    public boolean hasNext() {
+        if (position >= items.size()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+}
+```
+
+## <a name="compsite"></a>Composite
+
+---
+
+객체들을 트리 구조로 구성하여 부분과 전체를 나타내는 계층구조로 만들 수 있습니다. 이 패턴을 이용하면 클라이언트에서 개별 객체와 다른 객첻르로 구성된 복합 객체를 똑같은 방법으로 다룰 수 있습니다.
+
+### background & pattern
+
+- 메뉴 리스트 및에 하위 메뉴 리스트를 구현한다고 하자. 전형적인 부분-전체 계층구조(part-whole hierarchy)이다.
+
+### code with python
+
+```python
+from abc import ABC, abstractmethod
+
+NOT_IMPLEMENTED = "You should implement this."
+
+
+class Graphic(ABC):
+    @abstractmethod
+    def print(self):
+        raise NotImplementedError(NOT_IMPLEMENTED)
+
+
+class CompositeGraphic(Graphic):
+    def __init__(self):
+        self.graphics = []
+
+    def print(self):
+        for graphic in self.graphics:
+            graphic.print()
+
+    def add(self, graphic):
+        self.graphics.append(graphic)
+
+    def remove(self, graphic):
+        self.graphics.remove(graphic)
+
+
+class Ellipse(Graphic):
+    def __init__(self, name):
+        self.name = name
+
+    def print(self):
+        print("Ellipse:", self.name)
+
+
+ellipse1 = Ellipse("1")
+ellipse2 = Ellipse("2")
+ellipse3 = Ellipse("3")
+ellipse4 = Ellipse("4")
+
+graphic = CompositeGraphic()
+graphic1 = CompositeGraphic()
+graphic2 = CompositeGraphic()
+
+graphic1.add(ellipse1)
+graphic1.add(ellipse2)
+graphic1.add(ellipse3)
+
+graphic2.add(ellipse4)
+
+graphic.add(graphic1)
+graphic.add(graphic2)
+
+graphic.print()
 ```
