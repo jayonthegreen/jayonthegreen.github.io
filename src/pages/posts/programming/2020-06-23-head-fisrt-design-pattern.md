@@ -621,7 +621,7 @@ public class PancakeHouseMenuIterator implements Iterator {
 }
 ```
 
-## <a name="compsite"></a>Composite
+## <a name="composite"></a>Composite
 
 ---
 
