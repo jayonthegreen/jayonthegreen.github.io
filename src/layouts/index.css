@@ -1,6 +1,7 @@
 * {
   
 font-family: 'Roboto', sans-serif, 'Spoqa Han Sans';
+font-weight: 300;
 }
 
 
@@ -20,9 +21,4 @@ html {
 p {
   line-height: 2.0;
   color: #333;
-  font-weight: 300;
-}
-
-li {
-  margin-bottom: 0.4rem;
 }

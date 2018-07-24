@@ -14,7 +14,7 @@ const Meta = styled.div`
 `
 
 const Title = styled.div`
-  color: #333333;
+  font-weight: 500;
   font-size: 1.0rem;
   margin-bottom: 0.2rem;
 `
@@ -29,7 +29,7 @@ const maxLength = 200;
 
 const PostListItem = ({ title, category, date, description }) => (
   <Wrapper>
-    <Meta>{date}&middot;{category}</Meta>
+    <Meta>{date} &middot; {category}</Meta>
     <Title>{title}</Title>
     {
       description && 
