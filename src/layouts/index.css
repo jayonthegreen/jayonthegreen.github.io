@@ -1,5 +1,5 @@
 * {
-font-family: 'Spoqa Han Sans', 'Sans-serif';
+font-family: 'Sans-serif';
 }
 
 
@@ -17,7 +17,9 @@ html {
 }
 
 p {
-  line-height: 1.8;
+  line-height: 2.0;
+  color: #333;
+  font-weight: 300;
 }
 
 li {

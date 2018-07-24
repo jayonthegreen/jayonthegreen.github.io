@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 `
 
 const Header = styled.h1`
-  margin: 0;
+  margin: 0.4rem 0;
 `
 const Date = styled.div`
   margin-bottom: 0.5rem;
