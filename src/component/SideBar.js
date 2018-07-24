@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import NavLink from 'gatsby-link'
 import { media } from '../utils/style'
 import SideBarItem from './SideBarItem'
 
@@ -24,9 +25,10 @@ const Wrapper = styled.div`
   `}
 `
 
-const Top = styled.div`
+const Top = styled(NavLink)`
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     padding: 50px;
+    text-decoration: none;
 `
 const TopTitle = styled.h1`
     font-size: 1.0rem;
@@ -51,7 +53,7 @@ class SideBar extends React.Component {
     render() {
         return (
             <Wrapper mobileVisible={this.props.mobileSideNavVisible}>
-                <Top>
+                <Top to="/">
                     <TopTitle>Jaehyun Baek</TopTitle>
                     <TopDescription>
                         Wouldn't it be more consistent to change the direction  <br />
@@ -67,6 +69,10 @@ class SideBar extends React.Component {
                 </List>
             </Wrapper>
         );
+    }
+
+    onClickTop = () => {
+        window.location.href = '/'; 
     }
 }
 
