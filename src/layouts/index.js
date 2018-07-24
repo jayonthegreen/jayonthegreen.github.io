@@ -26,7 +26,8 @@ const Body = styled.div`
     padding-top: 50px;
   `}
   max-height: ${props => props.mobileSideNavVisible ? '100vh' : 'auto'};
-  overflow: ${props => props.mobileSideNavVisible ? 'hidden' : 'auto'};
+  overflow-y: ${props => props.mobileSideNavVisible ? 'hidden' : 'auto'};
+  -webkit-overflow-scrolling: touch;
 `
 
 const ContentBlock = styled.div`
