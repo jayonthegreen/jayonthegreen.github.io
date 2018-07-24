@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import NavLink, { navigateTo } from 'gatsby-link'
 import styled from 'styled-components'
-import { media } from '../utils/style'
 import hamburgerSvg from './hamburger.svg'
 
 const Wrapper = styled.div`

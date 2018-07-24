@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { media } from '../utils/style'
 
 const Wrapper = styled.div`
-  margin: 1rem 0; 
-  ${media.mobile`margin: 0.5rem 0;`}
+  margin: 1rem 0;   
 `
 
 const Meta = styled.div`

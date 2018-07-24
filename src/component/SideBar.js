@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import NavLink from 'gatsby-link'
-import { media } from '../utils/style'
 import SideBarItem from './SideBarItem'
 
 
@@ -17,12 +16,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   border-right: 1px solid rgba(0, 0, 0, 0.08);
-  ${media.mobile`
-  left: ${props => props.mobileVisible ? 0 : -300}px;
-  top: 50px;
-  height: calc(100vh - 50px);
-  z-index: 4;
-  `}
+  @media only screen and (max-width: 768px) {
+    left: ${props => props.mobileVisible ? 0 : -300}px;
+    top: 50px;
+    height: calc(100vh - 50px);
+    z-index: 4;
+    }   
 `
 
 const Top = styled(NavLink)`
