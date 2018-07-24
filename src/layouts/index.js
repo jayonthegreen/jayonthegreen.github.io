@@ -22,7 +22,9 @@ const Body = styled.div`
   left:0;
   right:0;
   bottom:0;
-  padding-top: 50px;
+  ${media.mobile`
+    padding-top: 50px;
+  `}
   max-height: ${props => props.mobileSideNavVisible ? '100vh' : 'auto'};
   overflow: ${props => props.mobileSideNavVisible ? 'hidden' : 'auto'};
 `
@@ -44,6 +46,7 @@ const ContentBlock = styled.div`
 const Content = styled.div`
   position: relative; 
   margin-left: 300px;
+  padding: 15px 50px;
   z-index: 0;
   transition: all 0.3s ease;
   ${media.mobile`

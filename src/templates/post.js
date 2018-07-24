@@ -6,7 +6,6 @@ import { media } from '../utils/style'
 
 
 const Wrapper = styled.div`
-  padding: 0 50px;
   ${media.mobile`
     padding: 0;
   `}
