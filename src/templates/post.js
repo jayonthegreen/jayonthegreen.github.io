@@ -6,7 +6,7 @@ import { media } from '../utils/style'
 
 
 const Wrapper = styled.div`
-  padding-top: 1rem;
+  
 `
 
 const Header = styled.h1`
