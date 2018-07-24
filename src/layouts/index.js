@@ -17,7 +17,14 @@ const NavigationWrapper = styled.div`
 `
 
 const Body = styled.div`
-  position: relative;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  padding-top: 50px;
+  max-height: ${props => props.mobileSideNavVisible ? '100vh' : 'auto'};
+  overflow: ${props => props.mobileSideNavVisible ? 'hidden' : 'auto'};
 `
 
 const ContentBlock = styled.div`
@@ -37,15 +44,13 @@ const ContentBlock = styled.div`
 const Content = styled.div`
   position: relative; 
   margin-left: 300px;
-  padding: 50px;
   z-index: 0;
+  transition: all 0.3s ease;
   ${media.mobile`
   margin-left: 0;
-  margin-top: 50px;
   min-height: calc( 100vh - 50px );
   padding: 20px;
   `}
-  transition: all 0.3s ease;
 `
 
 class TemplateWrapper extends React.Component {
@@ -99,7 +104,7 @@ class TemplateWrapper extends React.Component {
             onClickMenu={this.toggleMobileSideNavVisible}
           />
         </NavigationWrapper>
-        <Body>
+        <Body mobileSideNavVisible={mobileSideNavVisible}>
           <SideBar
             onClickSideBarItem={this.onClickSideBarItem}
             mobileSideNavVisible={mobileSideNavVisible}
