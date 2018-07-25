@@ -108,7 +108,9 @@ class TemplateWrapper extends React.Component {
             onClickMenu={this.toggleMobileSideNavVisible}
           />
         </NavigationWrapper>
-        <Body mobileSideNavVisible={mobileSideNavVisible}>
+        <Body 
+        id="body"
+        mobileSideNavVisible={mobileSideNavVisible}>
           <SideBar
             onClickSideBarItem={this.onClickSideBarItem}
             mobileSideNavVisible={mobileSideNavVisible}
