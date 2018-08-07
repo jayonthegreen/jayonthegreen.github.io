@@ -50,13 +50,13 @@ class PostTemplate extends React.Component {
       image = this.props.data.site.siteMetadata.image,
     } = post.frontmatter;
 
-    console.log(keywords)
-
+    
+    console.log([keywords || title, category].join(','));
     const imageUrl = 'http://holdonnn.me' + image;
     const meta = [
       {name: 'title', content: title},
       {name: 'description', content: description},
-      {name: 'keywords', content: [...keywords, category].join(',')},
+      {name: 'keywords', content: [keywords || title, category].join(',')},
       {name: 'image', content: imageUrl},
       {property: 'og:description', content: description},
       {property: 'og:title', content: title},
