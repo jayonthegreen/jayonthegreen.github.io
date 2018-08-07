@@ -63,7 +63,9 @@ class PostTemplate extends React.Component {
 
     return (
       <Wrapper>
-        <Helmet meta={meta}/>
+        <Helmet meta={meta}>
+          <title>{title}</title>
+        </Helmet>
         <Header>{post.frontmatter.title}</Header>
         <Date>{post.frontmatter.date}&middot;{post.frontmatter.category}</Date>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
