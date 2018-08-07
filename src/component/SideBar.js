@@ -29,7 +29,7 @@ const Top = styled(NavLink)`
     padding: 50px;
     text-decoration: none;
 `
-const TopTitle = styled.h1`
+const TopTitle = styled.div`
     font-size: 1.0rem;
     font-weight: 500;
     color: #333;
