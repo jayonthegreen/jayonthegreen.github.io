@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `holdonnn`,
     image: `/img/og.jpeg`,
+    siteUrl: `http://holdonnn.me`,
   },
   plugins: [
     {
@@ -14,5 +15,11 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/drafts`],
+      },
+    }
   ],
 }
