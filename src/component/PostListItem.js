@@ -25,7 +25,7 @@ const Description = styled.div`
 
 const maxLength = 100;
 
-const PostListItem = ({ title, category, date, description, image }) => (
+const PostListItem = ({ title, category, date, description }) => (
   <Wrapper>
     <Meta>{date} &middot; {category}</Meta>
     <Title>{title}</Title>
