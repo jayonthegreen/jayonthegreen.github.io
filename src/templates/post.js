@@ -40,6 +40,24 @@ const Content = styled.div`
 `
 
 class PostTemplate extends React.Component {
+
+  componentDidMount() {
+    this.disqusInstall();
+  }
+
+  disqusInstall(){
+    var disqus_config = function () {
+      this.page.url = window.location.href
+      this.page.identifier = window.location.pathname;
+      };
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://holdonnn.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();      
+  }
+
   render() {
     const post = this.props.data.markdownRemark
     const { 
@@ -49,9 +67,6 @@ class PostTemplate extends React.Component {
       keywords = [],
       image = this.props.data.site.siteMetadata.image,
     } = post.frontmatter;
-
-    
-    console.log([keywords || title, category].join(','));
     const imageUrl = 'http://holdonnn.me' + image;
     const meta = [
       {name: 'title', content: title},
@@ -71,6 +86,7 @@ class PostTemplate extends React.Component {
         <Header>{post.frontmatter.title}</Header>
         <Date>{post.frontmatter.date}&middot;{post.frontmatter.category}</Date>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div id="disqus_thread"></div>
       </Wrapper>
     )
   }
