@@ -1,6 +1,6 @@
 * {
   
-font-family: 'Roboto', sans-serif, 'Spoqa Han Sans';
+font-family: 'Spectral', 'notoserifk', serif, 'Spoqa Han Sans';
 font-weight: 300;
 }
 
@@ -19,6 +19,8 @@ html {
 }
 
 p {
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.6;
   color: #333;
+  font-weight: 500;
 }

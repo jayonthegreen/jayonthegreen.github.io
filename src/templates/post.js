@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { media } from '../utils/style'
 
 
@@ -13,6 +13,7 @@ const Wrapper = styled.div`
 
 const Header = styled.h1`
   margin: 0.4rem 0;
+  line-height: 1.4;
 `
 const Date = styled.div`
   margin-bottom: 0.5rem;

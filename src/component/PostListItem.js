@@ -2,19 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  margin: 1rem 0;   
+  margin: 3rem auto;
+  text-align: center;
+  max-width: 480px;
 `
 
 const Meta = styled.div`
   font-size: 0.75rem;
-  color: #666666;
-  margin-bottom: 0.1rem;
 `
 
 const Title = styled.div`
-  font-weight: 500;
-  font-size: 1.0rem;
-  margin-bottom: 0.2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0.2rem 0;
 `
 
 const Description = styled.div`
@@ -23,9 +23,8 @@ const Description = styled.div`
   line-height: 1.2rem;
 `
 
-const maxLength = 200;
+const maxLength = 100;
 
-const PostListItem = ({ title, category, date, description }) => (
   <Wrapper>
     <Meta>{date} &middot; {category}</Meta>
     <Title>{title}</Title>
