@@ -84,7 +84,7 @@ class PostTemplate extends React.Component {
         <Header>{post.frontmatter.title}</Header>
         <Date>{post.frontmatter.date}&middot;{post.frontmatter.category}</Date>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
-        <div className="fb-comments" data-href={window.location.href} data-numposts="5"/>
+        <div className="fb-comments" data-numposts="5"/>
       </Wrapper>
     )
   }
