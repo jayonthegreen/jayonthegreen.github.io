@@ -43,20 +43,17 @@ const Content = styled.div`
 class PostTemplate extends React.Component {
 
   componentDidMount() {
-    this.disqusInstall();
+    this.facebookCommentInstall();
   }
 
-  disqusInstall(){
-    var disqus_config = function () {
-      this.page.url = window.location.href
-      this.page.identifier = window.location.pathname;
-      };
-      (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
-      s.src = 'https://holdonnn.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-      })();      
+  facebookCommentInstall() {
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.1&appId=2072231716426066&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
   }
 
   render() {
@@ -87,7 +84,7 @@ class PostTemplate extends React.Component {
         <Header>{post.frontmatter.title}</Header>
         <Date>{post.frontmatter.date}&middot;{post.frontmatter.category}</Date>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
-        <div id="disqus_thread"></div>
+        <div className="fb-comments" data-href={window.location.href} data-numposts="5"/>
       </Wrapper>
     )
   }
