@@ -43,11 +43,13 @@ const Content = styled.div`
 class PostTemplate extends React.Component {
 
   componentDidMount() {
+    console.log('componentDidMount')
     this.facebookCommentInstall();
   }
 
   facebookCommentInstall() {
     (function(d, s, id) {
+      console.log(d,s,id);
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
@@ -84,7 +86,7 @@ class PostTemplate extends React.Component {
         <Header>{post.frontmatter.title}</Header>
         <Date>{post.frontmatter.date}&middot;{post.frontmatter.category}</Date>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
-        <div className="fb-comments" data-numposts="5"/>
+        {/* <div className="fb-comments" data-numposts="5"/> */}
       </Wrapper>
     )
   }
