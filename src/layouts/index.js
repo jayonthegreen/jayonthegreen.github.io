@@ -22,9 +22,6 @@ const Body = styled.div`
   left:0;
   right:0;
   bottom:0;
-  ${media.mobile`
-    padding-top: 50px;
-  `}
   max-height: ${props => props.mobileSideNavVisible ? '100vh' : 'auto'};
   overflow-y: ${props => props.mobileSideNavVisible ? 'hidden' : 'auto'};
   -webkit-overflow-scrolling: touch;
@@ -47,13 +44,16 @@ const ContentBlock = styled.div`
 const Content = styled.div`
   position: relative; 
   margin-left: 300px;
-  padding: 15px 50px;
+  padding-top: 50px;
+  padding-left:50px;
+  padding-right:50px;
   z-index: 0;
   transition: all 0.3s ease;
   ${media.mobile`
   margin-left: 0;
   min-height: calc( 100vh - 50px );
-  padding: 20px;
+  padding-left:20px;
+  padding-right:20px;
   `}
 `
 
@@ -115,7 +115,7 @@ class TemplateWrapper extends React.Component {
             onClickSideBarItem={this.onClickSideBarItem}
             mobileSideNavVisible={mobileSideNavVisible}
           />
-          <Content mobileSideNavVisible={mobileSideNavVisible}>
+          <Content>
             <ContentBlock mobileSideNavVisible={mobileSideNavVisible} />
             {this.props.children()}
           </Content>
