@@ -1,8 +1,7 @@
 {
   "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Gatsby",
+  "version": "1.0.1",
   "dependencies": {
     "gatsby": "^1.9.119",
     "gatsby-link": "^1.6.28",
@@ -14,9 +13,6 @@
     "react-ga": "^2.3.5",
     "styled-components": "2.2.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
