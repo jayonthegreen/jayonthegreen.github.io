@@ -3353,7 +3353,7 @@ gatsby-transformer-remark@^1.7.21:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.119:
+gatsby@^1.9.277:
   version "1.9.277"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.277.tgz#d2f5a6206fc66ed46fcf57985d4b1e2b491e9559"
   dependencies:
