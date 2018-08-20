@@ -70,7 +70,7 @@ jobs:
           command: |
                   aws configure set preview.cloudfront true
                   aws configure set preview.create-invalidation true
-      - run: aws cloudfront create-invalidation --distribution-id E35V23RZLIKY75 --paths \/*
+      - run: aws cloudfront create-invalidation --distribution-id E35V23RZLIKY75 --paths '/*'
 
 
 
