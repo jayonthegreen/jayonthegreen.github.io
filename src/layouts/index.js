@@ -66,6 +66,7 @@ class TemplateWrapper extends React.Component {
   toggleMobileSideNavVisible = (e) => {
     e.stopPropagation();
     const { mobileSideNavVisible  } = this.state;
+    console.log(mobileSideNavVisible)
     this.setState({mobileSideNavVisible : !mobileSideNavVisible})
   }
 
@@ -75,6 +76,7 @@ class TemplateWrapper extends React.Component {
   }
 
   componentDidMount() {
+    console.log('blog version 0.1.0');
     window.addEventListener('click', this.hideWhenMobileSideNav )
   }
   componentWillUnmound() {
@@ -117,6 +119,7 @@ class TemplateWrapper extends React.Component {
           />
           <Content>
             <ContentBlock mobileSideNavVisible={mobileSideNavVisible} />
+            {mobileSideNavVisible}
             {this.props.children()}
           </Content>
         </Body>

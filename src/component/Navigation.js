@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import NavLink, { navigateTo } from 'gatsby-link'
 import styled from 'styled-components'
 import hamburgerSvg from './hamburger.svg'
 
@@ -18,13 +17,13 @@ const Wrapper = styled.div`
 `
 
 const NavItem = styled.div`
-    cursor: pointer;
     display:flex;
     align-items: center;
 `
 
 const NavItemImg = styled.img`
     margin: 0 20px;
+    cursor: pointer;
 `
 
 class Navigation extends React.Component {
@@ -32,7 +31,11 @@ class Navigation extends React.Component {
     render() {
         return (
             <Wrapper>
-                <NavItem onClick={this.props.onClickMenu}><NavItemImg src={hamburgerSvg} alt="menu" /></NavItem>
+                <NavItem>
+                    <NavItemImg 
+                    onClick={this.props.onClickMenu} 
+                    src={hamburgerSvg} alt="menu" />
+                </NavItem>
             </Wrapper>
         )
     }

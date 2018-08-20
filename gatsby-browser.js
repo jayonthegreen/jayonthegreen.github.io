@@ -7,7 +7,7 @@ exports.onRouteUpdate = (state, page, pages) => {
   }
   if (process.env.NODE_ENV === 'production' && !window.localStorage.getItem('isAmdin')) {
     ReactGA.pageview(state.location.pathname);
-  } 
+  }
 };
 
 exports.shouldUpdateScroll = ({prevRouterProps, pathname}) => {
