@@ -10,6 +10,8 @@
     "gatsby-plugin-styled-components": "^2.0.2",
     "gatsby-source-filesystem": "^1.5.8",
     "gatsby-transformer-remark": "^1.7.21",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "react-ga": "^2.3.5",
     "styled-components": "2.2.0"
   },
@@ -20,6 +22,7 @@
     "build": "gatsby build",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "deploy": "yarn build && aws s3 sync public s3://holdonnn.me --delete  --region ap-northeast-1  --acl public-read --cache-control 'max-age=31536000, public'",
+    "cache-bust": "aws cloudfront create-invalidation --distribution-id E35V23RZLIKY75 --paths '/*'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-serve": "yarn build && serve public"
   },
@@ -28,4 +31,3 @@
     "prettier": "^1.8.2"
   }
 }
-
