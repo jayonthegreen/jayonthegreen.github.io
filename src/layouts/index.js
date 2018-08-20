@@ -53,7 +53,7 @@ const Content = styled.div`
   ${media.mobile`
   margin-left: 0;
   min-height: calc( 100vh - 50px );
-  padding: 0 20px;
+  padding: 20px;
   `}
 `
 
