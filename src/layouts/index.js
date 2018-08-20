@@ -9,12 +9,6 @@ import './reset.css'
 import './spoqa-han-sans.css'
 import './index.css'
 
-const NavigationWrapper = styled.div`
-  display: none;
-  ${media.mobile`
-  display: block;
-  `}
-`
 
 const Body = styled.div`
   position: fixed;
@@ -44,16 +38,14 @@ const ContentBlock = styled.div`
 const Content = styled.div`
   position: relative; 
   margin-left: 300px;
-  padding-top: 50px;
-  padding-left:50px;
-  padding-right:50px;
+  margin-top: 50px;
+  padding: 20px 50px;
   z-index: 0;
   transition: all 0.3s ease;
   ${media.mobile`
   margin-left: 0;
   min-height: calc( 100vh - 50px );
-  padding-left:20px;
-  padding-right:20px;
+  padding: 20px;
   `}
 `
 
@@ -105,11 +97,9 @@ class TemplateWrapper extends React.Component {
             { name: 'og:image', content: imageUrl },
           ]}
         />
-        <NavigationWrapper>
-          <Navigation
-            onClickMenu={this.toggleMobileSideNavVisible}
-          />
-        </NavigationWrapper>
+        <Navigation
+          onClickMenu={this.toggleMobileSideNavVisible}
+        />
         <Body 
         id="body"
         mobileSideNavVisible={mobileSideNavVisible}>
