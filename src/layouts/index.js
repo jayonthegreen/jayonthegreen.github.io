@@ -68,7 +68,7 @@ class TemplateWrapper extends React.Component {
   }
 
   componentDidMount() {
-    console.log('blog version 0.1.0');
+    console.log('blog version 0.1.1');
     window.addEventListener('click', this.hideWhenMobileSideNav )
   }
   componentWillUnmound() {
