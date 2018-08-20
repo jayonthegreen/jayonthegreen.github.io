@@ -61,7 +61,11 @@ jobs:
       - run: sudo apt-get install -y awscli
       - run: aws configure set default.s3_signature_version v4
       - run: yarn deploy
-      - run: aws configure set preview.cloudfront true
+      - run:
+          name: activate cloud front
+          command: |
+                  aws configure set preview.cloudfront true
+                  aws configure set preview.create-invalidation true
       - run: aws cloudfront create-invalidation --distribution-id E35V23RZLIKY75 --paths '/*'
 
 
