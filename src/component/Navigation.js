@@ -34,8 +34,7 @@ class Navigation extends React.Component {
         return (
             <Wrapper>
                 <NavItem onClick={this.props.onClickMenu}>
-                    <NavItemImg 
-                    src={hamburgerSvg} alt="menu" />
+                    Menu
                 </NavItem>
             </Wrapper>
         )
