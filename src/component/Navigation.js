@@ -21,9 +21,6 @@ const Wrapper = styled.div`
 
 const NavItem = styled.div`
     cursor: pointer; 
-    display: flex;
-    justify-items: center;
-    align-items: center;
     font-weight: bold;
 `
 
