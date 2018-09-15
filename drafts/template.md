@@ -8,4 +8,3 @@ image: '/img/book/blockchain.jpg'
 keywords: 넥스트 머니,고란,이용재,블록체인,가상화폐
 
 ---
-
