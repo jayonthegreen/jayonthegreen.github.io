@@ -1,17 +1,13 @@
 ---
-
-title: 나중에 온 이 사람에게도, 존 러스킨
-date: 2017-12-30
+title: '나중에 온 이 사람에게도, 존 러스킨'
+date: '2017-12-30'
 category: 'book'
 description: 저자는 인간을 효율성을 갖고 있는 기계가 아니라 영혼을 동력으로 가진 기관이라고 정의한다. 또 가치를 '생명에 유용한 것'으로 정의한다. 저자는 생산성과 효율만이 경제 활동의 근간이 아니라고 강조한다. 부의 본질은 사람에 있기에 고용인과 피고용인의 애정을 역설한다. 책을 읽어나가며 경제를 사람중심에서 생각해 볼 수 있었다.
 image: '/img/book/john-ruskin.jpg'
 keywords: '경제,존러스킨,나중에 온 이사람에게도'
-
 ---
 
-<div style="text-align:center">
-<iframe src='http://serviceapi.rmcnmv.naver.com/flash/outKeyPlayer.nhn?vid=8F18C336DBB7E77C84708BCD56F24A4E0B38&outKey=V125dce72288afcdba60aed51fd7a4a9ac4e95d3c6ef9d53b49bfed51fd7a4a9ac4e9&controlBarMovable=true&jsCallable=true&isAutoPlay=true&skinName=tvcast_white' frameborder='no' scrolling='no' marginwidth='0' marginheight='0' allowfullscreen></iframe>
-</div>
+<div style="text-align:center"><iframe src='http://serviceapi.rmcnmv.naver.com/flash/outKeyPlayer.nhn?vid=8F18C336DBB7E77C84708BCD56F24A4E0B38&outKey=V125dce72288afcdba60aed51fd7a4a9ac4e95d3c6ef9d53b49bfed51fd7a4a9ac4e9&controlBarMovable=true&jsCallable=true&isAutoPlay=true&skinName=tvcast_white' frameborder='no' scrolling='no' marginwidth='0' marginheight='0' allowfullscreen></iframe></div>
 
 토스라는 앱의 팬이다. 토스의 간편한 송금 서비스는 인상적이다. 회사도 미친듯 성장한다. 그러한 토스를 만든 팀의 창업자인 이승건 대표의 강연 영상을 보게 되었다. 이승건 대표는 담백하고, 명료했다. 강연 도중 이 책을 소개했고 바로 구매하여 읽었다.
 
