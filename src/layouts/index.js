@@ -33,7 +33,7 @@ class TemplateWrapper extends React.Component {
         />
         <Profile/>
         <Content>
-        {this.props.children()}
+          {this.props.children()}
         </Content> 
       </React.Fragment>
     )

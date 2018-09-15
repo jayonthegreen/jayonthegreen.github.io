@@ -18,12 +18,11 @@ const Title = styled.h1`
 `
 const Date = styled.div`
   font-size: 0.75rem;
-  margin-top: 0.5rem;
+  margin: 0.5rem;
   text-align: right;
 `
 
 const Content = styled.div`
-  margin: 1rem 0;
   & iframe {
     margin: 0 auto;
     width: 544px;
