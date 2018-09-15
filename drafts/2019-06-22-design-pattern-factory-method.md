@@ -1,7 +1,7 @@
 ---
 
 category: programming
-date:  2018-06-22
+date: 2018-06-22
 title: design pattern, factory method
 description:  객체의 생성하는 것을 캡슐화하는 패턴을 factory 라고 한다. 특히 서브클래스에서 어떤 클래스를 만들지 결정하게 만드는 것을 factory method 패턴이라고 한다.
 

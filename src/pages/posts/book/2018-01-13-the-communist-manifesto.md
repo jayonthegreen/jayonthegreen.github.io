@@ -1,17 +1,18 @@
 ---
 
-title: 공산당 선언, 카를 마르크스 / 프리드히리 엥겔스
-date: 2018-01-13
+title: '공산당 선언, 카를 마르크스 / 프리드히리 엥겔스'
+date: '2018-01-13'
 category: 'book'
-description: 지금까지 인간 사회의 모든 역사는 계급 투쟁의 역사이다.
+description: '지금까지 인간 사회의 모든 역사는 계급 투쟁의 역사이다.'
 image: '/img/book/marx.jpg'
-keywords: 공산당 선언, 마르크르, 공산주의 원리, 엥겔스
+keywords: '공산당 선언, 마르크르, 공산주의 원리, 엥겔스'
 
 ---
 
-<p align="center"><img src="/img/book/marx.jpg" src="marx"></p>
 
-> <center>"지금까지 인간 사회의 모든 역사는 계급 투쟁의 역사이다."</center>
+![marx.jpg](/img/book/marx.jpg "marx.jpg")
+
+> <p style="text-align:center;">"지금까지 인간 사회의 모든 역사는 계급 투쟁의 역사이다."</p>
 
 
 
