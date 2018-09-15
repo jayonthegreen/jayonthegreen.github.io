@@ -1,28 +1,29 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { media } from '../utils/style'
 
 
 const Wrapper = styled.div`
-  ${media.mobile`
-    padding: 0;
-  `}
+    max-width: 600px;
+    margin: auto;  
 `
 
-const Header = styled.h1`
-  margin: 0.4rem 0;
-  line-height: 1.4;
+const Title = styled.h1`
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom:0;
 `
 const Date = styled.div`
-  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
   text-align: right;
-  color: #666666;
-  font-size: 0.8rem;
 `
 
 const Content = styled.div`
+  margin: 1rem 0;
   & iframe {
     margin: 0 auto;
     width: 544px;
@@ -81,10 +82,9 @@ class PostTemplate extends React.Component {
         <Helmet meta={meta}>
           <title>{title}</title>
         </Helmet>
-        <Header>{post.frontmatter.title}</Header>
+        <Title>{post.frontmatter.title}</Title>
         <Date>{post.frontmatter.date}&middot;{post.frontmatter.category}</Date>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
-        {/* <div className="fb-comments" data-numposts="5"/> */}
       </Wrapper>
     )
   }

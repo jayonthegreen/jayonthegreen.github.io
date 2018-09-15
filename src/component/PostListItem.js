@@ -40,6 +40,4 @@ const PostListItem = ({ title, category, date, description }) => (
   </Wrapper>
 )
 
-const getEmoji = (key) => CATEGORY_EMOJI_MAP[key] || CATEGORY_EMOJI_MAP.default;
-
 export default PostListItem

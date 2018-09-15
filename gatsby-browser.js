@@ -9,9 +9,3 @@ exports.onRouteUpdate = (state, page, pages) => {
     ReactGA.pageview(state.location.pathname);
   }
 };
-
-exports.shouldUpdateScroll = ({prevRouterProps, pathname}) => {
-  if(prevRouterProps && prevRouterProps.pathname != pathname){
-    document.getElementById('body').scrollTo(0,0)
-  }
-}

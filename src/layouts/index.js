@@ -1,90 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import SideBar from '../component/SideBar'
-import Navigation from '../component/Navigation'
 import styled from 'styled-components'
 import { media } from '../utils/style'
+import Profile from '../component/Profile';
 import './reset.css'
 import './spoqa-han-sans.css'
 import './index.css'
 
-
-const Body = styled.div`
-  position: fixed;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  max-height: ${props => props.mobileSideNavVisible ? '100vh' : 'auto'};
-  overflow-y: ${props => props.mobileSideNavVisible ? 'hidden' : 'auto'};
-  -webkit-overflow-scrolling: touch;
-`
-
-const ContentBlock = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: black;
-  z-index: 2;
-  opacity: 0.7;
-  display: ${props => props.mobileSideNavVisible ? 'block' : 'none'};
-  cursor: pointer;
-`
-
-
 const Content = styled.div`
-  position: relative; 
-  margin-left: 300px;
-  margin-top: 50px;
   padding: 20px 50px;
-  z-index: 0;
   transition: all 0.3s ease;
-  ${media.mobile`
-  margin-left: 0;
-  min-height: calc( 100vh - 50px );
-  padding: 20px;
-  `}
+  ${media.mobile`padding: 20px;`}
 `
 
 class TemplateWrapper extends React.Component {
 
-  state = {
-    mobileSideNavVisible: false,
-  }
-
-  toggleMobileSideNavVisible = (e) => {
-    e.stopPropagation();
-    const { mobileSideNavVisible  } = this.state;
-    this.setState({mobileSideNavVisible : !mobileSideNavVisible})
-  }
-
-  onClickSideBarItem = (e) => {
-    e.stopPropagation();
-    this.hideWhenMobileSideNav();
-  }
-
-  componentDidMount() {
-    window.addEventListener('click', this.hideWhenMobileSideNav )
-  }
-  componentWillUnmound() {
-    window.removeEventListner('click', this.hideWhenMobileSideNav )
-  }
-
-  hideWhenMobileSideNav = () => {
-    if (this.state.mobileSideNavVisible ) {
-      this.setState({ mobileSideNavVisible: false })
-    }
-  }
-
-  render() {
-    const { mobileSideNavVisible } = this.state;
+  render() {;
     const { title, image } = this.props.data.site.siteMetadata;
     const imageUrl = 'http://holdonnn.me' + image;
     return (
-      <div>
+      <React.Fragment>
         <Helmet
           title={title}
           meta={[
@@ -95,23 +31,11 @@ class TemplateWrapper extends React.Component {
             { name: 'og:image', content: imageUrl },
           ]}
         />
-        <Navigation
-          onClickMenu={this.toggleMobileSideNavVisible}
-        />
-        <Body 
-        id="body"
-        mobileSideNavVisible={mobileSideNavVisible}>
-          <SideBar
-            onClickSideBarItem={this.onClickSideBarItem}
-            mobileSideNavVisible={mobileSideNavVisible}
-          />
-          <Content>
-            <ContentBlock mobileSideNavVisible={mobileSideNavVisible} />
-            {mobileSideNavVisible}
-            {this.props.children()}
-          </Content>
-        </Body>
-      </div>
+        <Profile/>
+        <Content>
+        {this.props.children()}
+        </Content> 
+      </React.Fragment>
     )
   }
 }
