@@ -7,7 +7,7 @@ description: 저자는 인간을 효율성을 갖고 있는 기계가 아니라 
 image: '/img/book/john-ruskin.jpg'
 keywords: '경제,존러스킨,나중에 온 이사람에게도'
 
---- 
+---
 
 <div style="text-align:center">
 <iframe src='http://serviceapi.rmcnmv.naver.com/flash/outKeyPlayer.nhn?vid=8F18C336DBB7E77C84708BCD56F24A4E0B38&outKey=V125dce72288afcdba60aed51fd7a4a9ac4e95d3c6ef9d53b49bfed51fd7a4a9ac4e9&controlBarMovable=true&jsCallable=true&isAutoPlay=true&skinName=tvcast_white' frameborder='no' scrolling='no' marginwidth='0' marginheight='0' allowfullscreen></iframe>

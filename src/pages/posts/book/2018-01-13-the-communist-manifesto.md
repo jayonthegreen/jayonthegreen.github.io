@@ -7,7 +7,7 @@ description: 지금까지 인간 사회의 모든 역사는 계급 투쟁의 역
 image: '/img/book/marx.jpg'
 keywords: 공산당 선언, 마르크르, 공산주의 원리, 엥겔스
 
---- 
+---
 
 <p align="center"><img src="/img/book/marx.jpg" src="marx"></p>
 

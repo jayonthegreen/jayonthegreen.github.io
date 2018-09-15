@@ -5,7 +5,7 @@ category: 'book'
 description: 
 image: '/img/book/john-ruskin.jpg'
 keywords: '일상기술연구소'
---- 
+---
 
 
 ## 갈무리
