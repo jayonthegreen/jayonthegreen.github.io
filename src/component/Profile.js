@@ -9,9 +9,15 @@ const Wrapper = styled.div`
 
 
 const Title = styled.div`
+  display: inline-block;
   font-weight: bold;
   font-size: 1.0rem;
   margin: 0.5rem 0;
+  padding: 0.25rem 0.5rem;
+  &:hover{
+    background-color: #f8f9fa;
+    border-radius: 3px;
+  }
 `
 
 const Description = styled.div`
@@ -23,6 +29,11 @@ const Description = styled.div`
 const OutLink = styled.a`
   text-decoration: none;
   color: inherit;
+  padding: 0.25rem;
+  &:hover{
+    background-color: #f8f9fa;
+    border-radius: 3px;
+  }
 `
 
 import Link from 'gatsby-link'

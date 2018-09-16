@@ -2,10 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  margin: 0 auto;
-  padding: 1.5rem;
+  margin: 3rem auto;
   text-align: center;
-  max-width: 480px;
+  transition:all 0.2s ease;
+  padding: 1rem;
+  &:hover{
+    background-color: #f8f9fa;
+    border-radius: 3px;
+  }
 `
 
 const Meta = styled.div`
