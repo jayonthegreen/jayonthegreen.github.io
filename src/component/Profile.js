@@ -30,14 +30,13 @@ const OutLink = styled.a`
   padding: 0.25rem;
   ${ hoverCss}
 `
-
-import Link from 'gatsby-link'
 const Profile = () => (
   <Wrapper>
       <Title>
-        <Link
-          to='/'
-         style={{ textDecoration: `none`, color: `inherit` }}>jaehyun baek</Link>
+        <a
+          href='/'
+          style={{ textDecoration: `none`, color: `inherit` }}>jaehyun baek
+        </a>
       </Title>
       <Description>
       <OutLink href="http://bit.ly/2NEu9Gb" target="_blank">github</OutLink>
