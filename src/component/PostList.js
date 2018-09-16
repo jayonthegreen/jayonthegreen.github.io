@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
 import styled from 'styled-components'
 
 import PostListItem from './PostListItem'
@@ -16,9 +15,9 @@ class PostList extends React.Component {
     return (
       <Wrapper>
         {this.props.markdownNodes.map(node => (
-          <Link
+          <a
             key={node.id}
-            to={node.fields.slug}
+            href={node.fields.slug}
             style={{ textDecoration: `none`, color: `inherit` }}
           >
             <PostListItem
@@ -27,7 +26,7 @@ class PostList extends React.Component {
               category={node.frontmatter.category}
               description={node.frontmatter.description}
             />
-          </Link>
+          </a>
         ))}
       </Wrapper>
     )
