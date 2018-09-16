@@ -1,15 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import hoverCss from './hoverCss'
 
 const Wrapper = styled.div`
   margin: 3rem auto;
   text-align: center;
-  transition:all 0.2s ease;
   padding: 1rem;
-  &:hover{
-    background-color: #f8f9fa;
-    border-radius: 3px;
-  }
+  ${hoverCss}
 `
 
 const Meta = styled.div`

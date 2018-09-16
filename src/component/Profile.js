@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import hoverCss from './hoverCss'
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -14,10 +15,7 @@ const Title = styled.div`
   font-size: 1.0rem;
   margin: 0.5rem 0;
   padding: 0.25rem 0.5rem;
-  &:hover{
-    background-color: #f8f9fa;
-    border-radius: 3px;
-  }
+  ${ hoverCss}
 `
 
 const Description = styled.div`
@@ -30,10 +28,7 @@ const OutLink = styled.a`
   text-decoration: none;
   color: inherit;
   padding: 0.25rem;
-  &:hover{
-    background-color: #f8f9fa;
-    border-radius: 3px;
-  }
+  ${ hoverCss}
 `
 
 import Link from 'gatsby-link'
