@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   font-weight: bold;
   text-align: center;
   margin-bottom:0;
