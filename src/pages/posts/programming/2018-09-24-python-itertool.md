@@ -7,7 +7,7 @@ image: '/img/programming/loop.jpeg'
 keywords: 'python,intertools,pythonic'
 ---
 
-If you want the [dot product](https://www.notion.so/holdonnn/Dive-into-itertools-3387bf57230b4282a091513f34962341) with python. maybe or maybe not, it can be implemented as follows
+If you want the [dot product](https://en.wikipedia.org/wiki/Dot_product) with python, maybe or not, you implement the code like as follows.
 
 ```python
 a = [1, 2, 3]
