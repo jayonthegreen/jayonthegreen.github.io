@@ -1,13 +1,10 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import styled from 'styled-components'
-import { media } from '../utils/style'
 
 import PostList from '../component/PostList'
 
-const SearchKeyword = styled.h1`
+const SearchKeyword = styled.div`
   text-align: center;
-  ${media.mobile`font-size: 1rem;`} 
 `
 
 class SearchPage extends React.Component {
@@ -36,6 +33,7 @@ class SearchPage extends React.Component {
           fields.slug.includes(searchKeyword) ||
           frontmatter.title.includes(searchKeyword) ||
           frontmatter.date.includes(searchKeyword) ||
+          (frontmatter.keywords|| []).includes(searchKeyword) ||
           html.includes(searchKeyword)
         )
       })
@@ -43,19 +41,16 @@ class SearchPage extends React.Component {
 
   render() {
     const resultNodes = this.getNodesWithSearchKeyword(this.state.searchKeyword);
+    if (!this.state.searchKeyword){
+      return null;
+    }
     return (
-      <div>
-        <Link to="/"> Go to Home</Link>
+      <React.Fragment>
         <SearchKeyword>
-          {this.state.searchKeyword && resultNodes.length > 0 &&
-            `😀 ${resultNodes.length} results about '${
-              this.state.searchKeyword
-            }'`}
-          {this.state.searchKeyword && resultNodes.length === 0 &&
-            `🙃 no results about '${this.state.searchKeyword}'`}
+            {`${resultNodes.length } posts about "${this.state.searchKeyword}"`}
         </SearchKeyword>
-        {resultNodes.length > 0 && <PostList markdownNodes={resultNodes} />}
-      </div>
+        <PostList markdownNodes={resultNodes} />
+      </React.Fragment>
     )
   }
 }
@@ -71,9 +66,10 @@ query SearchPageQuery {
         id
         frontmatter {
           title
-          category
           date(formatString: "YYYY-MM-DD")
           description
+          category
+          keywords
         }
         fields {
           slug
@@ -84,24 +80,3 @@ query SearchPageQuery {
   }
 }
 `
-
-// export const query = graphql`
-//   query SearchPageQuery {
-//     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-//       totalCount
-//       edges {
-//         node {
-//           id
-//           frontmatter {
-//             title
-//             date(formatString: "YYYY-MM-DD")
-//           }
-//           fields {
-//             slug
-//           }
-//           html
-//         }
-//       }
-//     }
-//   }
-// `
