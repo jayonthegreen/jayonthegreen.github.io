@@ -30,7 +30,7 @@ Why do you  know itertools.
 
 1. Code readability: As a simple example like dot product, the difference between two implementations is insignificant. But in the real world, more complexed list item with multiple for-loop make many developers tired.
 
-2. Superior Memory performance: Processing elements one at a time is more efficient rather than bringing the whole iterable into memory all at once.
+2. Superior Memory performance: Iterators handle element of list one by one when necessary. It's more efficient rather than bringing the whole iterable into memory all at once. It's [lazy evaluation](https://en.wikipedia.org/wiki/Lazy_evaluation)
 
 Let's read the official [document](https://docs.python.org/3.7/library/itertools.html#module-itertools). This post is also based on the document.
 
