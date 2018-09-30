@@ -9,7 +9,7 @@ keywords: 'Who Moved My Cheese, Johnson, Spencer, Cheese, Change'
 
 ---
 
-I just found out this book which is quite popular. This simple story give us a wisdom about how to do it in a changing situation. We should smell the cheese often so we know when it's getting old. The most impressive sentence is the following.
+I just found out and read this book which is quite popular. This simple story give us a wisdom about how to do it in a changing situation. We should smell the cheese often so we know when it's getting old. But the most impressive sentence is the following.
 
 > What Would You Do If You Weren’t Afraid ?
 
