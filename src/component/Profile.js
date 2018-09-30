@@ -16,7 +16,7 @@ const Title = styled.div`
   margin: 0.5rem 0;
   padding: 0.25rem 0.5rem;
   ${ hoverCss}
-  box-shadow: inset 0 -6px 0 rgba(36,177,209,.2);
+  /* box-shadow: inset 0 -6px 0 rgba(36,177,209,.2); */
   /* animation-name: color_change;
 	animation-duration: 1s;
 	animation-iteration-count: infinite;
