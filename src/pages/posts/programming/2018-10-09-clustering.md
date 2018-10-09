@@ -77,7 +77,7 @@ O(kn) for N points, k clusters. linear goods. But the number of rounds to conver
 
 ## Closing
 
-Two alogrithms are basic and essential. There are many optimization techniques in dealing with data in the real world. However, many optimization techniques have often evolved from these two basic algorithms. Therefore, these two concepts can be important as a foundation.
+Two alogrithms are basic and essential. There are many optimization techniques in dealing with data in the real world. However, many optimization techniques have often drived from these two basic algorithms. Therefore, these two concepts can be important as a foundation.
 
 
 ## reference
