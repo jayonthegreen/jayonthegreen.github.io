@@ -41,9 +41,9 @@ Q 3 ) When should we stop combining clusters?
 
 - If pick a number k upfront, We want data to falls into k classes.
 - Before merging low cohesion clustering. Don't make bad clusters. The way to measure cohesion
-    - 1) Diameters: maximum distance in points
-    - 2) Radius: maximum distances from centroid(or clustroid)
-    - 3) Density: points per volumes(derived from diameters/radius)
+    - Diameters: maximum distance in points
+    - Radius: maximum distances from centroid(or clustroid)
+    - Density: points per volumes(derived from diameters, radius)
 
 ## HAC Complexity
 
