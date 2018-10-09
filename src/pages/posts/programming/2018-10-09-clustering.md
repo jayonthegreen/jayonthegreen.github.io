@@ -9,47 +9,45 @@ keywords: 'clustering,k-means,hierarchical agglomerative'
 
 ## Definition of clustering
 
-Cluster analysis or clustering is the task of grouping a set of objects in such a way that objects in the same group (called a cluster) are more similar (in some sense) to each other than to those in other groups (clusters).
+Cluster analysis or clustering is the task of grouping a set of objects in such a way that objects in the same group (called a cluster) are more similar to each other than to those in other clusters.
 
 Let's look at two basic and widely used clustering algorithms. hierarchical and k-means clusterings.
 
 ## The hierarchical clustering
 
-Initially, each point is a cluster. repeatedly combined the two nearest cluster into one.
+Initially, each point is a cluster. Repeatedly combined the two nearest cluster into one.
 
 ![/img/programming/clustering/clustering.013.jpeg](/img/programming/clustering/clustering.013.jpeg "/img/programming/clustering/clustering.013.jpeg")
 
-it's called Hierarchical agglomerative clustering.
+It's called Hierarchical agglomerative clustering.
 
-The main output of Hierarchical Clustering is a dendrogram, which shows the hierarchical relationship between the clusters
+The main output of Hierarchical Clustering is a dendrogram, which shows the hierarchical relationship between the clusters.
 
-![/img/programming/clustering/clustering.007.jpeg](/img/programming/clustering/clustering.007.jpeg "/img/programming/clustering/clustering.007.jpeg")
+![/img/programming/clustering/clustering.014.jpeg](/img/programming/clustering/clustering.014.jpeg "/img/programming/clustering/clustering.014.jpeg")
 
-![/img/programming/clustering/clustering.008.jpeg](/img/programming/clustering/clustering.008.jpeg "/img/programming/clustering/clustering.008.jpeg")
+## 3 Essential questions of HAC(Hierarchical agglomerative clustering)
 
-## 3 essential questions of HAC(Hierarchical agglomerative clustering)
+Q 1 ) How to represent cluster of more than one point?
 
-Q 1 ) how to represent cluster of more than one point?
+- Euclidean space → Centroid = The average of its points.
+- Non-Euclidean space → There is no "average". using clustroid(closet all other points in the cluster) not centroid.
 
-- Euclidean space → centroid = average of its points.
-- Non-Euclidean space → there is no "average". using clustroid(closet all other points in the cluster) not centroid.
+Q 2 ) How to determine the 'nearness' of clusters?
 
-Q 2 ) how to determine the 'nearness' of clusters?
+- Euclidean space → Distances by distances of centroids.
+- Non-Euclidean space → Distances by distances of clustroid.
 
-- euclidean space → distances by distances of centroids.
-- Non-Euclidean space →  distances by distances of clustroid.
+Q 3 ) When to stop combining clusters?
 
-Q 3 ) when to stop combining clusters?
-
-- if pick a number k upfront. we want data to falls into k classes.
-- before merging low cohesion clustering. don't make bad clusters.The way to measure cohesion
-    - 1) diameters: maximum distance in points
-    - 2) radius: maximum distances from centroid(or clustroid)
-    - 3) density: points per volumes(derived from diameters/radius)
+- If pick a number k upfront, We want data to falls into k classes.
+- Before merging low cohesion clustering. Don't make bad clusters. The way to measure cohesion
+    - 1) Diameters: maximum distance in points
+    - 2) Radius: maximum distances from centroid(or clustroid)
+    - 3) Density: points per volumes(derived from diameters/radius)
 
 ## HAC Complexity
 
-Its too slow. The standard algorithm for hierarchical agglomerative clustering (HAC) has a time complexity of O(n^3) and requires O(n^2)memory, which makes it too slow for even medium data sets.
+It's too slow. The standard algorithm for hierarchical agglomerative clustering (HAC) has a time complexity of O(n^3) and requires O(n^2)memory, which makes it too slow for even medium data sets.
 
 ## K-means clustering
 
@@ -70,8 +68,8 @@ Its too slow. The standard algorithm for hierarchical agglomerative clustering (
 ![/img/programming/clustering/clustering.012.jpeg](/img/programming/clustering/clustering.012.jpeg "/img/programming/clustering/clustering.012.jpeg")
 
 - Picking initial centroids of clusters.
-    - Sampling and using hierarchical clustering to obtains k clusters.
-    - pick "dispersed" set of points.pick randomly first. then pick the next point which is as far as possible.
+    - Sampling then using hierarchical clustering to obtains k clusters.
+    - Pick "dispersed" set of points.pick randomly first. then pick the next point which is as far as possible.
 
 ## K-means Complexity
 
