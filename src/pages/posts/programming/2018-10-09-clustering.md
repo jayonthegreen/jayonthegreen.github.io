@@ -27,17 +27,17 @@ The main output of Hierarchical Clustering is a dendrogram, which shows the hier
 
 ## 3 Essential questions of HAC(Hierarchical agglomerative clustering)
 
-Q 1 ) How to represent cluster of more than one point?
+Q 1 ) How should we represent cluster of more than one point?
 
 - Euclidean space → Centroid = The average of its points.
 - Non-Euclidean space → There is no "average". using clustroid(closet all other points in the cluster) not centroid.
 
-Q 2 ) How to determine the 'nearness' of clusters?
+Q 2 ) How should we determine the 'nearness' of clusters
 
 - Euclidean space → Distances by distances of centroids.
 - Non-Euclidean space → Distances by distances of clustroid.
 
-Q 3 ) When to stop combining clusters?
+Q 3 ) When should we stop combining clusters?
 
 - If pick a number k upfront, We want data to falls into k classes.
 - Before merging low cohesion clustering. Don't make bad clusters. The way to measure cohesion
@@ -57,7 +57,7 @@ It's too slow. The standard algorithm for hierarchical agglomerative clustering 
 4. Reassign all points to their closet centroid.  Sometimes moves points between clusters.
 5. Repeat 3,4 util convergence. points and centroid don't move any further.
 
-## How to select the right k clustering ?
+## How to select the right k clustering
 
 - As the number of clustering increases. Average distance to centroid goes down.
 
@@ -67,9 +67,10 @@ It's too slow. The standard algorithm for hierarchical agglomerative clustering 
 
 ![/img/programming/clustering/clustering.012.jpeg](/img/programming/clustering/clustering.012.jpeg "/img/programming/clustering/clustering.012.jpeg")
 
-- Picking initial centroids of clusters.
-    - Sampling then using hierarchical clustering to obtains k clusters.
-    - Pick "dispersed" set of points.pick randomly first. then pick the next point which is as far as possible.
+## How to pick initial centroids of clusters
+
+1. Sampling then using hierarchical clustering to obtains k clusters.
+2. Pick "dispersed" set of points.pick randomly first. then pick the next point which is as far as possible.
 
 ## K-means Complexity
 
