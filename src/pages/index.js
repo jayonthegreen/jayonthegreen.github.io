@@ -1,17 +1,14 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import PostList from '../component/PostList'
 
 class IndexPage extends React.Component {
   render() {
     return (
-      <div>
         <PostList
           markdownNodes={this.props.data.allMarkdownRemark.edges.map(
             ({ node }) => node
           )}
         />
-      </div>
     )
   }
 }
