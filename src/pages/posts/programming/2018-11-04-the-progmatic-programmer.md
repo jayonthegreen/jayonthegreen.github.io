@@ -2,17 +2,18 @@
 
 category: 'programming'
 date: '2018-11-04'
-title: '실용주의 프로그래머. 앤드류 헌트/데이비드 토머스'
+title: '(읽는 중)실용주의 프로그래머. 앤드류 헌트/데이비드 토머스'
 description:  ''
 image: '/img/programming/programmer.jpg'
 keywords: '실용주의 프로그래머, 실용주의, 프로그래밍'
 
 ---
 
-# 실용주의 프로그래머.
-
 ![programmer](/img/programming/programmer.jpg "programmer")
 
+실용주의 프로그래머를 읽는 중입니다. 다 읽으면 종합적으로 글을 쓸 예정이에요.
+
+## 갈무리
 
 ### 서론
 
