@@ -1,4 +1,3 @@
 # holdonnn.me
 
-[http://holdonnn.me](http://holdonnn.me)
-ci test
+[blog.ordinarysimple.com](blog.ordinarysimple.com)

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `holdonnn`,
+    title: `ordinary, simple`,
     image: `/img/og.jpeg`,
-    siteUrl: `http://holdonnn.me`,
+    siteUrl: `https://blog.ordinarysimple.com`,
   },
   plugins: [
     {
