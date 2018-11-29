@@ -21,7 +21,7 @@
     "start": "gatsby develop --host localhost --port 8000",
     "build": "gatsby build",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "deploy": "yarn build && aws s3 sync public s3://blog.ordinarysimple.com --delete  --region ap-northeast-1  --acl public-read --cache-control 'max-age=31536000, public'",
+    "deploy": "yarn build && aws s3 sync public s3://blog.ordinarysimple.com --delete  --region ap-northeast-1  --acl public-read --cache-control 'max-age=3600, public'",
     "cache-bust": "aws cloudfront create-invalidation --distribution-id E1XXTAEHTWVPJ1 --paths '/*'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-serve": "yarn build && serve public"
