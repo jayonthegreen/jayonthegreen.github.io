@@ -1,3 +1,3 @@
-# holdonnn.me
+# blog
 
 [blog.ordinarysimple.com](blog.ordinarysimple.com)
