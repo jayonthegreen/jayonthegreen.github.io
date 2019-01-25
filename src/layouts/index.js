@@ -25,8 +25,8 @@ class TemplateWrapper extends React.Component {
           title={title}
           meta={[
             { name: 'description', content: 'ordinary, simple.' },
-            { name: 'og:description', content: 'ordinary, simple' },
-            { name: 'keywords', content: 'blog' },
+            { name: 'og:description', content: 'jaehyun baek blog' },
+            { name: 'keywords', content: 'blog,ordinarysimple,blog.ordinarysimple.com,백재현,jaehyunbaek,holdonnnn' },
             { name: 'image', content: imageUrl },
             { name: 'og:image', content: imageUrl },
           ]}
