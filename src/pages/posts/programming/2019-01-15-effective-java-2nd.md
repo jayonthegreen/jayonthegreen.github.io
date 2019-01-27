@@ -160,3 +160,33 @@ public final class Complex {
 
 - 계승은 하위 클래스가 상위 클래스의 자료형(subtype)이 확실한 경우에만 바람직하다. IS-A 관계가 성립할 때 계승을 사용하자.
 
+### 17 계승을 위한 설계와 문서를 갖추거나, 그럴 수 없다면 계승을 금지하라
+
+- 재정의 기능 메서드를 내부적으로 어떻게 사용하는지 가이드 문서에 남기라는 것이다.
+
+- 계승을 허용할 때 따라야할 제약사항 중 하나는, 생성자는 재정의 가능 메서드를 호출해서는 안 된다는 것이다.
+
+- 계승에 맞도록 설계하고 문서화하지 않는 클래스에 대한 하위 클래스는 만들지 않아야 한다.
+
+### 18 추상 클래스 대신 인터페이스를 사용하라
+
+- 여러가지 구현을 허용하는 자료형을 만드는 방법 두가지가 인터페이스와 추상클래스이다. 둘의 차이는 추상 클래스는 구현된 메서드를 포함할 수 있고 인터페이스는 아니라는 점이다.
+
+- 인터페이스는 믹스인(mixin)을 정의하는 데 이상적이다. 믹스인은 어떤 선택적 기능을 제공한다는 사실을 선언하기 위해 쓰인다.
+
+- 인터페이스는 비 계층적인 자료형 프레임워크를 만들 수 있도록 한다.
+
+    ```java
+        public interface Singger {} 
+        public interface Songwritter{}
+        public interface SinggerSongwritter extends Singger, Songwriter {...}
+    ```
+- 인터페이스 안에는 메서드 구현을 둘 수 없지만, 그렇다고 프로그래머가 사용할 수 있는 코드를 제공할 방법이 없는 것은 아니다. 추상 골격 구현(abstract skeletal implementation) 클래스를 중요 인터페이스마다 두면, 인터페이스의 장접과 추상 클래스의 장접을 결합할 수 있다. 관습적으로 이름은 AbstactInterface와 같이 정한다. 본뜨고자 하는 인터페이스를 abstract 로 선언하여 일부 구현과 재정의가 필요한 메소드에 익셉션( UnsupportedOperationExcetion)을 던지는 구현을 하므로써 재정의를 강제할 수 있다.
+    ```java
+    public abstract class AbstractMapEntry<K,V> implments Map.Entry<K,V> {
+        public V setValue(V value){ throw new UnsupportedOperationException();}
+
+        @Override ...
+    }
+    ```
+- 인터페이스는 신중하게 설계해야 한다. 인터페이스 공개되고 널리 구현된 다음에는, 인터페이스의 수정이 거의 불가능하기 때문이다.
