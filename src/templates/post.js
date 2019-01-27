@@ -38,6 +38,9 @@ const Content = styled.div`
     display:block;
     margin: 0 auto;
   }
+  h3 {
+    line-height: 1.4;
+  }
 `
 
 class PostTemplate extends React.Component {
