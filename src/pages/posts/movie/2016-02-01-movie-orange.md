@@ -7,7 +7,7 @@ image: '/img/movie/clock-orange/1.png'
 keywords: 'stanley kubric,a clockwork orage'
 ---
 
-&nbsp;에소프레소 샷을 바다에 뿌리면 그것은 아메리카노가 아니다. 물과 에소프레소를 적당히 섞으면 아메리카노라고 한다. 정도는 어떤것을 이야기하는데 중요하다. 그러나 가끔 우리는 극단에 집착한다.
+&nbsp;에소프레소 샷을 바다에 뿌려놓고 바다를 아메리카노로 부를 수 있는가. 정도는 어떤것을 이야기하는데 중요하다. 그러나 가끔 우리는 극단에 집착한다. 물과 에소프레소를 적당한 정도로 섞은 것을 아메리카노라고 한다.
 
 ![clock-orange-0.png](/img/movie/clock-orange/0.png "clock-orange/0.png")
 
@@ -15,4 +15,4 @@ keywords: 'stanley kubric,a clockwork orage'
 
 ![clock-orange-1.png](/img/movie/clock-orange/1.png "clock-orange/1.png")
 
-&nbsp;영화는 자유에 대해 끊임없이 이야기한다. 자유를 극단적으로 규정하기보다, 정도와 다양성을 잊지 않는게 중요한게 아닐까.
+&nbsp;영화는 자유에 대해 끊임없이 이야기한다. 자유를 극단적으로 규정하기보다 정도와 다양성을 잊지 않는게 중요한게 아닐까.
