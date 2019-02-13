@@ -15,4 +15,4 @@ keywords: 'stanley kubric,a clockwork orage'
 
 ![clock-orange-1.png](/img/movie/clock-orange/1.png "clock-orange/1.png")
 
-&nbsp;영화는 자유에 대해 끊임없이 이야기한다. 중요한 것은자유를 극단적으로 규정하기보다, 정도와 다양성을 잊지 않아야 한다.
+&nbsp;영화는 자유에 대해 끊임없이 이야기한다. 중요한 것은 자유를 극단적으로 규정하기보다, 정도와 다양성을 잊지 않아야 한다.
