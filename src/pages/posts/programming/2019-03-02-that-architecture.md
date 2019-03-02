@@ -11,7 +11,7 @@ keywords: 'DDD, DDD Start,Domain Driven Development,최범균,도메인 주도 �
 
 ## 김개발 이야기
 
-김개발은 커머스를 만들고 있다. 데이터베이스를 기준으로 User, Order, Product 객체를 정의한다. 모든 상태를 변경하거나 체크하는 로직을 "비즈니스 로직" 로직은 "서비스"에 넣는 것이라 생각한다. 
+김개발은 커머스를 만들고 있다. 데이터베이스를 기준으로 User, Order, Product 객체를 정의한다. 모든 상태를 변경하거나 체크하는 것을 "비즈니스 로직"라 하며 "서비스"라고 부르고 구현한다.
 
 > "비즈니스 로직은 서비스 레이어지! UserService! OrderService!" 
 
