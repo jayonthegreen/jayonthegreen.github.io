@@ -23,7 +23,7 @@ UserService class를 정의하고 데이터베이스에 유저를 조회/수정/
 
 ![2](/img/programming/ddd/DDD.002.jpeg "2")
 
-순환참조를 한두번 겪어본 것이 아니다. 김개발은 침착하게 OrderHistoryService 를 만든다. OrderHistoryService 에서는 UserService 와 OrderService 를 참조하여 '유저의 주문내역'기능을 구현했다. 기능을 마감 안에 구현했다.
+순환참조를 한두번 겪어본 것이 아니다. 김개발은 침착하게 OrderHistoryService 를 만든다. OrderHistoryService 에서는 UserService 와 OrderService 를 참조하여 '유저의 주문내역'기능을 일정 안에 구현했다.
 
 ![3](/img/programming/ddd/DDD.003.jpeg "3")
 
