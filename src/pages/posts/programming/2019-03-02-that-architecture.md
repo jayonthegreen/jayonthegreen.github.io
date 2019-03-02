@@ -11,7 +11,7 @@ keywords: 'DDD, DDD Start,Domain Driven Development,최범균,도메인 주도 �
 
 ## 김개발 이야기
 
-김개발은 커머스를 만들고 있다. 데이터베이스를 기준으로 User, Order, Product 객체를 정의한다. 상태를 변경하거나 읽s는 것을 "비즈니스 로직"라 고 하며 이를 "서비스"에 구현한다.
+김개발은 커머스를 만들고 있다. 데이터베이스를 기준으로 User, Order, Product 객체를 정의한다. 상태를 변경하거나 읽는 것을 "비즈니스 로직"라 부르고 이를 "서비스"에 구현한다.
 
 > "비즈니스 로직은 서비스 레이어지! UserService! OrderService!" 
 
@@ -19,7 +19,7 @@ UserService class를 정의하고 데이터베이스에 유저를 조회/수정/
 
 ![1](/img/programming/ddd/DDD.001.jpeg "1")
 
-어느날 김개발은 유저의 주문내역을 보여주는 기능을 만들어야 했다. UserService에서 OrderService 를 참조하여 기능을 만드려는 순간. 김개발은 순환참조 에러를 마주한다.
+어느날 김개발은 유저의 주문내역을 보여주는 기능을 만들어야 했다. UserService에서 OrderService 를 참조하여 기능을 만드려는 순간, 김개발은 순환참조 에러를 마주한다.
 
 ![2](/img/programming/ddd/DDD.002.jpeg "2")
 
@@ -27,7 +27,7 @@ UserService class를 정의하고 데이터베이스에 유저를 조회/수정/
 
 ![3](/img/programming/ddd/DDD.003.jpeg "3")
 
-1년이 지나고 같은 로직을 조금 다르게 구현한 서비스들이 마구 생겨났다. 많은 부분을 담당하는 서비스는 순환 참조로 인해 쉽게 가져다 쓰지 못하게 되었다. 수정에는 늘 버그가 따라다녔다. 테스트 코드는 코드를 조금만 수정하면 변경비용이 매우 컸다. 김개발은 무언가 잘못되어 간다는 것을 느꼈다.
+1년이 지나고 같은 로직을 조금 다르게 구현한 서비스들이 마구 생겨났다. 많은 부분을 담당하는 서비스를 순환 참조 때문에 재사용하지 못했다. 수정에는 늘 버그가 따라다녔다. 테스트 코드는 코드를 조금만 수정하면 변경비용이 매우 컸다. 김개발은 무언가 잘못되어 간다는 것을 느꼈다.
 
 ![dh](/img/programming/ddd/dh.jpg "hell")
 <p style="text-align:center"><a href="https://www.slideshare.net/InfoQ/adopting-continuous-delivery-adjusting-your-architecture">출처</a></p>
