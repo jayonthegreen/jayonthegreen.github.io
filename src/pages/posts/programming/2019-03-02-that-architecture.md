@@ -29,7 +29,7 @@ UserService class를 정의하고 데이터베이스에 유저를 조회/수정/
 
 1년이 지나고 같은 로직을 조금 다르게 구현한 서비스들이 마구 생겨났다. 많은 부분을 담당하는 서비스는 순환 참조로 인해 쉽게 가져다 쓰지 못하게 되었다. 수정에는 늘 버그가 따라다녔다. 테스트 코드는 코드를 조금만 수정하면 변경비용이 매우 컸다. 김개발은 무언가 잘못되어 간다는 것을 느꼈다.
 
-![dh](/img/programming/ddd/dh.jpg "hell" target="_blank")
+![dh](/img/programming/ddd/dh.jpg "hell")
 <p style="text-align:center"><a href="https://www.slideshare.net/InfoQ/adopting-continuous-delivery-adjusting-your-architecture">출처</a></p>
 
 ## 그런 아키텍쳐로 괜찮은가
