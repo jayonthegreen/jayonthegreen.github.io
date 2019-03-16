@@ -60,7 +60,7 @@ const Profile = () => (
       <Title>
         <a
           href='/'
-          style={{ textDecoration: `none`, color: `inherit` }}>jaehyun baek
+          style={{ textDecoration: `none`, color: `inherit` }}>Jaehyun Baek
         </a>
       </Title>
       <Description>
