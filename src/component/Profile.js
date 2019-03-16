@@ -69,7 +69,7 @@ const Profile = () => (
       <OutLink href="https://bit.ly/jaehyunbaek" target="_blank">linkedin</OutLink>
        ·
       <OutLink href="mailto:jaehyunbaek.engineer@gmail.com">email</OutLink>
-      </Description>   
+      </Description>    
   </Wrapper>
 )
 
