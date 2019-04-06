@@ -1,7 +1,7 @@
 * {
   
-font-family: san-serif, serif, 'Spoqa Han Sans';
-font-weight: 300;
+  font-family: san-serif, serif, 'Spoqa Han Sans';
+  font-weight: 300;
 }
 
 
@@ -9,6 +9,8 @@ html, body{
 margin: 0;
 -ms-text-size-adjust: 100%;
 -webkit-text-size-adjust: 100%;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
 }
 
 
