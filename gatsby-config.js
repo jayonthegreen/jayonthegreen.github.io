@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `ordinary, simple`,
+    title: `Jaehyun Baek Blog`,
     image: `/img/og.jpeg`,
     siteUrl: `https://blog.ordinarysimple.com`,
   },
