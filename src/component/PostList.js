@@ -14,6 +14,7 @@ class PostList extends React.Component {
   render() { 
     return (
       <Wrapper>
+        <h1 style={{display:'none'}}>Jaehyun Baek Blog</h1>
         {this.props.markdownNodes.map(node => (
           <a
             key={node.id}
@@ -22,7 +23,7 @@ class PostList extends React.Component {
           >
             <PostListItem
               title={node.frontmatter.title}
-              date={node.frontmatter.date}
+              date={node.frontmatter.date}gut 
               category={node.frontmatter.category}
               description={node.frontmatter.description}
             />
