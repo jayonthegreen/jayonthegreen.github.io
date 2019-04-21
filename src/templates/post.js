@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { media } from '../utils/style'
 import { BuyMe } from '../component/BuyMe';
+import ManageScrollBar from "../component/ManageScrollBar";
 
 
 const Wrapper = styled.div`
@@ -85,6 +86,7 @@ class PostTemplate extends React.Component {
         <Helmet meta={meta}>
           <title>{title}</title>
         </Helmet>
+        <ManageScrollBar/>
         <Title>{post.frontmatter.title}</Title>
         <Date>{post.frontmatter.date}&middot;{post.frontmatter.category}</Date>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />

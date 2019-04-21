@@ -9,7 +9,7 @@ import './spoqa-han-sans.css'
 import './index.css'
 
 const Content = styled.div`
-  padding: 20px 50px;
+  padding: 0 50px;
   transition: all 0.3s ease;
   ${media.mobile`padding: 20px;`}
 `
