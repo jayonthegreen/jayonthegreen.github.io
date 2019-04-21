@@ -19,6 +19,7 @@ class ScrollBar extends React.Component {
                     className="scrollbar"
                     id="hoge" style={{
                     width: `${width}%`,
+                    transition: 'width 0.5s',
                     height,
                     backgroundColor: "#495057"
                 }}/>
