@@ -11,7 +11,6 @@ class ScrollBar extends React.Component {
                      left: 0,
                      right: 0,
                      backgroundColor: '#ced4da',
-                     borderBottom: 'solid 1px #868e96',
                      height,
                  }}
             >
