@@ -34,7 +34,7 @@ UserService class를 정의하고 데이터베이스에 유저를 조회/수정/
 
 ## 그런 아키텍쳐로 괜찮은가
 
-<a href="https://youtu.be/RP_f5dMoHFc" target="_blank"> 이응준 님의 그런 REST API로 괜찮은가</a> 발표를 보고 충격과 감동을 받았다. 의도된 의미를 정확히 이해하는 것은 보기보다 매우 많이 어려울 수 있겠다는 생각이 들었다. 예를 들면 나는 REST를 처음 학습할 때 HATEOAS(Hypermedia as the engine of application state)를 제대로 이해하지 못했다. POST 요청은 생성의 의미이며, '/users'처럼 url path에 복수형으로 리스소를 쓴다 정도를 이해했을 뿐이었다. 꽤나 오랜 기간 내가 REST API를 만든다고 생각하고 있었다. 놀랍게도 많은 사람들이 REST가 아닌 REST API를 만들고 있다.
+<a href="https://youtu.be/RP_f5dMoHFc" target="_blank"> 이응준 님의 그런 REST API로 괜찮은가</a> 발표를 보고 충격과 감동을 받았다. 의도된 의미를 정확히 이해하는 것은 보기보다 매우 많이 어려울 수 있겠다는 생각이 들었다. 예를 들면 나는 REST를 처음 학습할 때 HATEOAS(Hypermedia as the engine of application state)를 제대로 이해하지 못했다. POST 요청은 생성의 의미이며, '/users'처럼 url path에 복수형으로 리스소를 쓴다 정도를 이해했을 뿐이었다. 꽤나 오랜 기간 내가 REST API를 만든다고 착각했다. 놀랍게도 많은 사람들이 REST가 아닌 REST API를 만들고 있다.
 
 소프트웨어 공학에서 정립된 개념을 이해하려는 노력은 중요하다. '완벽하게' 이해하지 못하는 것에 대해 지적할 의도는 없다. 더 중요한 것은 고객에게 가치를 전달하는 일이기 때문이다. 글을 쓸 때 연필이 맞는지 볼펜이 맞는지는 상황에 따라 다르다. 그리고 지금 빨리 글을 써야 한다면 글을 써야 함을 잊어선 안된다. 
 
