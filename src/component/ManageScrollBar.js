@@ -29,7 +29,7 @@ class ScrollBar extends React.Component {
 
 
 ScrollBar.defaultProps = {
-    height: 10,
+    height: 5,
     width: 0
 };
 
