@@ -68,9 +68,9 @@ class PostTemplate extends React.Component {
       description,
       category,
       keywords = [],
-      image = this.props.data.site.siteMetadata.image,
+      image = this.props.data.site.siteMetadata.image || '/img/og.jpeg',
     } = post.frontmatter;
-    const imageUrl = 'https://blog.ordinarysimple.com' + image;
+    const imageUrl = 'https://blog.ordinarysimple.com';
     const meta = [
       {name: 'title', content: title},
       {name: 'description', content: description},
