@@ -2,8 +2,8 @@
 
 category: 'book'
 date: '2019-03-16'
-title: '"생각의 탄생"을 읽고 나서'
-description: 창조적인 인물들은  방대한 관심사에도 '불구하고' 전문가가 된 것이 아니라 바로 그것 '때문에' 오히려 자신의 분야에 공헌할 수 있었다. 전문가가 아닌 전인(Whole man)이 되어보는 건 어떨까.
+title: '전문가가 아닌 전인(Whole man)'
+description: 생각의 탄생을 읽고나서
 image: '/img/book/whole-man.jpg'
 keywords: '생각의 탄생, 로버트 루트번스타인, 미셸 루트번스타인, 박종성'
 
