@@ -2,7 +2,7 @@
 
 category: 'book'
 date: '2019-03-16'
-title: '전문가가 아닌 전인(Whole man)'
+title: '전문가가 아닌 전인(Whole man)이 되어라'
 description: 생각의 탄생을 읽고나서
 image: '/img/book/whole-man.jpg'
 keywords: '생각의 탄생, 로버트 루트번스타인, 미셸 루트번스타인, 박종성'
