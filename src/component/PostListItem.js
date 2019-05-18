@@ -15,7 +15,7 @@ const Meta = styled.div`
 
 const Title = styled.div`
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin: 0.2rem 0;
 `
 
