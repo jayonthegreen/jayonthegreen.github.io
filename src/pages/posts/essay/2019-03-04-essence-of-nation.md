@@ -2,8 +2,8 @@
 
 category: 'essay'
 date: '2019-03-04'
-title: '정도전 - 민본으로 대의를 재정의하다.'
-description: '역사와 다소 차이가 있겠지만 드라마로서 정도전은 너무 재밌다.'
+title: '민본으로 대의를 재정의하다.'
+description: '드라마 정도전 다시보기'
 image: '/img/programming/picaso.jpg'
 keywords: '정도전,민본사상,이성계,ㅊ영,대하드라마 정도전'
 
