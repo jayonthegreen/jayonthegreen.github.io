@@ -2,7 +2,7 @@
 
 category: 'book'
 date: '2019-03-03'
-title: '복잡한 세상에서 논리적일 수 있다는 것'
+title: '논리적일 수 있다는 것'
 description:  '스마트한 생각들을 읽고나서'
 image: '/img/book/black-swan.jpg'
 keywords: '스마트한 생각들, 롤프 도벨리, 비르기트 랑, 걷는나무'
