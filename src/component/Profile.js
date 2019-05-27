@@ -4,8 +4,10 @@ import hoverCss from './hoverCss'
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  padding: 1.0rem;
+  padding: 0.5rem;
   text-align: center;
+  border-bottom: 1px solid #e9ecef;
+  margin-bottom: 1.0rem;
 `
 
 

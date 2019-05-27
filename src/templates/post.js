@@ -15,18 +15,15 @@ const Title = styled.h1`
   font-weight: bold;
   font-size: 1.6rem;
   text-align: center;
-  margin-top:10px;
+  margin-bottom:0.5rem;
 `
 
-const Description = styled.h2`
-  font-size: 1.2rem;
+const Description = styled.div`
+  font-size: 1.0rem;
+  font-weight: bold;
   text-align: center;
-  margin-bottom:0;
-`
-const Date = styled.div`
-  font-size: 0.75rem;
-  margin: 0.5rem;
-  text-align: right;
+  margin: 5px 0;
+  margin-bottom:0.5rem;
 `
 
 const Content = styled.div`
@@ -94,7 +91,6 @@ class PostTemplate extends React.Component {
         <ManageScrollBar/>
         <Title>{post.frontmatter.title}</Title>
         <Description>{post.frontmatter.description}</Description>
-        <Date>{post.frontmatter.date}&middot;{post.frontmatter.category}</Date>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
         <BuyMe/> 
       </Wrapper>
