@@ -14,7 +14,12 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   font-weight: bold;
   font-size: 1.6rem;
-  font-weight: bold;
+  text-align: center;
+  margin-top:10px;
+`
+
+const Description = styled.h2`
+  font-size: 1.2rem;
   text-align: center;
   margin-bottom:0;
 `
@@ -88,6 +93,7 @@ class PostTemplate extends React.Component {
         </Helmet>
         <ManageScrollBar/>
         <Title>{post.frontmatter.title}</Title>
+        <Description>{post.frontmatter.description}</Description>
         <Date>{post.frontmatter.date}&middot;{post.frontmatter.category}</Date>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
         <BuyMe/> 
