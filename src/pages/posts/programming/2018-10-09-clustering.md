@@ -2,7 +2,7 @@
 category: 'programming'
 date: '2018-10-09'
 title: 'Clustering'
-description: 'Basic and essential of clustering algorithms'
+description: 'The basic of clustering algorithms'
 image: '/img/programming/clustering/clustering.008.jpeg'
 keywords: 'clustering,k-means,hierarchical agglomerative'
 ---
