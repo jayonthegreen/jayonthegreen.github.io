@@ -1,7 +1,7 @@
 ---
 
 category: 'book'
-date: '2019-05-27'
+date: '2019-05-28'
 title: '어디서 바라보느냐에 따라 효율성의 의미도 변한다'
 description: '"프로젝트가 서쪽으로 가는 까닭은"을 읽다 말고'
 image: '/img/work.jpg'
