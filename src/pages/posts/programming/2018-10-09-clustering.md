@@ -2,7 +2,7 @@
 category: 'programming'
 date: '2018-10-09'
 title: 'Clustering'
-description: 'Cluster analysis or clustering is the task of grouping a set of objects in such a way that objects in the same group '
+description: 'Basic and essential of clustering algorithms'
 image: '/img/programming/clustering/clustering.008.jpeg'
 keywords: 'clustering,k-means,hierarchical agglomerative'
 ---
