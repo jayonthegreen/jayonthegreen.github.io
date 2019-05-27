@@ -1,7 +1,7 @@
 ---
 category: 'movie'
-title: "Big fish, Tim Burton"
-description: "우리는 과장한다. 지금 빼고 모두 판타지로 만들어 버린다. 편집되지 않은 과거란 없으며, 상상 없는 미래도 없다."
+title: "편집되지 않은 과거란 없으며, 상상 없는 미래도 없다"
+description: "영화 Big fish 를 보고"
 date: '2015-04-01'
 image: '/img/movie/big-fish/0.jpg'
 keywords: "Big fish, Tim Burton"
