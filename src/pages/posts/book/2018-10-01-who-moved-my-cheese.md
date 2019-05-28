@@ -2,8 +2,8 @@
 
 category: 'book'
 date: '2018-09-30'
-title: 'Who Moved My Cheese? Johnson, Spencer'
-description: 'It is up to courage to act or not in change. Recognizing change is important, but above all, we need courage.'
+title: 'It is up to courage to act or not in change'
+description: 'Review "Who Moved My Cheese?"'
 image: '/img/book/cheese.jpeg'
 keywords: 'Who Moved My Cheese, Johnson, Spencer, Cheese, Change'
 
