@@ -1,5 +1,5 @@
 ---
-title: '자유란 무엇인가?'
+title: '자유란 무엇인가'
 description: "영화 시계태엽 오렌지를 보고"
 date: '2016-02-01'
 category: 'movie'
