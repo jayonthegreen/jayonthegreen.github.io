@@ -3,7 +3,7 @@ category: 'book'
 date: '2019-06-02'
 title: '우리는 언제나 지망생이다'
 description: '"비생산적인 생산의 시간"을 읽고'
-image: '/img/book/theather.jpeg'
+image: '/img/book/theater.jpeg'
 keywords: '북저널리즘,생산적인 생산의 시간,지망생,영화감독,입봉,김보라'
 ---
 
