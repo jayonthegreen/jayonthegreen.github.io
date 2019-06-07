@@ -1,7 +1,7 @@
 ---
 category: book
 date: 2018-06-14
-title: 열등감에 기반하여 행동하지 않기를 다짐했고, 없는 인과관계를 만들어 합리화하지 않았으면 한다
+title: 열등감에 기반하여 행동하지 않기를
 description: 미움받을 용기를 읽고
 image: '/img/book/adler.jpg'
 ---
