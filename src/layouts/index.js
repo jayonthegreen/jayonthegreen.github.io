@@ -24,8 +24,8 @@ class TemplateWrapper extends React.Component {
         <Helmet
           title={title}
           meta={[
-            { name: 'description', content: 'ordinary, simple.' },
-            { name: 'og:description', content: 'jaehyun baek blog' },
+            { name: 'description', content: 'Jaehyun Baek blog' },
+            { name: 'og:description', content: 'Jaehyun Baek blog' },
             { name: 'keywords', content: 'blog,ordinarysimple,blog.ordinarysimple.com,백재현,jaehyunbaek,holdonnnn' },
             { name: 'image', content: imageUrl },
             { name: 'og:image', content: imageUrl },
