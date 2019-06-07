@@ -1,11 +1,10 @@
 ---
 category: 'book'
 date: '2018-05-19'
-title: '성공하는 기업들의 8가지 습관 (built to last). 짐 콜린스 / 제리 포라스'
-description: '역량 있는 구성원으로 이루어진 팀을 넘어 훌륭한 팀을 만드는 일은 더욱 어렵고 중요하다. 대박 아이디어나 대체 불가능한 사람의 카리스마로 이루어진 기업은 지속 가능한 성공을 만들기 어렵다. 유기체처럼 집요하게 아이디어를 발전시키고 실행할 수 있는 팀이 필요하다.'
+title: 훌륭한 팀을 만드는 것은 어렵고 중요한 일이다
+description: build to last 를 읽고
 image: '/img/book/teamplay.jpg'
-keywords: 'good to great,좋은 기업을 넘어 위대한 기업으로,성공,기업,build to last,짐 콜린스,제리 포라스,성공하는 기업들의 8가지 습관'
-
+keywords: 'good to great,좋은 기업을 넘어 위대한 기업으로,build to last,짐 콜린스,제리 포라스,성공하는 기업들의 8가지 습관'
 ---
 
 ![team](/img/book/teamplay.jpg "team")

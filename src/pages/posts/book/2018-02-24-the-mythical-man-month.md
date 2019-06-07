@@ -1,13 +1,14 @@
 ---
-
 category: 'book'
 date: '2018-02-24'
-title: 'The Mythical Man Month, 프레더릭 브룩스'
-description: '프로그래밍은 결국 현실을 개념화하여 다시 현실에 결과물을 만든다는 점에서 상당히 변태스럽다. 소프트웨어는 그것을 정의하는 언어와 그 규칙에 따라 움직이는 연산으로 이루어져 있다고 볼 수 있는데, 다리를 만들기 위해 철근을 박고 콘크리트를 넣는 것보다는 개념적이다. 따라서 소프트웨어 공학은 그 외 전통적인 엔지니어링과는 결이 다른 부분들이 있다. 그러나 이러한 다름이 미신, 오해 그리고 환상을 불러일으킨다.'
+title: '보스에게 이 책을 두권 선물 하고 2배 빨리 읽어 오라 해라'
+description: '맨먼스미신을 읽고'
 image: '/img/book/code.jpg'
 keywords: 'The Mythical Man Month,맨먼스미신,소프트웨어공학,은탄환은 없다'
-
 ---
+
+> "I bought my boss two copies of The Mythical Man Month so that he could read it twice as fast." - <a href="https://twitter.com/rkoutnik">@rkoutnik</a>
+
 
 프로그래밍은 어디에나 있지만 어디에도 없다. 프로그래밍으로 만들어진 소프트웨어는 어디에나 있지만, 많은 사람들에게는 마법처럼 여겨질 뿐이다. 아서 클라크의 유명한 말이 있다. "충분히 발달한 과학 기술은 마법과 구별할 수 없다." 더 나아가 생각해보면, 우리는 소프트웨어라는 마법의 원리는 모르지만 그 결과는 자연스럽게 받아들이는 시대에 살고 있다. 
 

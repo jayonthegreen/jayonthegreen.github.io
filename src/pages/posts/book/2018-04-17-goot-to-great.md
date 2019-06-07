@@ -1,11 +1,9 @@
 ---
-
 category: book
 date: 2018-04-17
-title: 좋은 기업을 넘어 위대한 기업으로(good to great), 짐 콜린스
-description: 외부에서 볼 때, 전환은 극적이고 혁명이나 다름없는 돌파로 비친다. 그러나 내부에서 볼 때, 전환은 전혀 다른 느낌으로 오히려 유기체의 발달 과정에 가깝다.
-image: '/img/book/good2great.png'
-
+title: 좋은 것에서 위대한 것으로
+description: '"좋은 기업을 넘어 위대한 기업으로"를 읽고'
+image: /img/book/good2great.png
 ---
 
 - '천 명의 조력자를 가진 한 명의 천재'보다, '뛰어난 조력자 집단'을 구축하는 것.
