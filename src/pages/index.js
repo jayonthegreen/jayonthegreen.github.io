@@ -17,7 +17,15 @@ export default IndexPage
 
 export const query = graphql`
   query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter:{
+        id:{
+          regex:"/posts/"
+        }
+      }
+    ) 
+    {
       totalCount
       edges {
         node {
