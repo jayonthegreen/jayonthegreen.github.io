@@ -2,7 +2,7 @@
 
 category: 'book'
 date: '2019-04-08'
-title: '알몸(naked)와 누드(nude)는 다르다'
+title: '알몸과 누드는 다르다'
 description: 사적인 글쓰기를 읽고
 image: '/img/book/nude.jpg'
 keywords: '사적인 글쓰기,류대성,글쓰기'
