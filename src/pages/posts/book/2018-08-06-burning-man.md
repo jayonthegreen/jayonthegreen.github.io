@@ -1,7 +1,7 @@
 ---
 category: book
 date: 2018-08-06
-title: 무언가 태워버리는 것
+title: 불장난
 image: '/img/book/burning-man.jpg'
 description: 버닝맨, 혁신을 실험하다을 읽고
 keywords: 버닝맨,혁신을 실험하다,북저널리즘,최형욱
