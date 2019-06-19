@@ -2,7 +2,7 @@
 
 category: 'book'
 date: '2019-05-28'
-title: '어디서 바라보느냐에 따라 효율성의 의미도 변한다'
+title: '시선에 따라 효율성의 의미가 다르다'
 description: '"프로젝트가 서쪽으로 가는 까닭은"을 읽다 말고'
 image: '/img/work.jpg'
 keywords: '프로젝트가 서쪽으로 가는 까닭은,효율,조직'
