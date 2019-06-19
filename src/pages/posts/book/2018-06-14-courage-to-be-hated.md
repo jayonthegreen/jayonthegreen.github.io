@@ -1,7 +1,7 @@
 ---
 category: book
 date: 2018-06-14
-title: 열등감에 기반하여 행동하지 않기를
+title: 열등감으로 행동하지 않기를
 description: 미움받을 용기를 읽고
 image: '/img/book/adler.jpg'
 ---
