@@ -1,6 +1,6 @@
 ---
 category: 'movie'
-title: "편집되지 않은 과거란 없으며, 상상 없는 미래도 없다"
+title: "판타지 없는 현실은 없다"
 description: "영화 Big fish 를 보고"
 date: '2015-04-01'
 image: '/img/movie/big-fish/0.jpg'
