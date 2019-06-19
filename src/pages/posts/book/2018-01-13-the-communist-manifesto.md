@@ -1,5 +1,5 @@
 ---
-title: '지금까지 인간 사회의 모든 역사는 계급 투쟁의 역사이다'
+title: '역사는 계급 투쟁의 역사이다'
 date: '2018-01-13'
 category: 'book'
 description: '공산당 선언을 읽고'
