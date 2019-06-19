@@ -1,5 +1,5 @@
 ---
-title: '인간의 진리보다 그것을 맹신하는 자들'
+title: '맹신하는 자들'
 date : '2016-05-22'
 category : 'movie'
 description: "영화 contact 를 보고"
