@@ -2,8 +2,8 @@
 
 category: 'programming'
 date: '2018-11-04'
-title: '정말 실용적인 책. 실용주의 프로그래머'
-description:  '실용주의 프로그래머 갈무리'
+title: '실용주의 프로그래머 요약'
+description:  ''
 image: '/img/programming/programmer.jpg'
 keywords: '실용주의 프로그래머,실용주의,프로그래밍,실용주의 프로그래머 요약,소프트웨어,앤드류 헌트,데이비드 토머스'
 
