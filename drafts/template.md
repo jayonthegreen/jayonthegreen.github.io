@@ -2,12 +2,11 @@
 
 category: 'book'
 date: '2018-08-19'
-title: '넥스트 머니. 고란, 이용재'
-description:  'booo'
-image: '/img/book/blockchain.jpg'
-keywords: 'code
-coc넥스트 머니,고란,이용재,블록체인,가상화폐'
+title: '제목'
+description: '설명'
+image: '/img/default.jpeg'
+keywords: '키워드1,키워드2'
 
 ---
 
-![blackswan](/img/book/black-swan.jpg "blackswan")
+![이미지넣는법](/img/default.jpeg "이미지넣는법")
