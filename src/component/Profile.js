@@ -8,6 +8,10 @@ const Wrapper = styled.div`
   text-align: center;
   border-bottom: 1px solid #e9ecef;
   margin-bottom: 1.0rem;
+  transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+  position: fixed;
+  width: 100%;
+  background-color: white;
 `
 
 
@@ -17,32 +21,7 @@ const Title = styled.div`
   font-size: 1.5rem;
   margin: 0.5rem 0;
   padding: 0.25rem 0.5rem;
-  ${ hoverCss}
-  /* box-shadow: inset 0 -6px 0 rgba(36,177,209,.2); */
-  /* animation-name: color_change;
-	animation-duration: 1s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-  @-webkit-keyframes color_change {
-	from { box-shadow: inset 0 -6px 0 rgba(36,177,209,.2); }
-	to { box-shadow: inset 0 -6px 0 rgba(184,107,255,.2); }
-  }
-@-moz-keyframes color_change {
-	from { box-shadow: inset 0 -6px 0 rgba(36,177,209,.2); }
-	to { box-shadow: inset 0 -6px 0 rgba(184,107,255,.2); }
-}
-@-ms-keyframes color_change {
-	from { box-shadow: inset 0 -6px 0 rgba(36,177,209,.2); }
-	to { box-shadow: inset 0 -6px 0 rgba(184,107,255,.2); }
-}
-@-o-keyframes color_change {
-	from { box-shadow: inset 0 -6px 0 rgba(36,177,209,.2); }
-	to { box-shadow: inset 0 -6px 0 rgba(184,107,255,.2); }
-}
-@keyframes color_change {
-	from { box-shadow: inset 0 -6px 0 rgba(36,177,209,.2); }
-	to { box-shadow: inset 0 -6px 0 rgba(184,107,255,.2); }
-} */
+  ${hoverCss}
 `
 
 const Description = styled.div`

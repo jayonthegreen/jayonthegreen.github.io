@@ -9,9 +9,9 @@ import './spoqa-han-sans.css'
 import './index.css'
 
 const Content = styled.div`
-  padding: 0 50px;
+  padding: 120px 50px;
   transition: all 0.3s ease;
-  ${media.mobile`padding: 20px;`}
+  ${media.mobile`padding: 100px 20px;`}
 `
 
 class TemplateWrapper extends React.Component {
