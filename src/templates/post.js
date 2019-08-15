@@ -3,7 +3,8 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { media } from '../utils/style'
 import { BuyMe } from '../component/BuyMe';
-import ManageScrollBar from "../component/ManageScrollBar";
+import { graphql } from 'gatsby'
+import Layout from '../component/Layout';
 
 
 const Wrapper = styled.div`
@@ -84,16 +85,17 @@ class PostTemplate extends React.Component {
     ]
 
     return (
+      <Layout>
       <Wrapper>
         <Helmet meta={meta}>
           <title>{title}</title>
         </Helmet>
-        <ManageScrollBar/>
         <Title>{post.frontmatter.title}</Title>
         <Description>{post.frontmatter.description}</Description>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
         <BuyMe/> 
       </Wrapper>
+      </Layout>
     )
   }
 }

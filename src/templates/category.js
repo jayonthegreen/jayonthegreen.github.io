@@ -1,16 +1,18 @@
 import React from 'react'
 import PostList from '../component/PostList'
+import Layout from '../component/Layout'
+import { graphql } from 'gatsby'
 
 class CategoryPage extends React.Component {
   render() {
     return (
-      <div>
+      <Layout>
         <PostList
           markdownNodes={this.props.data.allMarkdownRemark.edges.map(
             ({ node }) => node
           )}
         />
-      </div>
+      </Layout>
     )
   }
 }

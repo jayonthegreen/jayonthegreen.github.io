@@ -1,5 +1,5 @@
 ---
-title: '포퍼라면 진화심리학을 과학으로 간주할까?'
+title: '과학으로서 진화심리학'
 date: '2016-04-15'
 description: '오래된 연장통을 읽고'
 category: 'book'

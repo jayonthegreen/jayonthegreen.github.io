@@ -1,6 +1,6 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
-
 import PostList from '../component/PostList'
 
 const SearchKeyword = styled.div`

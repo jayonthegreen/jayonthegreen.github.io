@@ -8,13 +8,12 @@ const Wrapper = styled.div`
   margin: 0 auto;
   text-align: center;
   max-width: 480px;
-`
+  `
 
 class PostList extends React.Component {
   render() { 
     return (
       <Wrapper>
-        <h1 style={{display:'none'}}>Jaehyun Baek Blog</h1>
         {this.props.markdownNodes.map(node => (
           <a
             key={node.id}
