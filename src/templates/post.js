@@ -14,17 +14,18 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
   text-align: center;
   margin-bottom:0.5rem;
 `
 
 const Description = styled.div`
-  font-size: 1.0rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
   margin: 5px 0;
-  margin-bottom:0.5rem;
+  margin-bottom: 2rem;
 `
 
 const Content = styled.div`

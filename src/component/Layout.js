@@ -7,7 +7,7 @@ import Profile from './Profile'
 const Content = styled.div`
   padding: 120px 50px;
   transition: all 0.3s ease;
-  ${media.mobile`padding: 100px 20px;`}
+  ${media.mobile`padding: 120px 20px;`}
 `
 
 const siteMetadata = {
