@@ -3,8 +3,8 @@
 category: 'essay'
 date: '2019-08-27'
 title: 'Post analysis always seems plausible'
-description: 'My thoughts about Jeff Bezos' Ted in the past
-'
+description: "My thoughts about Jeff Bezos' Ted in the past
+"
 image: '/img/default.jpeg'
 keywords: 'jeff bezos,ted'
 
