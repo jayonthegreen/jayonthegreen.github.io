@@ -4,7 +4,7 @@ category: 'book'
 date: '2019-10-25'
 title: '매일 달리고 달리는 위대함'
 description: '달리기를 말할 때 내가 하고 싶은 이야기를 읽고'
-image: '/img/default.jpeg'
+image: '/img/book/running.jpg'
 keywords: '달리기를 말할 때 내가 하고 싶은 이야기,무라마키 하루키,달리기, 마라톤'
 
 ---
