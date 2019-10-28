@@ -50,6 +50,8 @@ const Profile = () => (
       <OutLink href="https://bit.ly/jaehyunbaek" target="_blank">linkedin</OutLink>
        ·
       <OutLink href="https://wiki.ordinarysimple.com" target="_blank">wiki</OutLink>
+      ·
+      <OutLink href="http://bit.ly/32TZJ6T" target="_blank">github</OutLink>
       </Description>    
   </Wrapper>
 )
