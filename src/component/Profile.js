@@ -45,13 +45,11 @@ const Profile = () => (
         </a>
       </Title>
       <Description>
-      <OutLink href="http://bit.ly/2NEu9Gb" target="_blank">github</OutLink>
-       ·
-      <OutLink href="https://wiki.ordinarysimple.com" target="_blank">wiki</OutLink>
-       ·
+      <OutLink href="mailto:jaehyunbaek.engineer@gmail.com">email</OutLink>
+      ·
       <OutLink href="https://bit.ly/jaehyunbaek" target="_blank">linkedin</OutLink>
        ·
-      <OutLink href="mailto:jaehyunbaek.engineer@gmail.com">email</OutLink>
+      <OutLink href="https://wiki.ordinarysimple.com" target="_blank">wiki</OutLink>
       </Description>    
   </Wrapper>
 )

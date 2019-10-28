@@ -28,7 +28,7 @@ class Layout extends React.Component {
           meta={[
             { name: 'description', content: 'Jaehyun Baek blog' },
             { name: 'og:description', content: 'Jaehyun Baek blog' },
-            { name: 'keywords', content: 'blog,ordinarysimple,blog.ordinarysimple.com,백재현,jaehyunbaek,holdonnnn' },
+            { name: 'keywords', content: 'blog,ordinarysimple,blog.ordinarysimple.com,백재현,jaehyunbaek,byjaehyun' },
             { name: 'image', content: imageUrl },
             { name: 'og:image', content: imageUrl },
           ]}
