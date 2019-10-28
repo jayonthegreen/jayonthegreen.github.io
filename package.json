@@ -6,7 +6,7 @@
     "gatsby": "^2.15.28",
     "gatsby-link": "^2.2.22",
     "gatsby-plugin-react-helmet": "^3.1.13",
-    "gatsby-plugin-sitemap": "^2.2.16",
+    "gatsby-plugin-sitemap": "^2.2.19",
     "gatsby-plugin-styled-components": "^3.1.8",
     "gatsby-source-filesystem": "^2.1.9",
     "gatsby-transformer-remark": "^2.6.14",
