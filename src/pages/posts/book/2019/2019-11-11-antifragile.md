@@ -2,7 +2,7 @@
 
 category: 'book'
 date: '2019-11-11'
-title: '합리화하하지 않는 것이 합리적인 것이 된다'
+title: '합리화하지 않는 것이 합리적이다'
 description: '안티프래질을 읽고 나서'
 image: '/img/default.jpeg'
 keywords: '안티프래질,나심 탈레브,불확실성'
