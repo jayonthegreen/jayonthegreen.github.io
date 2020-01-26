@@ -8,7 +8,7 @@ import Layout from '../component/Layout';
 
 
 const Wrapper = styled.div`
-    max-width: 600px;
+    max-width: 1000px;
     margin: auto;  
 `
 
