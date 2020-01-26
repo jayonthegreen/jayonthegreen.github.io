@@ -1,6 +1,6 @@
 ---
 
-category: 'book'
+templateKey: 'book'
 date: '2019-05-18'
 title: '내 문장은 그렇게 이상했다'
 description: '내 문장이 그렇게 이상한가요?를 읽고'

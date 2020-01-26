@@ -1,5 +1,5 @@
 ---
-category: 'programming'
+templateKey: 'programming'
 date: '2018-09-24'
 title: 'Why should you know itertools in python'
 description: 'But in the real world, more complexed list item with multiple for-loop make many developers tired.'

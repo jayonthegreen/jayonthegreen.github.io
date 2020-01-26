@@ -1,5 +1,5 @@
 ---
-category: 'book'
+templateKey: 'book'
 date: '2018-03-10'
 title: '무작위에 대한 인간의 맹목성'
 description: '블랙스완을 읽고'

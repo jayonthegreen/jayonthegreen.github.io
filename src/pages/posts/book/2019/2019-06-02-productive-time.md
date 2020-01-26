@@ -1,5 +1,5 @@
 ---
-category: 'book'
+templateKey: 'book'
 date: '2019-06-02'
 title: '우리는 언제나 지망생이다'
 description: '"비생산적인 생산의 시간"을 읽고'

@@ -1,5 +1,5 @@
 ---
-category: 'programming'
+templateKey: 'programming'
 date: '2018-10-09'
 title: 'Clustering'
 description: 'The basic of clustering algorithms'

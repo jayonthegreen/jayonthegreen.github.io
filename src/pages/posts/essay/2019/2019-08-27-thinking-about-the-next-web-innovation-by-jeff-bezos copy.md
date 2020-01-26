@@ -1,6 +1,6 @@
 ---
 
-category: 'essay'
+templateKey: 'essay'
 date: '2019-08-27'
 title: '제프 베조스, 다가오는 웹 이노베이션에 대하여 2003'
 description: ""

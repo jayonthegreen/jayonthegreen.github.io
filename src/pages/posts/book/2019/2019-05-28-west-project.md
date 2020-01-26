@@ -1,6 +1,6 @@
 ---
 
-category: 'book'
+templateKey: 'book'
 date: '2019-05-28'
 title: '입장에 따라 효율성의 의미도 다르다'
 description: '"프로젝트가 서쪽으로 가는 까닭은"을 읽다 말고'

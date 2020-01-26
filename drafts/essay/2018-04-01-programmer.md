@@ -1,6 +1,6 @@
 ---
 
-category: essay
+templateKey: essay
 date: 2018-04-01
 title: 프로그래머, 과학자, 해커 그리고 just do it
 description: 동작하는 소프트웨어를 만들어 낸다는 것이 '해커'적인 것이고 그 과정에서 컴퓨터과학 기반 지식을 바탕으로 효과적으로 문제를 해결하는 것이 '과학자'적인 것이라고 할 수 있겠다.

@@ -1,7 +1,7 @@
 ---
 title: '연기하기 가장 어려운 것'
 date: '2017-12-16'
-category: 'book'
+templateKey: 'book'
 description: '김영하의 "보다"를 읽고'
 ---
 

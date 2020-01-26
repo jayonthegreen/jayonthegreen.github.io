@@ -2,7 +2,7 @@
 title: "집념"
 description: '"아마존, 모든것을 팝니다."를 읽고'
 date: '2017-11-29'
-category: 'book'
+templateKey: 'book'
 keywords: '아마존,모든것을 팝니다,베조스'
 ---
 

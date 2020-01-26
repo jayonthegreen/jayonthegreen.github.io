@@ -1,5 +1,5 @@
 ---
-category: 'book'
+templateKey: 'book'
 date: '2018-05-19'
 title: 제품을 넘어 훌륭한 팀을 만드는 것
 description: build to last 를 읽고

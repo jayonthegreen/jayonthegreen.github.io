@@ -1,5 +1,5 @@
 ---
-category: 'book'
+templateKey: 'book'
 date: '2019-06-19'
 title: '서평 쓰기의 기준을 올리자'
 description: '이원석의 서평쓰는 법을 읽고'

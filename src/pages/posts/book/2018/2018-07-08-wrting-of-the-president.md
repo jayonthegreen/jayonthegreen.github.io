@@ -1,5 +1,5 @@
 ---
-category: 'book'
+templateKey: 'book'
 date: '2018-07-09'
 title: '생각을 잘 전달하고 싶다'
 description: '대통령의 글쓰기를 읽고'

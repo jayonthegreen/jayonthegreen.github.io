@@ -1,7 +1,7 @@
 ---
 title: 일상기술연구소, 제현주/금정연(2016)
 date: 2018-01-01
-category: 'book'
+templateKey: 'book'
 description: 
 image: '/img/book/john-ruskin.jpg'
 keywords: '일상기술연구소'

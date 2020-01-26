@@ -1,6 +1,6 @@
 ---
 
-category: 'book'
+templateKey: 'book'
 date: '2020-01-26'
 title: '어디서 살 것인가?'
 description: '유현준의 어디서 살 것인가를 읽고'

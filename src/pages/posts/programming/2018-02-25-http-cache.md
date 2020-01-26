@@ -1,5 +1,5 @@
 ---
-category: programming
+templateKey: programming
 date: '2018-02-25'
 title: 'Cache rules everything around me'
 description: 'http cache 정리'

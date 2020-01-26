@@ -1,5 +1,5 @@
 ---
-category: 'book'
+templateKey: 'book'
 title: '선택편향, 내생성, 베이즈의 정리'
 date: '2017-08-07'
 description: '유리 브람의 "통계적으로 생각하기"를 읽고'

@@ -1,6 +1,6 @@
 ---
 
-category: programming
+templateKey: programming
 date: 2018-06-17
 title: design pattern, strategy
 description:  알고리즘군을 정의하고 각각 캡슐화하여 교환해서 사용할 수 있도록 만든다. 스트래티지를 활용하면 알고리즘과 알고리즘을 사용하는 클라언트를 분리하여 관리할 수 있다.

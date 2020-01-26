@@ -1,6 +1,6 @@
 ---
 
-category: 'book'
+templateKey: 'book'
 date: '2019-04-08'
 title: '알몸과 누드는 다르다'
 description: 사적인 글쓰기를 읽고

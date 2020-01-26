@@ -1,7 +1,7 @@
 ---
 title : '그냥 웃어, 이 친구야'
 date : '2016-09-13'
-category: 'programming'
+templateKey: 'programming'
 description: '클린 코더를 읽고'
 keywords: '클린 코더, 밥, 프러그래머'
 ---

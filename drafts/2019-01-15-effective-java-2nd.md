@@ -1,6 +1,6 @@
 ---
 
-category: 'programming'
+templateKey: 'programming'
 date: '2019-01-15'
 title: '(ing...)Effective java 2nd. Joshua Bloch'
 description:  '명료하고, 정확하고, 사용이 편하며, 안정적이고, 유연하며, 유지보수가 쉬운 프로그램을 만드는 방법을 다룬다. 그런 프로그램을 만들 수 있게 되고 나면, 필요한 성능을 얻는 것은 상대적으로 쉽다.'

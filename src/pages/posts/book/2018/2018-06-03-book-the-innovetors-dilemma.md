@@ -1,5 +1,5 @@
 ---
-category: book
+templateKey: book
 date: 2018-06-03
 title: 결과론적인 이야기들
 description: 혁신 기업의 딜레마를 읽고

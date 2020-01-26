@@ -1,7 +1,7 @@
 ---
 title : '구글은 어떻게 일하나?'
 date : '2017-07-16'
-category: 'book'
+templateKey: 'book'
 description: "'구글은 어떻게 일하는가'를 읽고"
 keywords: '구글,일,구글은 어떻게 일하는가,에릭 슈미트'
 image: '/img/default.jpeg'

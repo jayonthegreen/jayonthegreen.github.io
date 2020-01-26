@@ -1,5 +1,5 @@
 ---
-category: 'book'
+templateKey: 'book'
 date: '2018-07-22'
 title: 데이터 중심 회사. 넷플릭스
 description: 넷플릭스하다를 읽고

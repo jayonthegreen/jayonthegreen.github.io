@@ -1,5 +1,5 @@
 ---
-category: 'movie'
+templateKey: 'movie'
 title: "판타지 없는 현실은 없다"
 description: "영화 Big fish 를 보고"
 date: '2015-04-01'

@@ -2,7 +2,7 @@
 title: '자유와 폭력'
 description: "영화 시계태엽 오렌지를 보고"
 date: '2016-02-01'
-category: 'movie'
+templateKey: 'movie'
 image: '/img/movie/clock-orange/1.png'
 keywords: 'stanley kubric,a clockwork orage'
 ---

@@ -1,6 +1,6 @@
 ---
 
-category: 'essay'
+templateKey: 'essay'
 date: '2019-11-03'
 title: 'Thinking small is a self-fulfilling prophecy'
 description: "While I'm reading Amazon Leadership principles"

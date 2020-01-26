@@ -1,5 +1,5 @@
 ---
-category: 'book'
+templateKey: 'book'
 date: '2018-09-16'
 title: '돈의 가치는 변한다'
 description: '인플레이션을 읽고'

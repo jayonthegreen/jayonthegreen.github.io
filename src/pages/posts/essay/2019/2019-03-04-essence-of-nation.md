@@ -1,6 +1,6 @@
 ---
 
-category: 'essay'
+templateKey: 'essay'
 date: '2019-03-04'
 title: '민본으로 대의를 다시 정의하다'
 description: '드라마 정도전 다시보기'

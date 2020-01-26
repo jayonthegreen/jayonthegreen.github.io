@@ -1,5 +1,5 @@
 ---
-category: programming
+templateKey: programming
 date: 2018-06-23
 title: Head First Design Pattern 요약 정리
 description: 

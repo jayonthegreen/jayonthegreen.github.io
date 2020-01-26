@@ -1,6 +1,6 @@
 ---
 
-category: programming
+templateKey: programming
 date: 2018-06-17
 title: design pattern, observer
 description: 옵저버 패턴에서는 한 객체의 상태가 바뀌면 그 객체에 의존하는 다른 객체들한테 상태변화를 알리고, 내용을 갱신해주는 일대다(one to many)의존성을 정의한다.

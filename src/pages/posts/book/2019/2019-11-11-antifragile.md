@@ -1,6 +1,6 @@
 ---
 
-category: 'book'
+templateKey: 'book'
 date: '2019-11-11'
 title: '합리화하지 않는 것이 합리적이다'
 description: '안티프래질을 읽고 나서'

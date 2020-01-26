@@ -1,6 +1,6 @@
 ---
 
-category: 'programming'
+templateKey: 'programming'
 date: '2019-03-02'
 title: '그런 아키텍쳐로 괜찮은가?'
 description: '비지니스 로직은 서비스 레이어지! UserService! OrderService!'

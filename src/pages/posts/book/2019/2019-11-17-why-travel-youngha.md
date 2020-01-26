@@ -1,6 +1,6 @@
 ---
 
-category: 'book'
+templateKey: 'book'
 date: '2019-11-17'
 title: '여행의 환상 깨기'
 description: '김영하의 여행의 이유를 읽고'

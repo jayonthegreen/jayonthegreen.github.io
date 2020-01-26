@@ -1,6 +1,6 @@
 ---
 
-category: 'book'
+templateKey: 'book'
 date: '2018-08-19'
 title: '제목'
 description: '설명'
