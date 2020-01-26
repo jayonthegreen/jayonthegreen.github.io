@@ -67,7 +67,6 @@ class PostTemplate extends React.Component {
     const { 
       title,
       description,
-      category,
       keywords = [],
       image = this.props.data.site.siteMetadata.image || '/img/og.jpeg',
     } = post.frontmatter;
@@ -75,7 +74,7 @@ class PostTemplate extends React.Component {
     const meta = [
       {name: 'title', content: title},
       {name: 'description', content: description},
-      {name: 'keywords', content: [keywords || title, category].join(',')},
+      {name: 'keywords', content: [keywords || title].join(',')},
       {name: 'image', content: imageUrl},
       {property: 'og:description', content: description},
       {property: 'og:title', content: title},
@@ -110,7 +109,6 @@ export const query = graphql`
         description
         keywords
         image
-        category
       }
     }
     site {
