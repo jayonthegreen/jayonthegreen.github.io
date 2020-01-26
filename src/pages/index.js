@@ -23,6 +23,7 @@ export const query = graphql`
   query IndexQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { ne: "wiki" } } }
     )
     {
       totalCount
