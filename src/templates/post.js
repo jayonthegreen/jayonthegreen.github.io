@@ -30,9 +30,6 @@ const Description = styled.div`
 
 const Content = styled.div`
   & iframe {
-    margin: 0 auto;
-    width: 544px;
-    height: 306px;
     ${
       media.mobile`
         width: 100%;
