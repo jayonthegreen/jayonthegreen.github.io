@@ -49,15 +49,6 @@ exports.createPages = ({ graphql, actions }) => {
             }
           });
 
-        for(const category of categories) {
-          createPage({
-            path: `/category/${category}`,
-            component: path.resolve(`./src/templates/category.js`),
-            context: {
-              category,
-            }
-          });
-        }
 
         resolve()
       })
