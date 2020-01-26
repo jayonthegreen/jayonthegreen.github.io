@@ -10,7 +10,7 @@ export default () => (
         query WikiQuery {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+            filter: { frontmatter: { templateKey: { eq: "wiki" } } }
           ) {
             edges {
               node {
@@ -21,6 +21,7 @@ export default () => (
                 }
                 frontmatter {
                   title
+                  description
                   templateKey
                   date(formatString: "MMMM DD, YYYY")
                 }
