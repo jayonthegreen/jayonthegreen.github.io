@@ -69,6 +69,7 @@ class PostTemplate extends React.Component {
       description,
       keywords = [],
       image = this.props.data.site.siteMetadata.image || '/img/og.jpeg',
+      date,
     } = post.frontmatter;
     const imageUrl = 'https://blog.ordinarysimple.com' + image;
     const meta = [
@@ -88,7 +89,7 @@ class PostTemplate extends React.Component {
           <title>{title}</title>
         </Helmet>
         <Title>{post.frontmatter.title}</Title>
-        <Description>{post.frontmatter.description}</Description>
+        <Description>{post.frontmatter.description} {date}</Description>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
         <BuyMe/> 
       </Wrapper>
