@@ -45,11 +45,7 @@ const Profile = () => (
         </a>
       </Title>
       <Description>
-      <OutLink href="mailto:jaehyunbaek.engineer@gmail.com">email</OutLink>
-      ·
-      <OutLink href="https://bit.ly/jaehyunbaek" target="_blank">linkedin</OutLink>
-      ·
-      <OutLink href="http://bit.ly/32TZJ6T" target="_blank">github</OutLink>
+      <OutLink href="/" >home</OutLink>
       ·
       <OutLink href="/wiki" >wiki</OutLink>
       </Description>    
