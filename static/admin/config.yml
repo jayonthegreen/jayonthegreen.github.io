@@ -16,6 +16,7 @@ collections:
     fields:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "wiki"}
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Cover", name: image, widget: image, default: "/img/default.jpeg"}
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
