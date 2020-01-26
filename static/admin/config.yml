@@ -8,7 +8,7 @@ public_folder: /static
 collections:
   - name: "wiki"
     label: "wiki"
-    folder: "content/wiki"
+    folder: "src/posts/wiki"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
@@ -17,5 +17,6 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       
