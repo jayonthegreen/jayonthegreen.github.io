@@ -5,6 +5,7 @@ module.exports = {
     siteUrl: `https://blog.ordinarysimple.com`,
   },
   plugins: [
+    'gatsby-plugin-netlify-cms',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
