@@ -48,6 +48,8 @@ const Profile = () => (
       <OutLink href="/" >home</OutLink>
       ·
       <OutLink href="/wiki" >wiki</OutLink>
+      ·
+      <OutLink href="/about" >about</OutLink>
       </Description>    
   </Wrapper>
 )
