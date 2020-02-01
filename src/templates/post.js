@@ -8,7 +8,7 @@ import Layout from '../component/Layout';
 
 
 const Wrapper = styled.div`
-    max-width: 1000px;
+    max-width: 600px;
     margin: auto;  
 `
 
@@ -64,7 +64,7 @@ class PostTemplate extends React.Component {
 
   render() {
     const post = this.props.data.markdownRemark
-    const { 
+    const {
       title,
       description,
       keywords = [],
@@ -91,7 +91,7 @@ class PostTemplate extends React.Component {
         <Title>{post.frontmatter.title}</Title>
         <Description>{post.frontmatter.description} {date}</Description>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
-        <BuyMe/> 
+        <BuyMe/>
       </Wrapper>
       </Layout>
     )

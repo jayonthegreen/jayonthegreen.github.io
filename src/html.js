@@ -28,6 +28,7 @@ export default class HTML extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           {this.props.headComponents}
           <link rel="shortcut icon" href={favicon} />
+          <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+KR&display=swap" rel="stylesheet"/>
           {css}
         </head>
         <body>
