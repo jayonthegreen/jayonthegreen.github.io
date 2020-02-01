@@ -23,7 +23,6 @@ class PostList extends React.Component {
             <PostListItem
               title={node.frontmatter.title}
               date={node.frontmatter.date}gut 
-              category={node.frontmatter.category}
               description={node.frontmatter.description}
             />
           </a>
