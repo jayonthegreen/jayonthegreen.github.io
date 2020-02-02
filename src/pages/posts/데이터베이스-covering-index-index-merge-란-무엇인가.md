@@ -1,6 +1,6 @@
 ---
 templateKey: posts
-title: '데이터베이스 Covering index, Index merge 란 무엇인가'
+title: 데이터베이스 covering index 와 index merge 란
 image: /static/nude.jpg
 date: 2020-02-02T11:24:17.034Z
 description: ''
