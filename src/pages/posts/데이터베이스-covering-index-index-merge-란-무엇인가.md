@@ -1,13 +1,13 @@
 ---
 templateKey: posts
-title: 데이터베이스 covering index 와 index merge 란
+title: 'covering index 와 index merge '
 image: /static/nude.jpg
 date: 2020-02-02T11:24:17.034Z
-description: ''
+description: 데이터베이스 인덱스 테이블은 메인 데이터 공간과 분리되어 있다
 ---
 ## 인덱스 테이블 → 데이터 조회
 
-일반적으로 인덱스 테이블은 테이블의 메인 데이터 공간과 분리되어 있다. 따라서 인덱스를 바탕으로 원하는 데이터가 있는 물리 주소를 알아낸 뒤에, 데이터에 접근하는 2단계 접근이 일반적이다. 그러나 주소를 바탕으로 메인 데이터 물리 주소에 직접 접근하는 것은 큰 비용이다. 이 간단한 특성과 관련있는 두 개념 "covering index" 와 "index merge" 를 살펴보자.
+일반적으로 인덱스 테이블은 테이블의 레코드 데이터 공간과 분리되어 있다. 따라서 인덱스를 바탕으로 원하는 데이터가 있는 물리 주소를 알아낸 뒤에, 데이터에 접근하는 2단계 접근이 일반적이다. 그러나 주소를 바탕으로 메인 데이터 물리 주소에 직접 접근하는 것은 큰 비용이다. 이 간단한 특성과 관련있는 두 개념 "covering index" 와 "index merge" 를 살펴보자.
 
 ## Covering index, Index only read
 
