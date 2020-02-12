@@ -18,12 +18,14 @@ const Title = styled.div`
   font-size: 1.4rem;
   line-height: 1.4;
   margin: 0.2rem 0;
+  word-break: keep-all;
 `
 
 const Description = styled.div`
   color: #333333;
   font-size: 0.8rem;
   line-height: 1.2rem;
+  word-break: keep-all;
 `
 
 const maxLength = 100;
@@ -33,7 +35,7 @@ const PostListItem = ({ title, date, description }) => (
     <Meta>{date}</Meta>
     <Title>{title}</Title>
     {
-      description && 
+      description &&
       <Description>
         {description.slice(0, maxLength)}
         {description.length > maxLength && '...'}
