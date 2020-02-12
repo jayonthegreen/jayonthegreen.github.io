@@ -597,4 +597,4 @@ pre tt:after {
 content: "";
 }
 
-:lang(ko) { word-break: keep-all; }
+h1,h2,h3:lang(ko) { word-break: keep-all; }
