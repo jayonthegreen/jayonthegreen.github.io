@@ -28,7 +28,7 @@
   "devDependencies": {
     "gatsby-plugin-netlify-cms": "^4.1.37",
     "gh-pages": "^2.1.1",
-    "netlify-cms-app": "^2.11.9",
+    "netlify-cms-app": "^2.11.23",
     "prettier": "^1.8.2"
   }
 }
