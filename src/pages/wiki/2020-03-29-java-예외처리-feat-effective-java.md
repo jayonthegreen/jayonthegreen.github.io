@@ -86,7 +86,7 @@ try{
 }
 
 class HigherLevelException extends Exception { 
-  igherLevelException(Throwable throwable){ 
+  HigherLevelException(Throwable throwable){ 
     super(throwable); 
   }
 }
