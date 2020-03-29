@@ -11,7 +11,7 @@ date: 2020-03-29T12:18:52.667Z
 
   ![](/img/exception.png)
 
-## Effective java 예외
+## Effective java
 
 ### item 69. 예외는 진짜 예외 상황에만 사용하라
 
@@ -79,3 +79,9 @@ class HigherLevelException extends Exception { HigherLevelException(Throwable th
 ### 끝맺음
 
 전역에 GOTO 같은 흐름제어를 위해 Exception 을 사용하는 패턴을 언어와 프레임워크 불문하고 종종 경험했다. 물론 이런 패턴을 도입하는 개발자들의 마음은 이해를 못하는건 아니다. 그러나 이런 GOTO 예외는 저수준의 함수에 있다면 재사용성이 떨어지고 유지보수시 예측가능성을 현저하게 낮춘다. 자신의 프로젝트가 GOTO성 예외에 중독된 프로젝트가 아닌지 돌이켜보자.
+
+
+
+## Reference
+
+\- [](http://www.yes24.com/Product/Goods/65551284)[Effective java 3rd](http://www.yes24.com/Product/Goods/65551284)
