@@ -78,4 +78,4 @@ class HigherLevelException extends Exception { HigherLevelException(Throwable th
 
 ### 끝맺음
 
-* 어플리케이션 전역에 GOTO 문으로 사용하는 RuntimeException 을 사용하는 패턴을 종종 본다. 이렇게 암묵적인 GOTO 문으로 사용되는 예외가, 저수준의 함수에 있다면 재사용성이 떨어진다. 나아가 스파게티 GOTO 문은 복잡도가 증가하면 당신은(=나..) 지옥을 맞보게 될 것이다.
+* 커리어 전반에 있어 어플리케이션 전역에 GOTO 문으로 사용하는 RuntimeException 을 사용하는 패턴을 종종 본다. 이렇게 암묵적인 GOTO 문으로 사용되는 예외가, 저수준의 함수에 있다면 재사용성이 떨어진다. 나아가 스파게티 GOTO 문은 복잡도가 증가하면 당신은(=나..) 지옥을 맞보게 될 것이다.
