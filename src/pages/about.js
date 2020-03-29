@@ -15,7 +15,6 @@ const AboutPage = ({ data }) => (
   <Layout>
     <Wrapper>
       서울에서 개발자로 일하는 백재현입니다.<br/>
-      말이 많은 편입니다. <br/>
       <br/>
       <br/>
       <a href="https://bit.ly/jaehyunbaek">linkedin</a>
