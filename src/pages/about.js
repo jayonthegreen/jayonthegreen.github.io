@@ -19,6 +19,8 @@ const AboutPage = ({ data }) => (
       <br/>
       <a href="https://bit.ly/jaehyunbaek">linkedin</a>
       <br/>
+      <a href="https://github.com/byjay">github</a>
+      <br/>
       <a href="mailto:jaehyunbaek.engineer@gmail.com">jaehyunbaek.engineer@gmail.com</a><br/>
     </Wrapper>
   </Layout>
