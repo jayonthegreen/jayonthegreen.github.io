@@ -20,10 +20,19 @@ date: 2020-03-29T12:18:52.667Z
 
 ```java
 // Bad 
-try { int i = 0; while(true) range\[i++].foo() } catch (ArrayIndexOUtBoundsException e) { // sth }
+try { 
+  int i = 0; 
+  while(true) {
+    range[i++].foo();
+  } 
+} catch (ArrayIndexOUtBoundsException e) { 
+  //
+}
 
 // God
-for(T m : range) m.foo()
+for(T m : range){
+  m.foo();
+}
 ```
 
 예외는 일상적인 제어 흐름용으로 쓰여선 안되며, 이를 프로그레머에게 강요하는 API 를 만들어서도 안된다.
