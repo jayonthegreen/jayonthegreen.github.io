@@ -98,4 +98,4 @@ class HigherLevelException extends Exception {
 
 ## Reference
 
-\- [](http://www.yes24.com/Product/Goods/65551284)[Effective java 3rd](http://www.yes24.com/Product/Goods/65551284)
+* [](http://www.yes24.com/Product/Goods/65551284)[Effective java 3rd](http://www.yes24.com/Product/Goods/65551284)
