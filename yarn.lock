@@ -5156,8 +5156,9 @@ gatsby-plugin-react-helmet@^3.1.13:
     "@babel/runtime" "^7.8.7"
 
 gatsby-plugin-sitemap@^2.2.19:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-2.3.1.tgz#97c746cd1f80007010e45577c8dc9630f167cdce"
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-2.3.6.tgz#643d2e765cfc776d67f9f23fb804f76591c08fef"
+  integrity sha512-KRJfpqaI2iYTfA0lPSdbD2RtOBbAizyf/f9LJiDnZy2EtdhYpmE+Px/rk9NTSxqBb/OXU2F9+tdPl//e097p0g==
   dependencies:
     "@babel/runtime" "^7.8.7"
     minimatch "^3.0.4"
