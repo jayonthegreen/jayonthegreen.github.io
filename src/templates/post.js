@@ -30,10 +30,8 @@ const Title = styled.h1`
 const Description = styled.div`
   color: #333333;
   font-size: 0.9rem;
-  line-height: 1.2rem;
   word-break: keep-all;
   text-align: center;
-  margin: 5px 0;
   margin-bottom: 2rem;
 `
 
