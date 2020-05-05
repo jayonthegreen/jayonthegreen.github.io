@@ -18,8 +18,8 @@ const Wrapper = styled.div`
 const Title = styled.div`
   display: inline-block;
   font-weight: bold;
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
+  font-size: 1.3rem;
+  margin: 0.2rem 0;
   padding: 0.25rem 0.5rem;
   ${hoverCss}
 `
@@ -34,6 +34,7 @@ const OutLink = styled.a`
   text-decoration: none;
   color: inherit;
   padding: 0.25rem;
+  margin: 0.25rem;
   ${ hoverCss}
 `
 const Profile = () => (
