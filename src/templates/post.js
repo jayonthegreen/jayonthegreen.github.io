@@ -12,17 +12,26 @@ const Wrapper = styled.div`
     margin: auto;  
 `
 
+const Time = styled.div`
+  font-weight: 300;
+  font-size: 0.75rem;
+  text-align: center;
+`
+
 const Title = styled.h1`
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.8rem;
-  text-align: center;
-  margin-bottom:0.5rem;
+  text-align: center; 
+  margin:0.5rem 0;
+  word-break: keep-all;
 `
 
 const Description = styled.div`
-  font-size: 1.2rem;
-  font-weight: bold;
+  color: #333333;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  word-break: keep-all;
   text-align: center;
   margin: 5px 0;
   margin-bottom: 2rem;
@@ -88,8 +97,9 @@ class PostTemplate extends React.Component {
         <Helmet meta={meta}>
           <title>{title}</title>
         </Helmet>
+        <Time>{date}</Time>
         <Title>{post.frontmatter.title}</Title>
-        <Description>{post.frontmatter.description} {date}</Description>
+        <Description>{post.frontmatter.description}</Description>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
         <BuyMe/>
       </Wrapper>
