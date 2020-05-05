@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import hoverCss from './hoverCss'
 
 const Wrapper = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
   padding: 1rem;
   ${hoverCss}
