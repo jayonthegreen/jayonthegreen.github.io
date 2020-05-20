@@ -5322,7 +5322,7 @@ gatsby-cli@^2.12.26:
     ink "^2.7.1"
     ink-spinner "^3.0.1"
 
-gatsby-core-utils@^1.2.3, gatsby-core-utils@^1.3.0:
+gatsby-core-utils@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.3.0.tgz#a3dfc85f705c23e0b19a8cf9ccb97580eb0e2612"
   integrity sha512-7rgNCsqvChp00rL2rJrYNqXf47qP1G0K9Pm6iWuIYrZAdzT0q6rB9csNS5dZ8gzY9CnLT4cTcHVYbr5BjuT/Rg==
@@ -5400,9 +5400,9 @@ gatsby-plugin-react-helmet@^3.1.13:
     "@babel/runtime" "^7.9.6"
 
 gatsby-plugin-sitemap@^2.2.19:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-2.4.2.tgz#23a41a8253b9b13722856fe5c6fc41896d8bda85"
-  integrity sha512-xh9+ZSQ3WWqsieNyQqcaJPjlGj63Vx51KNpO18sukUKcrHUnvGbZ20uqgRqBv72bD2uGn19AzS39qme84MOHew==
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-2.4.3.tgz#c07bed981133186b9ed0e7255ff3983615e12acd"
+  integrity sha512-XwtXRkUo1tFnr5PzwLlQqAD/Dbnrv0G9HjuUL24UhhCy0e5vqByohcewARUtySK0vSY1dr3msTO+UEKKuGWrFQ==
   dependencies:
     "@babel/runtime" "^7.9.6"
     minimatch "^3.0.4"
