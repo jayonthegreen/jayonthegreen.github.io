@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import hoverCss from './hoverCss'
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
   margin: 0 auto;
   padding: 0.5rem;
   text-align: center;
@@ -24,10 +24,14 @@ const Title = styled.div`
   ${hoverCss}
 `
 
-const Description = styled.div`
+const NavList = styled.ul`
   color: #333333;
   font-size: 0.8rem;
   line-height: 1.2rem;
+  margin: 0;
+  li {
+    display: inline;
+  }
 `
 
 const OutLink = styled.a`
@@ -45,15 +49,23 @@ const Profile = () => (
           style={{ textDecoration: `none`, color: `inherit` }}>Jaehyun Baek
         </a>
       </Title>
-      <Description>
-      <OutLink href="/" >home</OutLink>
+      <NavList>
+        <li>
+        <OutLink href="/" >home</OutLink>
+        </li>
       ·
+      <li>
       <OutLink href="/wiki" >wiki</OutLink>
+      </li>
       ·
+      <li>
       <OutLink href="/about" >about</OutLink>
+      </li>
       ·
+      <li>
       <OutLink href="/search" >search</OutLink>
-      </Description>    
+      </li>
+      </NavList>    
   </Wrapper>
 )
 
