@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import hoverCss from './hoverCss'
 
-const Wrapper = styled.div`
+const Wrapper = styled.article`
   margin-bottom: 1rem;
   text-align: center;
   padding: 1rem;
@@ -13,7 +13,7 @@ const Meta = styled.div`
   font-size: 0.75rem;
 `
 
-const Title = styled.div`
+const Title = styled.h2`
   font-weight: bold;
   font-size: 1.4rem;
   line-height: 1.4;
