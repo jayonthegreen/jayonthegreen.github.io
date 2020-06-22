@@ -6017,9 +6017,9 @@ gatsby-page-utils@^0.2.9:
     micromatch "^3.1.10"
 
 gatsby-plugin-netlify-cms@^4.1.40:
-  version "4.3.5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms/-/gatsby-plugin-netlify-cms-4.3.5.tgz#36d6c3c59016484c8dd39dd4e31fa10e36b8e52f"
-  integrity sha512-RS5Yw3tb/oAJSdnXS6JzWyU7XLb+f8pPesW5HKVTFEbKMWcz3qL+5+5haZNYIpQcbbP6EihsVt2zWQ5aZuY7kQ==
+  version "4.3.6"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms/-/gatsby-plugin-netlify-cms-4.3.6.tgz#715d6aec8ed9542a3ca8a29789100dfb3c0d5901"
+  integrity sha512-pF5f020djePHbxDfwPuo02E+N0HPxSErQ0r1tRcoeRZVEpwwBJvQI64nXDRuZGfZ1NjTboGnZ1eX6vm1j0PnDQ==
   dependencies:
     "@pieh/friendly-errors-webpack-plugin" "1.7.0-chalk-2"
     copy-webpack-plugin "^5.1.1"
