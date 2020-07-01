@@ -8853,9 +8853,9 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
 netlify-cms-app@^2.11.23:
-  version "2.12.15"
-  resolved "https://registry.yarnpkg.com/netlify-cms-app/-/netlify-cms-app-2.12.15.tgz#4cd7086aae221ecf71fcece286b540d9fb6aaf21"
-  integrity sha512-S3TpMrF4kpsJlXdIe/rMNyAGxRMPmyuqv7ISUpEnmd9meaKFofLzcVtAEZ7fMFnBCz6x1Gr3G8Pcu+vnpEQlXg==
+  version "2.12.16"
+  resolved "https://registry.yarnpkg.com/netlify-cms-app/-/netlify-cms-app-2.12.16.tgz#e5b1823c010900526913556613ef8e1fe2634cd1"
+  integrity sha512-uSPCb4bfK04TEAQGspZykOYk0/UUczByI3G3DlMzrEPh40Kw2Z/EA4ETDyTiMNzhZNBoHtVQSFvw/UhwFgoRtw==
   dependencies:
     "@emotion/core" "^10.0.9"
     "@emotion/styled" "^10.0.9"
@@ -8867,7 +8867,7 @@ netlify-cms-app@^2.11.23:
     netlify-cms-backend-github "^2.11.0"
     netlify-cms-backend-gitlab "^2.9.0"
     netlify-cms-backend-test "^2.10.0"
-    netlify-cms-core "^2.29.0"
+    netlify-cms-core "^2.30.0"
     netlify-cms-editor-component-image "^2.6.2"
     netlify-cms-lib-auth "^2.2.8"
     netlify-cms-lib-util "^2.11.0"
@@ -8882,7 +8882,7 @@ netlify-cms-app@^2.11.23:
     netlify-cms-widget-list "^2.6.0"
     netlify-cms-widget-map "^1.4.0"
     netlify-cms-widget-markdown "^2.12.0"
-    netlify-cms-widget-number "^2.4.0"
+    netlify-cms-widget-number "^2.4.1"
     netlify-cms-widget-object "^2.5.0"
     netlify-cms-widget-relation "^2.8.0"
     netlify-cms-widget-select "^2.6.0"
@@ -8940,10 +8940,10 @@ netlify-cms-backend-test@^2.10.0:
   resolved "https://registry.yarnpkg.com/netlify-cms-backend-test/-/netlify-cms-backend-test-2.10.0.tgz#06dd293d5ba8a4b679936e57a9f09aca93a7a616"
   integrity sha512-aRnG6SgRj8tXh7eqVJYOWkggvj1Ox+jiwnL46/fe72DmyyT49MTkrf0pc2/drmdeUUSIqBYZXuXa/XwRJ02yeQ==
 
-netlify-cms-core@^2.29.0:
-  version "2.29.0"
-  resolved "https://registry.yarnpkg.com/netlify-cms-core/-/netlify-cms-core-2.29.0.tgz#513c0ed89c6b0846d22b65bc84a06f2959f6d728"
-  integrity sha512-sFab42xBHVzFqB1+726e1U7k6dMAP+824rQsQtp7dvrGCHD9uvDOHq0m1b8COZnw9HRIEPgUsiZBrTjlKwX8Ag==
+netlify-cms-core@^2.30.0:
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/netlify-cms-core/-/netlify-cms-core-2.30.0.tgz#61267d7e46f2e1fda290e551bcb623a676f5a30a"
+  integrity sha512-7cqtfArjZkoOzpjEQB5oJnWug0eC8VbZvIru+tLps4E1M3Qelbdy5e/b0+Qys4+Xsd3hDQaViTCP3epDEy+UIQ==
   dependencies:
     "@iarna/toml" "2.2.5"
     ajv "^6.10.0"
@@ -9098,10 +9098,10 @@ netlify-cms-widget-markdown@^2.12.0:
     unist-builder "^1.0.3"
     unist-util-visit-parents "^2.0.1"
 
-netlify-cms-widget-number@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/netlify-cms-widget-number/-/netlify-cms-widget-number-2.4.0.tgz#511c7b01e23ec5c45f3f039cb6a33053880e049f"
-  integrity sha512-0xPna17VIHZ1GNl6m6gYRemQF0Pj8vWc3skDfSBNH4PynqXK+n9izVf2PshWdrm6eJGDU3TaZt2W9DTxyNn+ag==
+netlify-cms-widget-number@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/netlify-cms-widget-number/-/netlify-cms-widget-number-2.4.1.tgz#f5852b8693c1c1f6d2784f6b1eb670b1aa81b969"
+  integrity sha512-WTNYozkUDPnzAzrH469JVtE9sL9L6/C3KxqVWCzn0XLneQ4FEvkbGdIqx3hMngVPGIBDVl+ppIoStq31N9OY1Q==
 
 netlify-cms-widget-object@^2.5.0:
   version "2.5.0"
