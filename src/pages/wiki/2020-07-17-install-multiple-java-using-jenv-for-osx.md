@@ -1,0 +1,34 @@
+---
+templateKey: wiki
+title: Install multiple java using jenv for osx
+image: /img/default.jpeg
+date: 2020-07-17T01:52:43.923Z
+---
+
+
+```
+$ brew update
+$ brew tap homebrew/cask-versions
+$ brew search java
+$ brew cask install java11
+
+$ # java home 확인
+$ /usr/libexec/java_home -v 11
+/Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home
+
+$ # jenv에 java11 추가
+$ jenv add $(/usr/libexec/java_home -v 11)
+
+
+$ jenv versions ( 설치된 java 확인 )
+$ jenv global 11.0.x (본인 맞는 java version )
+
+
+--------------- ~/.zshrc ----------
+$ export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+--------------- .bashrc, .zhrc ----------
+$ source ~/.zshrc
+
+$ # java 버전확인
+$ java -version
+```
