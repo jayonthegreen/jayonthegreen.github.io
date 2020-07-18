@@ -19,7 +19,7 @@ $ jenv add $(/usr/libexec/java_home -v 11)
 
 
 $ jenv versions 
-$ jenv global 11.0.x (본인 맞는 java version )
+$ jenv global 11.0.x (check your java version )
 
 
 --------------- ~/.zshrc ----------
@@ -27,6 +27,5 @@ $ export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 --------------- .bashrc, .zhrc ----------
 $ source ~/.zshrc
 
-$ # java 버전확인
 $ java -version
 ```
