@@ -1,6 +1,6 @@
 ---
 templateKey: wiki
-title: JPA
+title: my JPA wiki
 image: /img/default.jpeg
 date: 2020-02-01T00:35:48.194Z
 ---
