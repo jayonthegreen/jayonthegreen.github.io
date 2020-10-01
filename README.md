@@ -4,4 +4,3 @@
 ![Build CI](https://github.com/byjay/blog/workflows/Build%20CI/badge.svg)
 
 [http://byjay.github.io/](http://byjay.github.io/)
->>>>>>> 2fba1e74029cf6ba51f9f3f2699fbe72390292d9
