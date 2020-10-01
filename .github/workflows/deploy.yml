@@ -1,3 +1,4 @@
+
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
@@ -19,15 +20,13 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - name: Checkout
     - uses: actions/checkout@v2
-
-    - name: Build Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
-    - run: yarn build
+    - run: yarn deploy
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.6.2
@@ -36,4 +35,3 @@ jobs:
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: build # The folder the action should deploy.
         CLEAN: true # Automatically remove deleted files from the deploy branch
-
