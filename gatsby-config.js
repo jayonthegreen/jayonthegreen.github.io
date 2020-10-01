@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Ordinary simple`,
     image: `/img/og.jpeg`,
-    siteUrl: `https://blog.ordinarysimple.com`,
+    siteUrl: `https://byjay.github.io`,
   },
   plugins: [
     'gatsby-plugin-netlify-cms',
