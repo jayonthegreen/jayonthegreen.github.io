@@ -20,8 +20,8 @@ const Time = styled.div`
 
 const Title = styled.h1`
   font-weight: bold;
-  font-size: 1.3rem;
-  line-height: 1.8rem;
+  font-size: 1.6rem;
+  line-height: 1.5rem;
   text-align: center; 
   margin:0.5rem 0;
   word-break: keep-all;
