@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 
 const Time = styled.div`
   font-weight: 300;
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   text-align: center;
 `
 
@@ -95,8 +95,8 @@ class PostTemplate extends React.Component {
         <Helmet meta={meta}>
           <title>{title}</title>
         </Helmet>
-        <Time>{date}</Time>
         <Title>{post.frontmatter.title}</Title>
+        <Time>{date}</Time>
         <Description>{post.frontmatter.description}</Description>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
         <BuyMe/>
