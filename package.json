@@ -1,6 +1,6 @@
 {
   "name": "gatsby-starter-default",
-  "description": "Gatsby",
+  "description": "blog",
   "version": "1.0.1",
   "dependencies": {
     "gatsby": "^2.20.12",
