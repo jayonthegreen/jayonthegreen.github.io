@@ -96,8 +96,8 @@ class PostTemplate extends React.Component {
           <title>{title}</title>
         </Helmet>
         <Title>{post.frontmatter.title}</Title>
-        <Time>{date}</Time>
         <Description>{post.frontmatter.description}</Description>
+        <Time>{date}</Time>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
         <BuyMe/>
       </Wrapper>
