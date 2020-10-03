@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Ordinary simple`,
+    title: `byjay`,
     image: `/img/og.jpeg`,
     siteUrl: `https://byjay.github.io`,
   },
