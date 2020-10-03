@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 const Time = styled.div`
   font-weight: 300;
   font-size: 0.6rem;
-  text-align: center;
+  text-align: right;
 `
 
 const Title = styled.h1`
@@ -23,7 +23,7 @@ const Title = styled.h1`
   font-size: 2rem;
   line-height: 1.5rem;
   text-align: center; 
-  margin:0.5rem 0;
+  margin: 0.5rem 0;
   word-break: keep-all;
 `
 
@@ -32,7 +32,7 @@ const Description = styled.div`
   font-size: 0.9rem;
   word-break: keep-all;
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0.5rem 0;
 `
 
 const Content = styled.div`
