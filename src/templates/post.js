@@ -21,7 +21,7 @@ const Time = styled.div`
 const Title = styled.h1`
   font-weight: bold;
   font-size: 2rem;
-  line-height: 1.5rem;
+  line-height: 2rem;
   text-align: center; 
   margin: 0.5rem 0;
   word-break: keep-all;
