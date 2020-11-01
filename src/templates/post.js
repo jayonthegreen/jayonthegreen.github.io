@@ -16,6 +16,7 @@ const Time = styled.div`
   font-weight: 300;
   font-size: 0.6rem;
   text-align: right;
+  color: var(--subtitle-color);
 `
 
 const Title = styled.h1`
@@ -25,10 +26,11 @@ const Title = styled.h1`
   text-align: center; 
   margin: 0.5rem 0;
   word-break: keep-all;
+  color: var(--title-color);
 `
 
 const Description = styled.div`
-  color: #333333;
+  color: var(--subtitle-color);
   font-size: 0.9rem;
   word-break: keep-all;
   text-align: center;

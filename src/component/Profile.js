@@ -6,12 +6,12 @@ const Wrapper = styled.nav`
   margin: 0 auto;
   padding: 0.5rem;
   text-align: center;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid var(--border-color);
   margin-bottom: 1.0rem;
   transition: 0.4s; /* Adds a transition effect when the padding is decreased */
   position: fixed;
   width: 100%;
-  background-color: white;
+  background-color: var(--bg-color);
 `
 
 
@@ -21,11 +21,12 @@ const Title = styled.div`
   font-size: 1.3rem;
   margin: 0.2rem 0;
   padding: 0.25rem 0.5rem;
-  ${hoverCss}
+  color: var(--title-color);
+  ${hoverCss};
 `
 
 const NavList = styled.ul`
-  color: #333333;
+  color: var(--subtitle-color);
   font-size: 0.8rem;
   line-height: 1.2rem;
   margin: 0;
@@ -36,7 +37,7 @@ const NavList = styled.ul`
 
 const OutLink = styled.a`
   text-decoration: none;
-  color: inherit;
+  color: var(--subtitle-color);
   padding: 0.25rem;
   margin: 0.25rem;
   ${ hoverCss}
