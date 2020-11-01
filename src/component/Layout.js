@@ -8,6 +8,7 @@ const Content = styled.div`
   padding: 120px 50px;
   transition: all 0.3s ease;
   ${media.mobile`padding: 100px 20px;`}
+  background-color: var(--bg-color);
 `
 
 const siteMetadata = {
