@@ -12,7 +12,7 @@ export default class HTML extends React.Component {
           <meta name="google-site-verification" content="JA_ocNhbTh2OZYc6XdvGU86Tu-KrppkZddT3_sfwTDU" />
           {this.props.headComponents}
           <link rel="shortcut icon" href={favicon} />
-          <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+KR&display=swap" rel="stylesheet"/>
+          <link rel="preconnect" href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+KR&display=swap" />
         </head>
         <body>
           <div
