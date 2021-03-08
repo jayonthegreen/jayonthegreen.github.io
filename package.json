@@ -3,7 +3,7 @@
   "description": "blog",
   "version": "1.0.1",
   "dependencies": {
-    "gatsby": "^2.20.12",
+    "gatsby": "^2.32.9",
     "gatsby-link": "^2.2.22",
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-sitemap": "^2.2.19",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "gatsby-plugin-netlify-cms": "^4.1.40",
-    "netlify-cms-app": "^2.11.23",
+    "netlify-cms-app": "^2.14.26",
     "prettier": "^2.0.2",
     "serve": "^11.3.2"
   }
