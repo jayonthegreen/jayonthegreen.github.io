@@ -5,7 +5,7 @@ import hoverCss from './hoverCss'
 const Wrapper = styled.nav`
   margin: 0 auto;
   padding: 0.5rem;
-  text-align: center;
+  text-align: left;
   border-bottom: 1px solid var(--border-color);
   margin-bottom: 1.0rem;
   transition: 0.4s; /* Adds a transition effect when the padding is decreased */
