@@ -56,6 +56,10 @@ const Profile = () => (
         </li>
       ·
       <li>
+      <OutLink href="/review" >review</OutLink>
+      </li>
+      ·
+      <li>
       <OutLink href="/wiki" >wiki</OutLink>
       </li>
       ·
