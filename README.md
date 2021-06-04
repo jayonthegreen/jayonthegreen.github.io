@@ -1,4 +1,4 @@
-# blog
+# blog!
 
 ![Build CI](https://github.com/byjay/blog/workflows/Build%20CI/badge.svg)
 
