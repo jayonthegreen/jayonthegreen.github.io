@@ -1,5 +1,5 @@
 ---
-templateKey: posts
+templateKey: reviews
 title: 'covering index 와 index merge '
 image: /static/nude.jpg
 date: 2020-02-02T11:24:17.034Z

@@ -20,14 +20,14 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "posts"
-    label: "posts"
-    folder: "src/pages/posts"
+  - name: "reviews"
+    label: "reviews"
+    folder: "src/pages/reviews"
     create: true
     editor:
      preview: true
     fields:
-      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "posts"}
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "reviews"}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Cover", name: image, widget: image, default: "/img/default.jpeg"}
       - { label: "Publish Date", name: "date", widget: "datetime" }
