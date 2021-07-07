@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "gatsby-plugin-netlify-cms": "^4.10.1",
-    "netlify-cms-app": "^2.15.17",
+    "netlify-cms-app": "^2.15.26",
     "prettier": "^2.3.0",
     "serve": "^11.3.2"
   }
