@@ -3,7 +3,7 @@
   "description": "blog",
   "version": "1.0.1",
   "dependencies": {
-    "gatsby": "^2.32.13",
+    "gatsby": "^3.10.2",
     "gatsby-link": "^2.2.22",
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-sitemap": "^2.2.19",
