@@ -14,7 +14,7 @@
     "react-dom": "^18.2.0",
     "react-ga": "^3.0.0",
     "react-helmet": "^6.1.0",
-    "styled-components": "5.3.5"
+    "styled-components": "5.3.6"
   },
   "license": "MIT",
   "main": "n/a",
