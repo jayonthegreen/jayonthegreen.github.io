@@ -1,7 +1,7 @@
 ---
 title: '맹신하는 자들'
 date : '2016-05-22'
-templateKey : 'movie'
+templateKey: review
 description: "영화 contact 를 보고"
 image: '/img/movie/contact/3.jpg'
 ---

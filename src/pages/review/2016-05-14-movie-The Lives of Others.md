@@ -1,6 +1,6 @@
 ---
 title : '저를 위한 겁니다'
-templateKey : 'movie'
+templateKey: review
 date: '2016-05-14'
 description: "영화 타인의 삶을 보고"
 keywords: 'The Lives Of Others, Florian Henckel von Donnersmarck,윤리'
