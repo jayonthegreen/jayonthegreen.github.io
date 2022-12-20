@@ -1,6 +1,6 @@
 ---
 
-templateKey: 'essay'
+templateKey: review
 date: '2019-10-14'
 title: '오버커뮤니케이션에 대한 오해'
 description: "'많이'라는 단어에 집착하고 착각한다"
