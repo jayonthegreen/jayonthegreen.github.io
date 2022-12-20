@@ -1,7 +1,7 @@
 ---
 title: '구김살'
 date: '2016-10-23'
-templateKey: 'book'
+templateKey: review
 description: '호밀밭의 파수꾼을 읽고'
 keywords: '호밀밭의 파수꾼,셀린저'
 image: '/img/default.jpeg'

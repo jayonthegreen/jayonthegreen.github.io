@@ -1,7 +1,7 @@
 ---
 title: '자본주의가 뭘까? 윤리란 뭘까?'
 date: '2017-12-15'
-templateKey: 'book'
+templateKey: review
 description: '"지적 대화를 위한 넓고 얕은 지식"를 읽고'
 ---
 

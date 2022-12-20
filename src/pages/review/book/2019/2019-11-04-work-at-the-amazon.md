@@ -1,6 +1,6 @@
 ---
 
-templateKey: 'book'
+templateKey: review
 date: '2019-11-04'
 title: '나는 아마존에서 미래를 다녔다를 읽고'
 description: '세상에서 가장 고객 중심인 회사, 아마존 12년 모험담'

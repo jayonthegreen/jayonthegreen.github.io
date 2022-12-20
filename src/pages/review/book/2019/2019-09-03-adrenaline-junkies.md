@@ -1,6 +1,6 @@
 ---
 
-templateKey: 'book'
+templateKey: review
 date: '2019-09-03'
 title: '생각 만큼 일은 되지 않는다'
 description: '"프로젝트가 서쪽으로 가는 까닭은"을 읽고나서'

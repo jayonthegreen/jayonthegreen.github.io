@@ -1,6 +1,6 @@
 ---
 
-templateKey: 'book'
+templateKey: review
 date: '2019-01-20'
 title: '멀리 가려면 같이 가라'
 description:  '함께 자라기를 읽고'

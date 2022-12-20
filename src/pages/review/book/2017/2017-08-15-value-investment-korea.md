@@ -1,7 +1,7 @@
 ---
 title: '투자?'
 date: '2017-08-15'
-templateKey: 'book'
+templateKey: review
 description: '"한국형 가치투자 전략"을 읽고'
 keywords: '한국형 가치투자'
 image: '/img/default.jpeg'

@@ -1,6 +1,6 @@
 ---
 
-templateKey: 'book'
+templateKey: review
 date: '2018-11-18'
 title: '기업 문화는 사치인가'
 description: '부족 리더쉽을 읽고' 

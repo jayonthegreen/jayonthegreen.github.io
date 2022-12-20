@@ -1,7 +1,7 @@
 ---
 title: "내가 믿는 패러다임은 언제까지 유효한가"
 date: '2016-04-02'
-templateKey: 'book'
+templateKey: review
 description: "토마스 쿤의 과학혁명의 구조를 읽고"
 keywords: '과학혁명,과학혁명의 구조,토마스 쿤, '
 ---

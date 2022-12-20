@@ -1,5 +1,5 @@
 ---
-templateKey: 'book'
+templateKey: review
 date: '2018-02-24'
 title: '보스에게 이 책을 2권 선물하고 2배 빨리 읽어 오라 해라'
 description: '맨먼스미신을 읽고'

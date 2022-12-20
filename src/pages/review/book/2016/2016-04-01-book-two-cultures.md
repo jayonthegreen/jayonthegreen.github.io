@@ -1,5 +1,5 @@
 ---
-templateKey: 'book'
+templateKey: review
 title: '어린 아이는 불완전한 말을 하며 말을 배운다'
 date: '2016-05-07'
 description: 'C.P Snow의 두 문화를 읽고'

@@ -1,7 +1,7 @@
 ---
 title: '주류 경제학에 반기를 들다'
 date: '2016-06-12'
-templateKey: 'book'
+templateKey: review
 description: '장하준의 경제학 강의를 읽고'
 ---
 

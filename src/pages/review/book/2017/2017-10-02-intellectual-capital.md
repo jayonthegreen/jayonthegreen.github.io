@@ -2,7 +2,7 @@
 title: '고객에게 제안'
 description: '마스다무네아키의 "지적자본론"를 읽고'
 date: '2017-10-02'
-templateKey: 'book'
+templateKey: review
 image: '/img/book/tsutaya.jpg'
 keywords: '지적자본론, 마스다무네아키'
 ---

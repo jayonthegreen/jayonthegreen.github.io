@@ -1,6 +1,6 @@
 ---
 
-templateKey: 'book'
+templateKey: review
 date: '2019-03-16'
 title: '현상과 이론을 연결하는 경험'
 description: 생각의 탄생을 읽고나서

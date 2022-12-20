@@ -1,7 +1,7 @@
 ---
 title: 인간은 기계가 아니다
 date: '2017-12-30'
-templateKey: 'book'
+templateKey: review
 description: '"나중에 온 이사람에게도"를 읽고'
 image: '/img/book/john-ruskin.jpg'
 keywords: '경제,존러스킨,나중에 온 이사람에게도'

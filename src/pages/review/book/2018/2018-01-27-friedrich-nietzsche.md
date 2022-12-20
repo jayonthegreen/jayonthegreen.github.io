@@ -1,5 +1,5 @@
 ---
-templateKey: 'book'
+templateKey: review
 date: '2018-01-27'
 title: '자기계발서 인기 작가 니체'
 description: '곁에 두고 읽는 니체를 읽고'

@@ -1,6 +1,6 @@
 ---
 
-templateKey: 'book'
+templateKey: review
 date: '2019-03-03'
 title: '논리적일 수 있다는 것'
 description:  '스마트한 생각들을 읽고나서'

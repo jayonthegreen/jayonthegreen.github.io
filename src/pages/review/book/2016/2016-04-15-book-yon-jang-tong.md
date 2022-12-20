@@ -2,7 +2,7 @@
 title: '과학으로서 진화심리학'
 date: '2016-04-15'
 description: '오래된 연장통을 읽고'
-templateKey: 'book'
+templateKey: review
 keywords: '오래된 연장통,전중환'
 ---
 

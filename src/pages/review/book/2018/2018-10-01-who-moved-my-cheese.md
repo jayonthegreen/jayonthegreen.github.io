@@ -1,6 +1,6 @@
 ---
 
-templateKey: 'book'
+templateKey: review
 date: '2018-09-30'
 title: 'It is up to courage to act or not in change'
 description: 'Review "Who Moved My Cheese?"'

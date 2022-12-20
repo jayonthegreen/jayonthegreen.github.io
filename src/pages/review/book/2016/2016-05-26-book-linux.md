@@ -1,7 +1,7 @@
 ---
 title: '스스로 재미가 있어야'
 date: '2016-05-26'
-templateKey: 'book'
+templateKey: review
 description : "리눅스 그냥 재미로를 읽고나서"
 keywords: '리눅스,리누즈,리누즈 토발즈,리눅스 그냥 재미로'
 ---

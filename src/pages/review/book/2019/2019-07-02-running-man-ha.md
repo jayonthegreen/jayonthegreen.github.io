@@ -1,5 +1,5 @@
 ---
-templateKey: 'book'
+templateKey: review
 date: '2019-07-02'
 title: '1만보 걷기를 시작했다'
 description: '걷는 사람 하정우를 읽고'

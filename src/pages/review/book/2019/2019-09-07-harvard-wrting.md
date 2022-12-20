@@ -1,6 +1,6 @@
 ---
 
-templateKey: 'book'
+templateKey: review
 date: '2019-09-07'
 title: '결론부터 말해라'
 description: '150년 하버드 글쓰기 비법을 읽고'

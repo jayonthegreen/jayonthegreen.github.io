@@ -1,6 +1,6 @@
 ---
 
-templateKey: 'book'
+templateKey: review
 date: '2019-10-25'
 title: '꾸준함'
 description: '달리기를 말할 때 내가 하고 싶은 이야기를 읽고'

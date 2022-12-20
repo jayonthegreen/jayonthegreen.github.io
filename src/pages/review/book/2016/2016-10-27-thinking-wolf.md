@@ -1,7 +1,7 @@
 ---
 title: '현상이 아닌 원인을 찾아라'
 date: '2016-11-26'
-templateKey: 'book'
+templateKey: review
 description: '서재근의 "생각하는 늑대 타스케"을 읽고'
 keywords: '타스케,생각하는 늑대 타스케,서재근'
 image: '/img/default.jpeg'

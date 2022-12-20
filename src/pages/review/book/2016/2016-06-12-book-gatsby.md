@@ -1,7 +1,7 @@
 ---
 title:  "정말 위대한 개츠비일까"
 date: '2016-06-12'
-templateKey: 'book'
+templateKey: review
 description: "위대한 개츠비를 읽고"
 keywords: '위대한 개츠비,개츠비,스캇 피츠재럴드'
 
