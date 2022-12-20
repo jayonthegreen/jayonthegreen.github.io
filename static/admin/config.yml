@@ -6,13 +6,41 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "post"
-    label: "post"
-    folder: "src/pages/post"
+  - name: "wiki"
+    label: "wiki"
+    folder: "src/pages/wiki"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+     preview: true
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "wiki"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Cover", name: image, widget: image, default: "/img/default.jpeg"}
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "review"
+    label: "review"
+    folder: "src/pages/review"
     create: true
     editor:
      preview: true
     fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "review"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Cover", name: image, widget: image, default: "/img/default.jpeg"}
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "essay"
+    label: "essay"
+    folder: "src/pages/essay"
+    create: true
+    editor:
+     preview: true
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "essay"}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Cover", name: image, widget: image, default: "/img/default.jpeg"}
       - { label: "Publish Date", name: "date", widget: "datetime" }
