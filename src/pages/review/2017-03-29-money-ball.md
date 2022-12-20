@@ -1,7 +1,7 @@
 ---
 title : '지지않기 위해서가 아니라 이기기 위한 전략은?'
 date : '2017-03-29'
-templateKey: 'movie'
+templateKey: review
 description: "영화 머니볼을 보고"
 image: '/img/movie/moneyball/1.jpeg'
 ---

@@ -1,5 +1,5 @@
 ---
-templateKey: book
+templateKey: review
 date: 2018-06-14
 title: 열등감으로 행동하지 않기를
 description: 미움받을 용기를 읽고

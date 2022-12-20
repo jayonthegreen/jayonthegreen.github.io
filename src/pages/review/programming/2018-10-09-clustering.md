@@ -1,5 +1,5 @@
 ---
-templateKey: 'programming'
+templateKey: review
 date: '2018-10-09'
 title: 'Clustering'
 description: 'The basic of clustering algorithms'

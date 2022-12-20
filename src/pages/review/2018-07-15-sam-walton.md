@@ -1,5 +1,5 @@
 ---
-templateKey: book
+templateKey: review
 date: 2018-07-15
 title: 결국 고객가치가 혁신의 깡패다
 description: 불황없는 소비를 창조하라를 읽고 

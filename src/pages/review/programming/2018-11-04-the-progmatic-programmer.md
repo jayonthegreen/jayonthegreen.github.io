@@ -1,6 +1,6 @@
 ---
 
-templateKey: 'programming'
+templateKey: review
 date: '2018-11-04'
 title: '실용주의 프로그래머 요약'
 description:  ''

@@ -1,5 +1,5 @@
 ---
-templateKey: book
+templateKey: review
 date: 2018-04-08
 title: 마케팅?
 description: 마케팅 평가 바이블을 읽고

@@ -1,5 +1,5 @@
 ---
-templateKey: book
+templateKey: review
 date: 2018-08-19
 title: 지금의 시스템도 쓸만하고, 가상화폐 실체는 잘 모르겠다
 description: 넥스트 머니를 읽고

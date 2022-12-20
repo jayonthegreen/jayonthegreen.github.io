@@ -1,5 +1,5 @@
 ---
-templateKey: book
+templateKey: review
 date: 2018-08-06
 title: 불장난
 image: '/img/book/burning-man.jpg'

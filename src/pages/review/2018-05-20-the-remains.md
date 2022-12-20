@@ -1,5 +1,5 @@
 ---
-templateKey: book
+templateKey: review
 date: 2018-05-20
 title: 허망하고 치열하고 외로운
 description: 남아 있는 나날을 읽고

@@ -1,5 +1,5 @@
 ---
-templateKey: book
+templateKey: review
 date: 2018-04-17
 title: 좋은 것에서 위대한 것으로
 description: '"좋은 기업을 넘어 위대한 기업으로"를 읽고'

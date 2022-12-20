@@ -2,7 +2,7 @@
 title: "삶을 바꾸는 독서는 가능할까?"
 description: "고영성의 '어떻게 읽을 것인가'를 읽고"
 date: '2017-10-21'
-templateKey: book
+templateKey: review
 keywords: '어떻게 읽을 것인가, 고영성, 독서법, 독서'
 ---
 
