@@ -1,7 +1,7 @@
 ---
 title : '희망과 근심의 균형'
 date : '2016-07-22'
-templateKey: 'book'
+templateKey: review
 description: '폴그레이엄의 해커와 화가를 읽고'
 keywords: '해커와 화가,폴그레이엄'
 image: '/img/default.jpeg'
