@@ -20,25 +20,22 @@ class IndexPage extends React.Component {
 export default IndexPage
 
 export const query = graphql`
-  query IndexQuery {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-    )
-    {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "YYYY-MM-DD")
-            description
-          }
-          fields {
-            slug
-          }
+query IndexQuery {
+  allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+    totalCount
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          date(formatString: "YYYY-MM-DD")
+          description
+        }
+        fields {
+          slug
         }
       }
     }
   }
+}
 `
