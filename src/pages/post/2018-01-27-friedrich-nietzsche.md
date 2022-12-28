@@ -2,7 +2,7 @@
 templateKey: post
 title: 삶에 대한 열의
 image: /img/book/nietzsche.jpg
-date: 2018-01-27
+date: 2022-12-28T23:06:46.873Z
 description: 곁에 두고 읽는 니체를 읽고
 keywords: 곁에 두고 읽는 니체, 사이토 디카시, 니체, nietzsche
 ---
