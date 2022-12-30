@@ -35,12 +35,12 @@
 }
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-color: var(--oc-gray-8);
+        --bg-color: var(--oc-gray-9);
         --border-color: var(--oc-gray-7);
-        --title-color: var(--oc-gray-4);
-        --subtitle-color: var(--oc-gray-4);
-        --text-color: var(--oc-gray-4);
-        --hover-color: var(--oc-gray-9);
+        --title-color: var(--oc-gray-2);
+        --subtitle-color: var(--oc-gray-2);
+        --text-color: var(--oc-gray-2);
+        --hover-color: var(--oc-gray-8);
     }
 }
 

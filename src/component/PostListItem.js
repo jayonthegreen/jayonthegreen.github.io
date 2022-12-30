@@ -10,22 +10,22 @@ const Wrapper = styled.article`
 `
 
 const Meta = styled.div`
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--subtitle-color);
 `
 
 const Title = styled.h2`
-  font-weight: bold;
-  font-size: 1.4rem;
-  line-height: 1.4;
+  font-size: 1.2rem;
+  line-height: 1.1;
   margin: 0;
+  margin-bottom: 5px;
   word-break: keep-all;
   color: var(--title-color);
 `
 
 const Description = styled.div`
   color: var(--subtitle-color);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.2rem;
   word-break: keep-all;
 `

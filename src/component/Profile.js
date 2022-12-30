@@ -18,7 +18,7 @@ const Wrapper = styled.nav`
 const Title = styled.div`
   display: inline-block;
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   margin: 0.2rem 0;
   padding: 0.25rem 0.5rem;
   color: var(--title-color);
@@ -27,7 +27,7 @@ const Title = styled.div`
 
 const NavList = styled.ul`
   color: var(--subtitle-color);
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   line-height: 1.2rem;
   margin: 0;
   li {

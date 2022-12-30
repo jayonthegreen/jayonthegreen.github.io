@@ -9,35 +9,37 @@ import Layout from '../component/Layout';
 
 const Wrapper = styled.div`
     max-width: 600px;
+    padding: 1rem 0;
     margin: auto;  
 `
 
 const Time = styled.div`
   font-weight: 300;
-  font-size: 0.6rem;
-  text-align: right;
+  font-size: 1rem;
+  margin: 0.5rem;
+  font-weight: bold;
+  text-align: center;
   color: var(--subtitle-color);
 `
 
 const Title = styled.h1`
   font-weight: bold;
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 1.4rem;
+  margin: 0.5rem;
   text-align: center; 
-  margin: 0.5rem 0;
   word-break: keep-all;
   color: var(--title-color);
 `
 
 const Description = styled.div`
   color: var(--subtitle-color);
-  font-size: 0.9rem;
   word-break: keep-all;
+  margin: 0.5rem;
   text-align: center;
-  margin: 0.5rem 0;
 `
 
 const Content = styled.div`
+  margin-top: 2rem;
   & iframe {
     ${
       media.mobile`
@@ -97,9 +99,9 @@ class PostTemplate extends React.Component {
         <Helmet meta={meta}>
           <title>{title}</title>
         </Helmet>
+        <Time>{date}</Time>
         <Title>{post.frontmatter.title}</Title>
         <Description>{post.frontmatter.description}</Description>
-        <Time>{date}</Time>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
         <BuyMe/>
       </Wrapper>
@@ -116,7 +118,7 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date(formatString: "YYYY-MM-DD")
+        date(formatString: "YYYY.MM.DD")
         description
         keywords
         image

@@ -28,7 +28,7 @@ query IndexQuery {
         id
         frontmatter {
           title
-          date(formatString: "YYYY-MM-DD")
+          date(formatString: "YYYY.MM.DD")
           description
         }
         fields {
