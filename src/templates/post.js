@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { media } from '../utils/style'
-import { BuyMe } from '../component/BuyMe';
+// import { BuyMe } from '../component/BuyMe';
 import { graphql } from 'gatsby'
 import Layout from '../component/Layout';
 
@@ -103,7 +103,7 @@ class PostTemplate extends React.Component {
         <Title>{post.frontmatter.title}</Title>
         <Description>{post.frontmatter.description}</Description>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
-        <BuyMe/>
+        {/* <BuyMe/> */}
       </Wrapper>
       </Layout>
     )
