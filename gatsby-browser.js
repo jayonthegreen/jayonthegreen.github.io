@@ -3,7 +3,7 @@ import "./src/styles/reset.css"
 import "./src/styles/global.css"
 
 
-ReactGA.initialize('UA-77395473-1');
+ReactGA.initialize('G-P76W5VY5NZ');
 
 export const onRouteUpdate = (state, page, pages) => {
   if ( state.location.search.includes('isAdmin') ) {
