@@ -1,9 +1,9 @@
 ---
 templateKey: post
-title: 마케팅?
+title: 마케팅 평가 바이블
 image: /img/book/marketing.jpeg
 date: 2018-04-08
-description: 마케팅 평가 바이블을 읽고
+description: 평가 없는 마케팅은 낭비일까?
 keywords: 마케팅,데이터드리븐,마케팅 평가 바이블
 ---
 
