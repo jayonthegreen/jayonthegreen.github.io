@@ -16,11 +16,13 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: `gatsby-plugin-gtag`,
       options: {
-        exclude: [`/drafts`],
+          trackingId: `G-P76W5VY5NZ`,
+          head: true,
       },
-    }
+    },
   ],
 }
