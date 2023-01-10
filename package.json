@@ -4,7 +4,7 @@
   "version": "1.0.1",
   "dependencies": {
     "gatsby": "^5.3.3",
-    "gatsby-link": "^5.3.1",
+    "gatsby-link": "^5.4.0",
     "gatsby-plugin-gtag": "^1.0.13",
     "gatsby-plugin-react-helmet": "^6.3.0",
     "gatsby-plugin-sitemap": "^6.3.1",
