@@ -1,6 +1,6 @@
 ---
 templateKey: post
-title: 제일 중요한건 공동의 목표
+title: 중요한 건 공동의 목표
 image: /img/work.jpg
 date: 2019-05-28
 description: '"프로젝트가 서쪽으로 가는 까닭은"을 읽다 말고'
