@@ -56,11 +56,11 @@ const Profile = () => (
         </li>
       ·
       <li>
-      <OutLink href="/about" >about</OutLink>
+      <OutLink href="/search" >search</OutLink>
       </li>
       ·
       <li>
-      <OutLink href="/search" >search</OutLink>
+      <OutLink href="/about" >about</OutLink>
       </li>
       </NavList>    
   </Wrapper>
