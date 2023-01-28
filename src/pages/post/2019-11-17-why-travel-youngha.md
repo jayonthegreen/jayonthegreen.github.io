@@ -1,8 +1,8 @@
 ---
 templateKey: post
-title: 여행의 환상 깨기
+title: 여행의 환상
 image: /img/default.jpeg
-date: 2023-01-22T02:46:47.079Z
+date: 2019-09-17T02:46:00.000Z
 description: 김영하의 여행의 이유를 읽고
 keywords: 김영하,여행의 이유,이유
 ---
