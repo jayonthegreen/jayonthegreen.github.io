@@ -11,23 +11,29 @@ const Wrapper = styled.div`
   `
 
 class PostList extends React.Component {
-  render() {
+  render() { 
     return (
       <Wrapper>
-        {this.props.posts.map(post => (
+        {this.props.markdownNodes.map(node => (
           <a
-            key={post.id}
-            href={post.href}
+            key={node.id}
+            href={node.fields.slug}
             style={{ textDecoration: `none`, color: `inherit` }}
           >
             <PostListItem
-              title={post.title}
+              title={node.frontmatter.title}
+              date={node.frontmatter.date}gut 
+              description={node.frontmatter.description}
             />
           </a>
         ))}
       </Wrapper>
     )
   }
+}
+
+PostList.propTypes = {
+  markdownNodes: PropTypes.array,
 }
 
 export default PostList
