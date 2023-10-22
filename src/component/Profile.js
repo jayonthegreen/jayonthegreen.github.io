@@ -58,10 +58,10 @@ const Profile = () => (
       <li>
       <OutLink href="/search" >search</OutLink>
       </li>
-      ·
+      {/* ·
       <li>
       <OutLink href="/about" >about</OutLink>
-      </li>
+      </li> */}
       </NavList>    
   </Wrapper>
 )
