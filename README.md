@@ -6,3 +6,6 @@
 
 
 [https://hardcore-cori-e515ae.netlify.app/admin/](https://hardcore-cori-e515ae.netlify.app/admin/)
+
+
+yarn upgrade-interactive --latest
