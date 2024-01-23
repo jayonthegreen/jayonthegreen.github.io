@@ -5,7 +5,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.13.1",
-    "gatsby-link": "^5.13.0",
+    "gatsby-link": "^5.13.1",
     "gatsby-plugin-gtag": "^1.0.13",
     "gatsby-plugin-react-helmet": "^6.13.0",
     "gatsby-plugin-sitemap": "^6.13.0",
