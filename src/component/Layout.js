@@ -27,17 +27,15 @@ class Layout extends React.Component {
         <Helmet
           title={title}
           meta={[
-            { name: 'description', content: 'Jaehyun Baek blog' },
-            { name: 'og:description', content: 'Jaehyun Baek blog' },
-            { name: 'keywords', content: 'blog,ordinarysimple,blog.ordinarysimple.com,백재현,jaehyunbaek,byjaehyun' },
+            { name: 'description', content: 'j blog' },
             { name: 'image', content: imageUrl },
             { name: 'og:image', content: imageUrl },
           ]}
         />
-        <Profile/> 
+        <Profile/>
         <Content>
           {this.props.children}
-        </Content> 
+        </Content>
       </>
     )
   }

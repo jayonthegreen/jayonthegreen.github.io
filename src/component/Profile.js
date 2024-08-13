@@ -30,6 +30,7 @@ const NavList = styled.ul`
   font-size: 1.0rem;
   line-height: 1.2rem;
   margin: 0;
+
   li {
     display: inline;
   }
@@ -40,30 +41,30 @@ const OutLink = styled.a`
   color: var(--subtitle-color);
   padding: 0.25rem;
   margin: 0.25rem;
-  ${ hoverCss}
+  ${hoverCss}
 `
 const Profile = () => (
-  <Wrapper>
-      <Title>
-        <a
-          href='/'
-          style={{ textDecoration: `none`, color: `inherit` }}>Jaehyun Baek
-        </a>
-      </Title>
-      <NavList>
-        <li>
-        <OutLink href="/" >home</OutLink>
-        </li>
-      ·
-      <li>
-      <OutLink href="/search" >search</OutLink>
-      </li>
-      {/* ·
-      <li>
-      <OutLink href="/about" >about</OutLink>
-      </li> */}
-      </NavList>    
-  </Wrapper>
+    <Wrapper>
+        <Title>
+            <a
+                href='/'
+                style={{textDecoration: `none`, color: `inherit`}}>J
+            </a>
+        </Title>
+        <NavList>
+            <li>
+                <OutLink href="/">home</OutLink>
+            </li>
+            ·
+            <li>
+                <OutLink href="/search">search</OutLink>
+            </li>
+            ·
+            <li>
+                <OutLink href="mailto:jayonthegreen@gmail.com">mail</OutLink>
+            </li>
+        </NavList>
+    </Wrapper>
 )
 
 export default Profile;
