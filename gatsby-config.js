@@ -37,8 +37,7 @@ module.exports = {
         serialize: ({ path, pageContext }) => {
           return {
             url: path,
-            lastmod: pageContext?.lastMod.split('T')[0] // for YYYY-mm-dd
-            ,
+            lastmod: pageContext?.lastMod,
           }
         },
       },
