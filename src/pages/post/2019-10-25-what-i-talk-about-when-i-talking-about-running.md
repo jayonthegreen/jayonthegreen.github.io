@@ -3,7 +3,7 @@ templateKey: post
 title: 꾸준함
 image: /img/book/running.jpg
 date: 2019-10-25
-description: 달리기를 말할 때 내가 하고 싶은 이야기를 읽고
+description: 하루키 무라카미, 『달리기를 말할 때 내가 하고 싶은 이야기』를 읽고
 keywords: 달리기를 말할 때 내가 하고 싶은 이야기,무라마키 하루키,달리기, 마라톤
 ---
 

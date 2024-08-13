@@ -3,7 +3,7 @@ templateKey: post
 title: 알몸과 누드
 image: /img/book/nude.jpg
 date: 2019-04-08
-description: 사적인 글쓰기를 읽고
+description: 정민, 『사적인 글쓰기』를 읽고
 keywords: 사적인 글쓰기,류대성,글쓰기
 ---
 

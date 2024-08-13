@@ -3,7 +3,7 @@
 templateKey: post
 date: '2019-03-16'
 title: '현상과 이론을 연결하는 경험'
-description: 생각의 탄생을 읽고나서
+description: 로버트 루트번스타인 & 미셸 루트번스타인, 『생각의 탄생』을 읽고 나서
 image: '/img/book/whole-man.jpg'
 keywords: '생각의 탄생, 로버트 루트번스타인, 미셸 루트번스타인, 박종성'
 

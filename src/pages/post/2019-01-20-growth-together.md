@@ -3,7 +3,7 @@
 templateKey: post
 date: '2019-01-20'
 title: '멀리 가려면 같이 가라'
-description:  '함께 자라기를 읽고'
+description:  '버크 헤디슨, 『함께 자라기』를 읽고'
 image: '/img/book/teamplay.jpg'
 keywords: '김창준, 함꼐 자라기,에자일,소프트웨어'
 ---

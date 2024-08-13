@@ -2,7 +2,7 @@
 templateKey: post
 title: 합리화하지 않는 것이 합리적이다
 image: /img/default.jpeg
-description: 안티프래질을 읽고 나서
+description: 나심 니콜라스 탈레브, 『안티프래질』을 읽고 나서
 keywords: 안티프래질,나심 탈레브,불확실성
 date: 2019-11-11T08:56:39.643Z
 ---

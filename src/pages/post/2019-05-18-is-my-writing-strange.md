@@ -3,7 +3,7 @@
 templateKey: post
 date: '2019-05-18'
 title: '내 문장은 그렇게 이상했다'
-description: '내 문장이 그렇게 이상한가요?를 읽고'
+description: '이은희, 『내 문장이 그렇게 이상한가요?』를 읽고'
 image: '/img/programming/picaso.jpg'
 keywords: '내 문장이 그렇게 이상한가요?,김정선,글쓰기,글 다듬기,교정'
 

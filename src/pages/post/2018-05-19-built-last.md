@@ -2,7 +2,7 @@
 templateKey: post
 date: '2018-05-19'
 title: 제품을 넘어 훌륭한 팀을 만드는 것
-description: build to last 를 읽고
+description: 짐 콜린스, 『Build
 image: '/img/book/teamplay.jpg'
 keywords: 'good to great,좋은 기업을 넘어 위대한 기업으로,build to last,짐 콜린스,제리 포라스,성공하는 기업들의 8가지 습관'
 ---

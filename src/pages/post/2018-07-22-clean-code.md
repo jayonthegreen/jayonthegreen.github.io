@@ -2,7 +2,7 @@
 templateKey: post
 date: '2018-07-22'
 title: '코드에 대한 전문가 정신'
-description: '클린 코드를 읽고'
+description: '로버트 C. 마틴, 『클린 코드』를 읽고'
 keywords: '클린 코드,개발,로버트 마틴'
 ---
 

@@ -3,7 +3,7 @@ templateKey: post
 title: 1만보 걷기를 시작했다
 image: /img/book/running.jpg
 date: 2019-07-02
-description: 걷는 사람 하정우를 읽고
+description: 하정우, 『걷는 사람 하정우』를 읽고
 keywords: 하정우, 걷는 사람,일만보,걷기
 ---
 

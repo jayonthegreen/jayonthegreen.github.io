@@ -3,7 +3,7 @@ templateKey: post
 title: 논리와 객관을 위한 노력
 image: /img/book/black-swan.jpg
 date: 2019-03-03
-description: 스마트한 생각들을 읽고나서
+description: 다니엘 카너먼, 『스마트한 생각들』을 읽고 나서
 keywords: 스마트한 생각들, 롤프 도벨리, 비르기트 랑, 걷는나무
 ---
 

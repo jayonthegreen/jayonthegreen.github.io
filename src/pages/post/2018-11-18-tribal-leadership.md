@@ -3,7 +3,7 @@
 templateKey: post
 date: '2018-11-18'
 title: '기업 문화는 사치인가'
-description: '부족 리더쉽을 읽고' 
+description: '세스 고딘, 『부족 리더십』을 읽고' 
 image: '/img/book/tribe.jpg'
 keywords: 'tribe,부족리더쉽,부족 리더쉽,데이브 로건,헤일리 피셔-라이트'
 

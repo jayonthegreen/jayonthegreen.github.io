@@ -3,7 +3,7 @@
 templateKey: post
 date: '2019-09-07'
 title: '결론부터 말해라'
-description: '150년 하버드 글쓰기 비법을 읽고'
+description: '리즈 벤틀리, 『150년 하버드 글쓰기 비법』을 읽고'
 image: '/img/default.jpeg'
 keywords: '하버드 글쓰기, 송숙희'
 

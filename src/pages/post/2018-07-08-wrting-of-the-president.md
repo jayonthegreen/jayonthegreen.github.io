@@ -3,7 +3,7 @@ templateKey: post
 title: 생각 한 만큼의 글쓰기
 image: /img/book/blockchain.jpg
 date: 2018-07-09
-description: 대통령의 글쓰기를 읽고
+description: 김대식, 『대통령의 글쓰기』를 읽고
 keywords: 대통령의 글쓰기,글쓰기,강원국
 ---
 

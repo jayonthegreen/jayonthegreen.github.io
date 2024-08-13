@@ -3,7 +3,7 @@ templateKey: post
 title: 그냥 웃어, 이 친구야
 image: /img/TDD.jpeg
 date: 2022-12-21T13:20:41.801Z
-description: 클린 코더를 읽고
+description: 로버트 C. 마틴, 『클린 코더』를 읽고
 keywords: 클린 코더, 밥, 프러그래머
 ---
 
