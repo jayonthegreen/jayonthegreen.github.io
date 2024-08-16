@@ -1,3 +1,4 @@
-Sitemap: https://byjay.github.io/sitemap-index.xml
 User-agent: *
 Disallow:
+
+Sitemap: https://byjay.github.io/sitemap-index.xml
