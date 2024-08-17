@@ -14,14 +14,14 @@ const Content = styled.div`
 const siteMetadata = {
   title: `byjay`,
   image: `/img/og.jpeg`,
-  siteUrl: `https://byjay.github.io`,
+  siteUrl: `https://jayonthegreen.github.io`,
 }
 
 class Layout extends React.Component {
 
   render() {;
     const { title, image } = siteMetadata;
-    const imageUrl = 'https://byjay.github.io' + image;
+    const imageUrl = 'https://jayonthegreen.github.io' + image;
     return (
       <>
         <Helmet

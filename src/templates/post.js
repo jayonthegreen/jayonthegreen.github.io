@@ -82,7 +82,7 @@ class PostTemplate extends React.Component {
       image = this.props.data.site.siteMetadata.image || '/img/og.jpeg',
       date,
     } = post.frontmatter;
-    const imageUrl = 'https://byjay.github.io' + image;
+    const imageUrl = 'https://jayonthegreen.github.io' + image;
     const meta = [
       {name: 'title', content: title},
       {name: 'description', content: description},

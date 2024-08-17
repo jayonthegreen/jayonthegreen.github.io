@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `byjay`,
+    title: `jay on the green`,
     image: `/img/og.jpeg`,
-    siteUrl: `https://byjay.github.io`,
+    siteUrl: `https://jayonthegreen.github.io`,
   },
   plugins: [
     'gatsby-plugin-netlify-cms',

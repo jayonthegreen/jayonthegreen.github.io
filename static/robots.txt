@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://byjay.github.io/sitemap-index.xml
+Sitemap: https://jayonthegreen.github.io/sitemap-index.xml
