@@ -5,7 +5,7 @@ module.exports = {
     siteUrl: `https://jayonthegreen.github.io`,
   },
   plugins: [
-    'gatsby-plugin-netlify-cms',
+    `gatsby-plugin-decap-cms`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
