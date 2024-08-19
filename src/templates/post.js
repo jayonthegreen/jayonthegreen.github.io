@@ -67,6 +67,8 @@ class PostTemplate extends React.Component {
 
     render() {
         const post = this.props.data.markdownRemark
+        const {slug} = this.props.data.markdownRemark.fields
+        const link = `https://jayonthegreen.github.io${slug}`
         const {
             title,
             description,
@@ -90,6 +92,7 @@ class PostTemplate extends React.Component {
                 <Wrapper>
                     <Helmet meta={meta}>
                         <title>{title}</title>
+                        <link rel="canonical" href={link} />
                     </Helmet>
                     <Time>{date}</Time>
                     <Title>{post.frontmatter.title}</Title>
@@ -108,6 +111,9 @@ export const query = graphql`
   query BlogPostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "YYYY.MM.DD")

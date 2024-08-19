@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   `
 
 class PostList extends React.Component {
-  render() { 
+  render() {
     return (
       <Wrapper>
         {this.props.markdownNodes.map(node => (
@@ -22,7 +22,7 @@ class PostList extends React.Component {
           >
             <PostListItem
               title={node.frontmatter.title}
-              date={node.frontmatter.date}gut 
+              date={node.frontmatter.date}
               description={node.frontmatter.description}
             />
           </a>
