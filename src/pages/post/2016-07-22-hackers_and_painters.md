@@ -1,10 +1,10 @@
 ---
-title : '희망과 근심의 균형'
-date : '2016-07-22'
 templateKey: post
-description: '폴그레이엄의 해커와 화가를 읽고'
-keywords: '해커와 화가,폴그레이엄'
-image: '/img/default.jpeg'
+title: 균형
+image: /img/default.jpeg
+date: 2016-07-22
+description: 폴 그레이엄, 『해커와 화가』를 읽고
+keywords: 해커와 화가,폴그레이엄
 ---
 
 희망과 근심을 동시에 품는 것이 이상한 일은 아니다. 오히려 그러지 않는 것을 경계해야 한다. 모순된 양가적인 생각들이 들 때, 이 상황이 모순적이지 않다는 것을 깨닫고 균형을 잡는 것이 중요하다.
