@@ -2,7 +2,7 @@
 templateKey: post
 title: 연기하기 가장 어려운 것
 date: 2017-12-16
-description: 김영하의 "보다"를 읽고
+description: 김영하, 『보다』를 읽고
 ---
 처음으로 에세이를 사서 읽었다. 직설적인 에세이가 나에게 더 편하다는 것을 느꼈다. 
 
