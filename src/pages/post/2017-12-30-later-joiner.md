@@ -3,7 +3,7 @@ templateKey: post
 title: 인간은 기계가 아니다
 image: /img/book/john-ruskin.jpg
 date: 2017-12-30
-description: '"나중에 온 이사람에게도"를 읽고'
+description: 존 러스킨, 『나중에 온 이사람에게도』를 읽고
 keywords: 경제,존러스킨,나중에 온 이사람에게도
 ---
 토스 창업자 이승건 대표의 강연 영상을 보게 되었다. 이승건 대표는 담백하고 명료했다. 강연에서 이 책을 소개했다.
