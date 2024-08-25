@@ -3,7 +3,7 @@ templateKey: post
 title: 디비는 왜 빠를까
 image: /img/programming/files.jpg
 date: 2018-09-25
-description: 대량의 레코드에서 사용자 id 가 1,234,567 인 것을 찾고 싶다. 어떻게 가져오는 것이 빠를까?
+description: 마쯔노부 요시노리, 『데이터베이스를 지탱하는 기술』을 읽고
 keywords: database,데이터베이스,디비,인덱스,데이터베이스를 지탱하는 기술,해시인덱스,인댁스,
 ---
 대량의 레코드에서 사용자 id 가 1,234,567 인 데이터를 찾고 싶다. 어떻게 가져오는 것이 빠를까?
