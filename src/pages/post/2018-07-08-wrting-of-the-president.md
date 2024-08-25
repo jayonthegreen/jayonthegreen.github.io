@@ -1,6 +1,6 @@
 ---
 templateKey: post
-title: 생각 한 만큼의 글쓰기
+title: 생각한 만큼의 글쓰기
 image: /img/book/blockchain.jpg
 date: 2018-07-09
 description: 강원국, 『대통령의 글쓰기』를 읽고
