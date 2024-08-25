@@ -1,9 +1,9 @@
 ---
 templateKey: post
-title: 역사는 계급 투쟁의 역사이다
+title: 계급 투쟁
 image: /img/book/marx.jpg
 date: 2018-01-13
-description: 공산당 선언을 읽고
+description: 마르크스, 『공산당 선언』을 읽고
 keywords: 공산당 선언, 마르크르, 공산주의 원리, 엥겔스
 ---
 ## 내용
