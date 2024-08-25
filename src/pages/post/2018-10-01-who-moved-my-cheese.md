@@ -1,14 +1,14 @@
 ---
 templateKey: post
-title: Courage to act or not in change
+title: Courage
 image: /img/book/cheese.jpeg
 date: 2018-09-30
-description: Review "Who Moved My Cheese?"
+description: Spencer Johnson, 『Who Moved My Cheese?』
 keywords: Who Moved My Cheese, Johnson, Spencer, Cheese, Change
 ---
 
 
-I read this book which is quite popular. This simple story give us a wisdom about how to do it in a changing situation. We should smell the cheese often so we know when it's getting old. But the most impressive sentence is the following.
+We should smell the cheese often so we know when it's getting old. But the most impressive sentence is the following.
 
 > What Would You Do If You Weren't Afraid?
 
