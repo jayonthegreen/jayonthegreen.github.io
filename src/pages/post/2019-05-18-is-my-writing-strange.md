@@ -1,17 +1,14 @@
 ---
-
 templateKey: post
-date: '2019-05-18'
-title: '내 문장은 그렇게 이상했다'
-description: '이은희, 『내 문장이 그렇게 이상한가요?』를 읽고'
-image: '/img/programming/picaso.jpg'
-keywords: '내 문장이 그렇게 이상한가요?,김정선,글쓰기,글 다듬기,교정'
-
+title: 문장 다듬기
+image: /img/programming/picaso.jpg
+date: 2019-05-18
+description: "\b김정선, 『내 문장이 그렇게 이상한가요?』를 읽고"
+keywords: 내 문장이 그렇게 이상한가요?,김정선,글쓰기,글 다듬기,교정
 ---
 
 어색한 글이 무엇인지 읽었다. 책을 읽으며 예전에 쓴 글을 꺼내 고쳐 썼는데 꽤나 재밌다. 내 문장은 그렇게나 이상했다.
 
-<a href="https://coupa.ng/bg8VyA" target="_blank"><img src="https://static.coupangcdn.com/image/affiliate/banner/032b83aa1650773cd3f1dc5e548e4228@2x.jpg" alt="내 문장이 그렇게 ..." width="120" height="240"></a>
 
 ---
 
