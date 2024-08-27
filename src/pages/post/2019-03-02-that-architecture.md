@@ -1,12 +1,10 @@
 ---
-
 templateKey: post
-date: '2019-03-02'
-title: '그런 아키텍쳐로 괜찮은가?'
-description: '비지니스 로직은 서비스 레이어지! UserService! OrderService!'
-image: '/img/programming/ddd/dh.jpg'
-keywords: 'DDD, DDD Start,Domain Driven Development,최범균,도메인 주도 설계'
-
+title: 그런 아키텍쳐로 괜찮은가?
+image: /img/programming/ddd/dh.jpg
+date: 2019-03-02
+description: 일관된 아름다움은 있다
+keywords: DDD, DDD Start,Domain Driven Development,최범균,도메인 주도 설계
 ---
 
 ## 김개발 이야기
