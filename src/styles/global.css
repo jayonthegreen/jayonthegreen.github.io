@@ -26,23 +26,23 @@
     --oc-gray-9-rgb: 33, 37, 41;
 
 
-    --bg-color: #ffffff;
-    --border-color: var(--oc-gray-2);
-    --title-color: var(--oc-gray-8);
-    --subtitle-color: var(--oc-gray-7);
-    --text-color: var(--oc-gray-8);
-    --hover-color: var(--oc-gray-2);
+    --bg-color: var(--oc-gray-8);
+    --border-color: var(--oc-gray-6);
+    --title-color: var(--oc-gray-2);
+    --subtitle-color: var(--oc-gray-2);
+    --text-color: var(--oc-gray-2);
+    --hover-color: var(--oc-gray-7);
 }
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: var(--oc-gray-9);
-        --border-color: var(--oc-gray-7);
-        --title-color: var(--oc-gray-2);
-        --subtitle-color: var(--oc-gray-2);
-        --text-color: var(--oc-gray-2);
-        --hover-color: var(--oc-gray-8);
-    }
-}
+/*@media (prefers-color-scheme: dark) {*/
+/*    :root {*/
+/*        --bg-color: var(--oc-gray-8);*/
+/*        --border-color: var(--oc-gray-7);*/
+/*        --title-color: var(--oc-gray-2);*/
+/*        --subtitle-color: var(--oc-gray-2);*/
+/*        --text-color: var(--oc-gray-2);*/
+/*        --hover-color: var(--oc-gray-8);*/
+/*    }*/
+/*}*/
 
 * {
     font-family: 'Noto Sans KR', 'Noto Sans', sans-serif;
