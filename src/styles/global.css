@@ -26,12 +26,12 @@
     --oc-gray-9-rgb: 33, 37, 41;
 
 
-    --bg-color: var(--oc-gray-8);
-    --border-color: var(--oc-gray-6);
-    --title-color: var(--oc-gray-2);
-    --subtitle-color: var(--oc-gray-2);
-    --text-color: var(--oc-gray-2);
-    --hover-color: var(--oc-gray-7);
+    --bg-color: var(--oc-gray-0);
+    --border-color: var(--oc-gray-1);
+    --hover-color: var(--oc-gray-1);
+    --title-color: var(--oc-gray-9);
+    --subtitle-color: var(--oc-gray-9);
+    --text-color: var(--oc-gray-9);
 }
 /*@media (prefers-color-scheme: dark) {*/
 /*    :root {*/

@@ -17,15 +17,14 @@ const Meta = styled.div`
 const Title = styled.h2`
     font-size: 1.2rem;
     line-height: 1.1;
-    margin: 0 0 5px;
+    margin: 0 0 2px;
     word-break: keep-all;
     color: var(--title-color);
 `
 
 const Description = styled.div`
     color: var(--subtitle-color);
-    font-size: 0.9rem;
-    line-height: 1.1;
+    font-size: 0.8rem;
     word-break: keep-all;
 `
 
