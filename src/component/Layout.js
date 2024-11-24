@@ -18,10 +18,9 @@ const siteMetadata = {
 }
 
 class Layout extends React.Component {
-
-  render() {;
-    const { title, image } = siteMetadata;
-    const imageUrl = 'https://jayonthegreen.github.io' + image;
+  render() {
+    const { title, image } = siteMetadata
+    const imageUrl = 'https://jayonthegreen.github.io' + image
     return (
       <>
         <Helmet
@@ -32,10 +31,8 @@ class Layout extends React.Component {
             { name: 'og:image', content: imageUrl },
           ]}
         />
-        <Profile/>
-        <Content>
-          {this.props.children}
-        </Content>
+        <Profile />
+        <Content>{this.props.children}</Content>
       </>
     )
   }
