@@ -4,7 +4,7 @@
   "version": "1.0.1",
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
-    "decap-cms-app": "^3.4.0",
+    "decap-cms-app": "^3.6.1",
     "gatsby": "^5.14.0",
     "gatsby-link": "^5.14.0",
     "gatsby-plugin-decap-cms": "^4.0.4",
