@@ -1,6 +1,6 @@
 ---
 templateKey: post
-title: "\b마케팅 평가 바이블"
+title: 평가 없는 마케팅은 낭비일까?
 image: /img/book/marketing.jpeg
 date: 2018-04-08
 description: "\b마크 제프리, 『마케팅 평가 바이블』을 읽고"
