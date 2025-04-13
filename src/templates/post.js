@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Nav from '..//nav'
+import Nav from '../Nav'
 
 class PostTemplate extends React.Component {
   render() {
@@ -21,6 +21,7 @@ class PostTemplate extends React.Component {
   }
 
 }
+
 
 export default PostTemplate
 
