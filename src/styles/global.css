@@ -1,4 +1,7 @@
 
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+
 
 :root {
     /*  Gray
@@ -33,59 +36,77 @@
     --subtitle-color: var(--oc-gray-9);
     --text-color: var(--oc-gray-9);
 }
-/*@media (prefers-color-scheme: dark) {*/
-/*    :root {*/
-/*        --bg-color: var(--oc-gray-8);*/
-/*        --border-color: var(--oc-gray-7);*/
-/*        --title-color: var(--oc-gray-2);*/
-/*        --subtitle-color: var(--oc-gray-2);*/
-/*        --text-color: var(--oc-gray-2);*/
-/*        --hover-color: var(--oc-gray-8);*/
-/*    }*/
-/*}*/
+
 
 * {
-    font-family: 'Noto Sans KR', 'Noto Sans', sans-serif;
-    font-weight: 400;
+    font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;
     color: var(--text-color);
 }
 
-html, body {
-    background-color: var(--bg-color);
+html{
     margin: 0;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    padding: 1rem
+    
 }
+
+
+nav {
+    font-size: x-large;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+main{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+h1{
+    font-size: xx-large;
+    margin: 1rem 0;
+    font-weight: bold;
+}
+h2{
+    font-size: x-large;
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+p {
+    margin: 1rem 0;
+    line-height: 1.7rem;
+}
+
+blockquote {
+    border-left: 4px solid var(--border-color);
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    font-style: italic;
+    color: #555;
+}
+
+blockquote::before {
+    content: none;
+}
+
 
 
 @media only screen and (max-width: 480px) {
     html {
-        font-size: 100%;
+        padding: 0.5rem;
+    }
+    nav{
+        margin: 0.8rem 0;    
     }
 }
-
-li, p {
-    font-size: 1.15rem;
-    line-height: 1.7rem;
-    font-weight: 500;
-}
-
-blockquote {
-    background: var(--hover-color);
-    border-left: 10px solid var(--border-color);
-    margin: 1.5em 0;
-    padding: .5em .5rem .5rem 2.0rem;
-    quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-blockquote:before {
-    color: #ccc;
-    content: open-quote;
-    font-size: 4em;
-    margin-left: -0.5em;
-    line-height: 0.1em;
-    vertical-align: -0.7em;
-}
-
