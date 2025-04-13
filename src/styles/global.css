@@ -1,0 +1,69 @@
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+
+
+:root {
+    /*  Gray
+ *  ─────────────────────────────────── */
+
+    --oc-gray-0: #f8f9fa;
+    --oc-gray-0-rgb: 248, 249, 250;
+    --oc-gray-1: #f1f3f5;
+    --oc-gray-1-rgb: 241, 243, 245;
+    --oc-gray-2: #e9ecef;
+    --oc-gray-2-rgb: 233, 236, 239;
+    --oc-gray-3: #dee2e6;
+    --oc-gray-3-rgb: 222, 226, 230;
+    --oc-gray-4: #ced4da;
+    --oc-gray-4-rgb: 206, 212, 218;
+    --oc-gray-5: #adb5bd;
+    --oc-gray-5-rgb: 173, 181, 189;
+    --oc-gray-6: #868e96;
+    --oc-gray-6-rgb: 134, 142, 150;
+    --oc-gray-7: #495057;
+    --oc-gray-7-rgb: 73, 80, 87;
+    --oc-gray-8: #343a40;
+    --oc-gray-8-rgb: 52, 58, 64;
+    --oc-gray-9: #212529;
+    --oc-gray-9-rgb: 33, 37, 41;
+
+
+    --bg-color: var(--oc-gray-0);
+    --border-color: var(--oc-gray-1);
+    --hover-color: var(--oc-gray-1);
+    --title-color: var(--oc-gray-9);
+    --subtitle-color: var(--oc-gray-9);
+    --text-color: var(--oc-gray-9);
+}
+
+
+* {
+    font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;
+    color: var(--text-color);
+}
+
+
+
+@media only screen and (max-width: 480px) {
+
+}
+
+
+blockquote {
+    background: var(--hover-color);
+    border-left: 10px solid var(--border-color);
+    margin: 1.5em 0;
+    padding: .5em .5rem .5rem 2.0rem;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    margin-left: -0.5em;
+    line-height: 0.1em;
+    vertical-align: -0.7em;
+}
+

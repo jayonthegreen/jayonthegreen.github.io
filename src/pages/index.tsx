@@ -16,7 +16,7 @@ const IndexPage: React.FC<PageProps> = ({
         {edges.map(({ node }) => (
           <li key={node.frontmatter.title}>
             <h2>{node.frontmatter.title}</h2>
-            {node.slug}
+            <h3>{node.frontmatter.description}</h3>
           </li>
         ))}
       </ul>
@@ -36,6 +36,7 @@ export const query = graphql`
           frontmatter {
             title
             date
+            description
           }
           html
         }
