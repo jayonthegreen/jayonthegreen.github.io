@@ -8,9 +8,10 @@ class PostTemplate extends React.Component {
       <main>
         <Nav/>
         <h1>{this.props.data.markdownRemark.frontmatter.title} </h1>
-        <div style={{'fontSize': 'medium', textAlign: 'right', marginBottom: '1em'}}>
+        <div style={{'fontSize': 'medium', textAlign: 'right', marginBottom: '1em', 
+          maxWidth: '60%', marginLeft: 'auto'}}>
           {this.props.data.markdownRemark.frontmatter.date}
-          {' '}
+          <br/>
           {this.props.data.markdownRemark.frontmatter.description} 
         </div>
         <div

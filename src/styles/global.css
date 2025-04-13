@@ -38,6 +38,7 @@
 * {
     font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;
     color: var(--text-color);
+    word-break: keep-all;
 }
 
 html{
