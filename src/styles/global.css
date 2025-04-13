@@ -43,7 +43,19 @@
     color: var(--text-color);
 }
 
+html{
+    margin: 0;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 2rem;
+}
 
+nav {
+    font-size: x-large;
+    margin: 2rem 0;
+}
 
 @media only screen and (max-width: 480px) {
 
