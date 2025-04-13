@@ -1,5 +1,4 @@
 import React from 'react'
-import favicon from './favicon.png'
 
 export default class HTML extends React.Component {
   render() {
@@ -16,7 +15,7 @@ export default class HTML extends React.Component {
             content="JA_ocNhbTh2OZYc6XdvGU86Tu-KrppkZddT3_sfwTDU"
           />
           {this.props.headComponents}
-          <link rel="shortcut icon" href={favicon} />
+          <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
           <link
             rel="preconnect"
             href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+KR&display=swap"
