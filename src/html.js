@@ -16,10 +16,6 @@ export default class HTML extends React.Component {
           />
           {this.props.headComponents}
           <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
-          <link
-            rel="preconnect"
-            href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+KR&display=swap"
-          />
         </head>
         <body>
           <div
