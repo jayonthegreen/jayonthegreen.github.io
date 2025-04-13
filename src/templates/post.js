@@ -7,7 +7,12 @@ class PostTemplate extends React.Component {
     return (
       <main>
         <Nav/>
-        <h1>{this.props.data.markdownRemark.frontmatter.title}</h1>
+        <h1>{this.props.data.markdownRemark.frontmatter.title} </h1>
+        <div style={{'fontSize': 'medium', textAlign: 'right', marginBottom: '1em'}}>
+          {this.props.data.markdownRemark.frontmatter.date}
+          {' '}
+          {this.props.data.markdownRemark.frontmatter.description} 
+        </div>
         <div
           dangerouslySetInnerHTML={{ __html: this.props.data.markdownRemark.html }}
         />
