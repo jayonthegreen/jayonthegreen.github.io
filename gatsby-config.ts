@@ -17,8 +17,8 @@ const config: GatsbyConfig = {
         name: `Jay`,
         short_name: `Jay`,
         start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#46a272`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
         display: `standalone`,
         icon: `static/favicon.png`, // This path is relative to the root of the site.
       },
