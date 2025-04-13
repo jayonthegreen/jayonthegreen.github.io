@@ -15,7 +15,7 @@ const IndexPage: React.FC<PageProps> = ({
         style={{padding: 0, margin: 0, listStyle: 'none'}}
       >
         {edges.map(({ node }) => (
-          <a href={node.fields.slug} key={node.frontmatter.title}>
+          <a href={node.fields.slug} key={node.frontmatter.title} style={{textDecoration: 'none'}}>
             <li key={node.frontmatter.title} 
                 style={{fontSize: 'large', listStyle: 'none', margin: '0.5rem 0'}}
             >
