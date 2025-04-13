@@ -1,10 +1,16 @@
 ---
-templateKey: post
-title: 저를 위한 겁니다
-image: /img/brain.jpg
 date: 2016-05-14
 description: 영화 타인의 삶을 보고
+image: /img/brain.jpg
 keywords: The Lives Of Others, Florian Henckel von Donnersmarck,윤리
+tags:
+- '#분단된독일'
+- '#비밀경찰'
+- '#윤리적성찰'
+- '#소수자공감'
+- '#삶의이해'
+templateKey: post
+title: 저를 위한 겁니다
 ---
 
 분단된 독일 시절, 주인공 비슬러는 동독 비밀 경찰이다. 시민들을 감시하며 사상과 체계를 유지하는 일을 한다. 비슬러는 정치적 이념아래 타인의 삶을 외면한다. 그러나 그는 자신의 일에 확신을 잃어간다. 결국 그는 본분을 거스르고 두 예술가가 위험에 처하자 비슬러는 자신이 위험을 감수한다. 그러나 두 예술가의 죽음을 막지는 못한다.

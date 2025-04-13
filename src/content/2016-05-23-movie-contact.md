@@ -1,9 +1,15 @@
 ---
-templateKey: post
-title: 맹신
-image: /img/movie/contact/3.jpg
 date: 2016-05-22
 description: 영화 contact 를 보고
+image: /img/movie/contact/3.jpg
+tags:
+- '#맹신'
+- '#영화리뷰'
+- '#과학과종교'
+- '#신념'
+- '#존중'
+templateKey: post
+title: 맹신
 ---
 
 #movie 
@@ -16,5 +22,3 @@ description: 영화 contact 를 보고
 ![contact](/img/movie/contact/3.jpg "contact")
 ![contact](/img/movie/contact/2.jpg "contact")
 ![contact](/img/movie/contact/1.jpg "contact")
-
-

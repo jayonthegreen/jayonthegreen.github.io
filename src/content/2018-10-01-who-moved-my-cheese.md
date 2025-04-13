@@ -1,12 +1,17 @@
 ---
-templateKey: post
-title: Courage
-image: /img/book/cheese.jpeg
 date: 2018-09-30
 description: Spencer Johnson, 『Who Moved My Cheese?』
+image: /img/book/cheese.jpeg
 keywords: Who Moved My Cheese, Johnson, Spencer, Cheese, Change
+tags:
+- '#Courage'
+- '#Change'
+- '#Fear'
+- '#Belief'
+- '#SelfGrowth'
+templateKey: post
+title: Courage
 ---
-
 
 We should smell the cheese often so we know when it's getting old. But the most impressive sentence is the following.
 

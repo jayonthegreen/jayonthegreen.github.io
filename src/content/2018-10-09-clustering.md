@@ -1,10 +1,16 @@
 ---
-templateKey: post
 date: '2018-10-09'
-title: 'Clustering'
-description: 'The basic of clustering algorithms'
-image: '/img/programming/clustering/clustering.008.jpeg'
-keywords: 'clustering,k-means,hierarchical agglomerative'
+description: The basic of clustering algorithms
+image: /img/programming/clustering/clustering.008.jpeg
+keywords: clustering,k-means,hierarchical agglomerative
+tags:
+- '#Clustering'
+- '#ClusterAnalysis'
+- '#HierarchicalClustering'
+- '#KMeans'
+- '#DataScience'
+templateKey: post
+title: Clustering
 ---
 
 ## Definition of clustering

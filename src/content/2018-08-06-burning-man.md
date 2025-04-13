@@ -1,12 +1,17 @@
 ---
-templateKey: post
-title: 내가 선택한 세계
-image: /img/book/burning-man.jpg
 date: 2018-08-06
 description: 최형욱, 『버닝맨, 혁신을 실험하다』를 읽고
+image: /img/book/burning-man.jpg
 keywords: 버닝맨,혁신을 실험하다,북저널리즘,최형욱
+tags:
+- '#버닝맨'
+- '#커뮤니티'
+- '#엘론머스크'
+- '#현대인의삶'
+- '#원초적인나'
+templateKey: post
+title: 내가 선택한 세계
 ---
-
 
 버닝맨은 커뮤니티다. 매년 8월, 미국 네바다 사막에 일주일간 도시를 만들어 캠프를 한다. 버닝맨이라는 이름에 걸맞게 사람 형상의 조형물을 태운다. 
 

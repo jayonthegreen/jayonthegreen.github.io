@@ -1,10 +1,16 @@
 ---
-templateKey: post
-title: 그런 아키텍쳐로 괜찮은가?
-image: /img/programming/ddd/dh.jpg
 date: 2019-03-02
 description: 일관된 아름다움은 있다
+image: /img/programming/ddd/dh.jpg
 keywords: DDD, DDD Start,Domain Driven Development,최범균,도메인 주도 설계
+tags:
+- '#김개발'
+- '#아키텍쳐'
+- '#순환참조'
+- '#비즈니스로직'
+- '#데이터베이스'
+templateKey: post
+title: 그런 아키텍쳐로 괜찮은가?
 ---
 
 ## 김개발 이야기

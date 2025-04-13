@@ -1,12 +1,17 @@
 ---
-templateKey: post
-title: 꾸준함
-image: /img/book/running.jpg
 date: 2019-10-25
 description: 하루키 무라카미, 『달리기를 말할 때 내가 하고 싶은 이야기』를 읽고
+image: /img/book/running.jpg
 keywords: 달리기를 말할 때 내가 하고 싶은 이야기,무라마키 하루키,달리기, 마라톤
+tags:
+- '#하루키'
+- '#꾸준함'
+- '#장거리달리기'
+- '#소설가'
+- '#자기계발'
+templateKey: post
+title: 꾸준함
 ---
-
 
 하루키는 속도와 거리에 연연하지 않았다. 무리하지 않는 대신 매일 뛰기위해 노력했다. 
 

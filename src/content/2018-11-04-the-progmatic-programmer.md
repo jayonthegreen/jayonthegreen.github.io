@@ -1,12 +1,16 @@
 ---
-
-templateKey: post
 date: '2018-11-04'
-title: '실용주의 프로그래머 요약'
-description:  ''
-image: '/img/programming/programmer.jpg'
-keywords: '실용주의 프로그래머,실용주의,프로그래밍,실용주의 프로그래머 요약,소프트웨어,앤드류 헌트,데이비드 토머스'
-
+description: ''
+image: /img/programming/programmer.jpg
+keywords: 실용주의 프로그래머,실용주의,프로그래밍,실용주의 프로그래머 요약,소프트웨어,앤드류 헌트,데이비드 토머스
+tags:
+- '#실용주의프로그래머'
+- '#프로그래밍'
+- '#소프트웨어개발'
+- '#코드관리'
+- '#개발자자세'
+templateKey: post
+title: 실용주의 프로그래머 요약
 ---
 
 ## 요약 갈무리

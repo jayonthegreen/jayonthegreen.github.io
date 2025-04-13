@@ -1,9 +1,15 @@
 ---
+date: 2023-01-16 23:45:41.357000+00:00
+description: 이코노미조선 475호
+image: /img/default.jpeg
+tags:
+- '#멘탈헬스케어'
+- '#MBTI'
+- '#불안감'
+- '#정신건강'
+- '#코로나'
 templateKey: post
 title: 불안에서 오는 MBTI
-image: /img/default.jpeg
-date: 2023-01-16T23:45:41.357Z
-description: 이코노미조선 475호
 ---
 
 이코노미조선 475호 주제는 멘탈헬스케어다. 이미 여러 기업들에서 EAP 형태로 직원들의 멘탈을 챙겨 생산성이 저하되는 것을 대처하고 있는 사례를 소개한다. 해외로는 [betterup](https://www.betterup.com/),  [springhealth](https://springhealth.com/) , 국내에는 [마인들링](https://mindle.kr/) 이 있다. 인접하게는 calm 같은 명상앱 등도 있다. 회사에서도 여러 사람과 이야기를 나누어 보면, 과도한 불안감으로 어려움을 겪고 있다는 생각이 들기도 한다. 나에게도 예외는 없다. 위닝멘탈리티는 그 자체로 사실 현실의 문제이다. 
