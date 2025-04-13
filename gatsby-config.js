@@ -1,6 +1,6 @@
-import type { GatsbyConfig } from "gatsby";
+// import type { GatsbyConfig } from "gatsby";
 
-const config: GatsbyConfig = {
+const config = {
   siteMetadata: {
     title: `jay`,
     siteUrl: `https://jayonthegreen.github.io`
