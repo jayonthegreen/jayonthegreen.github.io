@@ -1,6 +1,6 @@
 ---
 templateKey: post
-title: 회사를 만들 때 알아야할 상황들
+title: CEO 체크 리스트
 image: /img/default.jpeg
 date: 2024-12-09T08:40:00.000Z
 description: Matt Mochary, 『The Great CEO Within』를 읽고
