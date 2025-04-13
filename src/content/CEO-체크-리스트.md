@@ -1,9 +1,15 @@
 ---
+date: 2024-12-09 08:40:00+00:00
+description: Matt Mochary, 『The Great CEO Within』를 읽고
+image: /img/default.jpeg
+tags:
+- '#CEO'
+- '#기업문화'
+- '#업무습관'
+- '#코파운더'
+- '#논의방법'
 templateKey: post
 title: CEO 체크 리스트
-image: /img/default.jpeg
-date: 2024-12-09T08:40:00.000Z
-description: Matt Mochary, 『The Great CEO Within』를 읽고
 ---
 
 포괄적으로 알고 구조화해두는 건 생각보다 길을 잃지 않게 해준다.  이 책은 그런 관점에서 훌륭하다. 회사를 넓은 시야로 살펴보게 된다.

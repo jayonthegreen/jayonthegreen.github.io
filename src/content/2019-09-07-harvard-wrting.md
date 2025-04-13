@@ -1,10 +1,16 @@
 ---
-templateKey: post
-title: 결론부터 말해라
-image: /img/default.jpeg
 date: 2019-09-07
 description: 송숙희, 『150년 하버드 글쓰기 비법』을 읽고
+image: /img/default.jpeg
 keywords: 하버드 글쓰기, 송숙희
+tags:
+- '#결론부터말해라'
+- '#글쓰기기본기'
+- '#생각정리'
+- '#의견제시'
+- '#효과적인글쓰기'
+templateKey: post
+title: 결론부터 말해라
 ---
 
 인상 깊은 단 한문장을 뽑자면 '결론부터 이야기하라'이다. 그래서 결론부터 이야기 한다. 이 책에 대단히 새로운 내용은 없다. 글쓰기 기본기를 다시 새기는 시간이었다.

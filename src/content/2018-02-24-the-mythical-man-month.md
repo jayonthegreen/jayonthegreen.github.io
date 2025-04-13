@@ -1,10 +1,16 @@
 ---
-templateKey: post
-title: 소프트웨어의 미신
-image: /img/book/code.jpg
 date: 2018-02-24
 description: 프레더릭 브룩스, 『맨먼스 미신』을 읽고
+image: /img/book/code.jpg
 keywords: The Mythical Man Month,맨먼스미신,소프트웨어공학,은탄환은 없다
+tags:
+- '#소프트웨어공학'
+- '#프로그래밍'
+- '#미신'
+- '#소프트웨어의미신'
+- '#책리뷰'
+templateKey: post
+title: 소프트웨어의 미신
 ---
 
 > "I bought my boss two copies of The Mythical Man Month so that he could read it twice as fast." - <a href="https://twitter.com/rkoutnik">@rkoutnik</a>
@@ -18,4 +24,4 @@ keywords: The Mythical Man Month,맨먼스미신,소프트웨어공학,은탄환
 
 > 우리는 개조한 차고에서 두 명이 만들어낸 프로그램이 대규모 팀의 성과를 뛰어넘었다는 신문 기사를 가끔 접하곤 한다. 그리고 프로그래머라면 다들 이런 이야기를 믿을 준비가 되어 있는 것이, 어떤 프로그램이라도 1년에 1000 문장을 작성한다는 업계의 팀들보다야 자신이 훨리 빨리 짤 수 있음을 알기 때문이다. 그렇다면 왜 업계의 모든 프로그래밍 팀이 2인조들로 대체되지 않았을까? 우리는 여기서 '무엇'이 만들어지는지에 주목할 필요가 있다. <i>4 page</i>
 
-'늦어진 작업에 맨먼스를 더 투입하는 것이 오히려 더 큰 지연을 만들 수 있다', '부족한 시간 탓에 망가진 프로젝트는 다른 이유로 그렇게 된 경우를 모두 합한 것보다 많다.' 등 소프트웨어공학에 관련한 여러 생각들을 읽을 수 있었다. 
+'늦어진 작업에 맨먼스를 더 투입하는 것이 오히려 더 큰 지연을 만들 수 있다', '부족한 시간 탓에 망가진 프로젝트는 다른 이유로 그렇게 된 경우를 모두 합한 것보다 많다.' 등 소프트웨어공학에 관련한 여러 생각들을 읽을 수 있었다.

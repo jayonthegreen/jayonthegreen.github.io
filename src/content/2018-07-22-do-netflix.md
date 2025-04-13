@@ -1,10 +1,16 @@
 ---
-templateKey: post
-title: 넷플릭스?
-image: /img/book/netflix-logo.png
 date: 2018-07-22
 description: 문성길, 『넷플릭스하다』
+image: /img/book/netflix-logo.png
 keywords: 넷플릭스,넷플릭스하다,netflix,북저널리즘,문성길
+tags:
+- '#넷플릭스'
+- '#고객중심'
+- '#데이터분석'
+- '#콘텐츠공급'
+- '#넷플릭스양자이론'
+templateKey: post
+title: 넷플릭스?
 ---
 
 많은 회사가 넷플릭스를 참고한다. 주로는 고객, 데이터 중심을 이야기 한다. 이 책을 통해 넷플릭스의 실체를 읽었다.

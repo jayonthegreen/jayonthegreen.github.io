@@ -1,10 +1,16 @@
 ---
-templateKey: post
-title: 문장 다듬기
-image: /img/programming/picaso.jpg
 date: 2019-05-18
 description: "\b김정선, 『내 문장이 그렇게 이상한가요?』를 읽고"
+image: /img/programming/picaso.jpg
 keywords: 내 문장이 그렇게 이상한가요?,김정선,글쓰기,글 다듬기,교정
+tags:
+- '#문장다듬기'
+- '#글쓰기'
+- '#글쓰기교정'
+- '#문장수정'
+- '#글쓰기팁'
+templateKey: post
+title: 문장 다듬기
 ---
 
 어색한 글이 무엇인지 읽었다. 책을 읽으며 예전에 쓴 글을 꺼내 고쳐 썼는데 꽤나 재밌다. 내 문장은 그렇게나 이상했다.

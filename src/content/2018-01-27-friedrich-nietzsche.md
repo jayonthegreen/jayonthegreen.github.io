@@ -1,11 +1,18 @@
 ---
+date: 2018-01-27 23:31:00+00:00
+description: 사이토 다카시, 『곁에 두고 읽는 니체』를 읽고
+image: /img/book/nietzsche.jpg
+keywords: 곁에 두고 읽는 니체, 사이토 디카시, 니체, nietzsche
+tags:
+- '#니체'
+- '#삶에대한열의'
+- '#초인정신'
+- '#자아사랑'
+- '#고독'
 templateKey: post
 title: 가볍게 니체
-image: /img/book/nietzsche.jpg
-date: 2018-01-27T23:31:00.000Z
-description: 사이토 다카시, 『곁에 두고 읽는 니체』를 읽고
-keywords: 곁에 두고 읽는 니체, 사이토 디카시, 니체, nietzsche
 ---
+
 니체의 '삶에 대한 열의'라는 주제의식을 느꼈다. 니체는 '비극적인 상황에서도 자신을 긍정하고 꿈과 희망을 잃지 않으며 우뚝 나아가는 초인 정신'을 이야기한다. 
 
 ## 책 갈무리

@@ -1,10 +1,16 @@
 ---
-templateKey: post
-title: 평가 없는 마케팅은 낭비일까?
-image: /img/book/marketing.jpeg
 date: 2018-04-08
 description: 마크 제프리, 『마케팅 평가 바이블』을 읽고
+image: /img/book/marketing.jpeg
 keywords: 마케팅,데이터드리븐,마케팅 평가 바이블
+tags:
+- '#마케팅'
+- '#데이터기반마케팅'
+- '#마케팅평가'
+- '#성과창출'
+- '#애자일'
+templateKey: post
+title: 평가 없는 마케팅은 낭비일까?
 ---
 
 ## 읽기 전 질문들

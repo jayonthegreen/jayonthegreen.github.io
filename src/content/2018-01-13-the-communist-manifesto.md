@@ -1,11 +1,18 @@
 ---
-templateKey: post
-title: 계급 투쟁
-image: /img/book/marx.jpg
 date: 2018-01-13
 description: 마르크스, 『공산당 선언』을 읽고
+image: /img/book/marx.jpg
 keywords: 공산당 선언, 마르크르, 공산주의 원리, 엥겔스
+tags:
+- '#계급투쟁'
+- '#부르주아'
+- '#노동자'
+- '#산업혁명'
+- '#이기적인인간'
+templateKey: post
+title: 계급 투쟁
 ---
+
 ## 내용
 
 > "지금까지 인간 사회의 모든 역사는 계급 투쟁의 역사이다."

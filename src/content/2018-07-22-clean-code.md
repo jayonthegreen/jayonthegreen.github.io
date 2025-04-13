@@ -1,9 +1,15 @@
 ---
-templateKey: post
-title: 전문가 정신
 date: 2018-07-22
 description: 로버트 C. 마틴, 『클린 코드』를 읽고
 keywords: 클린 코드,개발,로버트 마틴
+tags:
+- '#코딩'
+- '#프로그래밍'
+- '#개발자'
+- '#깨끗한코드'
+- '#전문가정신'
+templateKey: post
+title: 전문가 정신
 ---
 
 <iframe src="https://coupa.ng/bhkoaZ" width="120" height="240" frameborder="0" scrolling="no"></iframe>

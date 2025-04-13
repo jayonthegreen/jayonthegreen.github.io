@@ -1,12 +1,17 @@
 ---
-templateKey: post
-title: 아마존 문화 살펴보기
-image: /img/book/running.jpg
 date: 2019-11-04
 description: 박정준, 『나는 아마존에서 미래를 다녔다』를 읽고
+image: /img/book/running.jpg
 keywords: 나는 아마존에서 미래를 다녔다박정준
+tags:
+- '#아마존문화'
+- '#고객중심주의'
+- '#인티그리티'
+- '#실패와혁신'
+- '#도어데스크'
+templateKey: post
+title: 아마존 문화 살펴보기
 ---
-
 
 문화는 구체적인 것들로부터 추상화된다. '우리는 고객을 위합니다.'  아마존의 유명한 문화들이 어떠한지 디테일 있게 다룬 책.
 
