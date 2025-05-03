@@ -1,19 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Nav from '../Nav'
+import { useSiteMetadata } from '../useSiteMetadata'
+
+
 
 class PostTemplate extends React.Component {
+  
   render() {
+
     return (
       <>
-        <title>{this.props.data.markdownRemark.frontmatter.title}</title>
-        <meta name="description" content={this.props.data.markdownRemark.frontmatter.description} />
-        <meta name="keywords" content={this.props.data.markdownRemark.frontmatter.keywords} />
-        <meta property="og:title" content={this.props.data.markdownRemark.frontmatter.title} />
-        <meta property="og:description" content={this.props.data.markdownRemark.frontmatter.description} />
-        <meta property="og:image" content={this.props.data.markdownRemark.frontmatter.image} />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="Jay" />
         <main>
           <Nav/>
           <h1>{this.props.data.markdownRemark.frontmatter.title} </h1>
@@ -33,6 +30,25 @@ class PostTemplate extends React.Component {
 
 }
 
+export function Head({ data}) {
+  const sitemeta = useSiteMetadata();
+  const tilte = data.markdownRemark.frontmatter.title || sitemeta.title
+  const description = data.markdownRemark.frontmatter.description || sitemeta.description
+  const keywords = (data.markdownRemark.frontmatter.tags || []).join(', ').replace(/#/g, '')
+  const image = `${sitemeta.siteUrl}${data.markdownRemark.frontmatter.image || sitemeta.image}`
+  return (
+    <>
+      <title>{tilte}</title>
+      <meta property="og:title" content={tilte} />
+
+      <meta name="description" content={description} />
+      <meta property="og:description" content={description} />
+
+      <meta name="keywords" content={keywords} />
+      <meta property="og:image" content={image} />
+    </>
+  )
+}
 
 export default PostTemplate
 
@@ -47,7 +63,7 @@ export const query = graphql`
         title
         date(formatString: "YYYY.MM.DD")
         description
-        keywords
+        tags
         image
       }
     }
