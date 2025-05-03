@@ -12,7 +12,6 @@ class PostTemplate extends React.Component {
         <meta property="og:title" content={this.props.data.markdownRemark.frontmatter.title} />
         <meta property="og:description" content={this.props.data.markdownRemark.frontmatter.description} />
         <meta property="og:image" content={this.props.data.markdownRemark.frontmatter.image} />
-        <meta property="og:url" content={`https://example.com${this.props.data.markdownRemark.fields.slug}`} />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Jay" />
         <main>
