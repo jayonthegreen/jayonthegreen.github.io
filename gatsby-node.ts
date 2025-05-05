@@ -8,7 +8,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `/post${slug}`,
+      value: `${slug}`,
     })
   }
 }
@@ -34,7 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
         result.data.allMarkdownRemark.edges.map(({ node }) => {
             createPage({
               path: node.fields.slug,
-              component: path.resolve(`./src/templates/post.tsx`),
+              component: path.resolve(`./src/templates/markdown.tsx`),
               context: {
                 // Data passed to context is available in page queries as GraphQL variables.
                 slug: node.fields.slug,

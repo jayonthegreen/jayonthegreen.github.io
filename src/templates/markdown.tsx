@@ -23,7 +23,7 @@ type BlogPostQueryData = {
   markdownRemark: MarkdownRemark
 }
 
-class PostTemplate extends React.Component<PageProps<BlogPostQueryData>> {
+class MarkdownTemplate extends React.Component<PageProps<BlogPostQueryData>> {
   render() {
     const { data } = this.props
     const { title, date, description } = data.markdownRemark.frontmatter
@@ -78,7 +78,7 @@ export function Head({ data }: HeadProps<BlogPostQueryData>) {
   )
 }
 
-export default PostTemplate
+export default MarkdownTemplate
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
