@@ -27,7 +27,7 @@ const IndexPage: React.FC<PageProps> = ({
                  overflow: 'hidden',
                  }}>
                 <span style={{marginRight: '0.3rem'}}>
-                    {node.frontmatter.date.split('.')[0]}·{node.frontmatter.date.split('.')[1]}
+                    { node.frontmatter.date && node.frontmatter.date.split('.')[0]}·{node.frontmatter.date.split('.')[1]}
                 </span>   
               {node.frontmatter.description}
               </p>
@@ -48,6 +48,8 @@ export const query = graphql`
   query {
     allMarkdownRemark (
         sort: { frontmatter: { date: DESC } }
+        filter: { fileAbsolutePath: { regex: "/pages/post/" } }
+
     ){
       edges {
         node {
