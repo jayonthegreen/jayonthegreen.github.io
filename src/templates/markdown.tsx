@@ -51,6 +51,14 @@ class MarkdownTemplate extends React.Component<PageProps<BlogPostQueryData>> {
               __html: data.markdownRemark.html,
             }}
           />
+          <hr/>
+          <div>
+              <a 
+              target='_blank'
+              rel='noopener noreferrer'
+              style={{fontStyle: 'italic',fontWeight: 'bold', color: '#007acc'}}
+              href='https://maily.so/green.jay?mid=vpzl5x68drk'>뉴스레터 구독하기</a>
+          </div>
         </main>
       </>
     )
