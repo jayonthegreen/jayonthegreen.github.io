@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /post/
 
 Sitemap: https://jayonthegreen.github.io/sitemap-index.xml
