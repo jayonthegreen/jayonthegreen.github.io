@@ -8,7 +8,7 @@ from pathlib import Path
 
 import gdown  # pip install gdown
 
-FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID")"
+FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID")
 DEST_DIR = os.environ.get("DEST_DIR", "content")  # 리포 내 동기화 경로(기본: content)
 
 # 해시 계산(큰 파일도 안전하게)
