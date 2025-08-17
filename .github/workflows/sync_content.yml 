@@ -1,0 +1,59 @@
+name: Sync Google Drive folder and commit
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # KST(UTC+9) 03:00에 돌리고 싶다면, UTC 18:00으로 설정
+    - cron: "0 18 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # uv 설치 + 파이썬 툴체인 관리(여기서 3.11 설치까지 처리)
+      - name: Set up uv and Python
+        uses: astral-sh/setup-uv@v3
+        with:
+          python-version: "3.11"
+          enable-cache: true
+          # uv.lock이 있으면 가장 강력; 없으면 pyproject.toml을 키로 캐시
+          cache-dependency-glob: |
+            uv.lock
+            pyproject.toml
+
+      - name: Sync dependencies (lock respected if exists)
+        run: |
+          # uv.lock이 없다면 생성(선택)
+          if [ ! -f uv.lock ]; then
+            uv lock
+          fi
+          # 의존성 설치(.venv 생성/재사용)
+          uv sync
+
+      - name: Run sync script
+        env:
+          GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+          DEST_DIR: content
+        run: |
+          uv run python sync_gdrive.py
+
+      - name: Commit & push if changed
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(sync): update from Google Drive folder"
+            git push
+          else
+            echo "No changes to commit."
+          fi

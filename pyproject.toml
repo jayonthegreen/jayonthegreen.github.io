@@ -1,0 +1,14 @@
+[project]
+name = "gdrive-sync-bot"
+version = "0.1.0"
+description = "Sync a public Google Drive folder into the repo and commit changes"
+requires-python = ">=3.11"
+
+dependencies = [
+  "gdown>=5.2.0"
+]
+
+[tool.uv]
+# uv가 .venv를 리포 루트에 생성(깃헙액션 캐시 효율 ↑)
+# 로컬에서도 `uv run`이 자동으로 이 가상환경을 사용
+default-groups = []
