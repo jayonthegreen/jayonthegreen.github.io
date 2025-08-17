@@ -1,7 +1,7 @@
 ---
 date: 2025-07-13
-description: 산티아고 순례길의 도착지에서
-tags: []
+description: 산티아고 순례길의 끝에서
+tags: null
 title: all or nothing
 ---
 
