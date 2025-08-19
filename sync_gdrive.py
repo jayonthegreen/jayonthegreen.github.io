@@ -4,6 +4,9 @@ import sys
 import tempfile
 import shutil
 import hashlib
+import time
+import subprocess
+import json
 from pathlib import Path
 
 import gdown  # pip install gdown
@@ -39,6 +42,86 @@ def build_manifest(root: Path):
 def ensure_parent_dir(path: Path):
     path.parent.mkdir(parents=True, exist_ok=True)
 
+def download_gdrive_folder_list_method(folder_id: str, output_dir: Path):
+    """gdown --list로 파일 목록을 가져온 후 개별 다운로드"""
+    try:
+        folder_url = f"https://drive.google.com/drive/folders/{folder_id}"
+        print(f"[INFO] Getting file list from folder: {folder_url}")
+        
+        # 1단계: 폴더 내 파일 목록 가져오기
+        list_cmd = ["gdown", folder_url, "--folder", "--list"]
+        result = subprocess.run(list_cmd, capture_output=True, text=True, check=True)
+        
+        if not result.stdout.strip():
+            print("[WARN] No files found in folder listing")
+            return False
+            
+        print(f"[INFO] Found files in folder:")
+        print(result.stdout)
+        
+        # 2단계: 출력에서 파일 URL들 추출
+        lines = result.stdout.strip().split('\n')
+        file_urls = []
+        file_names = []
+        
+        for line in lines:
+            if 'https://drive.google.com/file/d/' in line:
+                # 파일 URL과 이름 추출
+                parts = line.split()
+                for part in parts:
+                    if part.startswith('https://drive.google.com/file/d/'):
+                        file_urls.append(part)
+                        # 파일명은 URL 다음에 나타날 것
+                        try:
+                            name_part = line.split(part)[1].strip()
+                            if name_part:
+                                file_names.append(name_part.split()[0] if name_part.split() else f"file_{len(file_urls)}")
+                            else:
+                                file_names.append(f"file_{len(file_urls)}")
+                        except:
+                            file_names.append(f"file_{len(file_urls)}")
+                        break
+        
+        if not file_urls:
+            print("[WARN] No file URLs found in listing")
+            return False
+            
+        print(f"[INFO] Found {len(file_urls)} files to download")
+        
+        # 3단계: 각 파일을 개별적으로 다운로드
+        output_dir.mkdir(parents=True, exist_ok=True)
+        downloaded_count = 0
+        
+        for i, (url, name) in enumerate(zip(file_urls, file_names)):
+            try:
+                print(f"[INFO] Downloading {i+1}/{len(file_urls)}: {name}")
+                
+                # gdown으로 개별 파일 다운로드
+                output_path = output_dir / name
+                gdown.download(url, str(output_path), quiet=False)
+                
+                if output_path.exists():
+                    downloaded_count += 1
+                    print(f"[SUCCESS] Downloaded: {name}")
+                else:
+                    print(f"[WARN] Failed to download: {name}")
+                    
+            except Exception as e:
+                print(f"[ERROR] Failed to download {name}: {e}")
+                continue
+        
+        print(f"[INFO] Successfully downloaded {downloaded_count}/{len(file_urls)} files")
+        return downloaded_count > 0
+        
+    except subprocess.CalledProcessError as e:
+        print(f"[ERROR] Failed to list folder contents: {e}")
+        print(f"[ERROR] Command output: {e.stdout}")
+        print(f"[ERROR] Command error: {e.stderr}")
+        return False
+    except Exception as e:
+        print(f"[ERROR] Unexpected error in list method: {e}")
+        return False
+
 def main():
     if not FOLDER_ID:
         print("Env GDRIVE_FOLDER_ID is required.")
@@ -52,15 +135,64 @@ def main():
     try:
         print(f"[INFO] Downloading folder id={FOLDER_ID} -> {tmp_root}")
         # 공개 폴더(링크 공개)일 때 인증 없이 동작
-        gdown.download_folder(
-            id=FOLDER_ID,
-            output=str(tmp_root),
-            quiet=False,
-            use_cookies=False,   # Actions 환경에서 쿠키 불필요
-            remaining_ok=True,   # 중간에 실패 파일이 있어도 계속
-        )
+        # 먼저 list 방법으로 시도 (더 확실한 방법)
+        print("[INFO] Trying list method first...")
+        download_success = download_gdrive_folder_list_method(FOLDER_ID, tmp_root)
+        
+        # list 방법이 실패했으면 기존 방법으로 폴백
+        if not download_success:
+            print("[INFO] List method failed, trying standard folder download...")
+            max_retries = 3
+            
+            for attempt in range(max_retries):
+                try:
+                    print(f"[INFO] Download attempt {attempt + 1}/{max_retries}")
+                    gdown.download_folder(
+                        id=FOLDER_ID,
+                        output=str(tmp_root),
+                        quiet=False,
+                        use_cookies=False,   # Actions 환경에서 쿠키 불필요
+                        remaining_ok=True,   # 중간에 실패 파일이 있어도 계속
+                    )
+                    
+                    # 다운로드된 파일 수 확인
+                    downloaded_files = list(tmp_root.rglob("*"))
+                    file_count = len([f for f in downloaded_files if f.is_file()])
+                    print(f"[INFO] Downloaded {file_count} files")
+                    
+                    if file_count > 0:
+                        download_success = True
+                        break
+                        
+                except Exception as e:
+                    print(f"[WARN] Download attempt {attempt + 1} failed: {e}")
+                    if attempt < max_retries - 1:
+                        print(f"[INFO] Retrying in 5 seconds...")
+                        time.sleep(5)
+        
+        if not download_success:
+            print("[ERROR] All download methods failed")
+            sys.exit(1)
 
-        # 2) 매니페스트 비교로 변경점 계산
+        # 2) 다운로드 결과 상세 분석
+        downloaded_files = list(tmp_root.rglob("*"))
+        total_files = len([f for f in downloaded_files if f.is_file()])
+        total_dirs = len([f for f in downloaded_files if f.is_dir()])
+        
+        print(f"[INFO] Download complete - Files: {total_files}, Directories: {total_dirs}")
+        
+        # 파일 목록 출력 (처음 20개만)
+        md_files = [f for f in downloaded_files if f.is_file() and f.suffix == '.md']
+        print(f"[INFO] Found {len(md_files)} markdown files")
+        
+        if md_files:
+            print("[INFO] Sample files:")
+            for i, f in enumerate(md_files[:20]):
+                print(f"  {i+1:2d}. {f.name}")
+            if len(md_files) > 20:
+                print(f"  ... and {len(md_files) - 20} more files")
+
+        # 3) 매니페스트 비교로 변경점 계산
         src_manifest = build_manifest(tmp_root)
         dest_manifest = build_manifest(dest)
 
