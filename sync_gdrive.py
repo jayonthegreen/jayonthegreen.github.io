@@ -22,6 +22,8 @@ def sha256sum(path: Path, chunk_size: int = 1024 * 1024) -> str:
             h.update(chunk)
     return h.hexdigest()
 
+
+
 def build_manifest(root: Path):
     """root 아래 모든 파일에 대해 {상대경로: (size, sha256)} 매니페스트 생성"""
     manifest = {}
