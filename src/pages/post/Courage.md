@@ -12,7 +12,6 @@ tags:
 templateKey: post
 title: Courage
 ---
-
 We should smell the cheese often so we know when it's getting old. But the most impressive sentence is the following.
 
 > What Would You Do If You Weren't Afraid?
