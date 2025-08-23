@@ -19,36 +19,27 @@ jobs:
         with:
           fetch-depth: 0
 
-      # uv 설치 + 파이썬 툴체인 관리(여기서 3.11 설치까지 처리)
-      - name: Set up uv and Python
-        uses: astral-sh/setup-uv@v3
+      # Node.js 설치 및 종속성 설치
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: "3.11"
-          enable-cache: true
-          # uv.lock이 있으면 가장 강력; 없으면 pyproject.toml을 키로 캐시
-          cache-dependency-glob: |
-            uv.lock
-            pyproject.toml
+          node-version: '22.x'
+          cache: 'npm'
 
-      - name: Sync dependencies (lock respected if exists)
-        run: |
-          # uv.lock이 없다면 생성(선택)
-          if [ ! -f uv.lock ]; then
-            uv lock
-          fi
-          # 의존성 설치(.venv 생성/재사용)
-          uv sync
+      - name: Install dependencies
+        run: npm ci
 
       - name: Run sync script
         env:
           GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+          GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
           DEST_DIR: content
         run: |
-          uv run python sync_gdrive.py
+          npm run sync-gdrive
 
       - name: Process content to pages
         run: |
-          uv run python process_content.py
+          npm run process-content
 
       - name: Commit & push if changed
         run: |
