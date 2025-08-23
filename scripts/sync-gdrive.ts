@@ -148,9 +148,9 @@ function initializeDriveAPI() {
   return google.drive({ version: 'v3', auth });
 }
 
-// Get all files in a Google Drive folder recursively
-async function getAllFilesInFolder(drive: any, folderId: string, folderPath: string = ''): Promise<Array<{ file: DriveFile, path: string }>> {
-  const files: Array<{ file: DriveFile, path: string }> = [];
+// Get files that need to be downloaded based on metadata comparison
+async function getChangedFiles(drive: any, folderId: string, localMetadata: FileManifest, folderPath: string = ''): Promise<Array<{ file: DriveFile, path: string, action: 'add' | 'update' }>> {
+  const changedFiles: Array<{ file: DriveFile, path: string, action: 'add' | 'update' }> = [];
   
   try {
     let pageToken: string | undefined = undefined;
@@ -158,7 +158,7 @@ async function getAllFilesInFolder(drive: any, folderId: string, folderPath: str
     do {
       const response = await drive.files.list({
         q: `'${folderId}' in parents and trashed = false`,
-        fields: 'nextPageToken, files(id, name, parents, mimeType, size)',
+        fields: 'nextPageToken, files(id, name, parents, mimeType, size, modifiedTime)',
         pageToken: pageToken
       });
       
@@ -169,11 +169,23 @@ async function getAllFilesInFolder(drive: any, folderId: string, folderPath: str
         
         if (item.mimeType === 'application/vnd.google-apps.folder') {
           // Recursively get files from subfolder
-          const subFolderFiles = await getAllFilesInFolder(drive, item.id, currentPath);
-          files.push(...subFolderFiles);
+          const subFolderChangedFiles = await getChangedFiles(drive, item.id, localMetadata, currentPath);
+          changedFiles.push(...subFolderChangedFiles);
         } else {
-          // Regular file
-          files.push({ file: item, path: currentPath });
+          // Check if this file needs downloading
+          const remoteSize = parseInt(item.size) || 0;
+          const remoteHash = item.modifiedTime || 'unknown';
+          
+          if (!localMetadata[currentPath]) {
+            // New file
+            changedFiles.push({ file: item, path: currentPath, action: 'add' });
+          } else {
+            // Check if modified
+            const { size: localSize, hash: localHash } = localMetadata[currentPath];
+            if (remoteSize !== localSize || remoteHash !== localHash) {
+              changedFiles.push({ file: item, path: currentPath, action: 'update' });
+            }
+          }
         }
       }
       
@@ -181,11 +193,11 @@ async function getAllFilesInFolder(drive: any, folderId: string, folderPath: str
     } while (pageToken);
     
   } catch (error) {
-    console.error(`[ERROR] Failed to list files in folder ${folderId}:`, error);
+    console.error(`[ERROR] Failed to get changed files from folder ${folderId}:`, error);
     throw error;
   }
   
-  return files;
+  return changedFiles;
 }
 
 // Download a file from Google Drive
@@ -259,78 +271,48 @@ async function main() {
   console.log('[INFO] Initializing Google Drive API...');
   const drive = initializeDriveAPI();
 
-  // 2) Get remote file metadata first (lightweight check)
-  console.log(`[INFO] Checking for changes in Google Drive folder ${FOLDER_ID}...`);
-  const remoteMetadata = await getFileMetadata(drive, FOLDER_ID);
-  console.log(`[INFO] Found ${Object.keys(remoteMetadata).length} files in remote folder`);
-
-  // 3) Compare with local manifest
+  // 2) Get local manifest for comparison
   let localMetadata: FileManifest = {};
   try {
     localMetadata = await buildManifest(destPath);
+    console.log(`[INFO] Found ${Object.keys(localMetadata).length} local files`);
   } catch (error) {
     console.log('[INFO] No local files found, treating as initial sync');
   }
 
-  // 4) Check if sync is needed
-  if (!needsSync(remoteMetadata, localMetadata)) {
-    console.log('[INFO] No changes detected. Skipping sync.');
-    return;
-  }
-  
-  console.log('[INFO] Changes detected. Proceeding with sync...');
-
-  // 5) Create temporary directory
+  // 3) Create temporary directory
   const tmpRoot = await fs.mkdtemp(path.join(tmpdir(), 'gdrive_sync_'));
   
   try {
-    console.log(`[INFO] Downloading folder id=${FOLDER_ID} -> ${tmpRoot}`);
+    // Get only files that have changed
+    const changedFiles = await getChangedFiles(drive, FOLDER_ID, localMetadata);
+    console.log(`[INFO] Found ${changedFiles.length} files that need downloading`);
     
-    // Get all files in the Google Drive folder
-    const driveFiles = await getAllFilesInFolder(drive, FOLDER_ID);
-    console.log(`[INFO] Found ${driveFiles.length} files in Google Drive folder`);
+    if (changedFiles.length === 0) {
+      console.log('[INFO] No files to download');
+      return;
+    }
     
-    // Download each file
-    for (const { file, path: filePath } of driveFiles) {
+    console.log(`[INFO] Downloading changed files to ${tmpRoot}`);
+    
+    // Download only changed files
+    for (const { file, path: filePath, action } of changedFiles) {
       const localPath = path.join(tmpRoot, filePath);
-      console.log(`[DOWNLOAD] ${filePath}`);
+      console.log(`[${action.toUpperCase()}] ${filePath}`);
       await downloadFile(drive, file.id, localPath);
     }
 
-    // 3) Build manifests and compare changes
-    const srcManifest = await buildManifest(tmpRoot);
-    let destManifest: FileManifest = {};
-    
-    try {
-      destManifest = await buildManifest(destPath);
-    } catch (error) {
-      // Destination directory might not exist or be empty
-      console.log('[INFO] Destination directory empty or not accessible, treating as new sync');
-    }
-
-    const toAddOrUpdate: string[] = [];
+    // 4) Handle deletions - check for files that exist locally but not remotely
+    const remoteMetadata = await getFileMetadata(drive, FOLDER_ID);
     const toDelete: string[] = [];
-
-    // Find files to add or update
-    for (const [relativePath, { size, hash }] of Object.entries(srcManifest)) {
-      if (!destManifest[relativePath]) {
-        toAddOrUpdate.push(relativePath);
-      } else {
-        const { size: destSize, hash: destHash } = destManifest[relativePath];
-        if (size !== destSize || hash !== destHash) {
-          toAddOrUpdate.push(relativePath);
-        }
-      }
-    }
-
-    // Find files to delete (exist in dest but not in src)
-    for (const relativePath of Object.keys(destManifest)) {
-      if (!srcManifest[relativePath]) {
+    
+    for (const relativePath of Object.keys(localMetadata)) {
+      if (!remoteMetadata[relativePath]) {
         toDelete.push(relativePath);
       }
     }
 
-    // 4) Apply deletions
+    // Apply deletions
     for (const relativePath of toDelete) {
       const targetPath = path.join(destPath, relativePath);
       try {
@@ -341,16 +323,17 @@ async function main() {
       }
     }
 
-    // 5) Apply additions/updates (copy only necessary files)
-    for (const relativePath of toAddOrUpdate) {
+    // 5) Copy downloaded files to destination
+    const srcManifest = await buildManifest(tmpRoot);
+    for (const [relativePath] of Object.entries(srcManifest)) {
       const srcPath = path.join(tmpRoot, relativePath);
       const destFilePath = path.join(destPath, relativePath);
       await copyFile(srcPath, destFilePath);
-      console.log(`[UPD] ${relativePath}`);
+      console.log(`[COPY] ${relativePath}`);
     }
 
     // 6) Summary
-    console.log(`[SUMMARY] updated: ${toAddOrUpdate.length}, deleted: ${toDelete.length}`);
+    console.log(`[SUMMARY] downloaded: ${changedFiles.length}, deleted: ${toDelete.length}`);
 
   } finally {
     // Cleanup temporary directory
