@@ -84,6 +84,30 @@ async function ensureParentDir(filePath: string) {
   await fs.mkdir(parentDir, { recursive: true });
 }
 
+// Check if folder was modified within the last N days
+async function isFolderRecentlyModified(drive: any, folderId: string, daysThreshold: number = 3): Promise<boolean> {
+  try {
+    const response = await drive.files.get({
+      fileId: folderId,
+      fields: 'modifiedTime'
+    });
+    
+    const modifiedTime = new Date(response.data.modifiedTime);
+    const thresholdDate = new Date();
+    thresholdDate.setDate(thresholdDate.getDate() - daysThreshold);
+    
+    const isRecent = modifiedTime > thresholdDate;
+    console.log(`[INFO] Folder last modified: ${modifiedTime.toISOString()}`);
+    console.log(`[INFO] Threshold date (${daysThreshold} days ago): ${thresholdDate.toISOString()}`);
+    console.log(`[INFO] Is recently modified: ${isRecent}`);
+    
+    return isRecent;
+  } catch (error) {
+    console.warn(`[WARN] Could not check folder modification time: ${error}`);
+    return true; // If we can't check, assume it's modified to be safe
+  }
+}
+
 // Initialize Google Drive API
 function initializeDriveAPI() {
   if (!SERVICE_ACCOUNT_KEY) {
@@ -189,7 +213,18 @@ async function main() {
   console.log('[INFO] Initializing Google Drive API...');
   const drive = initializeDriveAPI();
 
-  // 2) Create temporary directory
+  // 2) Check if folder was recently modified (within 3 days)
+  console.log(`[INFO] Checking if folder ${FOLDER_ID} was modified recently...`);
+  const isRecentlyModified = await isFolderRecentlyModified(drive, FOLDER_ID, 3);
+  
+  if (!isRecentlyModified) {
+    console.log('[INFO] Folder not modified within the last 3 days. Skipping sync.');
+    return;
+  }
+  
+  console.log('[INFO] Folder was recently modified. Proceeding with sync...');
+
+  // 3) Create temporary directory
   const tmpRoot = await fs.mkdtemp(path.join(tmpdir(), 'gdrive_sync_'));
   
   try {
