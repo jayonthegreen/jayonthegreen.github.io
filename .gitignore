@@ -11,3 +11,5 @@ yarn-error.log
 
 .cache/
 src/gatsby-types.d.ts
+
+.end

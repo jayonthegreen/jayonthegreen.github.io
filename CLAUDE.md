@@ -95,9 +95,22 @@ This is a Gatsby-based blog with a two-stage automated content management system
 - `GOOGLE_SERVICE_ACCOUNT_KEY` - JSON string of Google service account credentials
 - `DEST_DIR` - Destination directory for synced content (default: "content")
 
+### Local Development Setup
+1. Copy `.env.example` to `.env`
+2. Fill in the required environment variables
+3. Never commit the `.env` file to the repository
+
 ### Setting up Google Drive API
 1. Create a Google Cloud project
 2. Enable Google Drive API
 3. Create a service account and download the JSON key
 4. Share your Google Drive folder with the service account email
-5. Add the JSON key as `GOOGLE_SERVICE_ACCOUNT_KEY` secret in GitHub
+5. For local development: Add credentials to your `.env` file
+6. For GitHub Actions: Add the JSON key as `GOOGLE_SERVICE_ACCOUNT_KEY` secret in GitHub
+
+### Environment Configuration
+The project uses a centralized environment configuration module at `src/config/env.ts` that:
+- Loads environment variables from `.env` file
+- Validates required environment variables
+- Provides type-safe access to configuration values
+- Throws clear error messages for missing required variables

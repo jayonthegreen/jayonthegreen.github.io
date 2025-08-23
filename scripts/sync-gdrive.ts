@@ -5,10 +5,9 @@ import * as path from 'path';
 import * as crypto from 'crypto';
 import { tmpdir } from 'os';
 import { google } from 'googleapis';
+import { env } from '../env';
 
-const FOLDER_ID = process.env.GDRIVE_FOLDER_ID;
-const DEST_DIR = process.env.DEST_DIR || 'content';
-const SERVICE_ACCOUNT_KEY = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
+const { GDRIVE_FOLDER_ID: FOLDER_ID, DEST_DIR, GOOGLE_SERVICE_ACCOUNT_KEY: SERVICE_ACCOUNT_KEY } = env;
 
 interface FileManifest {
   [relativePath: string]: {
@@ -182,10 +181,6 @@ async function copyFile(src: string, dest: string): Promise<void> {
 }
 
 async function main() {
-  if (!FOLDER_ID) {
-    console.error('Env GDRIVE_FOLDER_ID is required.');
-    process.exit(2);
-  }
 
   const destPath = path.resolve(DEST_DIR);
   await fs.mkdir(destPath, { recursive: true });
