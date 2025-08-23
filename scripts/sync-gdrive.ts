@@ -84,28 +84,47 @@ async function ensureParentDir(filePath: string) {
   await fs.mkdir(parentDir, { recursive: true });
 }
 
-// Check if folder was modified within the last N days
-async function isFolderRecentlyModified(drive: any, folderId: string, daysThreshold: number = 3): Promise<boolean> {
+// Get lightweight metadata of all files in a Google Drive folder recursively
+async function getFileMetadata(drive: any, folderId: string, folderPath: string = ''): Promise<FileManifest> {
+  const metadata: FileManifest = {};
+  
   try {
-    const response = await drive.files.get({
-      fileId: folderId,
-      fields: 'modifiedTime'
-    });
+    let pageToken: string | undefined = undefined;
     
-    const modifiedTime = new Date(response.data.modifiedTime);
-    const thresholdDate = new Date();
-    thresholdDate.setDate(thresholdDate.getDate() - daysThreshold);
+    do {
+      const response = await drive.files.list({
+        q: `'${folderId}' in parents and trashed = false`,
+        fields: 'nextPageToken, files(id, name, parents, mimeType, size, modifiedTime)',
+        pageToken: pageToken
+      });
+      
+      const items = response.data.files || [];
+      
+      for (const item of items) {
+        const currentPath = folderPath ? `${folderPath}/${item.name}` : item.name;
+        
+        if (item.mimeType === 'application/vnd.google-apps.folder') {
+          // Recursively get metadata from subfolder
+          const subFolderMetadata = await getFileMetadata(drive, item.id, currentPath);
+          Object.assign(metadata, subFolderMetadata);
+        } else {
+          // Regular file - use modifiedTime as hash for comparison
+          metadata[currentPath] = {
+            size: parseInt(item.size) || 0,
+            hash: item.modifiedTime || 'unknown'
+          };
+        }
+      }
+      
+      pageToken = response.data.nextPageToken;
+    } while (pageToken);
     
-    const isRecent = modifiedTime > thresholdDate;
-    console.log(`[INFO] Folder last modified: ${modifiedTime.toISOString()}`);
-    console.log(`[INFO] Threshold date (${daysThreshold} days ago): ${thresholdDate.toISOString()}`);
-    console.log(`[INFO] Is recently modified: ${isRecent}`);
-    
-    return isRecent;
   } catch (error) {
-    console.warn(`[WARN] Could not check folder modification time: ${error}`);
-    return true; // If we can't check, assume it's modified to be safe
+    console.error(`[ERROR] Failed to get file metadata from folder ${folderId}:`, error);
+    throw error;
   }
+  
+  return metadata;
 }
 
 // Initialize Google Drive API
@@ -194,6 +213,33 @@ async function downloadFile(drive: any, fileId: string, destPath: string): Promi
   }
 }
 
+// Check if any files need syncing by comparing metadata
+function needsSync(remoteMetadata: FileManifest, localMetadata: FileManifest): boolean {
+  // Check if any remote files are new or modified
+  for (const [relativePath, { size, hash }] of Object.entries(remoteMetadata)) {
+    if (!localMetadata[relativePath]) {
+      console.log(`[CHANGE] New file: ${relativePath}`);
+      return true;
+    } else {
+      const { size: localSize, hash: localHash } = localMetadata[relativePath];
+      if (size !== localSize || hash !== localHash) {
+        console.log(`[CHANGE] Modified file: ${relativePath}`);
+        return true;
+      }
+    }
+  }
+
+  // Check if any local files were deleted remotely
+  for (const relativePath of Object.keys(localMetadata)) {
+    if (!remoteMetadata[relativePath]) {
+      console.log(`[CHANGE] Deleted file: ${relativePath}`);
+      return true;
+    }
+  }
+
+  return false;
+}
+
 // Copy file with metadata
 async function copyFile(src: string, dest: string): Promise<void> {
   await ensureParentDir(dest);
@@ -213,18 +259,28 @@ async function main() {
   console.log('[INFO] Initializing Google Drive API...');
   const drive = initializeDriveAPI();
 
-  // 2) Check if folder was recently modified (within 3 days)
-  console.log(`[INFO] Checking if folder ${FOLDER_ID} was modified recently...`);
-  const isRecentlyModified = await isFolderRecentlyModified(drive, FOLDER_ID, 3);
-  
-  if (!isRecentlyModified) {
-    console.log('[INFO] Folder not modified within the last 3 days. Skipping sync.');
+  // 2) Get remote file metadata first (lightweight check)
+  console.log(`[INFO] Checking for changes in Google Drive folder ${FOLDER_ID}...`);
+  const remoteMetadata = await getFileMetadata(drive, FOLDER_ID);
+  console.log(`[INFO] Found ${Object.keys(remoteMetadata).length} files in remote folder`);
+
+  // 3) Compare with local manifest
+  let localMetadata: FileManifest = {};
+  try {
+    localMetadata = await buildManifest(destPath);
+  } catch (error) {
+    console.log('[INFO] No local files found, treating as initial sync');
+  }
+
+  // 4) Check if sync is needed
+  if (!needsSync(remoteMetadata, localMetadata)) {
+    console.log('[INFO] No changes detected. Skipping sync.');
     return;
   }
   
-  console.log('[INFO] Folder was recently modified. Proceeding with sync...');
+  console.log('[INFO] Changes detected. Proceeding with sync...');
 
-  // 3) Create temporary directory
+  // 5) Create temporary directory
   const tmpRoot = await fs.mkdtemp(path.join(tmpdir(), 'gdrive_sync_'));
   
   try {
