@@ -3,8 +3,8 @@ name: Sync Google Drive folder and commit
 on:
   workflow_dispatch: {}
   schedule:
-    # KST(UTC+9) 03:00에 돌리고 싶다면, UTC 18:00으로 설정
-    - cron: "0 18 * * *"
+    # KST 08:00-21:00 (UTC 23:00-12:00) 매시간 실행
+    - cron: "0 23,0,1,2,3,4,5,6,7,8,9,10,11,12 * * *"
 
 permissions:
   contents: write
