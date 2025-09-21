@@ -4,7 +4,7 @@ on:
   workflow_dispatch: {}
   schedule:
     # KST 08:00-09:00 (UTC 23:00-00:00) 5분마다 실행
-    - cron: "*/5 23,0 * * *"
+    - cron: "*/5 * * * *"
 
 permissions:
   contents: write
