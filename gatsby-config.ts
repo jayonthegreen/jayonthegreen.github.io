@@ -31,12 +31,17 @@ const config: GatsbyConfig = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }: any) => {
               return allMarkdownRemark.nodes.map((node: any) => {
+                // Clean HTML content to remove invalid XML characters
+                const cleanHtml = node.html
+                  .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '') // Remove control characters
+                  .replace(/&(?!(?:apos|quot|[gl]t|amp);|#)/g, '&amp;'); // Escape unescaped ampersands
+
                 return Object.assign({}, node.frontmatter, {
                   description: node.frontmatter.description || node.excerpt,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": cleanHtml }],
                 })
               })
             },
