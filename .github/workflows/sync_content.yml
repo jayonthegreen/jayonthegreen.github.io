@@ -38,6 +38,18 @@ jobs:
         run: |
           npm run sync-gdrive
 
+      - name: Process Korean content with spell check
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          npm run process-ko
+
+      - name: Translate to English
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          npm run process-en
+
       - name: Process content to pages
         run: |
           npm run process-content

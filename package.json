@@ -14,6 +14,8 @@
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "sync-gdrive": "tsx scripts/sync-gdrive.ts",
+    "process-ko": "tsx scripts/process-ko.ts",
+    "process-en": "tsx scripts/process-en.ts",
     "process-content": "tsx scripts/process-content.ts"
   },
   "dependencies": {
@@ -30,6 +32,7 @@
     "gatsby-transformer-remark": "^6.14.0",
     "gatsby-transformer-sharp": "^5.14.0",
     "googleapis": "^140.0.1",
+    "openai": "^6.2.0",
     "postcss": "^8.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
