@@ -53,11 +53,14 @@ class MarkdownTemplate extends React.Component<PageProps<BlogPostQueryData>> {
           />
           <hr/>
           <div>
-              <a 
-              target='_blank'
-              rel='noopener noreferrer'
-              style={{fontStyle: 'italic',fontWeight: 'bold', color: '#007acc'}}
-              href='https://maily.so/green.jay?mid=vpzl5x68drk'>뉴스레터 구독하기</a>
+              <iframe
+                src="https://jay1298545.substack.com/embed"
+                width="480"
+                height="150"
+                style={{border: '1px solid #EEE', background: 'white'}}
+                frameBorder="0"
+                scrolling="no"
+              />
           </div>
         </main>
       </>
