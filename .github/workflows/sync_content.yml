@@ -34,7 +34,7 @@ jobs:
         env:
           GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
-          DEST_DIR: content
+          DEST_DIR: content/origin
         run: |
           npm run sync-gdrive
 

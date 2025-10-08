@@ -140,7 +140,7 @@ async function getMarkdownFiles(dirPath: string): Promise<string[]> {
 }
 
 async function main(): Promise<void> {
-  const srcDir = 'content';
+  const srcDir = 'content/origin';
   const destDir = 'src/pages/post';
   
   // Check if source directory exists

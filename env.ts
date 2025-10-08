@@ -26,7 +26,7 @@ function getOptionalEnv(key: string, defaultValue: string): string {
 export const env: EnvConfig = {
   GDRIVE_FOLDER_ID: getRequiredEnv('GDRIVE_FOLDER_ID'),
   GOOGLE_SERVICE_ACCOUNT_KEY: getRequiredEnv('GOOGLE_SERVICE_ACCOUNT_KEY'),
-  DEST_DIR: getOptionalEnv('DEST_DIR', 'content')
+  DEST_DIR: getOptionalEnv('DEST_DIR', 'content/origin')
 };
 
 export default env;
