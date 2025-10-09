@@ -332,7 +332,20 @@ async function main() {
       console.log(`[COPY] ${relativePath}`);
     }
 
-    // 6) Summary
+    // 6) Save changed files list for next processing steps
+    const changedFilesList = changedFiles.map(cf => cf.path);
+    const changeManifest = {
+      downloaded: changedFilesList,
+      deleted: toDelete,
+      timestamp: new Date().toISOString()
+    };
+    await fs.writeFile(
+      path.join(destPath, '.changes.json'),
+      JSON.stringify(changeManifest, null, 2),
+      'utf-8'
+    );
+
+    // 7) Summary
     console.log(`[SUMMARY] downloaded: ${changedFiles.length}, deleted: ${toDelete.length}`);
 
   } finally {

@@ -72,39 +72,57 @@ async function main(): Promise<void> {
   // Create destination directory
   await fs.mkdir(destDir, { recursive: true });
 
+  // Read changes manifest to get only changed files
+  const changesPath = path.join(srcDir, '.changes.json');
+  let changedFiles: string[] = [];
+
+  try {
+    const changesContent = await fs.readFile(changesPath, 'utf-8');
+    const changes = JSON.parse(changesContent);
+    changedFiles = changes.downloaded || [];
+
+    // Filter only markdown files
+    changedFiles = changedFiles.filter(f => f.endsWith('.md'));
+
+    console.log(`[INFO] Found ${changedFiles.length} changed markdown files`);
+
+    if (changedFiles.length === 0) {
+      console.log('[INFO] No markdown files to process');
+      return;
+    }
+  } catch (error) {
+    console.log('[INFO] No changes manifest found, processing all files');
+    // If no changes file, process all files
+    const allFiles = await getMarkdownFiles(srcDir);
+    changedFiles = allFiles.map(f => path.relative(srcDir, f));
+  }
+
   // Process files
   let processedCount = 0;
 
-  try {
-    const markdownFiles = await getMarkdownFiles(srcDir);
+  for (const relativePath of changedFiles) {
+    try {
+      const srcPath = path.join(srcDir, relativePath);
+      const filename = path.basename(relativePath);
+      const destPath = path.join(destDir, filename);
 
-    for (const srcPath of markdownFiles) {
-      try {
-        // Get filename
-        const filename = path.basename(srcPath);
-        const destPath = path.join(destDir, filename);
+      // Read file content
+      const content = await fs.readFile(srcPath, 'utf-8');
 
-        // Read file content
-        const content = await fs.readFile(srcPath, 'utf-8');
+      console.log(`[PROCESSING] ${filename}...`);
 
-        console.log(`[PROCESSING] ${filename}...`);
+      // Correct spelling
+      const correctedContent = await correctKoreanSpelling(content);
 
-        // Correct spelling
-        const correctedContent = await correctKoreanSpelling(content);
+      // Write corrected content to destination
+      await fs.writeFile(destPath, correctedContent, 'utf-8');
 
-        // Write corrected content to destination
-        await fs.writeFile(destPath, correctedContent, 'utf-8');
+      console.log(`[DONE] ${filename}`);
+      processedCount++;
 
-        console.log(`[DONE] ${filename}`);
-        processedCount++;
-
-      } catch (error) {
-        console.error(`[ERROR] Failed to process ${srcPath}: ${error}`);
-      }
+    } catch (error) {
+      console.error(`[ERROR] Failed to process ${relativePath}: ${error}`);
     }
-  } catch (error) {
-    console.error(`[ERROR] Failed to read source directory: ${error}`);
-    return;
   }
 
   console.log(`[SUMMARY] processed: ${processedCount} files`);
