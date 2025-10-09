@@ -13,39 +13,68 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run typecheck` - Run TypeScript type checking
 
 ### Content Management
-- `npm run sync-gdrive` - Sync content from Google Drive to `/content/` directory
-- `npm run process-content` - Process content from `/content/` to `/src/pages/post/` with filename sanitization and link conversion
+- `npm run sync-gdrive` - Sync content from Google Drive to `/content/origin/` directory
+- `npm run process-ko` - Process Korean content with spell checking from `/content/origin/` to `/content/ko/`
+- `npm run process-en` - Translate Korean content to English from `/content/ko/` to `/content/en/`
+- `npm run process-content` - Process content from `/content/origin/` to `/src/pages/post/` with filename sanitization and link conversion
 
 ## Architecture Overview
 
-This is a Gatsby-based blog with a two-stage automated content management system:
+This is a Gatsby-based blog with a multi-stage automated content management system:
 
 ### Content Pipeline
-1. **Google Drive Sync**: Content is authored in Google Drive and automatically synced to the `/content/` directory via GitHub Actions
-2. **Content Processing**: Raw markdown files are processed and copied to `/src/pages/post/` with sanitized filenames and converted Obsidian-style links
-3. **Gatsby Build**: Processed markdown files are built into static pages using Gatsby's markdown transformer
+1. **Google Drive Sync** (`npm run sync-gdrive`):
+   - Content is authored in Google Drive and automatically synced to `/content/origin/`
+   - Only downloads changed files (based on modified time comparison)
+   - Saves list of changed files to `.changes.json` for next processing steps
+   - Handles file deletions automatically
+
+2. **Korean Spell Check** (`npm run process-ko`):
+   - Reads changed files from `.changes.json` (or processes all if not found)
+   - Uses OpenAI GPT-4o to correct Korean spelling and grammar minimally
+   - Preserves original meaning and style
+   - Output: `/content/ko/*.md` (spell-checked Korean content)
+
+3. **English Translation** (`npm run process-en`):
+   - Reads changed files from `.changes.json` (or processes all if not found)
+   - Uses OpenAI GPT-4o to translate Korean content to English
+   - Translates frontmatter (title, description) and body content
+   - Maintains markdown formatting and structure
+   - Output: `/content/en/*.md` (English translated content)
+
+4. **Gatsby Content Processing** (`npm run process-content`):
+   - Processes all files from `/content/origin/` to `/src/pages/post/`
+   - Sanitizes filenames: spaces → hyphens, removes special characters (keeps Korean)
+   - Removes `links:` field from YAML frontmatter
+   - Converts Obsidian-style links: `[[doc|text]]` → `[text](/resource/doc)`
+   - Cleans meaningless single-character lines
+   - Clears destination directory before processing
+
+5. **Gatsby Build**: Processed markdown files are built into static pages using Gatsby's markdown transformer
 
 ### Key Directories
-- `/content/` - Raw markdown files synced from Google Drive (Korean filenames)
-- `/src/pages/post/` - Processed markdown files with sanitized filenames for Gatsby
+- `/content/origin/` - Raw markdown files synced from Google Drive (with Korean filenames)
+- `/content/ko/` - Spell-checked Korean content
+- `/content/en/` - English translated content
+- `/src/pages/post/` - Final processed markdown files with sanitized filenames for Gatsby
 - `/src/templates/` - Gatsby page templates
 - `/static/` and `/public/img/` - Static assets and images
-
-### Content Processing Details
-- Filename sanitization: Spaces converted to hyphens, special characters removed
-- Frontmatter processing: `links` fields are removed from YAML frontmatter
-- Obsidian link conversion: `[[document|display]]` → `[display](/resource/document)` and `[[document]]` → `[document](/resource/document)`
-- Content cleaning: Removes meaningless single character lines
 
 ## Automated Workflows
 
 ### Content Sync (GitHub Actions)
-- Runs daily at 3 AM KST (6 PM UTC previous day)
+- Runs every 10 minutes between 7 AM - 11 PM KST (22:00-14:00 UTC)
 - Can be manually triggered via workflow_dispatch
 - Uses Google Drive API with service account authentication
 - TypeScript scripts handle folder download, file processing and hash comparison
 - Compares file hashes to only sync changed content
+- Processes content pipeline in sequence:
+  1. Sync from Google Drive to `/content/origin/`
+  2. Spell check Korean content to `/content/ko/`
+  3. Translate to English in `/content/en/`
+  4. Process to Gatsby pages in `/src/pages/post/`
 - Automatically commits and pushes changes
+- Triggers deployment workflow after successful commit
 
 ### Site Deployment
 - Triggers on pushes to master branch
@@ -70,7 +99,10 @@ This is a Gatsby-based blog with a two-stage automated content management system
 ### Dependencies
 - **Node.js**: TypeScript execution via `tsx` for content processing scripts
 - **Google APIs**: `googleapis` npm package for Google Drive API access
-- **Authentication**: Google service account for API access (no Python dependencies)
+- **OpenAI API**: `openai` npm package for spell checking and translation
+- **Authentication**:
+  - Google service account for Drive API access
+  - OpenAI API key for GPT-4o access
 
 ## Site Structure
 
@@ -93,20 +125,28 @@ This is a Gatsby-based blog with a two-stage automated content management system
 ### Required for Content Sync
 - `GDRIVE_FOLDER_ID` - The ID of the Google Drive folder to sync
 - `GOOGLE_SERVICE_ACCOUNT_KEY` - JSON string of Google service account credentials
-- `DEST_DIR` - Destination directory for synced content (default: "content")
+- `OPENAI_API_KEY` - OpenAI API key for spell checking and translation
+- `DEST_DIR` - Destination directory for synced content (default: "content/origin")
 
 ### Local Development Setup
 1. Copy `.env.example` to `.env`
 2. Fill in the required environment variables
 3. Never commit the `.env` file to the repository
 
-### Setting up Google Drive API
+### Setting up APIs
+
+#### Google Drive API
 1. Create a Google Cloud project
 2. Enable Google Drive API
 3. Create a service account and download the JSON key
 4. Share your Google Drive folder with the service account email
 5. For local development: Add credentials to your `.env` file
 6. For GitHub Actions: Add the JSON key as `GOOGLE_SERVICE_ACCOUNT_KEY` secret in GitHub
+
+#### OpenAI API
+1. Create an OpenAI account and obtain an API key
+2. For local development: Add `OPENAI_API_KEY` to your `.env` file
+3. For GitHub Actions: Add the API key as `OPENAI_API_KEY` secret in GitHub
 
 ### Environment Configuration
 The project uses a centralized environment configuration module at `src/config/env.ts` that:

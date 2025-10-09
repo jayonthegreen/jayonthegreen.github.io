@@ -3,6 +3,21 @@
 /**
  * Process content folder files to src/pages/post
  * Converts files from Google Drive sync to Gatsby-compatible format
+ *
+ * This script performs the following operations:
+ * 1. Reads all markdown files from content/origin directory
+ * 2. Clears the src/pages/post directory before processing
+ * 3. For each markdown file:
+ *    - Sanitizes filename: replaces spaces with hyphens, removes special characters (keeps Korean)
+ *    - Cleans content: removes meaningless single-character first lines
+ *    - Processes frontmatter: removes 'links:' field and its sub-items
+ *    - Converts Obsidian-style links to standard markdown links:
+ *      * [[document|display]] → [display](/resource/document)
+ *      * [[document]] → [document](/resource/document)
+ * 4. Writes processed files to src/pages/post with sanitized filenames
+ *
+ * Input: content/origin/*.md (raw markdown files from Google Drive)
+ * Output: src/pages/post/*.md (Gatsby-compatible markdown files)
  */
 
 import * as fs from 'fs/promises';
