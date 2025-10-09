@@ -55,11 +55,9 @@ class MarkdownTemplate extends React.Component<PageProps<BlogPostQueryData>> {
           <div>
               <iframe
                 src="https://jay1298545.substack.com/embed"
-                width="480"
+                width="100%"
                 height="150"
-                style={{border: '1px solid #EEE', background: 'white'}}
-                frameBorder="0"
-                scrolling="no"
+                style={{border: 'none', overflow: 'hidden'}}
               />
           </div>
         </main>
