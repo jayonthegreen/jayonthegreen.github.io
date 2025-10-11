@@ -16,7 +16,8 @@
     "sync-gdrive": "tsx scripts/sync-gdrive.ts",
     "process-ko": "tsx scripts/process-ko.ts",
     "process-en": "tsx scripts/process-en.ts",
-    "process-content": "tsx scripts/process-content.ts"
+    "process-content": "tsx scripts/process-content.ts",
+    "generate-sp500": "tsx scripts/generate-sp500-newsletter.ts"
   },
   "dependencies": {
     "dotenv": "^17.2.1",

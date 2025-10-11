@@ -18,6 +18,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run process-en` - Translate Korean content to English from `/content/ko/` to `/content/en/`
 - `npm run process-content` - Process content from `/content/origin/` to `/src/pages/post/` with filename sanitization and link conversion
 
+### Newsletter
+- `npm run generate-sp500` - Generate S&P 500 daily newsletter with market data (YoY, WoW, DoD, 90-day MA) and send to Telegram
+
 ## Architecture Overview
 
 This is a Gatsby-based blog with a multi-stage automated content management system:
@@ -59,6 +62,7 @@ This is a Gatsby-based blog with a multi-stage automated content management syst
 - `/src/pages/post/` - Final processed markdown files with sanitized filenames for Gatsby
 - `/src/templates/` - Gatsby page templates
 - `/static/` and `/public/img/` - Static assets and images
+- `/newsletters/` - Generated S&P 500 daily newsletters in markdown format
 
 ## Automated Workflows
 
@@ -80,6 +84,19 @@ This is a Gatsby-based blog with a multi-stage automated content management syst
 - Triggers on pushes to master branch
 - Builds site with `npm run build`
 - Deploys to GitHub Pages using gh-pages branch
+
+### S&P 500 Newsletter (GitHub Actions)
+- Runs daily at 9 AM KST (0:00 UTC)
+- Can be manually triggered via workflow_dispatch
+- Fetches S&P 500 data from Yahoo Finance API
+- Calculates performance metrics:
+  - Day over Day (DoD) - 1 day comparison
+  - Week over Week (WoW) - 7 day comparison
+  - Year over Year (YoY) - 365 day comparison
+  - 90-day moving average and comparison
+- Generates markdown newsletter in `/newsletters/` directory
+- Sends formatted message to Telegram
+- Automatically commits and pushes newsletter to repository
 
 ## Development Notes
 
@@ -128,6 +145,10 @@ This is a Gatsby-based blog with a multi-stage automated content management syst
 - `OPENAI_API_KEY` - OpenAI API key for spell checking and translation
 - `DEST_DIR` - Destination directory for synced content (default: "content/origin")
 
+### Required for S&P 500 Newsletter
+- `TELEGRAM_BOT_TOKEN` - Telegram bot token for sending newsletter messages
+- `TELEGRAM_CHAT_ID` - Telegram chat ID where messages will be sent
+
 ### Local Development Setup
 1. Copy `.env.example` to `.env`
 2. Fill in the required environment variables
@@ -147,6 +168,14 @@ This is a Gatsby-based blog with a multi-stage automated content management syst
 1. Create an OpenAI account and obtain an API key
 2. For local development: Add `OPENAI_API_KEY` to your `.env` file
 3. For GitHub Actions: Add the API key as `OPENAI_API_KEY` secret in GitHub
+
+#### Telegram Bot
+1. Create a Telegram bot using @BotFather
+2. Get the bot token from @BotFather
+3. Start a chat with your bot and send a message
+4. Get your chat ID by visiting `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates`
+5. For local development: Add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` to your `.env` file
+6. For GitHub Actions: Add both values as secrets in GitHub repository settings
 
 ### Environment Configuration
 The project uses a centralized environment configuration module at `src/config/env.ts` that:

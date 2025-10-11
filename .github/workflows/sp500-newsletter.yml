@@ -1,0 +1,43 @@
+name: S&P 500 Newsletter
+
+on:
+  schedule:
+    # 매일 아침 6시 (KST 기준, UTC 21시 전날)
+    - cron: '0 21 * * *'
+  workflow_dispatch: # 수동 실행도 가능하도록
+
+jobs:
+  generate-newsletter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate S&P 500 Newsletter
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: npx tsx scripts/generate-sp500-newsletter.ts
+
+      - name: Commit and push newsletter
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add newsletters/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: add S&P 500 newsletter for $(date +'%Y-%m-%d')"
+            git push
+          fi
