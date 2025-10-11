@@ -21,14 +21,21 @@ async function translateToEnglish(content: string): Promise<string> {
       messages: [
         {
           role: 'user',
-          content: `Translate the following Korean markdown content to English. Preserve the YAML frontmatter structure exactly, but translate the title and description fields. Translate the body content naturally while maintaining the markdown formatting, links, and structure. Return only the translated content.
+          content: `Translate the following Korean markdown content to English. Preserve the YAML frontmatter structure exactly, but translate the title and description fields. Translate the body content naturally while maintaining the markdown formatting, links, and structure.
+
+IMPORTANT: Do NOT wrap the output in code blocks (no \`\`\`yaml, \`\`\`markdown, or any other code fence). Return the raw markdown content directly.
 
 ${content}`
         }
       ]
     });
 
-    const translatedText = completion.choices[0]?.message?.content || content;
+    let translatedText = completion.choices[0]?.message?.content || content;
+
+    // Remove code block wrappers if GPT adds them
+    translatedText = translatedText.replace(/^```(?:yaml|markdown|md)?\s*\n/i, '');
+    translatedText = translatedText.replace(/\n```\s*$/i, '');
+
     return translatedText;
   } catch (error) {
     console.error('[ERROR] Failed to translate:', error);
