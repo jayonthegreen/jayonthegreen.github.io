@@ -3,9 +3,9 @@ name: Sync Google Drive folder and commit
 on:
   workflow_dispatch: {}
   schedule:
-    # KST 07:00-23:00 (UTC 22:00-14:00) 10분마다 실행
-    - cron: "*/10 22-23 * * *"  # KST 07:00-08:59
-    - cron: "*/10 0-14 * * *"   # KST 09:00-23:00
+    # KST 07:00-23:00 (UTC 22:00-14:00) 2시간마다 실행
+    - cron: "0 22 * * *"        # KST 07:00
+    - cron: "0 0,2,4,6,8,10,12,14 * * *"  # KST 09:00, 11:00, 13:00, 15:00, 17:00, 19:00, 21:00, 23:00
 
 permissions:
   contents: write
