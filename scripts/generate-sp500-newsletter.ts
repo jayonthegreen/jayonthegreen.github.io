@@ -55,6 +55,7 @@ interface NewsletterData {
   vix: number;
   vixChange: number;
   vixChangePercent: number;
+  peRatio?: number;
   aiInsight?: string;
   newsSources?: NewsSource[];
 }
@@ -133,6 +134,47 @@ async function fetchSP500Data(): Promise<SPData[]> {
 // VIX 데이터 가져오기
 async function fetchVIXData(): Promise<SPData[]> {
   return fetchYahooFinanceData('^VIX', 10); // VIX는 최근 며칠만 필요
+}
+
+// S&P 500 P/E Ratio 가져오기 (multpl.com에서 스크래핑)
+async function fetchPERatio(): Promise<number | null> {
+  return new Promise((resolve) => {
+    const url = 'https://www.multpl.com/s-p-500-pe-ratio';
+
+    console.log('📊 Fetching S&P 500 P/E Ratio from multpl.com...');
+
+    https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
+      let html = '';
+
+      res.on('data', (chunk) => {
+        html += chunk;
+      });
+
+      res.on('end', () => {
+        try {
+          // HTML에서 P/E Ratio 추출
+          // <div id="current"><b>Current<span class="currentTitle">S&P 500 PE Ratio</span>:</b>30.34
+          const pePattern = /<div id="current"[^>]*>[\s\S]*?:\s*<\/b>\s*([\d.]+)/;
+          const match = pePattern.exec(html);
+
+          if (match && match[1]) {
+            const peRatio = parseFloat(match[1]);
+            console.log(`✅ Fetched P/E Ratio: ${peRatio}`);
+            resolve(peRatio);
+          } else {
+            console.warn('⚠️  Could not find P/E Ratio in HTML');
+            resolve(null);
+          }
+        } catch (error) {
+          console.warn(`⚠️  Failed to parse P/E Ratio: ${error}`);
+          resolve(null);
+        }
+      });
+    }).on('error', (error) => {
+      console.warn(`⚠️  Failed to fetch P/E Ratio: ${error}`);
+      resolve(null);
+    });
+  });
 }
 
 // CNBC 공식 RSS 피드에서 최근 시장 뉴스 가져오기
@@ -344,9 +386,10 @@ function findPriceNDaysAgo(data: SPData[], n: number): number | null {
 
 // 뉴스레터 데이터 계산
 async function calculateNewsletterData(): Promise<NewsletterData> {
-  const [data, vixData] = await Promise.all([
+  const [data, vixData, peRatio] = await Promise.all([
     fetchSP500Data(),
-    fetchVIXData()
+    fetchVIXData(),
+    fetchPERatio()
   ]);
 
   if (!data || data.length === 0) {
@@ -424,7 +467,8 @@ async function calculateNewsletterData(): Promise<NewsletterData> {
     week52Low,
     vix,
     vixChange,
-    vixChangePercent
+    vixChangePercent,
+    peRatio: peRatio || undefined
   };
 
   // AI 인사이트 생성
@@ -447,6 +491,18 @@ function generateMarkdown(data: NewsletterData): string {
   // 템플릿 파일 읽기
   const templatePath = path.join(process.cwd(), 'templates', 'sp500-newsletter.md');
   let template = fs.readFileSync(templatePath, 'utf-8');
+
+  // AI 인사이트와 뉴스 소스 포맷팅
+  const aiInsight = data.aiInsight || 'No AI insight available.';
+
+  let newsSources = '';
+  if (data.newsSources && data.newsSources.length > 0) {
+    newsSources = data.newsSources.map((source, index) =>
+      `${index + 1}. [${source.title}](${source.url})`
+    ).join('\n');
+  } else {
+    newsSources = 'No news sources available.';
+  }
 
   // 템플릿 변수 치환
   const replacements: Record<string, string> = {
@@ -473,6 +529,9 @@ function generateMarkdown(data: NewsletterData): string {
     vix: formatNumber(data.vix),
     vixChange: formatChange(data.vixChange, data.vixChangePercent).split(' (')[0],
     vixChangePercent: formatPercent(data.vixChangePercent),
+    peRatio: data.peRatio ? formatNumber(data.peRatio) : 'N/A',
+    aiInsight: aiInsight,
+    newsSources: newsSources,
     timestamp: new Date().toISOString()
   };
 
@@ -504,6 +563,10 @@ function generateTelegramMessage(data: NewsletterData): string {
     }
   }
 
+  const peSection = data.peRatio
+    ? `\n💹 P/E Ratio: ${formatNumber(data.peRatio)}`
+    : '';
+
   return `📊 S&P 500 Daily Report
 
 📅 ${data.currentDate}
@@ -526,7 +589,7 @@ function generateTelegramMessage(data: NewsletterData): string {
 
 
 😱 VIX (Fear Index): ${formatNumber(data.vix)}
-    Daily Change: ${formatChange(data.vixChange, data.vixChangePercent)}${aiInsightSection}`;
+    Daily Change: ${formatChange(data.vixChange, data.vixChangePercent)}${peSection}${aiInsightSection}`;
 }
 
 
@@ -536,8 +599,8 @@ async function main() {
     console.log('📊 Fetching S&P 500 data...');
     const data = await calculateNewsletterData();
 
-    // 마크다운 파일 생성
-    console.log('📝 Generating newsletter...');
+    // 1. 먼저 마크다운 파일 생성 (AI 인사이트 및 뉴스 포함)
+    console.log('📝 Generating newsletter markdown...');
     const markdown = generateMarkdown(data);
     const newsletterDir = path.join(process.cwd(), 'newsletters');
 
@@ -550,7 +613,7 @@ async function main() {
     fs.writeFileSync(filepath, markdown);
     console.log(`✅ Newsletter saved to ${filepath}`);
 
-    // 텔레그램 메시지 전송 (HTML 모드)
+    // 2. 그 다음 텔레그램 메시지 전송 (HTML 모드)
     console.log('📱 Sending Telegram message...');
     const telegramMessage = generateTelegramMessage(data);
     await sendTelegramMessage({

@@ -24,11 +24,23 @@
 - **Current VIX:** {{vix}}
 - **Daily Change:** {{vixChange}} ({{vixChangePercent}})
 
+### Valuation
+- **P/E Ratio:** {{peRatio}}
+
 ### 52-Week Range
 - **52-Week High:** ${{week52High}}
 - **52-Week Low:** ${{week52Low}}
 - **From High:** {{fromHigh}} ({{fromHighPercent}})
 - **From Low:** {{fromLow}} ({{fromLowPercent}})
+
+---
+
+## AI Market Insight
+
+{{aiInsight}}
+
+### News Sources
+{{newsSources}}
 
 ---
 
