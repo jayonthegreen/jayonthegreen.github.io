@@ -23,6 +23,8 @@ interface NewsletterData {
   ma90: number;
   ma90Diff: number;
   ma90DiffPercent: number;
+  week52High: number;
+  week52Low: number;
 }
 
 // Yahoo Finance API를 통해 S&P 500 데이터 가져오기
@@ -156,6 +158,11 @@ async function calculateNewsletterData(): Promise<NewsletterData> {
   const ma90Diff = currentPrice - ma90;
   const ma90DiffPercent = (ma90Diff / ma90) * 100;
 
+  // 52주 최고/최저 (약 365일 데이터에서)
+  const week52Data = data.slice(-365);
+  const week52High = Math.max(...week52Data.map(d => d.close));
+  const week52Low = Math.min(...week52Data.map(d => d.close));
+
   return {
     currentPrice,
     currentDate,
@@ -167,7 +174,9 @@ async function calculateNewsletterData(): Promise<NewsletterData> {
     yearOverYearPercent,
     ma90,
     ma90Diff,
-    ma90DiffPercent
+    ma90DiffPercent,
+    week52High,
+    week52Low
   };
 }
 
@@ -178,30 +187,38 @@ function generateMarkdown(data: NewsletterData): string {
   const formatChange = (value: number, percent: number) =>
     `${value >= 0 ? '+' : ''}${formatNumber(value)} (${formatPercent(percent)})`;
 
-  return `# S&P 500 Daily Newsletter
+  // 템플릿 파일 읽기
+  const templatePath = path.join(process.cwd(), 'templates', 'sp500-newsletter.md');
+  let template = fs.readFileSync(templatePath, 'utf-8');
 
-**Date:** ${data.currentDate}
-**Current Price:** $${formatNumber(data.currentPrice)}
+  // 템플릿 변수 치환
+  const replacements: Record<string, string> = {
+    currentDate: data.currentDate,
+    currentPrice: formatNumber(data.currentPrice),
+    dayOverDay: formatChange(data.dayOverDay, data.dayOverDayPercent).split(' (')[0],
+    dayOverDayPercent: formatPercent(data.dayOverDayPercent),
+    weekOverWeek: formatChange(data.weekOverWeek, data.weekOverWeekPercent).split(' (')[0],
+    weekOverWeekPercent: formatPercent(data.weekOverWeekPercent),
+    yearOverYear: formatChange(data.yearOverYear, data.yearOverYearPercent).split(' (')[0],
+    yearOverYearPercent: formatPercent(data.yearOverYearPercent),
+    ma90: formatNumber(data.ma90),
+    ma90Diff: formatChange(data.ma90Diff, data.ma90DiffPercent).split(' (')[0],
+    ma90DiffPercent: formatPercent(data.ma90DiffPercent),
+    week52High: formatNumber(data.week52High),
+    week52Low: formatNumber(data.week52Low),
+    fromHigh: formatNumber(data.currentPrice - data.week52High),
+    fromHighPercent: formatPercent((data.currentPrice - data.week52High) / data.week52High * 100),
+    fromLow: formatNumber(data.currentPrice - data.week52Low),
+    fromLowPercent: formatPercent((data.currentPrice - data.week52Low) / data.week52Low * 100),
+    timestamp: new Date().toISOString()
+  };
 
-## Performance Summary
+  // 모든 플레이스홀더 치환
+  Object.entries(replacements).forEach(([key, value]) => {
+    template = template.replace(new RegExp(`{{${key}}}`, 'g'), value);
+  });
 
-### Daily Change (DoD)
-- **Change:** ${formatChange(data.dayOverDay, data.dayOverDayPercent)}
-
-### Weekly Change (WoW)
-- **Change:** ${formatChange(data.weekOverWeek, data.weekOverWeekPercent)}
-
-### Yearly Change (YoY)
-- **Change:** ${formatChange(data.yearOverYear, data.yearOverYearPercent)}
-
-### 90-Day Moving Average
-- **MA90:** $${formatNumber(data.ma90)}
-- **Difference from MA90:** ${formatChange(data.ma90Diff, data.ma90DiffPercent)}
-
----
-
-*Generated automatically on ${new Date().toISOString()}*
-`;
+  return template;
 }
 
 // 텔레그램 메시지용 텍스트 생성
@@ -222,7 +239,11 @@ function generateTelegramMessage(data: NewsletterData): string {
   • YoY: ${formatChange(data.yearOverYear, data.yearOverYearPercent)}
 
 📊 90-Day MA: ${formatNumber(data.ma90)}
-    vs MA90: ${formatChange(data.ma90Diff, data.ma90DiffPercent)}`;
+    vs MA90: ${formatChange(data.ma90Diff, data.ma90DiffPercent)}
+
+📏 52-Week Range:
+    High: ${formatNumber(data.week52High)} (${formatNumber((data.currentPrice - data.week52High) / data.week52High * 100)}% from high)
+    Low: ${formatNumber(data.week52Low)} (${formatNumber((data.currentPrice - data.week52Low) / data.week52Low * 100)}% from low)`;
 }
 
 // 텔레그램으로 메시지 전송
