@@ -14,9 +14,15 @@
 ### Yearly Change (YoY)
 - **Change:** {{yearOverYear}} ({{yearOverYearPercent}})
 
-### 90-Day Moving Average
-- **MA90:** ${{ma90}}
+### Moving Averages
+- **90-Day MA:** ${{ma90}}
 - **Difference from MA90:** {{ma90Diff}} ({{ma90DiffPercent}})
+- **365-Day MA:** ${{ma365}}
+- **Difference from MA365:** {{ma365Diff}} ({{ma365DiffPercent}})
+
+### VIX (Fear Index)
+- **Current VIX:** {{vix}}
+- **Daily Change:** {{vixChange}} ({{vixChangePercent}})
 
 ### 52-Week Range
 - **52-Week High:** ${{week52High}}
