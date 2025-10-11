@@ -13,9 +13,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run typecheck` - Run TypeScript type checking
 
 ### Content Management
-- `npm run sync-gdrive` - Sync content from Google Drive to `/content/origin/` directory
-- `npm run process-ko` - Process Korean content with spell checking from `/content/origin/` to `/content/ko/`
-- `npm run process-en` - Translate Korean content to English from `/content/ko/` to `/content/en/`
+- `npm run sync-gdrive` - Sync content from Google Drive to `/content/origin/` directory (sends Telegram notifications for changes)
+- `npm run process-ko` - Copy Korean content from `/content/origin/` to `/content/ko/`
+- `npm run process-en` - Translate Korean content to English from `/content/ko/` to `/content/en/` (only changed files)
 - `npm run process-content` - Process content from `/content/origin/` to `/src/pages/post/` with filename sanitization and link conversion
 
 ### Newsletter
@@ -32,15 +32,16 @@ This is a Gatsby-based blog with a multi-stage automated content management syst
    - Saves list of changed files to `.changes.json` for next processing steps
    - Handles file deletions automatically
 
-2. **Korean Spell Check** (`npm run process-ko`):
+2. **Copy to Korean folder** (`npm run process-ko`):
    - Reads changed files from `.changes.json` (or processes all if not found)
-   - Uses OpenAI GPT-4o to correct Korean spelling and grammar minimally
-   - Preserves original meaning and style
-   - Output: `/content/ko/*.md` (spell-checked Korean content)
+   - Copies content from `/content/origin/` to `/content/ko/`
+   - No spell checking or modification (done manually during writing)
+   - Output: `/content/ko/*.md` (Korean content)
 
 3. **English Translation** (`npm run process-en`):
    - Reads changed files from `.changes.json` (or processes all if not found)
    - Uses OpenAI GPT-4o to translate Korean content to English
+   - Only translates changed/new files to save API resources
    - Translates frontmatter (title, description) and body content
    - Maintains markdown formatting and structure
    - Output: `/content/en/*.md` (English translated content)
