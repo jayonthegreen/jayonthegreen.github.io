@@ -143,7 +143,7 @@ This is a Gatsby-based blog with a multi-stage automated content management syst
 ### Required for Content Sync
 - `GDRIVE_FOLDER_ID` - The ID of the Google Drive folder to sync
 - `GOOGLE_SERVICE_ACCOUNT_KEY` - JSON string of Google service account credentials
-- `OPENAI_API_KEY` - OpenAI API key for spell checking and translation
+- `OPENAI_API_KEY` - OpenAI API key for content translation (ko → en)
 - `DEST_DIR` - Destination directory for synced content (default: "content/origin")
 
 ### Required for S&P 500 Newsletter

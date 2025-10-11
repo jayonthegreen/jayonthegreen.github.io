@@ -7,9 +7,10 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import OpenAI from 'openai';
+import { env } from '../env';
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: env.OPENAI_API_KEY,
 });
 
 // Translate Korean to English

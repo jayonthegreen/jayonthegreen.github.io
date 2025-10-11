@@ -6,6 +6,7 @@ dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 interface EnvConfig {
   GDRIVE_FOLDER_ID: string;
   GOOGLE_SERVICE_ACCOUNT_KEY: string;
+  OPENAI_API_KEY: string;
   DEST_DIR: string;
 }
 
@@ -26,6 +27,7 @@ function getOptionalEnv(key: string, defaultValue: string): string {
 export const env: EnvConfig = {
   GDRIVE_FOLDER_ID: getRequiredEnv('GDRIVE_FOLDER_ID'),
   GOOGLE_SERVICE_ACCOUNT_KEY: getRequiredEnv('GOOGLE_SERVICE_ACCOUNT_KEY'),
+  OPENAI_API_KEY: getRequiredEnv('OPENAI_API_KEY'),
   DEST_DIR: getOptionalEnv('DEST_DIR', 'content/origin')
 };
 
