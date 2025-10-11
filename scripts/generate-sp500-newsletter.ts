@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import https from 'https';
 import dotenv from 'dotenv';
+import { sendTelegramMessage } from '../src/utils/telegram';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -246,57 +247,6 @@ function generateTelegramMessage(data: NewsletterData): string {
     Low: ${formatNumber(data.week52Low)} (${formatNumber((data.currentPrice - data.week52Low) / data.week52Low * 100)}% from low)`;
 }
 
-// 텔레그램으로 메시지 전송
-async function sendTelegramMessage(message: string): Promise<void> {
-  const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
-
-  if (!botToken || !chatId) {
-    console.log('Telegram credentials not found. Skipping message send.');
-    return;
-  }
-
-  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-  const payload = JSON.stringify({
-    chat_id: chatId,
-    text: message
-  });
-
-  return new Promise((resolve, reject) => {
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Content-Length': Buffer.byteLength(payload)
-      }
-    };
-
-    const req = https.request(url, options, (res) => {
-      let responseData = '';
-
-      res.on('data', (chunk) => {
-        responseData += chunk;
-      });
-
-      res.on('end', () => {
-        if (res.statusCode === 200) {
-          console.log('✅ Telegram message sent successfully');
-          resolve();
-        } else {
-          console.error('❌ Failed to send Telegram message:', responseData);
-          reject(new Error(`HTTP ${res.statusCode}: ${responseData}`));
-        }
-      });
-    });
-
-    req.on('error', (err) => {
-      reject(err);
-    });
-
-    req.write(payload);
-    req.end();
-  });
-}
 
 // 메인 함수
 async function main() {
