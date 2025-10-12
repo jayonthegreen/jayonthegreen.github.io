@@ -149,38 +149,50 @@ function initializeDriveAPI() {
 }
 
 // Get files that need to be downloaded based on metadata comparison
+// Only includes files modified within the last 7 days
 async function getChangedFiles(drive: any, folderId: string, localMetadata: FileManifest, folderPath: string = ''): Promise<Array<{ file: DriveFile, path: string, action: 'add' | 'update' }>> {
   const changedFiles: Array<{ file: DriveFile, path: string, action: 'add' | 'update' }> = [];
-  
+
+  // Calculate date 7 days ago
+  const sevenDaysAgo = new Date();
+  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
   try {
     let pageToken: string | undefined = undefined;
-    
+
     do {
       const response = await drive.files.list({
         q: `'${folderId}' in parents and trashed = false`,
         fields: 'nextPageToken, files(id, name, parents, mimeType, size, modifiedTime)',
         pageToken: pageToken
       });
-      
+
       const items = response.data.files || [];
-      
+
       for (const item of items) {
         const currentPath = folderPath ? `${folderPath}/${item.name}` : item.name;
-        
+
         if (item.mimeType === 'application/vnd.google-apps.folder') {
           // Recursively get files from subfolder
           const subFolderChangedFiles = await getChangedFiles(drive, item.id, localMetadata, currentPath);
           changedFiles.push(...subFolderChangedFiles);
         } else {
+          // Check if file was modified within last 7 days
+          const modifiedTime = new Date(item.modifiedTime);
+          if (modifiedTime < sevenDaysAgo) {
+            // Skip files older than 7 days
+            continue;
+          }
+
           // Check if this file needs downloading
           const remoteSize = parseInt(item.size) || 0;
           const remoteHash = item.modifiedTime || 'unknown';
-          
+
           if (!localMetadata[currentPath]) {
-            // New file
+            // New file (modified within 7 days)
             changedFiles.push({ file: item, path: currentPath, action: 'add' });
           } else {
-            // Check if modified
+            // Check if modified (within 7 days)
             const { size: localSize, hash: localHash } = localMetadata[currentPath];
             if (remoteSize !== localSize || remoteHash !== localHash) {
               changedFiles.push({ file: item, path: currentPath, action: 'update' });
@@ -188,15 +200,15 @@ async function getChangedFiles(drive: any, folderId: string, localMetadata: File
           }
         }
       }
-      
+
       pageToken = response.data.nextPageToken;
     } while (pageToken);
-    
+
   } catch (error) {
     console.error(`[ERROR] Failed to get changed files from folder ${folderId}:`, error);
     throw error;
   }
-  
+
   return changedFiles;
 }
 
@@ -257,15 +269,15 @@ async function main() {
   const tmpRoot = await fs.mkdtemp(path.join(tmpdir(), 'gdrive_sync_'));
   
   try {
-    // Get only files that have changed
+    // Get only files that have changed (within last 7 days)
     const changedFiles = await getChangedFiles(drive, FOLDER_ID, localMetadata);
-    console.log(`[INFO] Found ${changedFiles.length} files that need downloading`);
-    
+    console.log(`[INFO] Found ${changedFiles.length} files that need downloading (modified within last 7 days)`);
+
     if (changedFiles.length === 0) {
       console.log('[INFO] No files to download');
       return;
     }
-    
+
     console.log(`[INFO] Downloading changed files to ${tmpRoot}`);
     
     // Download only changed files
@@ -296,19 +308,46 @@ async function main() {
       }
     }
 
-    // 5) Copy downloaded files to destination (notifications will be sent after commit)
+    // 5) Copy downloaded files to destination and compare content
     const srcManifest = await buildManifest(tmpRoot);
+    const actuallyChangedFiles: string[] = [];
+
     for (const [relativePath] of Object.entries(srcManifest)) {
       const srcPath = path.join(tmpRoot, relativePath);
       const destFilePath = path.join(destPath, relativePath);
+
+      // Check if file content actually changed by comparing hashes
+      let contentChanged = false;
+
+      if (localMetadata[relativePath]) {
+        // File exists locally, compare hashes
+        const newHash = srcManifest[relativePath].hash;
+        const oldHash = localMetadata[relativePath].hash;
+
+        if (newHash !== oldHash) {
+          contentChanged = true;
+          console.log(`[COPY] ${relativePath} (content changed)`);
+        } else {
+          console.log(`[SKIP] ${relativePath} (no content change)`);
+        }
+      } else {
+        // New file
+        contentChanged = true;
+        console.log(`[COPY] ${relativePath} (new file)`);
+      }
+
+      // Always copy the file to update it
       await copyFile(srcPath, destFilePath);
-      console.log(`[COPY] ${relativePath}`);
+
+      // Only add to changed list if content actually changed
+      if (contentChanged) {
+        actuallyChangedFiles.push(relativePath);
+      }
     }
 
-    // 6) Save changed files list for next processing steps
-    const changedFilesList = changedFiles.map(cf => cf.path);
+    // 6) Save only files with actual content changes for next processing steps
     const changeManifest = {
-      downloaded: changedFilesList,
+      downloaded: actuallyChangedFiles,
       deleted: toDelete,
       timestamp: new Date().toISOString()
     };
@@ -319,7 +358,7 @@ async function main() {
     );
 
     // 7) Summary
-    console.log(`[SUMMARY] downloaded: ${changedFiles.length}, deleted: ${toDelete.length}`);
+    console.log(`[SUMMARY] downloaded: ${changedFiles.length}, content changed: ${actuallyChangedFiles.length}, deleted: ${toDelete.length}`);
 
   } finally {
     // Cleanup temporary directory

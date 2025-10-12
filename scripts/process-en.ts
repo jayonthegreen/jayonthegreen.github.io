@@ -88,12 +88,14 @@ async function main(): Promise<void> {
   try {
     const changesContent = await fs.readFile(changesPath, 'utf-8');
     const changes = JSON.parse(changesContent);
-    changedFiles = changes.downloaded || [];
+    const downloadedFiles = changes.downloaded || [];
 
-    // Filter only markdown files
-    changedFiles = changedFiles.filter(f => f.endsWith('.md'));
+    // Extract just the filenames (basename) from the origin paths
+    changedFiles = downloadedFiles
+      .filter((f: string) => f.endsWith('.md'))
+      .map((f: string) => path.basename(f));
 
-    console.log(`[INFO] Found ${changedFiles.length} changed markdown files`);
+    console.log(`[INFO] Found ${changedFiles.length} changed markdown files to translate`);
 
     if (changedFiles.length === 0) {
       console.log('[INFO] No markdown files to translate');
