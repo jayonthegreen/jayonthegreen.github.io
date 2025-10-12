@@ -8,12 +8,12 @@ tags:
   - minimalism
 links:
 ---
-팟캐스트에 들어가 하나의 계정만 남기고 모두 팔로우를 끊었다. 덜어내고 싶었다. 더하기 보다는.
+I went into my podcast app and unfollowed all accounts except one. I wanted to remove, not add more.
 
-수년 전에 덜어내지 못한 결정들이 떠오른다. 나중에 해도 늦지 않는다고 착각했던 의사결정들이 사실은 돌이킬 수 없는 결과를 낸다는 생각들을 한다. 대부분은 무언가 덜어내는 의사결정들이 망설임과 함께 흘러갔다.
+I recall decisions from years ago that I couldn't let go of. I now realize that choices I thought I could delay were actually decisions that led to irreversible outcomes. Most of these choices to remove something floated by hesitantly.
 
-늘 무엇을 할 지 고민한다. 진짜 중요한 건 하지 않아야 할 지 고민하고 실천하는 것이다. 누군가는 "하고 싶은 세 가지 적고, 그중 두 개를 지우라"고 했다. 어떤 영양제를 먹을까 고민하기 보다는 과자를 먹지 않는게 바람직하다. 목표, 해야할 일을 정의하기 보다는 시간 낭비를 줄이는 것이 맞다.
+I am always pondering what to do. The truly important thing is to contemplate and act on what not to do. Someone suggested, "Write down three things you want to do and erase two of them." It's better to avoid snacks rather than worry about which supplements to take. Reducing time wastage is more effective than defining goals and tasks.
 
-덜어낼수록 기준은 단순해지고 마음은 편해진다. 높은 기대치와 강박은 마음을 갉아먹을 뿐이다. 
+The more you remove, the simpler the criteria become, and the more at ease you feel. High expectations and obsessions only erode the mind.
 
-삶의 밀도는 빈 자리에 생긴다.
+The density of life is created in the empty spaces.

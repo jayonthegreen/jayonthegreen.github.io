@@ -1,19 +1,19 @@
 ---
 date: 2023-01-16 23:45:41.357000+00:00
-description: 이코노미조선 475호
+description: Economy Chosun Issue 475
 image: /img/default.jpeg
 tags:
-- '#멘탈헬스케어'
+- '#MentalHealthcare'
 - '#MBTI'
-- '#불안감'
-- '#정신건강'
-- '#코로나'
+- '#Anxiety'
+- '#MentalHealth'
+- '#Corona'
 templateKey: post
-title: 불안에서 오는 MBTI
+title: MBTI Stemming from Anxiety
 ---
 
-이코노미조선 475호 주제는 멘탈헬스케어다. 이미 여러 기업들에서 EAP 형태로 직원들의 멘탈을 챙겨 생산성이 저하되는 것을 대처하고 있는 사례를 소개한다. 해외로는 [betterup](https://www.betterup.com/),  [springhealth](https://springhealth.com/) , 국내에는 [마인들링](https://mindle.kr/) 이 있다. 인접하게는 calm 같은 명상앱 등도 있다. 주변만 돌이켜봐도 불안감으로 어려움을 겪오 있는 사람이 더러 있다. 위닝멘탈리티까지는 차치하고, 지금 우리의 정신건강은 현실의 문제이다. 
+The theme of Economy Chosun Issue 475 is mental healthcare. We introduce cases where various companies are addressing productivity loss by caring for their employees' mental health through EAPs (Employee Assistance Programs). International examples include [BetterUp](https://www.betterup.com/) and [Spring Health](https://springhealth.com/), while domestically there is [Mindle](https://mindle.kr/). There are also adjacent tools like meditation apps such as Calm. Looking around, there are quite a few people who struggle with anxiety. Beyond having a winning mentality, our mental health is a real issue.
 
-최근 MBTI가 주목받는 이유도 불안의 정서에서 비롯된 것이 아닐까. 내가 어떤 사람인지 설명하려는 욕구는 마음의 불안으로부터 나온다. 본인이 어떠한 사람인 지, 존재에대한 물음과 그것에 대한 단순화는 우리의 마음을 어느정도 달래준다. 그것이 MBTI 로 나타나는 것이다.
+The recent attention on MBTI might also stem from the emotions of anxiety. The desire to explain who we are comes from a sense of unease. Questions about one's identity and simplifying those answers can somewhat soothe our minds. This is expressed in the form of MBTI.
 
-우리는 점점 필요한 경우에만 만남을 이어나가는 경향이 있다. 사회가 만남의 빈도가 줄어듬에 따라 오히려 만남이 잦았던 때에 하지 않았던 고민이 늘어간다. 효율적이지만 외로운 사회가 된 것이다. 코로나가 끝나고도 이 경향성은 이어질 것 같다. 자주 자주 만남을 이어간다는 당위는 사라졌다. 코로나 이후의 우리 사회의 만남과 외로움에 대한 반작용이 있을 것이다.
+We increasingly tend to continue meetings only when necessary. As society reduces the frequency of meetings, concerns that were not present during frequent gatherings have increased. It has become an efficient but lonely society. This trend seems likely to continue even after the end of COVID-19. The obligatory nature of frequent meetings has disappeared. There will be a reaction in our society regarding meetings and loneliness post-COVID-19.

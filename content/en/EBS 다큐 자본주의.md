@@ -1,12 +1,12 @@
 ---
-title: 자본주의 기본
-description: 『EBS 다큐 프라임 자본주의』을 읽고
+title: Basics of Capitalism
+description: After Reading 『EBS Documentary Prime Capitalism』
 date: 2025-08-04
 tags: 
 links:
 ---
-1. 자본주의에 대해 곰곰히 생각해보고 싶은 사람이라면 한번쯤 읽어보면 좋다. 영상으로 가볍게 볼 수 있다.
-2. 은행은 돈을 계속 찍어낸다. 누군가는 빚을 진다. 돈은 돌고 돌며 불어난다.
-3. 돈을 가지고 돈을 버는 세상이다. 투자는 개인을 위한 것이 아닐 수도 있다. 
-4. 우리는 무엇을 계속 사라고 하는 환경에 둘러쌓여 있다.
-5. 불평등은 전체의 붕괴로 이어질까. 자본주의는 어떤 국면을 맞이할까.
+1. If you're someone who wants to deeply contemplate capitalism, it's worth reading at least once. You can watch it lightly in video form.
+2. Banks keep printing money. Someone incurs debt. Money circulates and grows.
+3. It's a world where you earn money with money. Investment might not be for individuals.
+4. We are surrounded by an environment that constantly encourages us to buy.
+5. Could inequality lead to the collapse of the whole? What phase will capitalism encounter?

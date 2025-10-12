@@ -108,8 +108,11 @@ async function main(): Promise<void> {
 
   // Process files
   let processedCount = 0;
+  const totalFiles = changedFiles.length;
 
-  for (const relativePath of changedFiles) {
+  for (let i = 0; i < changedFiles.length; i++) {
+    const relativePath = changedFiles[i];
+
     try {
       const filename = path.basename(relativePath);
       const srcPath = path.join(srcDir, filename);
@@ -118,7 +121,7 @@ async function main(): Promise<void> {
       // Read file content from ko directory
       const content = await fs.readFile(srcPath, 'utf-8');
 
-      console.log(`[TRANSLATING] ${filename}...`);
+      console.log(`[${i + 1}/${totalFiles}] [TRANSLATING] ${filename}...`);
 
       // Translate to English
       const translatedContent = await translateToEnglish(content);
@@ -126,8 +129,14 @@ async function main(): Promise<void> {
       // Write translated content to destination
       await fs.writeFile(destPath, translatedContent, 'utf-8');
 
-      console.log(`[DONE] ${filename}`);
+      console.log(`[${i + 1}/${totalFiles}] [DONE] ${filename}`);
       processedCount++;
+
+      // Add delay between API calls to avoid rate limiting (2 seconds)
+      if (i < changedFiles.length - 1) {
+        console.log('[WAITING] 2 seconds before next translation...');
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      }
 
     } catch (error) {
       console.error(`[ERROR] Failed to process ${relativePath}: ${error}`);

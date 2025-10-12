@@ -1,23 +1,23 @@
 ---
-title: OKR의 핵심 결과
-description: 존 도어, 『OKR』을 읽고
+title: Core Results of OKR
+description: Reflections on John Doerr's "OKR"
 date: 2025-06-07
 tags: 
 links:
 ---
-2018년 OKR을 처음 접했다. 회사의 OKR 이 있었고, 팀의 OKR 그리고 개인의 OKR 이 있었다.  상위의, 그리고 동료의 OKR 을 참조하며 개인 OKR을 썼다. 쓰기는 어려웠으나, 뭔가 자기계발 같은 느낌이 들었다. 개인의 행동 지침정도로 이해했다. 회사에서 수행하는 업무와 따로 놀았다.
+I first encountered OKR in 2018. There were OKRs for the company, the team, and individuals. I wrote my personal OKRs by referring to the OKRs of higher-ups and colleagues. Writing them was difficult, but it felt like a form of self-improvement. I understood it as a guideline for personal actions, separate from the work I was doing at the company.
 
-몇년 후 다시 OKR 을 했다. 이번엔 과제와 프로젝트, 지표 중심이었다. 지금 내가 하고 있는 과제들과 연관성이 깊었다. 관리자들이 과제의 목표치와 핵심결과 수준을 기입하고 추적 관리했다. "저 숫자로 고민하는 사람들이 많구나" 정도를 느꼈다. 다만 팀 모두가 숫자에 대해서 진지하게 뜯어보거나, 이를 같이 고민하고 실행하지는 않았다.
+A few years later, I engaged with OKR again. This time, it was task and project-oriented, centered around metrics. It was closely related to the tasks I was currently working on. Managers recorded and tracked the targets and key results of the tasks. I got the sense that many people were concerned about those numbers. However, the entire team didn't seriously analyze these numbers or think through and execute them together.
 
-또 다시 몇년 후 수백명이 넘어가는 조직에서 OKR 을 했다. 아무래도 수십, 수백이 이상이 움직이다보니, 서로의 과제를 이해하고 협업하는게 난이도가 올라갔다. 과제에 "목표"와 "핵심결과"를 이어붙이니 과제를 이해하는 데 큰 도움이 되었다.
+Again, a few years later, I participated in OKRs in an organization with over a hundred people. As dozens or even hundreds of people were involved, understanding each other's tasks and collaborating became more challenging. Adding "objectives" and "key results" to tasks greatly helped in understanding them.
 
-새로운 조직에서 들어왔다. 막 이제 100명을 넘어서, 어느정도 프로세스와 체계가 필요한 시점의 회사였다. 회사의 목표와 과제를 관리하는 입장이 되었다. 파편적으로 다뤄지고 있던 과제들을 모으고, 목표와 결과를 붙였다. 그러면서 어떻게 하면 이 조직을 변화시킬까에 대한 고민이 있었고, 책을 읽어보게 되었다.  OKR 은 복잡한 도구가 아니다. OKR의 핵심 결과는 성과를 내는 것이다. 
+I joined a new organization. It had just exceeded 100 people, reaching a stage where some processes and systems were necessary. I was in a position to manage the company's goals and tasks. My role was to gather fragmented tasks and attach objectives and results to them. This led me to ponder how to transform this organization, and I decided to read a book on the subject. OKR is not a complex tool. The core result of OKR is to achieve performance.
 
-책에서 인상 깊었던 부분은 아래와 같다.
-- 근로자가 목표 수립 과정에서 참여해야 한다. 근로자는 돈 버는 기계가 아니라 신뢰와 존경을 기반으로 구축된 공동체가 되어야 한다. 
-- 기존의 MRO / KPI 대비 공식적이고 투명하며, 무엇과 어떻게가 포함되어야 한다. 공격적이고 도전적이며, 상향식/수평식이 섞여있다. 최고의 팀은 하향식 / 상향식 목표 설정 사이의 창조적 긴장 위해 존재한다. 
-- 적은 게 많은 것이다.(Less is More). 주기당 3~5개로 OKR 수를 제한해 중요한 가치에 집중하도록 만들 수 있다. 스티브잡스는 "혁신이란 1000가지 아이디어 제안을 거절하는 것이다." 라는 말을 남겼다. 너무 많은 목표는 집중력을 흐트러뜨린다. 그리고 중요하지 않은 것에 한눈팔게 만든다.
-- 끈기와 단호함. OKR 시스템을 받아들이려면 4~5번의 분기를 거쳐야 한다. 게다가 목표달성을 위한 충분한 역량을 갖추려면 그보다 더 오랜 시간이 필요하다.
-- "말하기가 싫증 날 즈음에 직원들은 귀를 기울이기 시작한다."
-- "상사의 OKR 에서의 핵심 목표를 제 목표로 가져왔습니다."
-- 필요한 자원들을 OKR 시트에서 찾을 수 있도록, 관련된 정보를 신속하게 얻을 수 있도록
+The following points from the book were particularly impressive:
+- Employees must participate in the goal-setting process. Employees should be part of a community built on trust and respect, not just money-making machines.
+- Compared to traditional MRO/KPIs, OKRs should be formal, transparent, and include the "what" and "how." They should be aggressive, challenging, and incorporate both top-down and horizontal approaches. The best teams exist in the creative tension between top-down and bottom-up goal setting.
+- Less is more. Limiting the number of OKRs to 3-5 per cycle helps you focus on important values. Steve Jobs famously said, "Innovation is saying no to a thousand things." Too many goals can dilute focus and lead to distractions by unimportant matters.
+- Persistence and determination. It takes 4-5 quarters to fully adopt an OKR system. Moreover, it takes even longer to develop the competencies necessary for goal achievement.
+- "When you're tired of saying it, that's when your employees start listening."
+- "I adopted the key goals from my boss's OKR as my objectives."
+- Make sure that resources needed can be found on the OKR sheet, allowing related information to be swiftly accessed.

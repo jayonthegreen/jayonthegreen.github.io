@@ -1,6 +1,6 @@
 ---
 date: 2018-09-30
-description: Spencer Johnson, 『Who Moved My Cheese?』
+description: Spencer Johnson, 'Who Moved My Cheese?'
 image: /img/book/cheese.jpeg
 keywords: Who Moved My Cheese, Johnson, Spencer, Cheese, Change
 tags:
@@ -12,6 +12,7 @@ tags:
 templateKey: post
 title: Courage
 ---
+
 We should smell the cheese often so we know when it's getting old. But the most impressive sentence is the following.
 
 > What Would You Do If You Weren't Afraid?
@@ -25,4 +26,4 @@ It is up to courage to act or not in change. Recognizing change is important, bu
 * What Would You Do If You Weren't Afraid?
 * Haw now realized that the change probably would not have taken him by surprise if he had been watching what was happening all along and if he had anticipated change.
 * Smell The Cheese Often So You Know When It Is Getting Old
-* She said, “I'm curious. How many here are afraid of change?” No one responded so she suggested, “How about a show of hands?” Only one hand went up. “Well, it looks like we've got one honest person in our group !” she said. And then continued, “Maybe you'll like this next question better. How many here think other people are afraid of change?” Practically everyone raised their hands. Then they all started laughing. “What does that tell us?” “Denial,” Nathan answered. “Sure,” Michael admitted. “Sometimes we're not even aware that we're afraid.
+* She said, “I'm curious. How many here are afraid of change?” No one responded so she suggested, “How about a show of hands?” Only one hand went up. “Well, it looks like we've got one honest person in our group!” she said. And then continued, “Maybe you'll like this next question better. How many here think other people are afraid of change?” Practically everyone raised their hands. Then they all started laughing. “What does that tell us?” “Denial,” Nathan answered. “Sure,” Michael admitted. “Sometimes we're not even aware that we're afraid.

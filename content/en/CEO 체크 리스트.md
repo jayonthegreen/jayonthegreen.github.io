@@ -1,26 +1,26 @@
 ---
 date: 2024-12-09 08:40:00+00:00
-description: Matt Mochary, 『The Great CEO Within』를 읽고
+description: Reflections on reading 『The Great CEO Within』 by Matt Mochary
 image: /img/default.jpeg
 tags:
 - '#CEO'
-- '#기업문화'
-- '#업무습관'
-- '#코파운더'
-- '#논의방법'
+- '#CorporateCulture'
+- '#WorkHabits'
+- '#CoFounder'
+- '#DiscussionMethods'
 templateKey: post
-title: CEO 체크 리스트
+title: CEO Checklist
 ---
-책은 회사를 포괄적으로, 구조적으로 정리하여 넓은 시야로 바라볼 수 있게 한다.
+The book allows for a comprehensive and structural review of a company, enabling a broad perspective.
 
-나의 능력을 보완할 수 있는 코파운더를 찾는 게 핵심이다. 그러려면 우선 내가 어떤 사람인지 명확히 알아야 한다. 한편 회사의 전체 이익보다 개인적인 이익을 우선시하는 태도는 종종 문제를 일으킨다. 
-  
-업무 습관에 대해 다시 고민했다. 매일 메일 박스를 ‘제로’ 상태로 유지해 중요한 아젠다를 빠르게 선별하고, 해야 할 일을 리스트업하거나(GTD), 중요한 일에 시간을 집중할 수 있도록 시간을 지정하는 방식은 꽤나 유용하다. 겸손하고 감사하며 약속을 지키고, 일을 사랑하며, 운동을 열심히 하는 태도도 중요하다.
+Finding a co-founder who can complement my abilities is crucial. First, I need to clearly understand who I am. Meanwhile, prioritizing personal gain over the overall profit of the company often causes problems.
 
-효율적인 논의를 위한 세심한 준비가 필요하다. 논의와 의견 수렴의 구조를 점검하고(선택을 제한할 것인지, 선택지를 제공할 것인지, 문제를 공유할 것인지), 명확한 합의를 이끌어내는 것(누가, 언제까지, 무엇을)이 필요하다. 문제 해결도 사고를 구조화하고 논의를 세분화하면 훨씬 깔끔하게 진행된다.
+I reconsidered my work habits. Keeping the inbox at 'zero' every day to quickly filter important agendas, listing tasks (GTD), or designating time to focus on important tasks is quite useful. Being humble, grateful, keeping promises, loving your work, and maintaining a diligent attitude towards exercise are also important.
 
-기업 문화를 만들 때, 단순히 추상적인 문구에 머무르지 않고 이를 행동 규범으로 연결시키는 게 효과적이다. “Culture is the name for those rules”라는 말처럼, 문화는 규칙을 내포해야 강력한 실행력을 가질 수 있다.
+Careful preparation is needed for effective discussions. It's essential to check the structure of discussions and opinion gathering (whether to limit choices, provide options, or share issues) and to arrive at clear agreements (who will do what by when). Structuring thoughts and breaking down discussions make problem-solving much more streamlined.
 
-마지막으로, 거래(투자, 세일즈, 채용 등)에서 관계의 중요성을 다시 한번 생각했다. 나의 생각으로는 관계를 통해 상대가 합리적이고 정직한 사람이라는 신뢰를 형성하는 게 거래 성사에 결정적인 역할을 할 수 있다. 종종 사람들과 만나다 보면 지나치게 과장하며 비합리적인 주장을 펼치는 사례를 보곤 한다. 이는 정직하지 못한 태도로 이어지고, 결국 신뢰를 잃게 된다. 따라서 관계에 대해 지나치게 냉소적일 필요는 없으며, 주변에 관계를 잘 관리하는 사람들을 참고하는 것도 유용하다.
+When building a corporate culture, it's effective to connect abstract phrases to behavioral norms. As the saying goes, "Culture is the name for those rules," culture must imply rules to have strong executory power.
 
-Matt Mochary, 『[The Great CEO Within](https://docs.google.com/document/d/1ZJZbv4J6FZ8Dnb0JuMhJxTnwl-dwqx5xl0s65DE3wO8/edit)』를 읽고
+Lastly, I reflected on the importance of relationships in transactions (investment, sales, recruitment, etc.). In my view, forming trust that the counterpart is a rational and honest person through relationships can play a decisive role in concluding deals. Often, I encounter people who exaggerate excessively and make irrational claims. This leads to dishonest behavior and eventually losing trust. Therefore, it's unnecessary to be overly cynical about relationships, and it can be useful to refer to those who manage relationships well.
+
+Reflections on reading 『[The Great CEO Within](https://docs.google.com/document/d/1ZJZbv4J6FZ8Dnb0JuMhJxTnwl-dwqx5xl0s65DE3wO8/edit)』 by Matt Mochary.
