@@ -6,7 +6,6 @@ import * as crypto from 'crypto';
 import { tmpdir } from 'os';
 import { google } from 'googleapis';
 import { env } from '../env';
-import { sendTelegramMessage } from '../src/utils/telegram';
 
 const { GDRIVE_FOLDER_ID: FOLDER_ID, DEST_DIR, GOOGLE_SERVICE_ACCOUNT_KEY: SERVICE_ACCOUNT_KEY } = env;
 
@@ -226,33 +225,6 @@ async function downloadFile(drive: any, fileId: string, destPath: string): Promi
   }
 }
 
-// Check if any files need syncing by comparing metadata
-function needsSync(remoteMetadata: FileManifest, localMetadata: FileManifest): boolean {
-  // Check if any remote files are new or modified
-  for (const [relativePath, { size, hash }] of Object.entries(remoteMetadata)) {
-    if (!localMetadata[relativePath]) {
-      console.log(`[CHANGE] New file: ${relativePath}`);
-      return true;
-    } else {
-      const { size: localSize, hash: localHash } = localMetadata[relativePath];
-      if (size !== localSize || hash !== localHash) {
-        console.log(`[CHANGE] Modified file: ${relativePath}`);
-        return true;
-      }
-    }
-  }
-
-  // Check if any local files were deleted remotely
-  for (const relativePath of Object.keys(localMetadata)) {
-    if (!remoteMetadata[relativePath]) {
-      console.log(`[CHANGE] Deleted file: ${relativePath}`);
-      return true;
-    }
-  }
-
-  return false;
-}
-
 // Copy file with metadata
 async function copyFile(src: string, dest: string): Promise<void> {
   await ensureParentDir(dest);
@@ -261,62 +233,6 @@ async function copyFile(src: string, dest: string): Promise<void> {
   // Copy timestamps
   const stats = await fs.stat(src);
   await fs.utimes(dest, stats.atime, stats.mtime);
-}
-
-// Extract title from markdown file
-async function extractTitleFromMarkdown(filePath: string): Promise<string | null> {
-  try {
-    const content = await fs.readFile(filePath, 'utf-8');
-    const lines = content.split('\n');
-
-    // Look for YAML frontmatter title
-    if (lines[0]?.trim() === '---') {
-      for (let i = 1; i < lines.length; i++) {
-        const line = lines[i].trim();
-        if (line === '---') break;
-        if (line.startsWith('title:')) {
-          return line.substring(6).trim().replace(/^["']|["']$/g, '');
-        }
-      }
-    }
-
-    // Look for first H1 heading
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (trimmed.startsWith('# ')) {
-        return trimmed.substring(2).trim();
-      }
-    }
-
-    // Fallback to filename
-    return path.basename(filePath, path.extname(filePath));
-  } catch (error) {
-    console.warn(`[WARN] Failed to extract title from ${filePath}`);
-    return null;
-  }
-}
-
-// Send Telegram notification for changed files
-async function notifyFileChange(filePath: string, action: 'add' | 'update'): Promise<void> {
-  // Only notify for markdown files
-  if (!filePath.endsWith('.md')) {
-    return;
-  }
-
-  const title = await extractTitleFromMarkdown(filePath);
-  if (!title) {
-    return;
-  }
-
-  const emoji = action === 'add' ? '📝' : '✏️';
-  const actionText = action === 'add' ? 'New post' : 'Updated';
-  const message = `${emoji} ${actionText}: ${title}`;
-
-  try {
-    await sendTelegramMessage(message);
-  } catch (error) {
-    console.warn(`[WARN] Failed to send Telegram notification for ${filePath}:`, error);
-  }
 }
 
 async function main() {
@@ -380,19 +296,13 @@ async function main() {
       }
     }
 
-    // 5) Copy downloaded files to destination and send notifications
+    // 5) Copy downloaded files to destination (notifications will be sent after commit)
     const srcManifest = await buildManifest(tmpRoot);
     for (const [relativePath] of Object.entries(srcManifest)) {
       const srcPath = path.join(tmpRoot, relativePath);
       const destFilePath = path.join(destPath, relativePath);
       await copyFile(srcPath, destFilePath);
       console.log(`[COPY] ${relativePath}`);
-
-      // Find the action for this file and send notification
-      const changedFile = changedFiles.find(cf => cf.path === relativePath);
-      if (changedFile) {
-        await notifyFileChange(destFilePath, changedFile.action);
-      }
     }
 
     // 6) Save changed files list for next processing steps

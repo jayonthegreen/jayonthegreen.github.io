@@ -70,6 +70,14 @@ jobs:
             echo "changes_committed=false" >> $GITHUB_OUTPUT
           fi
 
+      - name: Send Telegram notifications for committed files
+        if: steps.commit_changes.outputs.changes_committed == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          npm run notify-changes
+
       - name: Trigger deploy workflow
         if: steps.commit_changes.outputs.changes_committed == 'true'
         run: |
