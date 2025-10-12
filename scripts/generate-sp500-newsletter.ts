@@ -608,7 +608,12 @@ async function main() {
       fs.mkdirSync(newsletterDir, { recursive: true });
     }
 
-    const filename = `sp500-${data.currentDate}.md`;
+    // 실행 날짜를 기준으로 파일명 생성 (데이터 날짜가 아닌 실제 실행 날짜)
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    const filename = `sp500-${year}-${month}-${day}.md`;
     const filepath = path.join(newsletterDir, filename);
     fs.writeFileSync(filepath, markdown);
     console.log(`✅ Newsletter saved to ${filepath}`);
