@@ -4,7 +4,7 @@
 
 ## S&P 500 Index
 
-**Current:** ${{currentPrice}}
+**S&P 500 Current:** ${{currentPrice}}
 
 ### Performance Summary
 
@@ -44,6 +44,18 @@
 
 ### News Sources
 {{newsSources}}
+
+---
+
+## Bitcoin MVRV Z-Score
+
+**MVRV Z-Score:** {{mvrvZScore}}
+**Signal:** {{mvrvSignal}}
+
+> The MVRV Z-Score helps identify when Bitcoin is overvalued or undervalued relative to its "fair value".
+> - **< 0**: 🟢 Buy Signal (Undervalued)
+> - **> 6**: 🔴 Sell Signal (Overvalued)
+> - **0-6**: ⚪ Neutral Zone (Hold)
 
 ---
 

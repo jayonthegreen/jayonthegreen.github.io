@@ -56,6 +56,8 @@ interface NewsletterData {
   vixChange: number;
   vixChangePercent: number;
   peRatio?: number;
+  mvrvZScore?: number;
+  mvrvSignal?: string;
   aiInsight?: string;
   newsSources?: NewsSource[];
 }
@@ -175,6 +177,99 @@ async function fetchPERatio(): Promise<number | null> {
       resolve(null);
     });
   });
+}
+
+// Bitcoin MVRV Z-Score 계산을 위한 데이터 가져오기 (CoinMetrics Community API)
+interface BitcoinMetrics {
+  marketCap: number;
+  realizedCap: number;
+  mvrvZScore: number;
+  date: string;
+}
+
+async function fetchBitcoinMVRVData(): Promise<BitcoinMetrics | null> {
+  return new Promise((resolve) => {
+    // CoinMetrics Community API - 최근 1일 데이터 가져오기
+    const metrics = 'CapMrktCurUSD,CapRealUSD';
+    const url = `https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=${metrics}&frequency=1d&limit=365`;
+
+    console.log('₿ Fetching Bitcoin MVRV data from CoinMetrics...');
+
+    https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
+      let data = '';
+
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      res.on('end', () => {
+        try {
+          const jsonData = JSON.parse(data);
+
+          if (!jsonData.data || jsonData.data.length === 0) {
+            console.warn('⚠️  No Bitcoin data received from CoinMetrics');
+            resolve(null);
+            return;
+          }
+
+          // 최근 데이터 추출 및 표준편차 계산을 위한 historical data
+          const allData = jsonData.data;
+          const latestData = allData[allData.length - 1];
+
+          const marketCap = parseFloat(latestData.CapMrktCurUSD);
+          const realizedCap = parseFloat(latestData.CapRealUSD);
+
+          if (isNaN(marketCap) || isNaN(realizedCap)) {
+            console.warn('⚠️  Invalid Bitcoin market data');
+            resolve(null);
+            return;
+          }
+
+          // 표준편차 계산 (최근 365일 데이터 사용)
+          const marketCaps = allData.map((d: any) => parseFloat(d.CapMrktCurUSD)).filter((v: number) => !isNaN(v));
+          const mean = marketCaps.reduce((sum: number, val: number) => sum + val, 0) / marketCaps.length;
+          const variance = marketCaps.reduce((sum: number, val: number) => sum + Math.pow(val - mean, 2), 0) / marketCaps.length;
+          const stdDev = Math.sqrt(variance);
+
+          // MVRV Z-Score 계산
+          const mvrvZScore = (marketCap - realizedCap) / stdDev;
+
+          console.log(`✅ Bitcoin MVRV Z-Score: ${mvrvZScore.toFixed(2)}`);
+          console.log(`   Market Cap: $${(marketCap / 1e9).toFixed(2)}B`);
+          console.log(`   Realized Cap: $${(realizedCap / 1e9).toFixed(2)}B`);
+
+          resolve({
+            marketCap,
+            realizedCap,
+            mvrvZScore,
+            date: latestData.time
+          });
+        } catch (error) {
+          console.warn(`⚠️  Failed to parse Bitcoin data: ${error}`);
+          resolve(null);
+        }
+      });
+    }).on('error', (error) => {
+      console.warn(`⚠️  Failed to fetch Bitcoin data: ${error}`);
+      resolve(null);
+    });
+  });
+}
+
+// MVRV Z-Score 계산 함수
+function calculateMVRVZScore(marketCap: number, realizedCap: number, stdDev: number): number {
+  return (marketCap - realizedCap) / stdDev;
+}
+
+// MVRV Z-Score 신호 판단
+function getMVRVSignal(zScore: number): string {
+  if (zScore < 0) {
+    return '🟢 Buy Signal (Undervalued)';
+  } else if (zScore > 6) {
+    return '🔴 Sell Signal (Overvalued)';
+  } else {
+    return '⚪ Neutral (Hold)';
+  }
 }
 
 // CNBC 공식 RSS 피드에서 최근 시장 뉴스 가져오기
@@ -386,10 +481,11 @@ function findPriceNDaysAgo(data: SPData[], n: number): number | null {
 
 // 뉴스레터 데이터 계산
 async function calculateNewsletterData(): Promise<NewsletterData> {
-  const [data, vixData, peRatio] = await Promise.all([
+  const [data, vixData, peRatio, bitcoinData] = await Promise.all([
     fetchSP500Data(),
     fetchVIXData(),
-    fetchPERatio()
+    fetchPERatio(),
+    fetchBitcoinMVRVData()
   ]);
 
   if (!data || data.length === 0) {
@@ -468,7 +564,9 @@ async function calculateNewsletterData(): Promise<NewsletterData> {
     vix,
     vixChange,
     vixChangePercent,
-    peRatio: peRatio || undefined
+    peRatio: peRatio || undefined,
+    mvrvZScore: bitcoinData?.mvrvZScore,
+    mvrvSignal: bitcoinData ? getMVRVSignal(bitcoinData.mvrvZScore) : undefined
   };
 
   // AI 인사이트 생성
@@ -530,6 +628,8 @@ function generateMarkdown(data: NewsletterData): string {
     vixChange: formatChange(data.vixChange, data.vixChangePercent).split(' (')[0],
     vixChangePercent: formatPercent(data.vixChangePercent),
     peRatio: data.peRatio ? formatNumber(data.peRatio) : 'N/A',
+    mvrvZScore: data.mvrvZScore ? formatNumber(data.mvrvZScore) : 'N/A',
+    mvrvSignal: data.mvrvSignal || 'N/A',
     aiInsight: aiInsight,
     newsSources: newsSources,
     timestamp: new Date().toISOString()
@@ -564,32 +664,50 @@ function generateTelegramMessage(data: NewsletterData): string {
   }
 
   const peSection = data.peRatio
-    ? `\n💹 P/E Ratio: ${formatNumber(data.peRatio)}`
+    ? `💹 P/E Ratio: ${formatNumber(data.peRatio)}\n`
     : '';
 
-  return `📊 Economic Daily Report
+  let bitcoinSection = '';
+  if (data.mvrvZScore !== undefined) {
+    bitcoinSection = `
+
+━━━━━━━━━━━━━━━━━━━━
+
+₿ <b>Bitcoin MVRV Z-Score</b>
+
+📊 Z-Score: ${formatNumber(data.mvrvZScore)}
+${data.mvrvSignal || 'N/A'}`;
+  }
+
+  return `📊 <b>Economic Daily Report</b>
 
 📅 ${data.currentDate}
-💰 Current: ${formatNumber(data.currentPrice)}
 
-📈 Performance:
+━━━━━━━━━━━━━━━━━━━━
+
+📈 <b>S&P 500 Index</b>
+
+💰 S&P 500: ${formatNumber(data.currentPrice)}
+
+<b>Performance:</b>
   • DoD: ${formatChange(data.dayOverDay, data.dayOverDayPercent)}
   • WoW: ${formatChange(data.weekOverWeek, data.weekOverWeekPercent)}
   • YoY: ${formatChange(data.yearOverYear, data.yearOverYearPercent)}
 
-📊 Moving Averages:
+<b>Moving Averages:</b>
   • 90-Day MA: ${formatNumber(data.ma90)}
     vs MA90: ${formatChange(data.ma90Diff, data.ma90DiffPercent)}
   • 365-Day MA: ${formatNumber(data.ma365)}
     vs MA365: ${formatChange(data.ma365Diff, data.ma365DiffPercent)}
 
-📏 52-Week Range:
+<b>52-Week Range:</b>
   • High: ${formatNumber(data.week52High)} (${formatNumber((data.currentPrice - data.week52High) / data.week52High * 100)}% from high)
   • Low: ${formatNumber(data.week52Low)} (${formatNumber((data.currentPrice - data.week52Low) / data.week52Low * 100)}% from low)
 
-
+<b>Market Indicators:</b>
 😱 VIX (Fear Index): ${formatNumber(data.vix)}
-    Daily Change: ${formatChange(data.vixChange, data.vixChangePercent)}${peSection}${aiInsightSection}`;
+    Daily Change: ${formatChange(data.vixChange, data.vixChangePercent)}
+${peSection}${aiInsightSection}${bitcoinSection}`;
 }
 
 
