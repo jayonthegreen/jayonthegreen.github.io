@@ -19,7 +19,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run process-content` - Process content from `/content/origin/` to `/src/pages/post/` with filename sanitization and link conversion
 
 ### Newsletter
-- `npm run generate-sp500` - Generate S&P 500 daily newsletter with market data (YoY, WoW, DoD, 90-day MA) and send to Telegram
+- `npm run generate-economic-newsletter` - Generate economic daily newsletter with market data (S&P 500, VIX, etc.) and send to Telegram
 
 ## Architecture Overview
 
@@ -63,7 +63,7 @@ This is a Gatsby-based blog with a multi-stage automated content management syst
 - `/src/pages/post/` - Final processed markdown files with sanitized filenames for Gatsby
 - `/src/templates/` - Gatsby page templates
 - `/static/` and `/public/img/` - Static assets and images
-- `/newsletters/` - Generated S&P 500 daily newsletters in markdown format
+- `/newsletters/` - Generated economic daily newsletters in markdown format
 
 ## Automated Workflows
 
@@ -86,15 +86,21 @@ This is a Gatsby-based blog with a multi-stage automated content management syst
 - Builds site with `npm run build`
 - Deploys to GitHub Pages using gh-pages branch
 
-### S&P 500 Newsletter (GitHub Actions)
+### Economic Newsletter (GitHub Actions)
 - Runs daily at 9 AM KST (0:00 UTC)
 - Can be manually triggered via workflow_dispatch
-- Fetches S&P 500 data from Yahoo Finance API
+- Fetches economic data from various sources:
+  - S&P 500 index data from Yahoo Finance API
+  - VIX (Fear Index) data
+  - P/E Ratio from multpl.com
+  - Market news from CNBC RSS feed
 - Calculates performance metrics:
   - Day over Day (DoD) - 1 day comparison
   - Week over Week (WoW) - 7 day comparison
   - Year over Year (YoY) - 365 day comparison
-  - 90-day moving average and comparison
+  - 90-day and 365-day moving averages
+  - 52-week high/low analysis
+- Generates AI-powered market insights using OpenAI GPT-4o-mini
 - Generates markdown newsletter in `/newsletters/` directory
 - Sends formatted message to Telegram
 - Automatically commits and pushes newsletter to repository
@@ -146,9 +152,10 @@ This is a Gatsby-based blog with a multi-stage automated content management syst
 - `OPENAI_API_KEY` - OpenAI API key for content translation (ko → en)
 - `DEST_DIR` - Destination directory for synced content (default: "content/origin")
 
-### Required for S&P 500 Newsletter
+### Required for Economic Newsletter
 - `TELEGRAM_BOT_TOKEN` - Telegram bot token for sending newsletter messages
 - `TELEGRAM_CHAT_ID` - Telegram chat ID where messages will be sent
+- `OPENAI_API_KEY` - (Optional) OpenAI API key for AI-powered market insights
 
 ### Local Development Setup
 1. Copy `.env.example` to `.env`

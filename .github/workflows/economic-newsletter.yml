@@ -1,4 +1,4 @@
-name: S&P 500 Newsletter
+name: Economic Newsletter
 
 on:
   schedule:
@@ -24,11 +24,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate S&P 500 Newsletter
+      - name: Generate Economic Newsletter
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: npx tsx scripts/generate-sp500-newsletter.ts
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: npx tsx scripts/generate-economic-newsletter.ts
 
       - name: Commit and push newsletter
         run: |
@@ -38,6 +39,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore: add S&P 500 newsletter for $(date +'%Y-%m-%d')"
+            git commit -m "chore: add economic newsletter for $(date +'%Y-%m-%d')"
             git push
           fi

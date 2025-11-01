@@ -1,9 +1,12 @@
-# S&P 500 Daily Newsletter
+# Economic Daily Newsletter
 
 **Date:** {{currentDate}}
+
+## S&P 500 Index
+
 **Current:** ${{currentPrice}}
 
-## Performance Summary
+### Performance Summary
 
 ### Daily Change (DoD)
 - **Change:** {{dayOverDay}} ({{dayOverDayPercent}})

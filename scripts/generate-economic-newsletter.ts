@@ -489,7 +489,7 @@ function generateMarkdown(data: NewsletterData): string {
     `${value >= 0 ? '+' : ''}${formatNumber(value)} (${formatPercent(percent)})`;
 
   // 템플릿 파일 읽기
-  const templatePath = path.join(process.cwd(), 'templates', 'sp500-newsletter.md');
+  const templatePath = path.join(process.cwd(), 'templates', 'economic-newsletter.md');
   let template = fs.readFileSync(templatePath, 'utf-8');
 
   // AI 인사이트와 뉴스 소스 포맷팅
@@ -567,7 +567,7 @@ function generateTelegramMessage(data: NewsletterData): string {
     ? `\n💹 P/E Ratio: ${formatNumber(data.peRatio)}`
     : '';
 
-  return `📊 S&P 500 Daily Report
+  return `📊 Economic Daily Report
 
 📅 ${data.currentDate}
 💰 Current: ${formatNumber(data.currentPrice)}
@@ -613,7 +613,7 @@ async function main() {
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0');
     const day = String(today.getDate()).padStart(2, '0');
-    const filename = `sp500-${year}-${month}-${day}.md`;
+    const filename = `economic-${year}-${month}-${day}.md`;
     const filepath = path.join(newsletterDir, filename);
     fs.writeFileSync(filepath, markdown);
     console.log(`✅ Newsletter saved to ${filepath}`);
