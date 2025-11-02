@@ -47,15 +47,29 @@
 
 ---
 
-## Bitcoin MVRV Z-Score
+## [Fear & Greed](https://edition.cnn.com/markets/fear-and-greed) Index
 
-**MVRV Z-Score:** {{mvrvZScore}}
-**Signal:** {{mvrvSignal}}
+**Current:** {{fearGreedIndex}} - {{fearGreedClassification}}
 
-> The MVRV Z-Score helps identify when Bitcoin is overvalued or undervalued relative to its "fair value".
-> - **< 0**: 🟢 Buy Signal (Undervalued)
-> - **> 6**: 🔴 Sell Signal (Overvalued)
-> - **0-6**: ⚪ Neutral Zone (Hold)
+Market sentiment indicator (0-100):
+- **0-24**: 😱 Extreme Fear
+- **25-44**: 😨 Fear
+- **45-55**: ⚪ Neutral
+- **56-75**: 😃 Greed
+- **76-100**: 🤑 Extreme Greed
+
+---
+
+## Bitcoin [MVRV](https://en.macromicro.me/series/8365/bitcoin-mvrv-zscore) Z-Score
+
+Check the current Bitcoin MVRV Z-Score to identify market valuation.
+
+The MVRV Z-Score helps identify when Bitcoin is overvalued or undervalued relative to its "fair value":
+- **< 0**: 🟢 Undervalued (Buy zone)
+- **> 6**: 🔴 Overvalued (Sell zone)
+- **0-6**: ⚪ Neutral zone
+
+[View Current MVRV Z-Score →](https://en.macromicro.me/series/8365/bitcoin-mvrv-zscore)
 
 ---
 

@@ -56,6 +56,8 @@ interface NewsletterData {
   vixChange: number;
   vixChangePercent: number;
   peRatio?: number;
+  fearGreedIndex?: number;
+  fearGreedClassification?: string;
   mvrvZScore?: number;
   mvrvSignal?: string;
   aiInsight?: string;
@@ -272,6 +274,57 @@ function getMVRVSignal(zScore: number): string {
   }
 }
 
+// Fear and Greed Index 가져오기
+interface FearGreedData {
+  value: number;
+  classification: string;
+}
+
+async function fetchFearGreedIndex(): Promise<FearGreedData | null> {
+  return new Promise((resolve) => {
+    const url = 'https://api.alternative.me/fng/';
+
+    console.log('😨 Fetching Fear and Greed Index...');
+
+    https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
+      let data = '';
+
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      res.on('end', () => {
+        try {
+          const jsonData = JSON.parse(data);
+
+          if (!jsonData.data || jsonData.data.length === 0) {
+            console.warn('⚠️  No Fear and Greed data received');
+            resolve(null);
+            return;
+          }
+
+          const latestData = jsonData.data[0];
+          const value = parseInt(latestData.value);
+          const classification = latestData.value_classification;
+
+          console.log(`✅ Fear and Greed Index: ${value} (${classification})`);
+
+          resolve({
+            value,
+            classification
+          });
+        } catch (error) {
+          console.warn(`⚠️  Failed to parse Fear and Greed data: ${error}`);
+          resolve(null);
+        }
+      });
+    }).on('error', (error) => {
+      console.warn(`⚠️  Failed to fetch Fear and Greed data: ${error}`);
+      resolve(null);
+    });
+  });
+}
+
 // CNBC 공식 RSS 피드에서 최근 시장 뉴스 가져오기
 async function fetchCNBCNews(): Promise<NewsSource[]> {
   return new Promise((resolve) => {
@@ -481,11 +534,11 @@ function findPriceNDaysAgo(data: SPData[], n: number): number | null {
 
 // 뉴스레터 데이터 계산
 async function calculateNewsletterData(): Promise<NewsletterData> {
-  const [data, vixData, peRatio, bitcoinData] = await Promise.all([
+  const [data, vixData, peRatio, fearGreedData] = await Promise.all([
     fetchSP500Data(),
     fetchVIXData(),
     fetchPERatio(),
-    fetchBitcoinMVRVData()
+    fetchFearGreedIndex()
   ]);
 
   if (!data || data.length === 0) {
@@ -565,8 +618,8 @@ async function calculateNewsletterData(): Promise<NewsletterData> {
     vixChange,
     vixChangePercent,
     peRatio: peRatio || undefined,
-    mvrvZScore: bitcoinData?.mvrvZScore,
-    mvrvSignal: bitcoinData ? getMVRVSignal(bitcoinData.mvrvZScore) : undefined
+    fearGreedIndex: fearGreedData?.value,
+    fearGreedClassification: fearGreedData?.classification
   };
 
   // AI 인사이트 생성
@@ -628,8 +681,8 @@ function generateMarkdown(data: NewsletterData): string {
     vixChange: formatChange(data.vixChange, data.vixChangePercent).split(' (')[0],
     vixChangePercent: formatPercent(data.vixChangePercent),
     peRatio: data.peRatio ? formatNumber(data.peRatio) : 'N/A',
-    mvrvZScore: data.mvrvZScore ? formatNumber(data.mvrvZScore) : 'N/A',
-    mvrvSignal: data.mvrvSignal || 'N/A',
+    fearGreedIndex: data.fearGreedIndex?.toString() || 'N/A',
+    fearGreedClassification: data.fearGreedClassification || 'N/A',
     aiInsight: aiInsight,
     newsSources: newsSources,
     timestamp: new Date().toISOString()
@@ -667,17 +720,45 @@ function generateTelegramMessage(data: NewsletterData): string {
     ? `💹 P/E Ratio: ${formatNumber(data.peRatio)}\n`
     : '';
 
-  let bitcoinSection = '';
-  if (data.mvrvZScore !== undefined) {
-    bitcoinSection = `
+  let fearGreedSection = '';
+  if (data.fearGreedIndex !== undefined) {
+    let emoji = '⚪';
+    if (data.fearGreedClassification?.includes('Extreme Fear')) {
+      emoji = '😱';
+    } else if (data.fearGreedClassification?.includes('Fear')) {
+      emoji = '😨';
+    } else if (data.fearGreedClassification?.includes('Extreme Greed')) {
+      emoji = '🤑';
+    } else if (data.fearGreedClassification?.includes('Greed')) {
+      emoji = '😃';
+    }
+
+    fearGreedSection = `
 
 ━━━━━━━━━━━━━━━━━━━━
 
-₿ <b>Bitcoin MVRV Z-Score</b>
+📊 <b><a href="https://edition.cnn.com/markets/fear-and-greed">Fear &amp; Greed</a> Index</b>
 
-📊 Z-Score: ${formatNumber(data.mvrvZScore)}
-${data.mvrvSignal || 'N/A'}`;
+${emoji} <b>${data.fearGreedIndex}</b> - ${data.fearGreedClassification}
+
+Market sentiment indicator (0-100):
+• <b>0-24</b>: 😱 Extreme Fear
+• <b>25-44</b>: 😨 Fear
+• <b>45-55</b>: ⚪ Neutral
+• <b>56-75</b>: 😃 Greed
+• <b>76-100</b>: 🤑 Extreme Greed`;
   }
+
+  const bitcoinSection = `
+
+━━━━━━━━━━━━━━━━━━━━
+
+₿ <b>Bitcoin <a href="https://en.macromicro.me/series/8365/bitcoin-mvrv-zscore">MVRV</a> Z-Score</b>
+
+Check the current Bitcoin MVRV Z-Score to identify market valuation:
+• <b>&lt; 0</b>: 🟢 Undervalued (Buy zone)
+• <b>&gt; 6</b>: 🔴 Overvalued (Sell zone)
+• <b>0-6</b>: ⚪ Neutral zone`;
 
   return `📊 <b>Economic Daily Report</b>
 
@@ -707,7 +788,7 @@ ${data.mvrvSignal || 'N/A'}`;
 <b>Market Indicators:</b>
 😱 VIX (Fear Index): ${formatNumber(data.vix)}
     Daily Change: ${formatChange(data.vixChange, data.vixChangePercent)}
-${peSection}${aiInsightSection}${bitcoinSection}`;
+${peSection}${aiInsightSection}${fearGreedSection}${bitcoinSection}`;
 }
 
 
