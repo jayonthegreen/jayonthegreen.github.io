@@ -1,7 +1,11 @@
 {
-  "downloaded": [],
-  "deleted": [
-    ".changes.json"
+  "downloaded": [
+    "끈 이론.md",
+    "아이렌(IREN) 투자 기록 01.md"
   ],
-  "timestamp": "2025-11-09T14:02:40.270Z"
+  "deleted": [
+    ".changes.json",
+    "아이렌 투자 기록 01.md"
+  ],
+  "timestamp": "2025-11-09T22:01:28.352Z"
 }

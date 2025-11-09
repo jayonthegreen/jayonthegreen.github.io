@@ -1,0 +1,34 @@
+---
+title: 아이렌(IREN) 투자 기록 01
+description: 비트코인 채굴 사업의 수익성이 좋다
+date: 2025-06-15
+tags:
+  - "#invest"
+  - "#IREN"
+links:
+---
+
+올해 초에 자산 리벨런싱을 하던 중, 비트코인과 이더리움 비중을 늘려갔다. 비트코인의 단기적 변동성에 대해서는 불안했다. 따라서 비트코인 관련한 적절한 관련주를 찾고 있었다. 아이렌이라는 곳을 알게 되었다. 데이터센터라는 실질 가치가 있었고, 이미 비트코인으로 캐시플로우가 훌륭했다.
+
+( [3Q FY25](https://iren.gcs-web.com/static-files/f76d5271-b6f5-4004-8799-d2659196c427) 의 보고서 기반으로 작성) 
+
+비트코인 채굴 사업의 수익성이 좋다
+- 비트코인 가격 대비 채굴비용이 절반이 안된다.
+	- $41k all in cash cost per Bitcoin mined (vs. $93k revenue per Bitcoin mined)
+- 25년 5월말 기준의 가격과 3Q FY25 실적. EV/EVITDA는 약 5.4배로 다소 저평가 되어 있다고 생각한다. 
+	- EV/EVTIDA ~= 5.45 EV = $1.8B, EBITDA ~= $330m(E)
+	- Record EBITDA of $82.7 million ($62.7 million in Q2 FY25)
+- 약 40 EH/s 의 컴퓨팅 파워를 가지고 있다. 
+	- 전 세계의 비트코인 연산이 약 800~1,000 EH/s 임을 감안하면 꽤나 높은 점유율을 가지고 있다.
+
+AI 사업은 EBITDA 기준 $3.1M(vs $141.2M bitcoin) 수준으로 미약하다. 
+- 그래서 1) 로드맵을 잘 지키는지,  2)비트코인 인프라를 AI 로 탄력적으로 변경할 수 있는지 3)그래서 결과적으로 딜메이킹을 할 수 있는 지 이 3가지를 중점적으로 봐야 한다.
+- 1) 로드맵
+	- Horizon 1 : 2025년 4분기
+	- Sweetwater 1 (1.4GW) : 2026년 4월 전력 공급
+- 2) 비트코인 인프라 변경 가능성
+	-  Prince George 데이터 센터(50MW)에서는 비트코인 채굴 장비(ASIC)를 AI용 GPU로 원활하게 전환하는 것을 시연.
+	- 다만 액체냉각 기술 운영은 그대로 적용되지만, 장비를 돌려쓰는 것은 효율/채산성에 있어서 의문점이라 스터디가 필요.
+- 3) 매출발생
+	- 뚜렷한 매출에 대한 언급은 없고, 사용률에 대한 언급만 - GPU fleet near full utilization – supporting training and inference workloads, including through white-labelled compute with leading US AI cloud providers (generating annualized run-rate revenue of $28 million6)
+
