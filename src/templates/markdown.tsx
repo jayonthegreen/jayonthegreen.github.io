@@ -8,7 +8,6 @@ type Frontmatter = {
   date: string
   description?: string
   tags?: string[]
-  image?: string
 }
 
 type MarkdownRemark = {
@@ -73,7 +72,7 @@ export function Head({ data }: HeadProps<BlogPostQueryData>) {
   const title = front.title || sitemeta.title
   const description = front.description || sitemeta.description
   const keywords = (front.tags || []).join(', ').replace(/#/g, '')
-  const image = `${sitemeta.siteUrl}${front.image || sitemeta.image}`
+  const image = `${sitemeta.siteUrl}${sitemeta.image}`
 
   return (
     <>
@@ -101,7 +100,6 @@ export const query = graphql`
         date(formatString: "YYYY.MM.DD")
         description
         tags
-        image
       }
     }
   }
