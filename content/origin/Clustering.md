@@ -1,15 +1,12 @@
 ---
 date: '2018-10-09'
 description: The basic of clustering algorithms
-image: /img/programming/clustering/clustering.008.jpeg
-keywords: clustering,k-means,hierarchical agglomerative
 tags:
-- '#Clustering'
-- '#ClusterAnalysis'
-- '#HierarchicalClustering'
-- '#KMeans'
-- '#DataScience'
-templateKey: post
+- Clustering
+- ClusterAnalysis
+- HierarchicalClustering
+- KMeans
+- DataScience
 title: Clustering
 ---
 

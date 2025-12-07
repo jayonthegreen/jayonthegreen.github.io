@@ -13,9 +13,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "sync-gdrive": "tsx scripts/sync-gdrive.ts",
+    "sync-local": "tsx scripts/sync-local.ts",
     "process-ko": "tsx scripts/process-ko.ts",
-    "process-en": "tsx scripts/process-en.ts",
     "process-content": "tsx scripts/process-content.ts",
     "generate-economic-newsletter": "tsx scripts/generate-economic-newsletter.ts",
     "notify-changes": "tsx scripts/notify-changes.ts"
