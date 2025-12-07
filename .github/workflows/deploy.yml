@@ -38,6 +38,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Process content
+        run: npm run process-content
+
       - name: Build site
         run: npm run build
 
