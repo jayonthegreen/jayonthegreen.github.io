@@ -4,7 +4,7 @@ modified_at: 2025-12-14
 tags: [startup, thinking, investment, finance, life, insight, feedback, second_brain]
 links: []
 title: AI에게 묻다
-description: Second Brain(Vault)을 훑어보며 느낀 점을 솔직하고 객관적인 시선으로 정리한 심층 분석
+description: 내 메모를 AI 에게 모두 읽혔다
 date: 2025-12-14
 ---
 Second Brain(제2의 뇌)이란 Tiago Forte가 제안한 개인 지식 관리(PKM) 시스템으로, 쏟아지는 정보를 단순히 저장하는 것을 넘어 '프로젝트'와 '목표'를 중심으로 구조화하여 창의적 생산을 돕는 디지털 아카이브를 말합니다. 
