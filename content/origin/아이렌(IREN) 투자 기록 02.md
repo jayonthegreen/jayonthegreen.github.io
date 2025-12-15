@@ -2,9 +2,7 @@
 title: 아이렌(IREN) 투자 기록 02
 description: 36억 달러 자금 조달과 AI 인프라 투자
 date: 2025-12-07
-tags:
-  - invest
-  - IREN
+tags: [investment, startup, finance, invest, IREN]
 links:
 created_at: 2025-12-07
 modified_at: 2025-12-07
@@ -46,7 +44,7 @@ modified_at: 2025-12-07
 
 ## 5. Valuation 변화: 01 글 대비 비교
 
-[1편](/post/아이렌-IREN-투자-기록-01) 작성 시점(2025년 5월)과 현재를 비교하면, 매출 대비 Valuation이 크게 상승했다.
+1편 작성 시점(2025년 5월)과 현재를 비교하면, 매출 대비 Valuation이 크게 상승했다.
 
 | 지표 | 01 작성 시점 (2025.5월) | 현재 (2025.12월) | 변화 |
 |------|------------------------|------------------|------|

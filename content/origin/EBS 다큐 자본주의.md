@@ -2,7 +2,7 @@
 title: 자본주의 기본
 description: 『EBS 다큐 프라임 자본주의』을 읽고
 date: 2025-08-04
-tags: 
+tags: [investment, thinking, finance]
 links:
 ---
 1. 자본주의에 대해 곰곰히 생각해보고 싶은 사람이라면 한번쯤 읽어보면 좋다. 영상으로 가볍게 볼 수 있다.

@@ -1,12 +1,7 @@
 ---
 date: 2024-12-09 08:40:00+00:00
 description: Matt Mochary, 『The Great CEO Within』를 읽고
-tags:
-- CEO
-- 기업문화
-- 업무습관
-- 코파운더
-- 논의방법
+tags: [investment, thinking, startup, life, CEO, 기업문화, 업무습관, 코파운더, 논의방법]
 title: CEO 체크 리스트
 ---
 책은 회사를 포괄적으로, 구조적으로 정리하여 넓은 시야로 바라볼 수 있게 한다.

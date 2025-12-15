@@ -2,10 +2,7 @@
 title: Removal over Addition
 description: Via Negativa, Less Is More
 date: 2025-10-05
-tags:
-  - essay
-  - philosophy
-  - minimalism
+tags: [thinking, essay, philosophy, minimalism]
 links:
 ---
 팟캐스트에 들어가 하나의 계정만 남기고 모두 팔로우를 끊었다. 덜어내고 싶었다. 더하기 보다는.

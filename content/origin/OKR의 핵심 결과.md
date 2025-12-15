@@ -2,7 +2,7 @@
 title: OKR의 핵심 결과
 description: 존 도어, 『OKR』을 읽고
 date: 2025-06-07
-tags: 
+tags: [startup, finance]
 links:
 ---
 2018년 OKR을 처음 접했다. 회사의 OKR 이 있었고, 팀의 OKR 그리고 개인의 OKR 이 있었다.  상위의, 그리고 동료의 OKR 을 참조하며 개인 OKR을 썼다. 쓰기는 어려웠으나, 뭔가 자기계발 같은 느낌이 들었다. 개인의 행동 지침정도로 이해했다. 회사에서 수행하는 업무와 따로 놀았다.

@@ -1,12 +1,7 @@
 ---
 date: 2018-09-30
 description: Spencer Johnson, 『Who Moved My Cheese?』
-tags:
-- Courage
-- Change
-- Fear
-- Belief
-- SelfGrowth
+tags: [investment, Courage, Change, Fear, Belief, SelfGrowth]
 title: Courage
 ---
 We should smell the cheese often so we know when it's getting old. But the most impressive sentence is the following.

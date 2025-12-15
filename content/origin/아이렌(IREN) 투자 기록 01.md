@@ -2,10 +2,10 @@
 title: 아이렌(IREN) 투자 기록 01
 description: 비트코인 채굴 사업의 수익성이 좋다
 date: 2025-06-15
-tags:
-  - invest
-  - IREN
+tags: [investment, thinking, startup, invest, IREN]
 links:
+created_at: 2025-06-15
+modified_at: 2025-06-15
 ---
 
 올해 초에 자산 리벨런싱을 하던 중, 비트코인과 이더리움 비중을 늘려갔다. 비트코인의 단기적 변동성에 대해서는 불안했다. 따라서 비트코인 관련한 적절한 관련주를 찾고 있었다. 아이렌이라는 곳을 알게 되었다. 데이터센터라는 실질 가치가 있었고, 이미 비트코인으로 캐시플로우가 훌륭했다.
@@ -31,4 +31,3 @@ AI 사업은 EBITDA 기준 $3.1M(vs $141.2M bitcoin) 수준으로 미약하다.
 	- 다만 액체냉각 기술 운영은 그대로 적용되지만, 장비를 돌려쓰는 것은 효율/채산성에 있어서 의문점이라 스터디가 필요.
 - 3) 매출발생
 	- 뚜렷한 매출에 대한 언급은 없고, 사용률에 대한 언급만 - GPU fleet near full utilization – supporting training and inference workloads, including through white-labelled compute with leading US AI cloud providers (generating annualized run-rate revenue of $28 million6)
-
