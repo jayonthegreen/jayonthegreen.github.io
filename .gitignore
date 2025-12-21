@@ -13,3 +13,7 @@ yarn-error.log
 src/gatsby-types.d.ts
 
 .env
+
+# IREN reports tracking files
+iren-reports/.downloaded-urls
+iren-reports/.new-reports.json

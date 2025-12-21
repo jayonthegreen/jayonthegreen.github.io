@@ -1,0 +1,53 @@
+name: IREN Reports Crawler
+
+on:
+  schedule:
+    # 매주 월요일 오전 9시 (KST), UTC 기준 일요일 자정
+    - cron: '0 0 * * 1'
+  workflow_dispatch: # 수동 실행도 가능하도록
+
+jobs:
+  fetch-reports:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        run: npx playwright install chromium --with-deps
+
+      - name: Fetch IREN Reports
+        run: npx tsx scripts/fetch-iren-reports.ts
+
+      - name: Commit and push new reports
+        id: commit
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add iren-reports/
+          if git diff --staged --quiet; then
+            echo "No new reports to commit"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            git commit -m "chore: add new IREN reports $(date +'%Y-%m-%d')"
+            git push
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send Telegram Notification
+        if: steps.commit.outputs.has_changes == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: npx tsx scripts/fetch-iren-reports.ts --notify-only
