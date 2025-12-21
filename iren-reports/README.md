@@ -9,7 +9,7 @@ Last updated: 2025-12-21
 | Q2 FY25 Results Press Release | 2025-12-21 | [📥 Q2-FY25-Results-Press-Release.pdf](Q2-FY25-Results-Press-Release.pdf) |
 | IREN Q1 FY26 Results Press Release | 2025-12-21 | [📥 IREN-Q1-FY26-Results-Press-Release.pdf](IREN-Q1-FY26-Results-Press-Release.pdf) |
 | IREN Q1 FY26 Results Press Release | 2025-12-21 | [📥 IREN-Q1-FY26-Results-Press-Release.pdf](IREN-Q1-FY26-Results-Press-Release.pdf) |
-| IREN to Release Q1 FY26 Results on November 6, 2025 | November 6, 2025 | [🔗 External Link](https://iren.gcs-web.com/static-files/6c349f81-6922-4047-8e42-9e8036c7f44e) |
+| IREN to Release Q1 FY26 Results on November 6, 2025 | November 6, 2025 | [📥 IREN-to-Release-Q1-FY26-Results-on-November-6,-2025.pdf](IREN-to-Release-Q1-FY26-Results-on-November-6,-2025.pdf) |
 | IREN August 2025 Monthly Update | 2025-12-21 | [🔗 External Link](https://iren.gcs-web.com/static-files/ec8ec2a6-a1d1-4bb6-9cb9-bc2d436b9db9) |
 | IREN Appoints Anthony Lewis as Chief Financial Officer | 2025-12-21 | [🔗 External Link](https://iren.gcs-web.com/static-files/7d0e5311-680b-44de-913b-dba3bb4bd750) |
 | IREN Reports Full Year FY25 Results | 2025-12-21 | [🔗 External Link](https://iren.gcs-web.com/static-files/1992dde8-e264-4226-8421-8882a46411ae) |
