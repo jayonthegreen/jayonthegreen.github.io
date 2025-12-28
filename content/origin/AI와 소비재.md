@@ -2,10 +2,13 @@
 title: AI와 소비재
 description: 패션 브랜드와 실행력에 대한 단상
 date: 2025-12-09
-tags: [life, essay, AI, fashion]
-links:
+tags:
+  - life
+  - essay
+  - AI
+  - fashion
 created_at: 2025-11-30
-modified_at: 2025-12-15
+modified_at: 2025-12-28
 ---
 
 5년 전보다 훨씬 빠르게 많은 걸 배울 수 있다. 비슷하게, 훨씬 빠르게 무언가를 생산할 수 있다. 그 과정을 더 구조적으로, 자동으로 만들 수도 있다.

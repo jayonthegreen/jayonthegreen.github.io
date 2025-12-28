@@ -9,7 +9,7 @@ tags:
   - future
 links: 
 created_at: 2025-12-15
-modified_at: 2025-12-15
+modified_at: 2025-12-28
 ---
 
 > AI 시대, 우리는 로마의 시민이 될 것인가, 아니면 새로운 생산자가 될 것인가.
