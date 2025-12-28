@@ -1,6 +1,6 @@
 ---
 title: AGI, 천사인가 악마인가를 읽고
-description: 김대식, 『AGI, 천사인가 악마인가』를 읽고
+description: 김대식, 『AGI, 천사인가 악마인가』을 읽고
 date: 2025-12-15
 tags:
   - book
