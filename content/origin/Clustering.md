@@ -13,7 +13,7 @@ Let's look at two basic and widely used clustering algorithms. hierarchical and 
 
 ## The hierarchical clustering
 
-Initially, each point is a cluster. Repeatedly combined the two nearest cluster into one.
+Initially, each point is a cluster. Repeatedly combined the two nearest clusters into one.
 
 ![/img/programming/clustering/clustering.013.jpeg](/img/programming/clustering/clustering.013.jpeg "/img/programming/clustering/clustering.013.jpeg")
 
@@ -28,17 +28,17 @@ The main output of Hierarchical Clustering is a dendrogram, which shows the hier
 Q 1 ) How should we represent cluster of more than one point?
 
 - Euclidean space → Centroid = The average of its points.
-- Non-Euclidean space → There is no "average". using clustroid(closet all other points in the cluster) not centroid.
+- Non-Euclidean space → There is no "average". using clustroid(closest all other points in the cluster) not centroid.
 
 Q 2 ) How should we determine the 'nearness' of clusters
 
 - Euclidean space → Distances by distances of centroids.
-- Non-Euclidean space → Distances by distances of clustroid.
+- Non-Euclidean space → Distances by distances of clustroids.
 
 Q 3 ) When should we stop combining clusters?
 
-- If pick a number k upfront, We want data to falls into k classes.
-- Before merging low cohesion clustering. Don't make bad clusters. The way to measure cohesion
+- If we pick a number k upfront, we want data to fall into k classes.
+- Before merging low cohesion clusters. Don't make bad clusters. The way to measure cohesion
     - Diameters: maximum distance in points
     - Radius: maximum distances from centroid(or clustroid)
     - Density: points per volumes(derived from diameters, radius)
@@ -50,14 +50,14 @@ It's too slow. The standard algorithm for hierarchical agglomerative clustering 
 ## K-means clustering
 
 1. Assuming Euclidean space/distance, start by picking **k**(number of clusters) clusters.  
-2. Assign points in the nearest cluster
+2. Assign points to the nearest cluster
 3. After all points are assigned, update location of centroid of the **k** clusters**.**
-4. Reassign all points to their closet centroid.  Sometimes moves points between clusters.
-5. Repeat 3,4 util convergence. points and centroid don't move any further.
+4. Reassign all points to their closest centroid.  Sometimes moves points between clusters.
+5. Repeat 3,4 until convergence. points and centroid don't move any further.
 
 ## How to select the right k clustering
 
-- As the number of clustering increases. Average distance to centroid goes down.
+- As the number of clusters increase. Average distance to centroid goes down.
 
 ![/img/programming/clustering/clustering.010.jpeg](/img/programming/clustering/clustering.010.jpeg "/img/programming/clustering/clustering.010.jpeg")
 
@@ -68,15 +68,15 @@ It's too slow. The standard algorithm for hierarchical agglomerative clustering 
 ## How to pick initial centroids of clusters
 
 1. Sampling then using hierarchical clustering to obtains k clusters.
-2. Pick "dispersed" set of points.pick randomly first. then pick the next point which is as far as possible.
+2. Pick "dispersed" set of points. Pick randomly first. Then pick the next point which is as far as possible.
 
 ## K-means Complexity
 
-O(kn) for N points, k clusters. linear goods. But the number of rounds to convergence can be  very large.
+O(kn) for N points, k clusters. Linear time complexity. But the number of rounds to convergence can be  very large.
 
 ## Closing
 
-Two alogrithms are basic and essential. There are many optimization techniques in dealing with data in the real world. However, many optimization techniques have often drived from these two basic algorithms. Therefore, these two concepts can be important as a foundation.
+Two algorithms are basic and essential. There are many optimization techniques in dealing with data in the real world. However, many optimization techniques have often derived from these two basic algorithms. Therefore, these two concepts can be important as a foundation.
 
 
 ## reference
