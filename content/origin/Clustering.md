@@ -1,8 +1,13 @@
 ---
-date: '2018-10-09'
-description: The basic of clustering algorithms
-tags: [investment, Clustering, ClusterAnalysis, HierarchicalClustering, KMeans, DataScience]
 title: Clustering
+description: The basic of clustering algorithms
+date: 2018-10-09
+tags:
+  - investment
+  - data-science
+  - algorithm
+created_at: 2018-10-09
+modified_at: 2025-12-28
 ---
 
 ## Definition of clustering
