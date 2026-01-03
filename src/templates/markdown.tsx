@@ -68,15 +68,20 @@ class MarkdownTemplate extends React.Component<PageProps<BlogPostQueryData>> {
 export function Head({ data }: HeadProps<BlogPostQueryData>) {
   const sitemeta = useSiteMetadata()
   const front = data.markdownRemark.frontmatter
+  const slug = data.markdownRemark.fields.slug
 
   const title = front.title || sitemeta.title
   const description = front.description || sitemeta.description
   const keywords = (front.tags || []).join(', ').replace(/#/g, '')
   const image = `${sitemeta.siteUrl}${sitemeta.image}`
 
+  // Exclude /report/ pages from search engines
+  const isReport = slug.startsWith('/report/')
+
   return (
     <>
       <title>{title}</title>
+      {isReport && <meta name="robots" content="noindex, nofollow" />}
       <meta property="og:title" content={title} />
       <meta name="description" content={description} />
       <meta property="og:description" content={description} />

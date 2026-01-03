@@ -801,10 +801,10 @@ async function main() {
     // 1. 먼저 마크다운 파일 생성 (AI 인사이트 및 뉴스 포함)
     console.log('📝 Generating newsletter markdown...');
     const markdown = generateMarkdown(data);
-    const newsletterDir = path.join(process.cwd(), 'newsletters');
+    const reportDir = path.join(process.cwd(), 'src', 'pages', 'report');
 
-    if (!fs.existsSync(newsletterDir)) {
-      fs.mkdirSync(newsletterDir, { recursive: true });
+    if (!fs.existsSync(reportDir)) {
+      fs.mkdirSync(reportDir, { recursive: true });
     }
 
     // 실행 날짜를 기준으로 파일명 생성 (데이터 날짜가 아닌 실제 실행 날짜)
@@ -813,9 +813,10 @@ async function main() {
     const month = String(today.getMonth() + 1).padStart(2, '0');
     const day = String(today.getDate()).padStart(2, '0');
     const filename = `economic-${year}-${month}-${day}.md`;
-    const filepath = path.join(newsletterDir, filename);
+    const filepath = path.join(reportDir, filename);
     fs.writeFileSync(filepath, markdown);
     console.log(`✅ Newsletter saved to ${filepath}`);
+    console.log(`🔗 URL: /report/economic-${year}-${month}-${day}/`);
 
     // 2. 그 다음 텔레그램 메시지 전송 (HTML 모드)
     console.log('📱 Sending Telegram message...');

@@ -16,7 +16,8 @@
     "process-content": "tsx scripts/process-content.ts",
     "generate-economic-newsletter": "tsx scripts/generate-economic-newsletter.ts",
     "notify-changes": "tsx scripts/notify-changes.ts",
-    "fetch-iren-reports": "tsx scripts/fetch-iren-reports.ts"
+    "fetch-iren-reports": "tsx scripts/fetch-iren-reports.ts",
+    "generate-market-thermometer": "tsx scripts/generate-market-thermometer.ts"
   },
   "dependencies": {
     "dotenv": "^17.2.1",

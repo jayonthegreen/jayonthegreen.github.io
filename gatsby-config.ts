@@ -11,7 +11,13 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: false,
-  plugins: ["gatsby-plugin-postcss",  "gatsby-plugin-image", "gatsby-plugin-sitemap",
+  plugins: ["gatsby-plugin-postcss",  "gatsby-plugin-image",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        excludes: ["/report/*", "/report/**"],
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
