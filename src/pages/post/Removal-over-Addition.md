@@ -2,10 +2,7 @@
 title: Removal over Addition
 description: Via Negativa, Less Is More
 date: 2025-10-05
-tags:
-  - essay
-  - philosophy
-  - minimalism
+tags: [thinking, essay, philosophy, minimalism]
 ---
 팟캐스트에 들어가 하나의 계정만 남기고 모두 팔로우를 끊었다. 덜어내고 싶었다. 더하기 보다는.
 
@@ -15,4 +12,4 @@ tags:
 
 덜어낼수록 기준은 단순해지고 마음은 편해진다. 높은 기대치와 강박은 마음을 갉아먹을 뿐이다. 
 
-삶의 밀도는 빈 자리에 생긴다.
+삶의 밀도는 빈자리에 생긴다.
