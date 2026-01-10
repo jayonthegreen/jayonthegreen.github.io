@@ -2,7 +2,7 @@
 title: 자본주의 기본
 description: 『EBS 다큐 프라임 자본주의』을 읽고
 date: 2025-08-04
-tags: [investment, thinking, finance]
+tags: [invest, thinking, finance]
 links:
 created_at: 2025-12-28
 modified_at: 2025-12-28
