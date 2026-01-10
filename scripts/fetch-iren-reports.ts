@@ -9,7 +9,7 @@ dotenv.config();
 // GitHub repository info for constructing URLs
 const GITHUB_REPO = 'jayonthegreen/jayonthegreen.github.io';
 const GITHUB_BRANCH = 'master';
-const REPORTS_DIR_NAME = 'iren-reports';
+const REPORTS_DIR_NAME = 'crawl/iren-reports';
 
 // Maximum number of reports to download per execution
 const MAX_DOWNLOADS_PER_RUN = 1;
@@ -263,7 +263,7 @@ async function main() {
   const args = process.argv.slice(2);
   const notifyOnly = args.includes('--notify-only');
 
-  const reportsDir = path.join(process.cwd(), 'iren-reports');
+  const reportsDir = path.join(process.cwd(), 'crawl/iren-reports');
 
   // Ensure reports directory exists
   if (!fs.existsSync(reportsDir)) {

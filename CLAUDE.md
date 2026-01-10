@@ -38,7 +38,10 @@ This is a Gatsby-based blog with automated content processing and deployment.
 - `/src/pages/post/` - Processed markdown files for Gatsby
 - `/src/templates/` - Gatsby page templates
 - `/static/` and `/public/img/` - Static assets and images
-- `/newsletters/` - Generated economic daily newsletters
+- `/crawl/` - Crawled/archived data
+  - `/crawl/iren-reports/` - IREN investor reports (PDFs)
+  - `/crawl/newsletters/` - Economic newsletter archives
+  - `/crawl/thermometer/` - Market thermometer archives
 
 ## Automated Workflows
 
@@ -51,7 +54,7 @@ This is a Gatsby-based blog with automated content processing and deployment.
 - Runs daily at 9 AM KST (0:00 UTC)
 - Fetches S&P 500, VIX, P/E Ratio data
 - Generates AI-powered market insights
-- Sends to Telegram and saves to `/newsletters/`
+- Sends to Telegram and saves to `/src/pages/report/`
 
 ## Development Notes
 
