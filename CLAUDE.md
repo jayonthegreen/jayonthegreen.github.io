@@ -34,8 +34,10 @@ This is a Gatsby-based blog with automated content processing and deployment.
 4. **Deployment**: GitHub Actions deploys to GitHub Pages on push to master
 
 ### Key Directories
-- `/content/post/` - Raw markdown files (Korean filenames)
-- `/src/pages/post/` - Processed markdown files for Gatsby
+- `/content/post/` - Raw markdown files for blog posts
+- `/content/report/` - Raw markdown files for reports (not listed on homepage)
+- `/src/pages/post/` - Processed blog posts for Gatsby
+- `/src/pages/report/` - Processed reports for Gatsby
 - `/src/templates/` - Gatsby page templates
 - `/static/` and `/public/img/` - Static assets and images
 - `/crawl/` - Crawled/archived data

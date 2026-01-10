@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 /**
- * Process content folder files to src/pages/post
+ * Process content folder files to src/pages
  * Converts files from Google Drive sync to Gatsby-compatible format
  *
  * This script performs the following operations:
- * 1. Reads all markdown files from content/post directory
- * 2. Clears the src/pages/post directory before processing
+ * 1. Reads all markdown files from content/post and content/report directories
+ * 2. Clears the corresponding src/pages directories before processing
  * 3. For each markdown file:
  *    - Sanitizes filename: replaces spaces with hyphens, removes special characters (keeps Korean)
  *    - Cleans content: removes meaningless single-character first lines
@@ -14,10 +14,10 @@
  *    - Converts Obsidian-style links to standard markdown links:
  *      * [[document|display]] → [display](/resource/document)
  *      * [[document]] → [document](/resource/document)
- * 4. Writes processed files to src/pages/post with sanitized filenames
+ * 4. Writes processed files to src/pages with sanitized filenames
  *
- * Input: content/post/*.md (raw markdown files from Google Drive)
- * Output: src/pages/post/*.md (Gatsby-compatible markdown files)
+ * Input: content/post/*.md, content/report/*.md
+ * Output: src/pages/post/*.md, src/pages/report/*.md
  */
 
 import * as fs from 'fs/promises';
@@ -154,63 +154,75 @@ async function getMarkdownFiles(dirPath: string): Promise<string[]> {
   return files;
 }
 
-async function main(): Promise<void> {
-  const srcDir = 'content/post';
-  const destDir = 'src/pages/post';
-  
+async function processDirectory(srcDir: string, destDir: string): Promise<number> {
   // Check if source directory exists
   try {
     await fs.access(srcDir);
   } catch (error) {
-    console.error(`Error: Source directory ${srcDir} does not exist`);
-    return;
+    // Directory doesn't exist, skip silently
+    return 0;
   }
-  
+
   // Create destination directory
   await fs.mkdir(destDir, { recursive: true });
-  
+
   // Clear destination directory
   console.log(`[INFO] Clearing destination directory: ${destDir}`);
   await clearDestinationDirectory(destDir);
-  
+
   // Process files
   let processedCount = 0;
-  
+
   try {
     const markdownFiles = await getMarkdownFiles(srcDir);
-    
+
     for (const srcPath of markdownFiles) {
       try {
         // Get original filename without extension
         const originalName = path.basename(srcPath, '.md');
-        
+
         // Sanitize filename
         const sanitizedName = sanitizeFilename(originalName);
         const destFilename = `${sanitizedName}.md`;
         const destPath = path.join(destDir, destFilename);
-        
+
         // Read file content
         const content = await fs.readFile(srcPath, 'utf-8');
-        
+
         // Process markdown file
         const processedContent = processMarkdownFile(content);
-        
+
         // Write processed content to destination
         await fs.writeFile(destPath, processedContent, 'utf-8');
-        
+
         console.log(`[PROCESS] ${path.basename(srcPath)} -> ${destFilename}`);
         processedCount++;
-        
+
       } catch (error) {
         console.error(`[ERROR] Failed to process ${srcPath}: ${error}`);
       }
     }
   } catch (error) {
     console.error(`[ERROR] Failed to read source directory: ${error}`);
-    return;
   }
-  
-  console.log(`[SUMMARY] processed: ${processedCount} files`);
+
+  return processedCount;
+}
+
+async function main(): Promise<void> {
+  const directories = [
+    { src: 'content/post', dest: 'src/pages/post' },
+    { src: 'content/report', dest: 'src/pages/report' },
+  ];
+
+  let totalProcessed = 0;
+
+  for (const { src, dest } of directories) {
+    const count = await processDirectory(src, dest);
+    totalProcessed += count;
+  }
+
+  console.log(`[SUMMARY] processed: ${totalProcessed} files`);
 }
 
 if (require.main === module) {
