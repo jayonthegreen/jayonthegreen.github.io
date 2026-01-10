@@ -58,7 +58,7 @@ async function main() {
   const committedFiles = output
     .split('\n')
     .filter(file => file.endsWith('.md'))
-    .filter(file => file.startsWith('content/origin/') || file.startsWith('content/ko/') || file.startsWith('content/en/'));
+    .filter(file => file.startsWith('content/post/'));
 
   if (committedFiles.length === 0) {
     console.log('[INFO] No markdown files to notify');

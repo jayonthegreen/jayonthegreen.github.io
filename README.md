@@ -20,8 +20,7 @@
 
 ## Content
 
-- `content/origin/` - 한국어 글
-- `content/en/` - English posts
+- `content/post/` - 블로그 포스트
 
 ## License
 

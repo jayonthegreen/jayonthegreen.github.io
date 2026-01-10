@@ -13,7 +13,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run typecheck` - Run TypeScript type checking
 
 ### Content Management
-- `npm run process-content` - Process content from `/content/origin/` to `/src/pages/post/` with filename sanitization and link conversion
+- `npm run process-content` - Process content from `/content/post/` to `/src/pages/post/` with filename sanitization and link conversion
 
 ### Newsletter
 - `npm run generate-economic-newsletter` - Generate economic daily newsletter with market data (S&P 500, VIX, etc.) and send to Telegram
@@ -23,9 +23,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a Gatsby-based blog with automated content processing and deployment.
 
 ### Content Pipeline
-1. **Content Editing**: Edit markdown files directly in `/content/origin/` (via Claude Desktop + Obsidian MCP)
+1. **Content Editing**: Edit markdown files directly in `/content/post/` (via Claude Desktop + Obsidian MCP)
 2. **Content Processing** (`npm run process-content`):
-   - Processes all files from `/content/origin/` to `/src/pages/post/`
+   - Processes all files from `/content/post/` to `/src/pages/post/`
    - Sanitizes filenames: spaces → hyphens, removes special characters (keeps Korean)
    - Removes `links:` field from YAML frontmatter
    - Converts Obsidian-style links: `[[doc|text]]` → `[text](/resource/doc)`
@@ -34,7 +34,7 @@ This is a Gatsby-based blog with automated content processing and deployment.
 4. **Deployment**: GitHub Actions deploys to GitHub Pages on push to master
 
 ### Key Directories
-- `/content/origin/` - Raw markdown files (Korean filenames)
+- `/content/post/` - Raw markdown files (Korean filenames)
 - `/src/pages/post/` - Processed markdown files for Gatsby
 - `/src/templates/` - Gatsby page templates
 - `/static/` and `/public/img/` - Static assets and images
@@ -60,7 +60,7 @@ This is a Gatsby-based blog with automated content processing and deployment.
 
 ### Content Development
 - Content is edited via Claude Desktop with Obsidian MCP
-- Edit files in `/content/origin/`, commit & push
+- Edit files in `/content/post/`, commit & push
 - GitHub Actions handles processing and deployment
 
 ### Technical Stack

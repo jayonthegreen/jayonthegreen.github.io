@@ -5,7 +5,7 @@
  * Converts files from Google Drive sync to Gatsby-compatible format
  *
  * This script performs the following operations:
- * 1. Reads all markdown files from content/origin directory
+ * 1. Reads all markdown files from content/post directory
  * 2. Clears the src/pages/post directory before processing
  * 3. For each markdown file:
  *    - Sanitizes filename: replaces spaces with hyphens, removes special characters (keeps Korean)
@@ -16,7 +16,7 @@
  *      * [[document]] → [document](/resource/document)
  * 4. Writes processed files to src/pages/post with sanitized filenames
  *
- * Input: content/origin/*.md (raw markdown files from Google Drive)
+ * Input: content/post/*.md (raw markdown files from Google Drive)
  * Output: src/pages/post/*.md (Gatsby-compatible markdown files)
  */
 
@@ -155,7 +155,7 @@ async function getMarkdownFiles(dirPath: string): Promise<string[]> {
 }
 
 async function main(): Promise<void> {
-  const srcDir = 'content/origin';
+  const srcDir = 'content/post';
   const destDir = 'src/pages/post';
   
   // Check if source directory exists
