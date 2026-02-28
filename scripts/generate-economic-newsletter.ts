@@ -818,13 +818,14 @@ async function main() {
     console.log(`✅ Newsletter saved to ${filepath}`);
     console.log(`🔗 URL: /report/economic-${year}-${month}-${day}/`);
 
-    // 2. 그 다음 텔레그램 메시지 전송 (HTML 모드)
-    console.log('📱 Sending Telegram message...');
-    const telegramMessage = generateTelegramMessage(data);
-    await sendTelegramMessage({
-      text: telegramMessage,
-      parseMode: 'HTML'
-    });
+    // 텔레그램 전송 비활성화 (주간 요약으로 대체)
+    //     console.log('📱 Sending Telegram message...');
+    //     const telegramMessage = generateTelegramMessage(data);
+    //     await sendTelegramMessage({
+    //   text: telegramMessage,
+    //   parseMode: 'HTML'
+    // });
+    console.log('ℹ️  Telegram notification disabled (weekly summary enabled)');
 
     console.log('🎉 Newsletter generation completed!');
   } catch (error) {
