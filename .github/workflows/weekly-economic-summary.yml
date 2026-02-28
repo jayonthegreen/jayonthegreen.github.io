@@ -1,0 +1,32 @@
+name: Weekly Economic Summary
+
+on:
+  schedule:
+    # 매주 일요일 20시 (KST) = 일요일 11시 (UTC)
+    - cron: '0 11 * * 0'
+  workflow_dispatch: # 수동 실행도 가능하도록
+
+jobs:
+  generate-summary:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Weekly Economic Summary
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: npx tsx scripts/generate-weekly-economic-summary.ts
