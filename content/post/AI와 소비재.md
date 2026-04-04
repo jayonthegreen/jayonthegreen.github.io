@@ -5,7 +5,7 @@ date: 2025-12-09
 tags:
   - life
   - essay
-  - AI
+  - ai
   - fashion
 created_at: 2025-11-30
 modified_at: 2025-12-28

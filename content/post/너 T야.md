@@ -1,7 +1,7 @@
 ---
 date: 2025-02-01 19:40:00+00:00
 description: 마르틴부버, 『나와 너』을 읽고
-tags: [thinking, 실증주의, 현상학, 마르틴부버, 나와너, 관계의소중함]
+tags: [thinking, 실증주의, philosophy, 나와너, 관계의소중함]
 title: 너 T야?
 created_at: 2025-12-28
 modified_at: 2025-12-28
