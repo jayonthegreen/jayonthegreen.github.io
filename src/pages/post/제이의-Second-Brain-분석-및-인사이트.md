@@ -1,6 +1,6 @@
 ---
 title: AI에게 묻다
-description: 내 메모를 AI에게 모두 읽혔다
+description: 내 메모를 AI 에게 모두 읽혔다
 date: 2025-12-14
 tags:
   - second-brain

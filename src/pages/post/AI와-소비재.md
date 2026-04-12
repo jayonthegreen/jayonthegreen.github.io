@@ -1,11 +1,11 @@
 ---
 title: AI와 소비재
-description: 패션 브랜드와 실행력에 대한 단상
+description: 소비재를 AI 로 혁신하면
 date: 2025-12-09
 tags:
   - life
   - essay
-  - AI
+  - ai
   - fashion
 created_at: 2025-11-30
 modified_at: 2025-12-28

@@ -44,7 +44,7 @@ const config: GatsbyConfig = {
 
                 return Object.assign({}, node.frontmatter, {
                   description: node.frontmatter.description || node.excerpt,
-                  date: node.frontmatter.date,
+                  date: node.frontmatter.created_at,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": cleanHtml }],
@@ -55,7 +55,7 @@ const config: GatsbyConfig = {
               {
                 allMarkdownRemark(
                   filter: { fileAbsolutePath: { regex: "/pages/post/" } }
-                  sort: { frontmatter: { date: DESC } }
+                  sort: { frontmatter: { created_at: DESC } }
                 ) {
                   nodes {
                     excerpt
@@ -65,7 +65,7 @@ const config: GatsbyConfig = {
                     }
                     frontmatter {
                       title
-                      date
+                      created_at
                       description
                     }
                   }
