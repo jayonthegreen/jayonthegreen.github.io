@@ -2,10 +2,14 @@
 title: Removal over Addition
 description: Via Negativa, Less Is More
 date: 2025-10-05
-tags: [thinking, essay, philosophy, minimalism]
-created_at: 2025-12-28
-modified_at: 2025-12-28
+tags:
+- thinking
+- essay
+- minimalism
+created_at: 2025-10-05
+modified_at: 2026-04-15 21:29
 ---
+
 팟캐스트에 들어가 하나의 계정만 남기고 모두 팔로우를 끊었다. 덜어내고 싶었다. 더하기 보다는.
 
 수년 전에 덜어내지 못한 결정들이 떠오른다. 나중에 해도 늦지 않는다고 착각했던 의사결정들이 사실은 돌이킬 수 없는 결과를 낸다는 생각들을 한다. 대부분은 무언가 덜어내는 의사결정들이 망설임과 함께 흘러갔다.

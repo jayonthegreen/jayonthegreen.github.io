@@ -73,24 +73,40 @@ function processMarkdownFile(content: string): string {
     }
     
     if (frontmatterEnd > 0) {
-      // Remove links field from frontmatter
+      // Remove links field and fix malformed frontmatter
       const frontmatterLines: string[] = [];
-      let skipLinks = false;
-      
+      let skipField = false;
+      let prevFieldHasInlineValue = false;
+
       for (let i = 1; i < frontmatterEnd; i++) {
         const line = lines[i];
-        
+        const isIndentedOrListItem = line.startsWith('  ') || line.startsWith('\t') || line.startsWith('- ');
+
         if (line.startsWith('links:')) {
-          skipLinks = true;
+          skipField = true;
+          prevFieldHasInlineValue = false;
           continue;
-        } else if (skipLinks && (line.startsWith('  ') || line.startsWith('\t') || line.startsWith('- '))) {
-          // Skip sub-items of links field (including list items)
+        } else if (skipField && isIndentedOrListItem) {
+          // Skip sub-items of links field
           continue;
-        } else if (skipLinks && !line.startsWith('  ') && !line.startsWith('\t') && !line.startsWith('- ') && line.trim() !== '') {
-          skipLinks = false;
+        } else if (skipField && !isIndentedOrListItem && line.trim() !== '') {
+          skipField = false;
         }
-        
-        if (!skipLinks) {
+
+        if (skipField) continue;
+
+        // Detect top-level field lines (e.g., "tags: [a, b]")
+        const fieldMatch = line.match(/^(\w[\w-]*)\s*:(.*)/);
+        if (fieldMatch) {
+          const value = fieldMatch[2].trim();
+          // Field has an inline value (not empty, not starting a block list)
+          prevFieldHasInlineValue = value.length > 0 && !value.startsWith('|') && !value.startsWith('>');
+          frontmatterLines.push(line);
+        } else if (isIndentedOrListItem && prevFieldHasInlineValue) {
+          // Skip orphaned indented/list lines after a field with inline value
+          continue;
+        } else {
+          prevFieldHasInlineValue = false;
           frontmatterLines.push(line);
         }
       }
