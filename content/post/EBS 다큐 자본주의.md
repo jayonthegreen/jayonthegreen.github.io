@@ -2,10 +2,15 @@
 title: 자본주의 기본
 description: 『EBS 다큐 프라임 자본주의』을 읽고
 date: 2025-08-04
-tags: [invest, thinking, finance]
+tags:
+- 투자
+- thinking
+- finance
 created_at: 2025-12-28
 modified_at: 2025-12-28
 ---
+
+
 자본주의에 대해 곰곰이 생각해보고 싶은 사람이라면 한 번쯤 읽어보면 좋다. 영상으로 가볍게 볼 수 있다.
 
 1. 은행은 돈을 계속 찍어낸다. 누군가는 빚을 진다. 돈은 돌고 돌며 불어난다.

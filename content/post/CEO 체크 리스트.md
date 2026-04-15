@@ -3,14 +3,15 @@ title: CEO 체크 리스트
 description: Matt Mochary, 『The Great CEO Within』을 읽고
 date: 2024-12-09
 tags:
-  - invest
-  - thinking
-  - startup
-  - life
-  - book
+- 투자/가치
+- thinking
+- startup
+- life
+- book
 created_at: 2024-12-09
 modified_at: 2025-12-28
 ---
+
 
 책은 회사를 포괄적으로, 구조적으로 정리하여 넓은 시야로 바라볼 수 있게 한다.
 

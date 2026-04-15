@@ -3,13 +3,14 @@ title: Courage
 description: Spencer Johnson, 『Who Moved My Cheese?』을 읽고
 date: 2018-09-30
 tags:
-  - invest
-  - thinking
-  - book
-  - self-growth
+- 투자/가치
+- thinking
+- book
 created_at: 2018-09-30
-modified_at: 2025-12-28
+modified_at: 2026-04-15 08:13
 ---
+
+
 
 We should smell the cheese often so we know when it's getting old. But the most impressive sentence is the following.
 

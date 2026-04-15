@@ -1,11 +1,19 @@
 ---
 date: '2018-10-09'
 description: The basic of clustering algorithms
-tags: [invest, Clustering, ClusterAnalysis, HierarchicalClustering, KMeans, DataScience]
+tags:
+- 투자
+- Clustering
+- ClusterAnalysis
+- HierarchicalClustering
+- KMeans
+- DataScience
 title: Clustering
 created_at: 2025-12-28
-modified_at: 2025-12-28
+modified_at: 2026-04-15 08:13
 ---
+
+
 ## Definition of clustering
 
 Cluster analysis or clustering is the task of grouping a set of objects in such a way that objects in the same group (called a cluster) are more similar to each other than to those in other clusters.
