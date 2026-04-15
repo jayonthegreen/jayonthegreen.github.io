@@ -27,7 +27,7 @@ const ReportPage: React.FC<PageProps> = ({
                  overflow: 'hidden',
                  }}>
                 <span style={{marginRight: '0.3rem'}}>
-                    { node.frontmatter.date && node.frontmatter.date.split('.')[0]}·{node.frontmatter.date.split('.')[1]}
+                    { node.frontmatter.created_at && node.frontmatter.created_at.split('.')[0]}·{node.frontmatter.created_at.split('.')[1]}
                 </span>
               {node.frontmatter.description}
               </p>
@@ -51,14 +51,14 @@ export const Head: HeadFC = () => (
 export const query = graphql`
   query {
     allMarkdownRemark (
-        sort: { frontmatter: { date: DESC } }
+        sort: { frontmatter: { created_at: DESC } }
         filter: { fileAbsolutePath: { regex: "/pages/report/" } }
     ){
       edges {
         node {
           frontmatter {
             title
-            date(formatString: "YYYY.MM")
+            created_at(formatString: "YYYY.MM")
             description
           }
           fields {

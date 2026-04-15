@@ -5,7 +5,7 @@ import { useSiteMetadata } from '../useSiteMetadata'
 
 type Frontmatter = {
   title: string
-  date: string
+  created_at: string
   description?: string
   tags?: string[]
 }
@@ -25,7 +25,7 @@ type BlogPostQueryData = {
 class MarkdownTemplate extends React.Component<PageProps<BlogPostQueryData>> {
   render() {
     const { data } = this.props
-    const { title, date, description } = data.markdownRemark.frontmatter
+    const { title, created_at, description } = data.markdownRemark.frontmatter
 
     return (
       <>
@@ -41,7 +41,7 @@ class MarkdownTemplate extends React.Component<PageProps<BlogPostQueryData>> {
               marginLeft: 'auto',
             }}
           >
-            {date}
+            {created_at}
             <br />
             {description}
           </div>
@@ -102,7 +102,7 @@ export const query = graphql`
       }
       frontmatter {
         title
-        date(formatString: "YYYY.MM.DD")
+        created_at(formatString: "YYYY.MM.DD")
         description
         tags
       }
