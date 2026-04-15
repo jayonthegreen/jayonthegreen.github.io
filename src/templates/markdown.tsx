@@ -72,14 +72,22 @@ export function Head({ data }: HeadProps<BlogPostQueryData>) {
   // Exclude /report/ pages from search engines
   const isReport = slug.startsWith('/report/')
 
+  const url = `${sitemeta.siteUrl}${slug}`
+
   return (
     <>
       <title>{title}</title>
       {isReport && <meta name="robots" content="noindex, nofollow" />}
-      <meta property="og:title" content={title} />
+      <link rel="canonical" href={url} />
       <meta name="description" content={description} />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content={url} />
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
     </>
   )
 }

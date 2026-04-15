@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, type HeadFC, type PageProps } from "gatsby"
 import Nav from "../Nav"
+import { useSiteMetadata } from "../useSiteMetadata"
 
 
 const IndexPage: React.FC<PageProps> = ({
@@ -40,7 +41,22 @@ const IndexPage: React.FC<PageProps> = ({
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Jay</title>
+export function Head() {
+  const sitemeta = useSiteMetadata()
+  return (
+    <>
+      <title>{sitemeta.title}</title>
+      <link rel="canonical" href={sitemeta.siteUrl} />
+      <meta name="description" content={sitemeta.description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={sitemeta.siteUrl} />
+      <meta property="og:title" content={sitemeta.title} />
+      <meta property="og:description" content={sitemeta.description} />
+      <meta property="og:image" content={`${sitemeta.siteUrl}${sitemeta.image}`} />
+      <meta name="twitter:card" content="summary" />
+    </>
+  )
+}
 
 export const query = graphql`
   query {

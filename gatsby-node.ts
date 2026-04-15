@@ -1,47 +1,46 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+import path from 'path'
+import { createFilePath } from 'gatsby-source-filesystem'
+import type { GatsbyNode } from 'gatsby'
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+  if (node.internal.type === 'MarkdownRemark') {
+    const slug = createFilePath({ node, getNode, basePath: 'pages' })
     createNodeField({
       node,
-      name: `slug`,
-      value: `${slug}`,
+      name: 'slug',
+      value: slug,
     })
   }
 }
 
-exports.createPages = ({ graphql, actions }) => {
-    const { createPage } = actions
-    return new Promise((resolve) => {
-      graphql(
-        `
-        {
-          allMarkdownRemark {
-            edges {
-              node {
-                fields {
-                  slug
-                }
-              }
+export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const result = await graphql<{
+    allMarkdownRemark: {
+      edges: Array<{ node: { fields: { slug: string } } }>
+    }
+  }>(`
+    {
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
             }
           }
         }
-      `
-  ).then(result => {
-        result.data.allMarkdownRemark.edges.map(({ node }) => {
-            createPage({
-              path: node.fields.slug,
-              component: path.resolve(`./src/templates/markdown.tsx`),
-              context: {
-                // Data passed to context is available in page queries as GraphQL variables.
-                slug: node.fields.slug,
-              },
-            });
-          });
-        resolve()
-      })
+      }
+    }
+  `)
+
+  result.data?.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve('./src/templates/markdown.tsx'),
+      context: {
+        slug: node.fields.slug,
+      },
     })
-  };
+  })
+}
