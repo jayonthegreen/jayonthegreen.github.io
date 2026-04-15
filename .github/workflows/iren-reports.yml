@@ -20,17 +20,23 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Get Playwright version
         id: playwright-version
-        run: echo "PLAYWRIGHT_VERSION=$(npm ls playwright --json | jq -r '.dependencies.playwright.version')" >> $GITHUB_OUTPUT
+        run: echo "PLAYWRIGHT_VERSION=$(pnpm ls playwright --json | jq -r '.[0].devDependencies.playwright.version')" >> $GITHUB_OUTPUT
 
       - name: Cache Playwright browsers
         uses: actions/cache@v4
@@ -41,14 +47,14 @@ jobs:
 
       - name: Install Playwright
         if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install chromium --with-deps
+        run: pnpm exec playwright install chromium --with-deps
 
       - name: Install Playwright dependencies only
         if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps chromium
+        run: pnpm exec playwright install-deps chromium
 
       - name: Fetch IREN Reports
-        run: npx tsx scripts/fetch-iren-reports.ts
+        run: pnpm exec tsx scripts/fetch-iren-reports.ts
 
       - name: Commit and push new reports
         id: commit
@@ -79,4 +85,4 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: npx tsx scripts/fetch-iren-reports.ts --notify-only
+        run: pnpm exec tsx scripts/fetch-iren-reports.ts --notify-only
