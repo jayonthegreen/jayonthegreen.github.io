@@ -15,24 +15,22 @@ const IndexPage: React.FC<PageProps> = ({
         style={{padding: 0, margin: 0, listStyle: 'none'}}
       >
         {edges.map(({ node }) => (
-          <a href={node.fields.slug} key={node.frontmatter.title} style={{textDecoration: 'none'}}>
-            <li key={node.frontmatter.title} 
-                style={{listStyle: 'none', margin: '0.5rem 0'}}
-            >
+          <li key={node.fields.slug} style={{listStyle: 'none', margin: '0.5rem 0'}}>
+            <a href={node.fields.slug} style={{textDecoration: 'none'}}>
               {node.frontmatter.title}
               {" "}
               <p style={{fontSize: 'small', margin: 0,
-                 whiteSpace: 'nowrap', 
+                 whiteSpace: 'nowrap',
                  textOverflow: 'ellipsis',
                  overflow: 'hidden',
                  }}>
                 <span style={{marginRight: '0.3rem'}}>
                     { node.frontmatter.created_at && node.frontmatter.created_at.split('.')[0]}·{node.frontmatter.created_at.split('.')[1]}
-                </span>   
+                </span>
               {node.frontmatter.description}
               </p>
-            </li>
-          </a>
+            </a>
+          </li>
         ))}
       </ul>
     </main>

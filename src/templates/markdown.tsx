@@ -7,7 +7,6 @@ type Frontmatter = {
   title: string
   created_at: string
   description?: string
-
 }
 
 type MarkdownRemark = {
@@ -22,47 +21,43 @@ type BlogPostQueryData = {
   markdownRemark: MarkdownRemark
 }
 
-class MarkdownTemplate extends React.Component<PageProps<BlogPostQueryData>> {
-  render() {
-    const { data } = this.props
-    const { title, created_at, description } = data.markdownRemark.frontmatter
+const MarkdownTemplate: React.FC<PageProps<BlogPostQueryData>> = ({ data }) => {
+  const { title, created_at, description } = data.markdownRemark.frontmatter
 
-    return (
-      <>
-        <main>
-          <Nav />
-          <h1>{title}</h1>
-          <div
-            style={{
-              fontSize: 'medium',
-              textAlign: 'right',
-              marginBottom: '1em',
-              maxWidth: '60%',
-              marginLeft: 'auto',
-            }}
-          >
-            {created_at}
-            <br />
-            {description}
-          </div>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: data.markdownRemark.html,
-            }}
-          />
-          <hr/>
-          <div>
-              <iframe
-                src="https://jay1298545.substack.com/embed"
-                width="100%"
-                height="150"
-                style={{border: 'none', overflow: 'hidden'}}
-              />
-          </div>
-        </main>
-      </>
-    )
-  }
+  return (
+    <main>
+      <Nav />
+      <h1>{title}</h1>
+      <div
+        style={{
+          fontSize: 'medium',
+          textAlign: 'right',
+          marginBottom: '1em',
+          maxWidth: '60%',
+          marginLeft: 'auto',
+        }}
+      >
+        {created_at}
+        <br />
+        {description}
+      </div>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: data.markdownRemark.html,
+        }}
+      />
+      <hr/>
+      <div>
+        <iframe
+          title="Substack Newsletter Signup"
+          src="https://jay1298545.substack.com/embed"
+          width="100%"
+          height="150"
+          style={{border: 'none', overflow: 'hidden'}}
+        />
+      </div>
+    </main>
+  )
 }
 
 export function Head({ data }: HeadProps<BlogPostQueryData>) {
@@ -72,7 +67,6 @@ export function Head({ data }: HeadProps<BlogPostQueryData>) {
 
   const title = front.title || sitemeta.title
   const description = front.description || sitemeta.description
-  const keywords = ''
   const image = `${sitemeta.siteUrl}${sitemeta.image}`
 
   // Exclude /report/ pages from search engines
@@ -85,7 +79,6 @@ export function Head({ data }: HeadProps<BlogPostQueryData>) {
       <meta property="og:title" content={title} />
       <meta name="description" content={description} />
       <meta property="og:description" content={description} />
-      <meta name="keywords" content={keywords} />
       <meta property="og:image" content={image} />
     </>
   )
