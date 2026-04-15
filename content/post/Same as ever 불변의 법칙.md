@@ -3,7 +3,7 @@ title: 변하지 않을 것이 무엇인가
 description: 모건 하우절, 『불변의 법칙』을 읽고
 date: 2025-11-02
 tags: [thinking, book]
-created_at: 2025-12-28
+created_at: 2025-11-02
 modified_at: 2025-12-28
 ---
 인생은 정말 우연한 사건에 의해 많은 것이 변한다. 겸손하되, 많은 가능성을 염두에 두고 열린 상상력을 가지자.

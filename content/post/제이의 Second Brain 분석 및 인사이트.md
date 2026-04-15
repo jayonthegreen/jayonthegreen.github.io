@@ -5,7 +5,7 @@ date: 2025-12-14
 tags:
 - ai
 - insight
-created_at: 2025-12-13
+created_at: 2025-12-14
 modified_at: 2025-12-14
 ---
 

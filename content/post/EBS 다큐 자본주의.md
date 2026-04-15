@@ -6,7 +6,7 @@ tags:
 - 투자
 - thinking
 - finance
-created_at: 2025-12-28
+created_at: 2025-08-04
 modified_at: 2025-12-28
 ---
 

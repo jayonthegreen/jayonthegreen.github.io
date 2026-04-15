@@ -1,5 +1,5 @@
 ---
-date: 2023-01-16 23:45:41.357000+00:00
+date: 2023-01-16
 description: 이코노미조선 475호
 tags:
 - life
@@ -7,7 +7,7 @@ tags:
 - health
 - 코로나
 title: 불안에서 오는 MBTI
-created_at: 2025-12-28
+created_at: 2023-01-16
 modified_at: 2025-12-28
 ---
 

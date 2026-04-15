@@ -1,5 +1,5 @@
 ---
-date: '2018-10-09'
+date: 2018-10-09
 description: The basic of clustering algorithms
 tags:
 - 투자
@@ -9,8 +9,8 @@ tags:
 - KMeans
 - DataScience
 title: Clustering
-created_at: 2025-12-28
-modified_at: 2026-04-15 08:13
+created_at: 2018-10-09
+modified_at: 2026-04-15 21:29
 ---
 
 
