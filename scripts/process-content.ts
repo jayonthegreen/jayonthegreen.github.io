@@ -82,12 +82,12 @@ function processMarkdownFile(content: string): string {
         const line = lines[i];
         const isIndentedOrListItem = line.startsWith('  ') || line.startsWith('\t') || line.startsWith('- ');
 
-        if (line.startsWith('links:')) {
+        if (line.startsWith('links:') || line.startsWith('tags:')) {
           skipField = true;
           prevFieldHasInlineValue = false;
           continue;
         } else if (skipField && isIndentedOrListItem) {
-          // Skip sub-items of links field
+          // Skip sub-items of removed field
           continue;
         } else if (skipField && !isIndentedOrListItem && line.trim() !== '') {
           skipField = false;

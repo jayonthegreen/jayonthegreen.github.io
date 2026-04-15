@@ -7,7 +7,7 @@ type Frontmatter = {
   title: string
   created_at: string
   description?: string
-  tags?: string[]
+
 }
 
 type MarkdownRemark = {
@@ -72,7 +72,7 @@ export function Head({ data }: HeadProps<BlogPostQueryData>) {
 
   const title = front.title || sitemeta.title
   const description = front.description || sitemeta.description
-  const keywords = (front.tags || []).join(', ').replace(/#/g, '')
+  const keywords = ''
   const image = `${sitemeta.siteUrl}${sitemeta.image}`
 
   // Exclude /report/ pages from search engines
@@ -104,7 +104,6 @@ export const query = graphql`
         title
         created_at(formatString: "YYYY.MM.DD")
         description
-        tags
       }
     }
   }

@@ -2,10 +2,6 @@
 title: Courage
 description: Spencer Johnson, 『Who Moved My Cheese?』을 읽고
 date: 2018-09-30
-tags:
-- 투자/가치
-- thinking
-- book
 created_at: 2018-09-30
 modified_at: 2026-04-15 08:13
 ---

@@ -2,10 +2,6 @@
 title: Removal over Addition
 description: Via Negativa, Less Is More
 date: 2025-10-05
-tags:
-- thinking
-- essay
-- minimalism
 created_at: 2025-10-05
 modified_at: 2026-04-15 21:29
 ---

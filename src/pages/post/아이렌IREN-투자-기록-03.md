@@ -2,11 +2,6 @@
 title: 아이렌(IREN) 투자 기록 03
 description: Q1 FY26 실적 기반 종합 분석. 미실현이득 괴리, GPU 감가상각 위험, 2026년 성장 실행 역량 평가
 date: 2026-02-01
-tags:
-  - invest
-  - IREN
-  - ai
-  - finance
 created_at: 2026-02-01
 modified_at: 2026-02-01
 ---

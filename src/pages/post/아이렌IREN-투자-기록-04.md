@@ -2,11 +2,6 @@
 title: 아이렌(IREN) 투자 기록 04
 description: Q2 FY26 실적, 증권사 Bull/Bear 논쟁, $3.4B ARR 마일스톤 검증
 date: 2026-04-04
-tags:
-  - invest
-  - IREN
-  - ai
-  - finance
 created_at: 2026-03-30
 modified_at: 2026-04-04
 ---
