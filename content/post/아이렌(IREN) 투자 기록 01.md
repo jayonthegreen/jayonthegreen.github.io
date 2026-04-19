@@ -4,7 +4,7 @@ description: 비트코인 채굴 사업의 수익성이 좋다
 date: 2025-06-15
 tags:
   - invest
-  - IREN
+  - iren
   - crypto
   - ai
 created_at: 2025-06-15

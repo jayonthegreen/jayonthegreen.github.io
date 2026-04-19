@@ -6,6 +6,7 @@ tags:
 - thinking
 - essay
 - minimalism
+links: null
 created_at: 2025-10-05
 modified_at: 2026-04-15 21:29
 ---
