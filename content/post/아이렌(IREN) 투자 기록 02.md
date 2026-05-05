@@ -1,9 +1,8 @@
 ---
 title: 아이렌(IREN) 투자 기록 02
 description: 36억 달러 자금 조달과 AI 인프라 투자
-date: 2025-12-07
 tags:
-  - invest
+  - 투자
   - iren
   - crypto
   - ai

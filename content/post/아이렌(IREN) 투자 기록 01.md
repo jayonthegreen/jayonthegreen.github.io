@@ -1,9 +1,8 @@
 ---
 title: 아이렌(IREN) 투자 기록 01
 description: 비트코인 채굴 사업의 수익성이 좋다
-date: 2025-06-15
 tags:
-  - invest
+  - 투자
   - iren
   - crypto
   - ai

@@ -1,5 +1,4 @@
 ---
-date: 2025-02-01
 description: 마르틴부버, 『나와 너』을 읽고
 tags:
 - thinking

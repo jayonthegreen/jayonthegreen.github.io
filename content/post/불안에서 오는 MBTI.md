@@ -1,5 +1,4 @@
 ---
-date: 2023-01-16
 description: 이코노미조선 475호
 tags:
 - life
