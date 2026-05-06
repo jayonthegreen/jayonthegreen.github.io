@@ -16,6 +16,52 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-sitemap",
       options: {
         excludes: ["/report/*", "/report/**"],
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            allMarkdownRemark {
+              nodes {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  created_at
+                  modified_at
+                }
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: ({ site }: any) => site.siteMetadata.siteUrl,
+        resolvePages: ({ allSitePage, allMarkdownRemark }: any) => {
+          const lastmodBySlug = new Map<string, string>(
+            allMarkdownRemark.nodes
+              .filter((n: any) => n.fields?.slug && (n.frontmatter?.modified_at || n.frontmatter?.created_at))
+              .map((n: any) => [n.fields.slug, n.frontmatter.modified_at || n.frontmatter.created_at])
+          );
+          return allSitePage.nodes.map((p: any) => ({
+            path: p.path,
+            lastmod: lastmodBySlug.get(p.path),
+          }));
+        },
+        serialize: ({ path, lastmod }: any) => {
+          const entry: any = {
+            url: path,
+            changefreq: "weekly",
+            priority: path === "/" ? 1.0 : 0.7,
+          };
+          if (lastmod) entry.lastmod = lastmod;
+          return entry;
+        },
       },
     },
     {
