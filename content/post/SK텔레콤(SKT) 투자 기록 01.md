@@ -7,7 +7,7 @@ tags:
   - 투자
   - dividend
 created_at: 2026-04-20
-modified_at: 2026-04-20
+modified_at: 2026-05-06
 ---
 
 2월에 SKT를 샀다. 주가는 74,700원이었다.
