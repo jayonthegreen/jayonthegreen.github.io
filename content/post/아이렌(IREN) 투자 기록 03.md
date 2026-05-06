@@ -5,7 +5,6 @@ tags:
   - 투자
   - iren
   - ai
-  - 투자
 created_at: 2026-02-01
 modified_at: 2026-02-01
 ---
