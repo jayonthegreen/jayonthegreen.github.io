@@ -4,7 +4,7 @@ tags:
 - 투자
 title: Clustering
 created_at: 2018-10-09
-modified_at: 2026-05-01 10:38
+modified_at: 2026-05-06
 ---
 
 
@@ -79,7 +79,7 @@ O(kn) for N points, k clusters. Linear time complexity. But the number of rounds
 
 ## Closing
 
-Two alogrithms are basic and essential. There are many optimization techniques in dealing with data in the real world. However, many optimization techniques have often drived from these two basic algorithms. Therefore, these two concepts can be important as a foundation.
+Two algorithms are basic and essential. There are many optimization techniques in dealing with data in the real world. However, many optimization techniques have often derived from these two basic algorithms. Therefore, these two concepts can be important as a foundation.
 
 ## reference
 
