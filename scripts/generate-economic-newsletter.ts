@@ -801,7 +801,7 @@ async function main() {
     // 1. 먼저 마크다운 파일 생성 (AI 인사이트 및 뉴스 포함)
     console.log('📝 Generating newsletter markdown...');
     const markdown = generateMarkdown(data);
-    const reportDir = path.join(process.cwd(), 'src', 'pages', 'report');
+    const reportDir = path.join(process.cwd(), 'content', 'report');
 
     if (!fs.existsSync(reportDir)) {
       fs.mkdirSync(reportDir, { recursive: true });
