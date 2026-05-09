@@ -15,6 +15,7 @@
     "typecheck": "tsc --noEmit",
     "process-content": "tsx scripts/process-content.ts",
     "generate-economic-newsletter": "tsx scripts/generate-economic-newsletter.ts",
+    "send-daily-post": "tsx scripts/send-daily-post.ts",
     "notify-changes": "tsx scripts/notify-changes.ts",
     "fetch-iren-reports": "tsx scripts/fetch-iren-reports.ts",
     "generate-market-thermometer": "tsx scripts/generate-market-thermometer.ts"
