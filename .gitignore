@@ -17,3 +17,7 @@ src/gatsby-types.d.ts
 # IREN reports tracking files
 iren-reports/.downloaded-urls
 iren-reports/.new-reports.json
+
+# Build artifacts of process-content (generated from content/)
+src/pages/post/
+src/pages/report/
