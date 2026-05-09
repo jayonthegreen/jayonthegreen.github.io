@@ -3,8 +3,10 @@
 /**
  * 매일 텔레그램으로 블로그 글 1개를 전송한다.
  *
- * - src/pages/post/*.md 중 sent-posts.json 에 없는 글 하나를 골라 전송
+ * - content/post/*.md (원본) 중 sent-posts.json 에 없는 글 하나를 골라 전송
+ *   (src/pages/post 는 빌드 산출물이라 stale 가능성 있음 → content/post 가 진실의 원천)
  * - 미전송 글 중 무작위 선택
+ * - URL 슬러그는 process-content.ts 와 동일한 파일명 sanitize 규칙 적용
  * - 본문 전체를 텔레그램으로 전송 (4096자 초과 시 분할)
  * - 전송 후 sent-posts.json 갱신 → CI에서 commit/push 하여 중복 방지
  */
@@ -16,7 +18,7 @@ import { sendTelegramMessage } from '../src/utils/telegram';
 
 dotenv.config();
 
-const POSTS_DIR = path.join(__dirname, '..', 'src', 'pages', 'post');
+const POSTS_DIR = path.join(__dirname, '..', 'content', 'post');
 const SENT_LOG_PATH = path.join(__dirname, '..', 'data', 'sent-posts.json');
 const SITE_URL = 'https://jayonthegreen.github.io';
 const TELEGRAM_LIMIT = 3800; // 4096 안전 여유
@@ -59,6 +61,13 @@ function parseFrontmatter(raw: string): { fm: Record<string, string>; body: stri
   return { fm, body };
 }
 
+// process-content.ts 와 동일한 sanitize 규칙
+function sanitizeFilename(title: string): string {
+  return title
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-가-힣]/g, '');
+}
+
 function loadPosts(): PostMeta[] {
   const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith('.md'));
   const posts: PostMeta[] = [];
@@ -66,7 +75,7 @@ function loadPosts(): PostMeta[] {
     const filePath = path.join(POSTS_DIR, file);
     const raw = fs.readFileSync(filePath, 'utf-8');
     const { fm, body } = parseFrontmatter(raw);
-    const slug = file.replace(/\.md$/, '');
+    const slug = sanitizeFilename(file.replace(/\.md$/, ''));
     posts.push({
       slug,
       filePath,
