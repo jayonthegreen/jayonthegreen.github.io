@@ -4,7 +4,7 @@
  * 매일 텔레그램으로 블로그 글 1개를 전송한다.
  *
  * - src/pages/post/*.md 중 sent-posts.json 에 없는 글 하나를 골라 전송
- * - 전송 순서는 created_at(또는 date) 오름차순 — 오래된 글부터
+ * - 미전송 글 중 무작위 선택
  * - 본문 전체를 텔레그램으로 전송 (4096자 초과 시 분할)
  * - 전송 후 sent-posts.json 갱신 → CI에서 commit/push 하여 중복 방지
  */
@@ -76,8 +76,6 @@ function loadPosts(): PostMeta[] {
       body,
     });
   }
-  // 오래된 글부터
-  posts.sort((a, b) => (a.date || '').localeCompare(b.date || ''));
   return posts;
 }
 
@@ -147,16 +145,18 @@ async function main(): Promise<void> {
   const log = loadSentLog();
   const sentSet = new Set(log.sent);
 
-  const next = posts.find((p) => !sentSet.has(p.slug));
+  const unsent = posts.filter((p) => !sentSet.has(p.slug));
 
-  if (!next) {
+  if (unsent.length === 0) {
     console.log('✅ 모든 글을 이미 전송했습니다.');
     // 텔레그램에는 알리지 않고 조용히 종료
     return;
   }
 
+  const next = unsent[Math.floor(Math.random() * unsent.length)];
+
   console.log(`📤 전송 대상: ${next.slug} (${next.date})`);
-  console.log(`   진행률: ${log.sent.length + 1} / ${posts.length}`);
+  console.log(`   진행률: ${log.sent.length + 1} / ${posts.length} (남은 ${unsent.length}개 중 무작위)`);
 
   await sendPost(next);
 
