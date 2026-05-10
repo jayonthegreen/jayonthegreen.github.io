@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 
+const PAGE_SIZE = 30;
+
 function postDate(p: { data: { created_at?: Date; date?: Date } }) {
   return p.data.created_at || p.data.date;
 }
@@ -13,6 +15,8 @@ const posts = (await getCollection('post')).sort((a, b) => {
   return db - da;
 });
 
+const totalPages = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
+
 function fmtYearMonth(d?: Date) {
   if (!d) return '';
   const y = d.getFullYear();
@@ -22,9 +26,9 @@ function fmtYearMonth(d?: Date) {
 ---
 <BaseLayout title="jay" description="things about thinking" canonical="https://jayonthegreen.github.io/" ogType="website">
   <Nav />
-  <ul style="padding: 0; margin: 0; list-style: none;">
-    {posts.map((p) => (
-      <li style="list-style: none; margin: 0.5rem 0;">
+  <ul id="post-list" data-page-size={PAGE_SIZE} style="padding: 0; margin: 0; list-style: none;">
+    {posts.map((p, i) => (
+      <li data-index={i} style="list-style: none; margin: 0.5rem 0;">
         <a href={`/post/${p.id}/`} style="text-decoration: none;">
           {p.data.title || p.id}{' '}
           <p style="font-size: small; margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
@@ -37,4 +41,79 @@ function fmtYearMonth(d?: Date) {
       </li>
     ))}
   </ul>
+
+  <nav id="pager" aria-label="pagination" data-total-pages={totalPages} style="display: flex; justify-content: center; align-items: center; gap: 0.6rem; margin: 2rem 0 1rem; font-size: small; font-weight: 700; color: #222;">
+    <a id="pager-prev" href="?page=1" rel="prev" aria-label="이전 페이지" style="text-decoration: none; color: inherit;">‹</a>
+    <span id="pager-info">1 / {totalPages}</span>
+    <a id="pager-next" href="?page=2" rel="next" aria-label="다음 페이지" style="text-decoration: none; color: inherit;">›</a>
+  </nav>
+
+  <script is:inline>
+    (function () {
+      const list = document.getElementById('post-list');
+      const pager = document.getElementById('pager');
+      if (!list || !pager) return;
+      const pageSize = Number(list.dataset.pageSize) || 30;
+      const totalPages = Number(pager.dataset.totalPages) || 1;
+      const items = Array.from(list.children);
+      const info = document.getElementById('pager-info');
+      const prev = document.getElementById('pager-prev');
+      const next = document.getElementById('pager-next');
+      const disabledColor = '#ccc';
+      const enabledColor = 'inherit';
+
+      function clamp(n) {
+        if (!Number.isFinite(n) || n < 1) return 1;
+        if (n > totalPages) return totalPages;
+        return n;
+      }
+
+      function readPage() {
+        const params = new URLSearchParams(window.location.search);
+        return clamp(parseInt(params.get('page') || '1', 10));
+      }
+
+      function setDisabled(el, disabled) {
+        if (disabled) {
+          el.setAttribute('aria-disabled', 'true');
+          el.style.color = disabledColor;
+          el.style.pointerEvents = 'none';
+        } else {
+          el.removeAttribute('aria-disabled');
+          el.style.color = enabledColor;
+          el.style.pointerEvents = '';
+        }
+      }
+
+      function render(page) {
+        const start = (page - 1) * pageSize;
+        const end = start + pageSize;
+        items.forEach((el, i) => {
+          el.style.display = i >= start && i < end ? '' : 'none';
+        });
+        info.textContent = page + ' / ' + totalPages;
+        prev.href = '?page=' + (page - 1);
+        next.href = '?page=' + (page + 1);
+        setDisabled(prev, page <= 1);
+        setDisabled(next, page >= totalPages);
+        window.scrollTo({ top: 0 });
+      }
+
+      function handleClick(e) {
+        e.preventDefault();
+        const href = e.currentTarget.getAttribute('href');
+        const params = new URLSearchParams(href.split('?')[1] || '');
+        const target = clamp(parseInt(params.get('page') || '1', 10));
+        const url = target === 1 ? window.location.pathname : window.location.pathname + '?page=' + target;
+        history.pushState({ page: target }, '', url);
+        render(target);
+      }
+
+      prev.addEventListener('click', handleClick);
+      next.addEventListener('click', handleClick);
+      window.addEventListener('popstate', () => render(readPage()));
+
+      render(readPage());
+    })();
+  </script>
 </BaseLayout>
