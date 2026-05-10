@@ -1,0 +1,51 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('post');
+  return posts.map((p) => ({ params: { slug: p.id }, props: { entry: p } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const date: Date | undefined = entry.data.created_at || entry.data.date;
+function fmtDate(d?: Date) {
+  if (!d) return '';
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}.${m}.${day}`;
+}
+
+const canonical = `https://jayonthegreen.github.io/post/${entry.id}/`;
+---
+<BaseLayout
+  title={entry.data.title || entry.id}
+  description={entry.data.description || 'things about thinking'}
+  canonical={canonical}
+  ogType="article"
+>
+  <Nav />
+  <h1>{entry.data.title || entry.id}</h1>
+  <div style="font-size: medium; text-align: right; margin-bottom: 1em; max-width: 60%; margin-left: auto;">
+    {fmtDate(date)}
+    <br />
+    {entry.data.description}
+  </div>
+  <div>
+    <Content />
+  </div>
+  <hr />
+  <div>
+    <iframe
+      title="Substack Newsletter Signup"
+      src="https://jay1298545.substack.com/embed"
+      width="100%"
+      height="150"
+      style="border: none; overflow: hidden;"
+    ></iframe>
+  </div>
+</BaseLayout>

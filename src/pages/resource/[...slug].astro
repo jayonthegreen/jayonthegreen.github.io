@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+
+export async function getStaticPaths() {
+  const resources = await getCollection('resource');
+  return resources.map((r) => ({ params: { slug: r.id }, props: { entry: r } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const canonical = `https://jayonthegreen.github.io/resource/${entry.id}/`;
+---
+<BaseLayout
+  title={entry.data.title || entry.id}
+  description={entry.data.description || ''}
+  canonical={canonical}
+  ogType="article"
+  noindex={true}
+>
+  <Nav />
+  <h1>{entry.data.title || entry.id}</h1>
+  <div>
+    <Content />
+  </div>
+</BaseLayout>

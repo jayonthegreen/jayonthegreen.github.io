@@ -1,0 +1,69 @@
+---
+import '../styles/reset.css';
+import '../styles/global.css';
+
+const SITE = {
+  title: 'jay',
+  description: 'things about thinking',
+  url: 'https://jayonthegreen.github.io',
+  image: '/img/default.jpeg',
+};
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+}
+
+const {
+  title = SITE.title,
+  description = SITE.description,
+  canonical = SITE.url,
+  ogType = 'website',
+  noindex = false,
+} = Astro.props;
+
+const fullImage = `${SITE.url}${SITE.image}`;
+---
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="google-site-verification" content="JA_ocNhbTh2OZYc6XdvGU86Tu-KrppkZddT3_sfwTDU" />
+    <title>{title}</title>
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonical} />
+    <meta name="description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImage} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png" />
+    <link rel="alternate" type="application/rss+xml" title="Jay's Blog RSS Feed" href="/rss.xml" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P76W5VY5NZ"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P76W5VY5NZ');
+    </script>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
