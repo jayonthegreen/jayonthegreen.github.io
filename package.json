@@ -11,10 +11,8 @@
     "astro": "astro",
     "typecheck": "astro check",
     "send-daily-post": "tsx scripts/send-daily-post.ts",
-    "generate-economic-newsletter": "tsx scripts/generate-economic-newsletter.ts",
     "notify-changes": "tsx scripts/notify-changes.ts",
-    "fetch-iren-reports": "tsx scripts/fetch-iren-reports.ts",
-    "generate-market-thermometer": "tsx scripts/generate-market-thermometer.ts"
+    "fetch-iren-reports": "tsx scripts/fetch-iren-reports.ts"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.18",

@@ -4,23 +4,21 @@ import type { APIContext } from 'astro';
 
 export async function GET(context: APIContext) {
   const posts = (await getCollection('post')).sort((a, b) => {
-    const da = a.data.created_at || a.data.date || '';
-    const db = b.data.created_at || b.data.date || '';
-    return db.localeCompare(da);
+    const da = (a.data.created_at || a.data.date)?.getTime() ?? 0;
+    const db = (b.data.created_at || b.data.date)?.getTime() ?? 0;
+    return db - da;
   });
 
-  const items = await Promise.all(
-    posts.map(async (p) => {
-      const date = p.data.created_at || p.data.date || '';
-      return {
-        title: p.data.title,
-        description: p.data.description || '',
-        link: `/post/${p.id}/`,
-        pubDate: date ? new Date(date) : undefined,
-        content: p.body || '',
-      };
-    })
-  );
+  const items = posts.map((p) => {
+    const date = p.data.created_at || p.data.date;
+    return {
+      title: p.data.title || p.id,
+      description: p.data.description || '',
+      link: `/post/${p.id}/`,
+      pubDate: date,
+      content: p.body || '',
+    };
+  });
 
   return rss({
     title: "Jay's Blog RSS Feed",

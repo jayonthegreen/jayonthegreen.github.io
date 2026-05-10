@@ -3,36 +3,38 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 
+function postDate(p: { data: { created_at?: Date; date?: Date } }) {
+  return p.data.created_at || p.data.date;
+}
+
 const posts = (await getCollection('post')).sort((a, b) => {
-  const da = a.data.created_at || a.data.date || '';
-  const db = b.data.created_at || b.data.date || '';
-  return db.localeCompare(da);
+  const da = postDate(a)?.getTime() ?? 0;
+  const db = postDate(b)?.getTime() ?? 0;
+  return db - da;
 });
 
-function fmtYearMonth(d?: string) {
+function fmtYearMonth(d?: Date) {
   if (!d) return '';
-  const [y, m] = d.split('-');
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
   return `${y}.${m}`;
 }
 ---
 <BaseLayout title="jay" description="things about thinking" canonical="https://jayonthegreen.github.io/" ogType="website">
   <Nav />
   <ul style="padding: 0; margin: 0; list-style: none;">
-    {posts.map((p) => {
-      const date = p.data.created_at || p.data.date || '';
-      return (
-        <li style="list-style: none; margin: 0.5rem 0;">
-          <a href={`/post/${p.id}/`} style="text-decoration: none;">
-            {p.data.title || p.id}{' '}
-            <p style="font-size: small; margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
-              <span style="margin-right: 0.3rem;">
-                {fmtYearMonth(date)}
-              </span>
-              {p.data.description}
-            </p>
-          </a>
-        </li>
-      );
-    })}
+    {posts.map((p) => (
+      <li style="list-style: none; margin: 0.5rem 0;">
+        <a href={`/post/${p.id}/`} style="text-decoration: none;">
+          {p.data.title || p.id}{' '}
+          <p style="font-size: small; margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+            <span style="margin-right: 0.3rem;">
+              {fmtYearMonth(postDate(p))}
+            </span>
+            {p.data.description}
+          </p>
+        </a>
+      </li>
+    ))}
   </ul>
 </BaseLayout>

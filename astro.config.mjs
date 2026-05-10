@@ -51,7 +51,6 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/report/'),
       serialize: (item) => {
         const path = new URL(item.url).pathname;
         const m = path.match(/^\/post\/([^/]+)\/?$/);

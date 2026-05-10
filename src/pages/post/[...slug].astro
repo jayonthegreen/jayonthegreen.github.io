@@ -11,10 +11,12 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-const date = entry.data.created_at || entry.data.date || '';
-function fmtDate(d: string) {
+const date: Date | undefined = entry.data.created_at || entry.data.date;
+function fmtDate(d?: Date) {
   if (!d) return '';
-  const [y, m, day] = d.split('-');
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
   return `${y}.${m}.${day}`;
 }
 

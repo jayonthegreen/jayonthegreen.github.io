@@ -10,9 +10,9 @@ const frontmatter = z
   .object({
     title: z.string().optional(),
     description: z.string().optional(),
-    created_at: z.coerce.string().optional(),
-    modified_at: z.coerce.string().optional(),
-    date: z.coerce.string().optional(),
+    created_at: z.coerce.date().optional(),
+    modified_at: z.coerce.date().optional(),
+    date: z.coerce.date().optional(),
     tags: z.any().optional(),
   })
   .passthrough();
@@ -21,15 +21,6 @@ const post = defineCollection({
   loader: glob({
     pattern: '**/*.md',
     base: './content/post',
-    generateId: ({ entry }) => sanitize(entry.replace(/\.md$/, '')),
-  }),
-  schema: frontmatter,
-});
-
-const report = defineCollection({
-  loader: glob({
-    pattern: '**/*.md',
-    base: './content/report',
     generateId: ({ entry }) => sanitize(entry.replace(/\.md$/, '')),
   }),
   schema: frontmatter,
@@ -44,4 +35,4 @@ const resource = defineCollection({
   schema: frontmatter,
 });
 
-export const collections = { post, report, resource };
+export const collections = { post, resource };
