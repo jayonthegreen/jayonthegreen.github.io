@@ -2,6 +2,7 @@
 title: OKR의 핵심 결과
 description: 존 도어, 『OKR』을 읽고
 tags: [startup, finance]
+links:
 created_at: 2025-06-07
 modified_at: 2026-05-06
 ---
