@@ -2,7 +2,6 @@
 title: 변하지 않을 것이 무엇인가
 description: 모건 하우절, 『불변의 법칙』을 읽고
 tags: [thinking, book]
-links:
 created_at: 2025-11-02
 modified_at: 2026-05-06
 ---
