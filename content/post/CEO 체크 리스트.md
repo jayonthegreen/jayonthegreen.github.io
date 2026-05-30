@@ -9,9 +9,7 @@ tags:
 - reading
 created_at: 2024-12-09
 modified_at: 2026-05-06
-links: []
 ---
-
 
 책은 회사를 포괄적이고 구조적으로 정리해, 넓은 시야로 바라볼 수 있게 해준다.
 

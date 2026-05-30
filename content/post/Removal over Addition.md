@@ -5,9 +5,8 @@ tags:
 - thinking
 - writing
 - minimalism
-links: null
 created_at: 2025-10-05
-modified_at: 2026-05-06 20:59
+modified_at: 2026-05-22 21:28
 ---
 
 팟캐스트에 들어가 하나의 계정만 남기고 모두 팔로우를 끊었다. 덜어내고 싶었다. 더하기보다는.

@@ -6,10 +6,8 @@ tags:
 - thinking
 - reading
 created_at: 2018-09-30
-modified_at: 2026-05-06 20:59
+modified_at: 2026-05-22 21:32
 ---
-
-
 
 We should smell the cheese often so we know when it's getting old. But the most impressive sentence is the following.
 
