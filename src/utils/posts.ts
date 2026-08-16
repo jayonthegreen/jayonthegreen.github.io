@@ -30,11 +30,3 @@ export function fmtYearMonth(d?: Date): string {
   const m = String(d.getMonth() + 1).padStart(2, '0');
   return `${y}.${m}`;
 }
-
-/** 아카이브 URL 파라미터용 (예: "2026-05") */
-export function archiveKey(d?: Date): string {
-  if (!d) return '';
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  return `${y}-${m}`;
-}
