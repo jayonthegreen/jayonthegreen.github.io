@@ -1,29 +1,14 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import { websiteJsonLd } from '../utils/jsonld';
+import { sortedPosts, postDate, fmtYearMonth } from '../utils/posts';
 
 const PAGE_SIZE = 30;
 
-function postDate(p: { data: { created_at?: Date; date?: Date } }) {
-  return p.data.created_at || p.data.date;
-}
-
-const posts = (await getCollection('post')).sort((a, b) => {
-  const da = postDate(a)?.getTime() ?? 0;
-  const db = postDate(b)?.getTime() ?? 0;
-  return db - da;
-});
+const posts = await sortedPosts();
 
 const totalPages = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
-
-function fmtYearMonth(d?: Date) {
-  if (!d) return '';
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  return `${y}.${m}`;
-}
 ---
 <BaseLayout title="jay" description="things about thinking" canonical="https://jayonthegreen.github.io/" ogType="website" jsonLd={websiteJsonLd()}>
   <Nav />

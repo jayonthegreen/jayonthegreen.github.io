@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import { sortedPosts, postTags, fmtYearMonth, postDate, type Post } from '../../utils/posts';
+
+export async function getStaticPaths() {
+  const posts = await sortedPosts();
+  const byTag = new Map<string, Post[]>();
+  for (const p of posts) {
+    for (const tag of postTags(p)) {
+      const list = byTag.get(tag) ?? [];
+      list.push(p);
+      byTag.set(tag, list);
+    }
+  }
+  return [...byTag.entries()].map(([tag, tagged]) => ({
+    params: { tag },
+    props: { tag, posts: tagged },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+<BaseLayout
+  title={`#${tag} | jay`}
+  description={`${tag} 관련 글 ${posts.length}개`}
+  canonical={`https://jayonthegreen.github.io/tags/${tag}/`}
+>
+  <Nav />
+  <h1>#{tag}</h1>
+  <ul style="padding: 0; margin: 0; list-style: none;">
+    {posts.map((p) => (
+      <li style="list-style: none; margin: 0.5rem 0;">
+        <a href={`/post/${p.id}/`} style="text-decoration: none;">
+          {p.data.title || p.id}{' '}
+          <p style="font-size: small; margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+            <span style="margin-right: 0.3rem;">{fmtYearMonth(postDate(p))}</span>
+            {p.data.description}
+          </p>
+        </a>
+      </li>
+    ))}
+  </ul>
+  <p style="margin-top: 2rem; font-size: small;">
+    <a href="/tags/">← 전체 태그</a>
+  </p>
+</BaseLayout>

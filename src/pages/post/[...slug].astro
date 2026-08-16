@@ -1,16 +1,25 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import { blogPostingJsonLd } from '../../utils/jsonld';
+import { sortedPosts, postTags } from '../../utils/posts';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('post');
-  return posts.map((p) => ({ params: { slug: p.id }, props: { entry: p } }));
+  const posts = await sortedPosts();
+  return posts.map((p, i) => ({
+    params: { slug: p.id },
+    props: {
+      entry: p,
+      newer: posts[i - 1] ?? null,
+      older: posts[i + 1] ?? null,
+    },
+  }));
 }
 
-const { entry } = Astro.props;
+const { entry, newer, older } = Astro.props;
 const { Content } = await render(entry);
+const tags = postTags(entry);
 
 const date: Date | undefined = entry.data.created_at || entry.data.date;
 function fmtDate(d?: Date) {
@@ -40,6 +49,35 @@ const canonical = `https://jayonthegreen.github.io/post/${entry.id}/`;
   <div>
     <Content />
   </div>
+  {tags.length > 0 && (
+    <div style="margin-top: 2rem; font-size: small;">
+      {tags.map((tag) => (
+        <a href={`/tags/${tag}/`} style="margin-right: 0.6rem;">#{tag}</a>
+      ))}
+    </div>
+  )}
+  <nav aria-label="이전/다음 글" style="display: flex; justify-content: space-between; gap: 1rem; margin: 2rem 0 1rem; font-size: small;">
+    <div style="flex: 1; min-width: 0;">
+      {older && (
+        <a href={`/post/${older.id}/`} rel="prev" style="text-decoration: none;">
+          ← 이전 글
+          <p style="margin: 0.2rem 0 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+            {older.data.title || older.id}
+          </p>
+        </a>
+      )}
+    </div>
+    <div style="flex: 1; min-width: 0; text-align: right;">
+      {newer && (
+        <a href={`/post/${newer.id}/`} rel="next" style="text-decoration: none;">
+          다음 글 →
+          <p style="margin: 0.2rem 0 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+            {newer.data.title || newer.id}
+          </p>
+        </a>
+      )}
+    </div>
+  </nav>
   <hr />
   <div>
     <iframe
