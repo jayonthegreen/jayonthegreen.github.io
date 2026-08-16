@@ -15,6 +15,7 @@ interface Props {
   canonical?: string;
   ogType?: 'website' | 'article';
   noindex?: boolean;
+  jsonLd?: object | object[];
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   canonical = SITE.url,
   ogType = 'website',
   noindex = false,
+  jsonLd,
 } = Astro.props;
 
 const fullImage = `${SITE.url}${SITE.image}`;
@@ -51,6 +53,9 @@ const fullImage = `${SITE.url}${SITE.image}`;
     <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png" />
     <link rel="alternate" type="application/rss+xml" title="Jay's Blog RSS Feed" href="/rss.xml" />
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P76W5VY5NZ"></script>

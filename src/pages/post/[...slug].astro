@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
+import { blogPostingJsonLd } from '../../utils/jsonld';
 
 export async function getStaticPaths() {
   const posts = await getCollection('post');
@@ -27,6 +28,7 @@ const canonical = `https://jayonthegreen.github.io/post/${entry.id}/`;
   description={entry.data.description || 'things about thinking'}
   canonical={canonical}
   ogType="article"
+  jsonLd={blogPostingJsonLd(entry.id, entry.data)}
 >
   <Nav />
   <h1>{entry.data.title || entry.id}</h1>

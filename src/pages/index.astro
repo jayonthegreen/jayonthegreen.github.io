@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
+import { websiteJsonLd } from '../utils/jsonld';
 
 const PAGE_SIZE = 30;
 
@@ -24,7 +25,7 @@ function fmtYearMonth(d?: Date) {
   return `${y}.${m}`;
 }
 ---
-<BaseLayout title="jay" description="things about thinking" canonical="https://jayonthegreen.github.io/" ogType="website">
+<BaseLayout title="jay" description="things about thinking" canonical="https://jayonthegreen.github.io/" ogType="website" jsonLd={websiteJsonLd()}>
   <Nav />
   <ul id="post-list" data-page-size={PAGE_SIZE} style="padding: 0; margin: 0; list-style: none;">
     {posts.map((p, i) => (
