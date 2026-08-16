@@ -1,7 +1,7 @@
 ---
 description: The basic of clustering algorithms
 tags:
-- 투자
+  - 투자
 title: Clustering
 created_at: 2018-10-09
 modified_at: 2026-05-22 21:32

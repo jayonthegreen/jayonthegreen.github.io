@@ -4,8 +4,7 @@ description: Q2 FY26 실적, 증권사 Bull/Bear 논쟁, $3.4B ARR 마일스톤 
 tags:
   - 투자
   - iren
-  - ai
-  - 투자
+  - AI
 created_at: 2026-03-30
 modified_at: 2026-05-06
 ---

@@ -2,9 +2,9 @@
 title: AI와 소비재
 description: 소비재를 AI 로 혁신하면
 tags:
-  - life
-  - essay
-  - ai
+  - 삶
+  - 에세이
+  - AI
 created_at: 2025-12-09
 modified_at: 2026-05-06
 ---

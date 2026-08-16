@@ -1,10 +1,8 @@
 ---
 description: 이코노미조선 475호
 tags:
-- life
-- thinking
-- health
-- 코로나
+  - 삶
+  - 건강
 title: 불안에서 오는 MBTI
 created_at: 2023-01-16
 modified_at: 2026-05-06

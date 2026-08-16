@@ -2,8 +2,8 @@
 title: AI에게 묻다
 description: 내 메모를 AI 에게 모두 읽혔다
 tags:
-- ai
-- insight
+  - AI
+  - 경영
 created_at: 2025-12-14
 modified_at: 2026-05-06
 ---

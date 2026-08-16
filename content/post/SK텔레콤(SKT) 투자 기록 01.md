@@ -3,9 +3,6 @@ title: SK텔레콤(SKT) 투자 기록 01
 description: 해킹 사태가 매수 기회였다
 tags:
   - 투자
-  - skt
-  - 투자
-  - dividend
 created_at: 2026-04-20
 modified_at: 2026-05-06
 ---

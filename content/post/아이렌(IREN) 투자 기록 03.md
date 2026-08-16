@@ -4,8 +4,7 @@ description: Q1 FY26 실적 기반 종합 분석. 미실현이득 괴리, GPU �
 tags:
   - 투자
   - iren
-  - ai
-  - 투자
+  - AI
 created_at: 2026-02-01
 modified_at: 2026-05-06
 ---

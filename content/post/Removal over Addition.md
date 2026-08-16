@@ -2,9 +2,8 @@
 title: Removal over Addition
 description: Via Negativa, Less Is More
 tags:
-- thinking
-- writing
-- minimalism
+  - 글쓰기
+  - 삶
 created_at: 2025-10-05
 modified_at: 2026-05-22 21:28
 ---

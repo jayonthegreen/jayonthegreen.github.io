@@ -1,10 +1,8 @@
 ---
 description: 마르틴부버, 『나와 너』을 읽고
 tags:
-- thinking
-- 실증주의
-- 나와너
-- 관계의소중함
+  - 과학
+  - 삶
 title: 너 T야?
 created_at: 2025-02-01
 modified_at: 2026-05-06

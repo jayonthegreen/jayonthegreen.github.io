@@ -4,8 +4,7 @@ description: 36억 달러 자금 조달과 AI 인프라 투자
 tags:
   - 투자
   - iren
-  - crypto
-  - ai
+  - AI
 created_at: 2025-12-07
 modified_at: 2026-05-06
 ---
