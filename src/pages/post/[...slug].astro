@@ -50,9 +50,9 @@ const canonical = `https://jayonthegreen.github.io/post/${entry.id}/`;
     <Content />
   </div>
   {tags.length > 0 && (
-    <div style="margin-top: 2rem; font-size: small;">
+    <div style="display: flex; flex-wrap: wrap; gap: 0.3rem 0.6rem; margin-top: 2rem; font-size: small;">
       {tags.map((tag) => (
-        <a href={`/tags/${tag}/`} style="margin-right: 0.6rem;">#{tag}</a>
+        <a href={`/tags/${tag}/`} style="white-space: nowrap;">#{tag}</a>
       ))}
     </div>
   )}

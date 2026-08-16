@@ -21,9 +21,9 @@ const tags = [...counts.entries()].sort(
 >
   <Nav />
   <h1>Tags</h1>
-  <div style="line-height: 2;">
+  <div style="display: flex; flex-wrap: wrap; gap: 0.4rem 0.8rem;">
     {tags.map(([tag, count]) => (
-      <a href={`/tags/${tag}/`} style="margin-right: 0.8rem; white-space: nowrap; text-decoration: none;">
+      <a href={`/tags/${tag}/`} style="white-space: nowrap; text-decoration: none;">
         #{tag} <span style="font-size: small; color: #888;">{count}</span>
       </a>
     ))}
