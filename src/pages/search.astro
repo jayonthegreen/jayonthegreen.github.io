@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+---
+<BaseLayout title="search · jay" description="검색" canonical="https://jayonthegreen.github.io/search/" noindex={true}>
+  <Nav />
+  <input
+    id="search-input"
+    type="search"
+    placeholder="검색어를 입력하세요"
+    autocomplete="off"
+    autofocus
+    style="width: 100%; box-sizing: border-box; margin: 1rem 0; padding: 0.5rem 0.7rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px; outline: none;"
+  />
+  <p id="search-status" style="font-size: small; color: #888; margin: 0;"></p>
+  <ul id="search-results" style="padding: 0; margin: 0; list-style: none;"></ul>
+
+  <script is:inline>
+    (function () {
+      const input = document.getElementById('search-input');
+      const results = document.getElementById('search-results');
+      const status = document.getElementById('search-status');
+      const MAX_RESULTS = 50;
+      let index = null;
+      let loading = null;
+
+      function loadIndex() {
+        if (!loading) {
+          loading = fetch('/search.json')
+            .then((r) => r.json())
+            .then((data) => {
+              index = data.map((p) => ({
+                ...p,
+                lcTitle: p.title.toLowerCase(),
+                lcDescription: p.description.toLowerCase(),
+                lcBody: p.body.toLowerCase(),
+              }));
+            });
+        }
+        return loading;
+      }
+
+      function snippet(post, token) {
+        const pos = post.lcBody.indexOf(token);
+        if (pos < 0) return post.description;
+        const start = Math.max(0, pos - 40);
+        const end = Math.min(post.body.length, pos + token.length + 60);
+        return (start > 0 ? '…' : '') + post.body.slice(start, end) + (end < post.body.length ? '…' : '');
+      }
+
+      function search(query) {
+        const tokens = query.toLowerCase().split(/\s+/).filter(Boolean);
+        if (!tokens.length) return [];
+        const matched = [];
+        for (const post of index) {
+          const ok = tokens.every(
+            (t) => post.lcTitle.includes(t) || post.lcDescription.includes(t) || post.lcBody.includes(t)
+          );
+          if (!ok) continue;
+          // 제목 매칭을 본문 매칭보다 앞세운다
+          const inTitle = tokens.some((t) => post.lcTitle.includes(t));
+          matched.push({ post, inTitle });
+        }
+        matched.sort((a, b) => Number(b.inTitle) - Number(a.inTitle));
+        return matched.slice(0, MAX_RESULTS).map((m) => m.post);
+      }
+
+      function render(query) {
+        results.textContent = '';
+        if (!query.trim()) {
+          status.textContent = '';
+          return;
+        }
+        const found = search(query);
+        status.textContent = found.length ? found.length + '개의 결과' : '결과가 없습니다';
+        const firstToken = query.toLowerCase().split(/\s+/).filter(Boolean)[0] || '';
+        for (const post of found) {
+          const li = document.createElement('li');
+          li.style.cssText = 'list-style: none; margin: 0.5rem 0;';
+          const a = document.createElement('a');
+          a.href = '/post/' + post.id + '/';
+          a.style.textDecoration = 'none';
+          a.appendChild(document.createTextNode(post.title + ' '));
+          const p = document.createElement('p');
+          p.style.cssText = 'font-size: small; margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;';
+          const span = document.createElement('span');
+          span.style.marginRight = '0.3rem';
+          span.textContent = post.date;
+          p.appendChild(span);
+          p.appendChild(document.createTextNode(snippet(post, firstToken)));
+          a.appendChild(p);
+          li.appendChild(a);
+          results.appendChild(li);
+        }
+      }
+
+      let timer = null;
+      function onInput() {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          const query = input.value;
+          const url = query.trim()
+            ? window.location.pathname + '?q=' + encodeURIComponent(query.trim())
+            : window.location.pathname;
+          history.replaceState(null, '', url);
+          loadIndex().then(() => render(query));
+        }, 150);
+      }
+
+      input.addEventListener('input', onInput);
+
+      const initial = new URLSearchParams(window.location.search).get('q') || '';
+      if (initial) {
+        input.value = initial;
+        loadIndex().then(() => render(initial));
+      } else {
+        // 첫 입력 전에 미리 인덱스 로드
+        loadIndex();
+      }
+    })();
+  </script>
+</BaseLayout>
