@@ -37,7 +37,7 @@ interface PostData {
   tags?: unknown;
 }
 
-export function blogPostingJsonLd(id: string, data: PostData) {
+export function blogPostingJsonLd(id: string, data: PostData, image?: string) {
   const url = `${SITE_URL}/post/${id}/`;
   const published = data.created_at || data.date;
   const modified = data.modified_at || published;
@@ -52,7 +52,7 @@ export function blogPostingJsonLd(id: string, data: PostData) {
     ...(data.description && { description: data.description }),
     url,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-    image: DEFAULT_IMAGE,
+    image: image || DEFAULT_IMAGE,
     inLanguage: 'ko',
     author: AUTHOR,
     publisher: AUTHOR,

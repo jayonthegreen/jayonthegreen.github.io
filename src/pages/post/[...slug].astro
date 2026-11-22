@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import { blogPostingJsonLd } from '../../utils/jsonld';
 import { sortedPosts, postTags } from '../../utils/posts';
+import { postOgImage } from '../../utils/og';
 
 export async function getStaticPaths() {
   const posts = await sortedPosts();
@@ -31,13 +32,15 @@ function fmtDate(d?: Date) {
 }
 
 const canonical = `https://jayonthegreen.github.io/post/${entry.id}/`;
+const ogImage = postOgImage(entry);
 ---
 <BaseLayout
   title={entry.data.title || entry.id}
   description={entry.data.description || 'things about thinking'}
   canonical={canonical}
   ogType="article"
-  jsonLd={blogPostingJsonLd(entry.id, entry.data)}
+  jsonLd={blogPostingJsonLd(entry.id, entry.data, ogImage)}
+  image={ogImage}
 >
   <Nav />
   <h1>{entry.data.title || entry.id}</h1>
